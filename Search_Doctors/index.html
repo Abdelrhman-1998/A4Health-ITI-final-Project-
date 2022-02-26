@@ -246,7 +246,7 @@
         </section>
         <section class="row m-0 g-5">
             <aside class="col-3 d-flex flex-column align-items-center ">
-                <form action="" method="" class="filteredForm d-flex">
+                <form action="" method="" class="filteredForm d-flex" onchange="submit()">
                     <ul class="list-unstyled accordion filteredList" id="accordionExample">
                         <li class=" p-3">
                             <i class="fa-solid fa-filter"></i>
@@ -268,25 +268,25 @@
                                 <div class="accordion-body p-0 ">
                                         <ul  class="list-unstyled">
                                             <li>
-                                                <input type="checkbox" name="title" id="title1">
+                                                <input type="checkbox" name="title" id="title1" value="professor">
                                                 <label for="title1">
-                                                 Professors
+                                                 Professor
                                                  </label>
                                             </li>
                                             <li>
-                                                <input type="checkbox" name="title" id="title2">
+                                                <input type="checkbox" name="title" id="title2" value="lecturer">
                                                 <label for="title2">
                                                  Lecturer
                                                  </label>
                                              </li>
                                              <li>
-                                                <input type="checkbox" name="title" id="title3">
+                                                <input type="checkbox" name="title" id="title3" value="consultant">
                                                 <label for="title3">
                                                  Consultant
                                                  </label>
                                              </li>
                                              <li>
-                                                <input type="checkbox" name="title" id="title4">
+                                                <input type="checkbox" name="title" id="title4" value="speciallist">
                                                 <label for="title4">
                                                  Specialist
                                                  </label>
@@ -308,19 +308,19 @@
                                 <div class="accordion-body p-0 ">
                                         <ul  class="list-unstyled">
                                             <li>
-                                                <input type="radio" name="gender" id="gender1">
+                                                <input type="radio" name="gender" id="gender1" value="male">
                                                 <label for="gender1">
                                                  Male
                                                  </label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="gender" id="gender2">
+                                                <input type="radio" name="gender" id="gender2" value="female">
                                                 <label for="gender2">
                                                  Female
                                                  </label>
                                              </li>
                                              <li>
-                                                <input type="radio" name="gender" id="genderAll">
+                                                <input type="radio" name="gender" id="genderAll" value="all">
                                                 <label for="genderAll">
                                                  All
                                                 </label>
@@ -342,19 +342,19 @@
                                 <div class="accordion-body p-0 ">
                                         <ul  class="list-unstyled">
                                             <li>
-                                                <input type="radio" name="avaliabilty" id="avaliabilty1">
+                                                <input type="radio" name="avaliabilty" id="avaliabilty1" value="any">
                                                 <label for="avaliabilty1">
                                                  Any day
                                                  </label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="avaliabilty" id="avaliabilty2">
+                                                <input type="radio" name="avaliabilty" id="avaliabilty2" value="today">
                                                 <label for="avaliabilty2">
                                                  Today
                                                  </label>
                                              </li>
                                              <li>
-                                                <input type="radio" name="avaliabilty" id="avaliabilty3">
+                                                <input type="radio" name="avaliabilty" id="avaliabilty3" value="tomorrow">
                                                 <label for="avaliabilty3">
                                                     Tomorrow
                                                 </label>
@@ -376,37 +376,37 @@
                                 <div class="accordion-body p-0 ">
                                         <ul  class="list-unstyled">
                                             <li>
-                                                <input type="radio" name="fees" id="fee1">
+                                                <input type="radio" name="fees" id="fee1" value="any">
                                                 <label for="fee1">
                                                 Any
                                                  </label>
                                             </li>
                                             <li>
-                                                <input type="radio" name="fees" id="fee2">
+                                                <input type="radio" name="fees" id="fee2" value="lt-50">
                                                 <label for="fee2">
                                                  Less than 50
                                                  </label>
                                              </li>
                                              <li>
-                                                <input type="radio" name="fees" id="fee3">
+                                                <input type="radio" name="fees" id="fee3" value="50-100">
                                                 <label for="fee3">
                                                     From 50 to 100
                                                 </label>
                                              </li>
                                              <li>
-                                                <input type="radio" name="fees" id="fee4">
+                                                <input type="radio" name="fees" id="fee4" value="100-200">
                                                 <label for="fee4">
                                                     From 100 to 200
                                                 </label>
                                              </li>
                                              <li>
-                                                <input type="radio" name="fees" id="fee5">
+                                                <input type="radio" name="fees" id="fee5" value="200-300">
                                                 <label for="fee5">
                                                     From 200 to 300
                                                 </label>
                                              </li>
                                              <li>
-                                                <input type="radio" name="fees" id="fee6">
+                                                <input type="radio" name="fees" id="fee6" value="gt-300">
                                                 <label for="fee6">
                                                     Greater than 300
                                                 </label>
@@ -429,13 +429,13 @@
                                 <div class="accordion-body p-0 ">
                                         <ul  class="list-unstyled">
                                             <li>
-                                                <input type="radio" name="offers" id="offer1">
+                                                <input type="radio" name="offers" id="offer1" value="offer1">
                                                 <label for="offer1">
                                                offer1
                                                 </label>
                                             </li>
                                                 <li>
-                                                    <input type="radio" name="offers" id="offer2">
+                                                    <input type="radio" name="offers" id="offer2" value="offer2">
                                                     <label for="offer2">
                                                    offer2
                                                     </label>
@@ -459,34 +459,34 @@
                                 <p class="btn btn-secondary dropdown-toggle m-0 sortingParagraph" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
                                   Top Rated
                                 </p>
-                                <form class="dropdown-menu sorting" aria-labelledby="dropdownMenuButton6" action="" method="">
+                                <form class="dropdown-menu sorting" aria-labelledby="dropdownMenuButton6" action="" method="" onchange="submit()">
                                     <ul class="list-unstyled">
                                         <li class="d-flex align-items-center pt-2 pb-2 ps-1" >
-                                            <input type="radio" name="sorting" id="sorting1" class="pe-1">
+                                            <input type="radio" name="sorting" id="sorting1" class="pe-1" value="TR">
                                             <label for="sorting1" class="ps-1">
                                                 Top rated
                                             </label>
                                         </li>
-                                        <li class="d-flex  align-items-center pt-2 pb-2 ps-1">
-                                            <input type="radio" name="sorting" id="sorting2">
-                                            <label for="sorting2" class="ps-1">
+                                        <li class="d-flex  align-items-center pt-2 pb-2 ps-1" >
+                                            <input type="radio" name="sorting" id="sorting2" value="BM">
+                                            <label for="sorting2" class="ps-1" >
                                               Best Match
                                             </label>
                                         </li>
-                                        <li class="d-flex  align-items-center pt-2 pb-2 ps-1" >
-                                            <input type="radio" name="sorting" id="sorting3" >
+                                        <li class="d-flex  align-items-center pt-2 pb-2 ps-1"  >
+                                            <input type="radio" name="sorting" id="sorting3" value="LH">
                                             <label for="sorting3" class="ps-1">
                                                 Price Low to High
                                             </label>
                                         </li>
                                         <li class="d-flex  align-items-center pt-2 pb-2 ps-1" >
-                                            <input type="radio" name="sorting" id="sorting4" >
+                                            <input type="radio" name="sorting" id="sorting4" value="HL" >
                                             <label for="sorting4" class="ps-1">
                                                 Price High to Low
                                             </label>
                                         </li>
                                         <li class="d-flex  align-items-center pt-2 pb-2 ps-1" >
-                                            <input type="radio" name="sorting" id="sorting5" >
+                                            <input type="radio" name="sorting" id="sorting5" value="WT">
                                             <label for="sorting5" class="ps-1">
                                                Less Waiting Time
                                             </label>
