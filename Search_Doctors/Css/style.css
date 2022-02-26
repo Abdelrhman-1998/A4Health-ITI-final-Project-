@@ -148,6 +148,9 @@ option{
     box-sizing: border-box !important;
     box-shadow: 3px 3px 10px 0px #ddd;
 }
+.doctor-name{
+    font-weight: 400;
+}
 .doctor-image img{
     width:150px;
 }
@@ -230,4 +233,40 @@ aside form{
 }
 .accordion-button::after{
     transform: rotate(270deg) !important;
+}
+
+
+
+
+.timing{
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    color: var(--color2);
+}
+.timing li span:hover{
+    background-color:var(--color2);
+    border-radius: 20px;
+    padding: 8px 10px;
+    color: #fff;
+}
+@media (max-width:1050px) {
+    .timing li span{
+        font-size: 14px;
+    }
+}
+.owl-theme .owl-dots{
+    visibility: hidden !important;
+}
+.owl-nav .owl-prev span,.owl-nav .owl-next span{
+    font-size: 40px !important;
+}
+.owl-prev, .owl-next{
+   
+    background-color: #fff!important;
+    color: var(--color2) !important;}
+.owl-prev:hover, .owl-next:hover{
+    background-color: var(--color2) !important;
+    color: #fff !important;
 }
