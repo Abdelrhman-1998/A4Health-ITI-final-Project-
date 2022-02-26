@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A 4 Health">
     <title>A 4 Health</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" sizes="152*152" href="images/logo-removebg-preview.png" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/daab4a7a52.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -17,6 +17,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- sofia pro font -->
     <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
+    <!-- Owl Plug-in -->
+    <!-- <link rel="stylesheet" href="Css/owl.carousel.css"> -->
+    <link rel="stylesheet" href="Css/owl.carousel.min.css">
+    <link rel="stylesheet" href="Css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Css/style.css">
 </head>
 
 <body>
@@ -24,15 +30,19 @@
     <header class="d-flex flex-column flex-nowrap ">
         <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav">
             <div class="container-fluid">
-                <h1 class="navbar-brand fs" class="title"><span class="text-danger">me</span><span
-                        class="text-primary">dic</span></h1>
+                <a class="navbar-brand" href="#">
+                <img src="images/logo-removebg-preview.png" alt="" width="55" height="40">
+                <span
+                class="text-primary">A</span><span class="text-danger">4</span><span
+                        class="text-primary">Health</span>
+                        </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="nav nav-pills d-flex justify-content-evenly text-white w-50  handle-nav handle-m ">
+                    <ul class="nav nav-pills d-flex justify-content-end text-white w-100  handle-nav handle-m ">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home"
                                 type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
@@ -41,6 +51,11 @@
                             <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
                                 aria-selected="false">About us</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                aria-selected="false">Make An Appointment</button>
                         </li>
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
@@ -52,13 +67,55 @@
                                 data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
                                 aria-selected="false">Community</button>
                         </li>
+                        <li>
+                            <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign In</button>
+    
+                        </li>
+                        <li>
+                            <button class="btn btn-outline-primary margin-o-small  mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign Up</button>
+    
+                        </li>
                     </ul>
-                    <button type="button"
-                        class="btn btn-outline-primary margin-o-small  mt-lg-0  mt-sm-3  px-4 rounded-pill">Contact</button>
                 </div>
             </div>
         </nav>
-        
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-primary" id="exampleModalLabel">Sign In</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form  class="needs-validation" novalidate> 
+                        <div class="form-floating my-3 text-center">
+                            <input type="text" class="form-control " id=" floatingName"
+                                placeholder="name@example.com"  name="username" value="" required>
+                            <label class="text-primary" for="floatingName" >username</label>
+                            <div class="valid-feedback">
+                                Looks good!
+                              </div>
+                            </div>
+                        <div class="form-floating my-3">
+                            <input type="password" class="form-control" id="floatingInput"
+                                placeholder="name@example.com" name="password" value="" required>
+                            <label class="text-primary" for="floatingInput">Password</label>
+                            <div class="valid-feedback">
+                                Looks good!
+                              </div>
+
+                        </div> 
+                         <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary">Sign In</button>
+                </div>
+                      </form>
+                </div>
+              
+              </div>
+            </div>
+          </div>
         <div id="home" class="row pt-5 pb-5 m-0">
                     <div class="col-md-6 d-flex justify-content-center align-items-center flex-column flex-nowrap ps-3 pe-3">
 <!-- text-lg-center text-md-left -->
@@ -67,10 +124,6 @@
                         <p class="lead pss text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet dolorum
                             maiores veritatis
                             alias eius dolor id illo necessitatibus atque obcaecati.</p>
-                        <div>
-                            <button type="button" class="btn ps-4 pe-4 pt-3 pb-3 btn-primary pss">Make an
-                                Appiontment</button>
-                        </div>
 
                     </div>
                     <div class="col-md-6  pt-md-0 pt-sm-5 d-flex justify-content-center align-items-center">
@@ -87,8 +140,10 @@
         <p class="text-center ms-auto me-auto w-75 pt-2 pb-2 mb-0  ">
             We offer complete healthcare to individuals with various health concerns.
         </p>
-            <div class="row mt-0 ms-3 me-3 ms-lg-5 me-lg-5 gx-5 gy-3">
-                <div class="col-lg-3 col-sm-6 ">
+        <div class="container serv">
+        <div class="owl-one owl-carousel owl-theme">
+            <div class="item">
+                <div class="item-card">
                     <div class="serviceCard">
                         <div class="cardIcon">
                             <i class="fa-solid fa-heart-pulse"></i>
@@ -98,7 +153,7 @@
                                 Cardiology and Chest
                             </p>
                         </div>
-
+    
                         <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
                             <a href="#">
                                 Learn More
@@ -109,7 +164,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+            </div>
+            <div class="item"> 
+                <div class="item-card ">
                 <div class="serviceCard">
                     <div class="cardIcon">
                         <i class="fa-solid fa-tooth"></i>
@@ -129,7 +186,9 @@
                     </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 ">
+            </div>
+            <div class="item">
+                <div class="item-card">
                     <div class="serviceCard">
                         <div class="cardIcon">
                             <i class="fa-solid fa-brain"></i>
@@ -149,7 +208,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6  ">
+            </div>
+            <div class="item">
+                <div class="item-card">
                     <div class="serviceCard">
                         <div class="cardIcon">
                             <i class="fa-solid fa-baby"></i>
@@ -168,9 +229,126 @@
                             </a>
                         </div>
                     </div>
-
+    
                 </div>
             </div>
+            <div class="item">
+                <div class="item-card ">
+                    <div class="serviceCard">
+                        <div class="cardIcon">
+                            <i class="fa-solid fa-hand-dots"></i>
+                        </div>
+                        <div class="cardBody">
+                            <p>
+                                Dermatology (skin)
+                            </p>
+                        </div>
+                        <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-card">
+                    <div class="serviceCard">
+                        <div class="cardIcon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <div class="cardBody">
+                            <p>
+                                Psychiatry
+                            </p>
+                        </div>
+                        <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-card ">
+                    <div class="serviceCard">
+                        <div class="cardIcon">
+                            <i class="fa-solid fa-bone"></i>
+                        </div>
+                        <div class="cardBody">
+                            <p>
+                                Othopedics(Bones)
+                            </p>
+                        </div>
+                        <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-card ">
+                    <div class="serviceCard">
+                        <div class="cardIcon">
+                            <i class="fa-solid fa-ear-deaf"></i>
+                        </div>
+                        <div class="cardBody">
+                            <p>
+                                Ear,Nose and Throat
+                            </p>
+                        </div>
+                        <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-card ">
+                    <div class="serviceCard">
+                        <div class="cardIcon">
+                            <i class="fa-solid fa-venus"></i>
+                        </div>
+                        <div class="cardBody">
+                            <p>
+                                Gynaecology and Infertility
+                            </p>
+                        </div>
+                        <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section class=" row  m-0 aboutUs ">
     <div class="col-lg-6 d-flex align-items-center ps-0 pe-0">
@@ -181,9 +359,6 @@
             <p> 
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, iusto exercitationem veritatis culpa dolores vero natus architecto qui et quidem odio. Maiores quis voluptates quaerat earum deserunt eos nobis quod?
             </p>
-            <button type="button" class="btn ps-4 pe-4 pt-3 pb-3 btn-primary">
-                Learn more
-            </button>
         </div>
     </div>
     <div class="col-lg-6 ps-0 pe-0">
@@ -222,7 +397,9 @@
                 <p class="w-">L75orem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur veritatis voluptatem odio libero, laudantium doloremque assumenda labore officiis nemo?</p>
             </div>
             <div class="row g-5 m-0">
-                <div class="col-lg-3 col-md-6">
+                <div class="owl-one owl-carousel owl-theme">
+                <div class="item">
+                    <div class="item-card">
                     <div class="card doctor ">
                         <div class="pt-2 d-flex justify-content-center">
                         <img class="docImg"src="images/kisspng-health-professional-medicine-physician-nurse-5affc387458874.0429913015267111752848.png" class="card-img-top" alt="...">
@@ -242,8 +419,10 @@
                         </div>
                         </div>
                       </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 ">
+                <div class="item ">
+                    <div class="item-card">
                     <div class="card doctor" >
                         <div class="pt-2 d-flex justify-content-center">
                         <img class="docImg" src="images/pngegg.png" class="card-img-top" alt="...">
@@ -263,8 +442,10 @@
                         </div>
                         </div>
                       </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 ">
+                <div class="item ">
+                    <div class="item-card">
                     <div class="card doctor" >
                         <div class="pt-2 d-flex justify-content-center">
                         <img class="docImg" src="images/doctor-png-11553965920coieh57tza-removebg-preview.png" class="card-img-top" alt="...">
@@ -284,8 +465,10 @@
                         </div>
                         </div>
                       </div>
+                    </div>
                 </div>
-                <div class="col-lg-3 col-md-6 ">
+                <div class="item ">
+                    <div class="item-card">
                     <div class="card doctor" >
                         <div class="pt-2  d-flex justify-content-center">
                         <img class="docImg" src="images/main-qimg-4e6e97f3798814cd6fa1cc62a6a1fc7c-lq-removebg-preview.png" class="card-img-top" alt="...">
@@ -306,6 +489,77 @@
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="item ">
+                    <div class="item-card">
+                    <div class="card doctor" >
+                        <div class="pt-2  d-flex justify-content-center">
+                        <img class="docImg" src="images/kisspng-health-professional-medicine-physician-nurse-5affc387458874.0429913015267111752848.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr. Julia Jameson
+                          </p>
+                          <p class="card-text">Neurlogist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="item ">
+                    <div class="item-card">
+                    <div class="card doctor" >
+                        <div class="pt-2  d-flex justify-content-center">
+                        <img class="docImg" src="images/pngegg.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr. Julia Jameson
+                          </p>
+                          <p class="card-text">Neurlogist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="item ">
+                    <div class="item-card">
+                    <div class="card doctor" >
+                        <div class="pt-2  d-flex justify-content-center">
+                        <img class="docImg" src="images/doctor-png-11553965920coieh57tza-removebg-preview.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr. Julia Jameson
+                          </p>
+                          <p class="card-text">Neurlogist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
     </div>
@@ -318,16 +572,19 @@
                 <h2 class="text-center">Feedback</h2>
             </div>
             <div class="row g-5 m-0 mt-3">
-                <div class="col-xl-6 col-sm-12">
-                    
+                <div class=" owl-two  owl-carousel owl-theme">
+
+                <div class="item">
+                    <div class="container mt-5 mb-5">
                     <div class="card c-feedback">
                         <div class="qoutL">
                             <i class="fa-solid fa-quote-left"></i>
                         </div>
                         <div class="card-body text-center">
                           <p class="card-text my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!</p>
+                          
                           <div class="user d-flex justify-content-center justify-content-sm-between flex-sm-row flex-column flex-wrap align-items-center">
-                              <img  class="rounded-circle "src="imgs/images.png">
+                              <img  class=" w-100 rounded-circle "src="imgs/images.png">
                              <div class="info d-flex justify-content-center align-items-center flex-column">
                                 <p class="fw-bold pt-2 pb-2 m-0"> Pual Peterson</p>
                                 <p class=" m-0">patient</p>
@@ -338,9 +595,10 @@
                             <i class="fa-solid fa-quote-right"></i>
                           </div>
                       </div>
-                      
+                    </div>
                 </div>
-                <div class="col-xl-6 col-sm-12">
+                <div class="item">
+                    <div class="container mt-5 mb-5">
                     <div class="card c-feedback">
                         <div class="qoutL2">
                             <i class="fa-solid fa-quote-left "></i>
@@ -359,6 +617,30 @@
                             <i class="fa-solid fa-quote-right"></i>
                           </div>
                       </div>
+                      </div>
+                </div>
+                <div class="item">
+                    <div class="container mt-5 mb-5">
+                    <div class="card c-feedback">
+                        <div class="qoutL">
+                            <i class="fa-solid fa-quote-left "></i>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, non quidem. Assumenda ut, officiis accusamus eum placeat necessitatibus impedit optio. Qui cum animi similique. Aliquam ad eveniet distinctio tempora maxime odio iusto repellendus dolorum dolor doloremque accusamus, nobis laboriosam suscipit ex ea magnam officia dolore vero aspernatur? Dolore, voluptatibus dolorem.</p>
+                          <div class="user d-flex justify-content-center justify-content-sm-between flex-sm-row flex-column flex-wrap align-items-center">
+                              <img  class="rounded-circle" src="imgs/images.png">
+                             <div class="info d-flex justify-content-center align-items-center flex-column ">
+                                <p class="fw-bold pt-2 pb-2 m-0"> Pual Peterson</p>
+                                <p class=" m-0">patient</p>
+                             </div>
+                          </div>
+                        </div>
+                        <div class="qoutR">
+                            <i class="fa-solid fa-quote-right"></i>
+                          </div>
+                      </div>
+                      </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -377,5 +659,19 @@
     </div>
 </div>
 </footer> 
+
+
+
+<!-- Owl Plug-in -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="Js/owl.carousel.min.js"></script>
+<script src="Js/owl.js"></script>
+<script src="Js/validatiom.js"></script>
+
 </body>
 </html>
+
+
+
+
+
