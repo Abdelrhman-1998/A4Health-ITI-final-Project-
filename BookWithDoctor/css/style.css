@@ -1,0 +1,86 @@
+*{
+    font-family:'Inter', sans-serif;
+    font-size: 16px;
+}
+:root{
+    --color1:#043d75;
+    --color2:#0075ff;
+    --color3:#FF8C83;
+    --color4:#e7eef6;
+    --color5:#ebeeff;
+    --color6:#fee1d3;
+    --color7:#e4e7ec;
+    --color8:#6eb4d8;
+    --color9:#ffd5bf;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--color4) !important;
+    transition: all ease-in-out 0.3s;
+}
+.more{
+    display: none;
+}
+.dots,.less{
+    cursor: pointer;
+    color: var(--color1);
+}
+.rating i{
+    color: #FFB624;
+}
+.top-rated-review{
+    border-radius: 5px 20px 5px;
+    background-color: rgb(245, 245, 245);
+}
+.top-rated-review .quote{
+color: var(--color2);
+rotate: 180deg;
+transform: rotateY(180deg);
+font-size: 25px;
+
+}
+.card,.card-header{
+    background-color: white;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+    box-shadow: 3px 3px 10px 0px #ddd;
+}
+.doctor-img img{
+    width: 150px !important;
+    height: 150px;
+}
+.exclamation,.umbrella,.star{
+    color: var(--color2);
+    font-size: 20px;
+}
+.tota-rate{
+    background-color: var(--color2);
+    color: #fff;
+    padding: 5px 5px;
+    border-radius: 5px  ;
+}
+.timing{
+    font-size: 10px;
+}
+.card-header{
+     border-radius: 10px 10px 0px 0px !important;
+}
+aside{
+    position: sticky !important;
+    top:5%;
+   
+    
+}
+.px15{font-size: 10px;}
+.book{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.calender{
+    display: flex;
+-moz-box-pack: center;
+justify-content: center;
+-moz-box-align: center;
+align-items: center;
+}

@@ -1,0 +1,28 @@
+.loc
+{
+    top: 25%;
+    left: 2%;
+}
+.bg
+{
+    background-color: rgb(226, 230, 234);
+}
+body{
+    font-family: 'Inter', sans-serif;
+}
+.abv
+{
+    width: 100% !important;;
+}
+.textc:hover
+{
+    background-color:rgba(182, 218, 253, 0.7)!important;
+}
+
+@media screen and (max-width:766px) {
+
+    .sideMargin
+    {
+        margin-top: 20px;
+    }
+  }

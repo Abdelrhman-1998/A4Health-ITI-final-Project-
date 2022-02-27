@@ -25,6 +25,63 @@
 <body>
     <header>
             <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav ">
+                <div class="container-fluid">
+                    <h1 class="navbar-brand fs" class="title"><span class="text-danger fs">me</span><span
+                            class="text-primary fs">dic</span></h1>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav nav-pills d-flex justify-content-evenly text-white w-50  handle-nav handle-m ">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
+                                    role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                    aria-selected="false">About us</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">Service</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <div class="btn-group">
+                                    <button type="button" class="btn  btn-outline-primary marginLarge  dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        User Name<i class="fa-solid fa-caret-down ms-2"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li class="">
+                                            <a class="dropdown-item text-primary textc  "
+                                                href="#">
+                                                <i class="fa-solid fa-user me-3"></i>My info</a>
+                                        </li>
+                                        <li class="">
+                                            <a class="dropdown-item text-primary textc  "
+                                                href="#">
+                                                <i class="fa-solid fa-calendar-day me-3"></i>My Appointment </a>
+                                        </li>
+                                        <li class="">
+                                            <a class="dropdown-item text-primary textc  "
+                                                href="#">
+                                                <i class="fa-solid fa-shield me-3"></i>Insurance</a>
+                                        </li>
+        
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <button type="button"
+                            class="btn btn-outline-primary margin-o-small  mt-lg-0  mt-sm-3  px-4 rounded-pill">Contact</button>
+                    </div>
+                </div>
+            </nav>
 
     </header>
     <main>
@@ -47,7 +104,7 @@
                         <img src="./images/pngwing.com.png" alt="pic">
                 </div>
             </div>
-            <form class="d-lg-flex d-none justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100 ">
+            <form class="d-lg-flex d-none justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100" action="#searchResults">
                 <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-4 me-4">
                     <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title="">
                         <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -264,7 +321,7 @@
         </section>
         <section class="row m-0 g-5">
             <aside class="col-3 autoSubmittedForm d-lg-block d-none">
-                <form action="" method="" class="filteredForm " onchange="submit()">
+                <form action="#searchResults" method="" class="filteredForm " onchange="submit()">
                     <ul class="list-unstyled accordion filteredList" id="accordionExample">
                         <li class=" p-3">
                             <i class="fa-solid fa-filter"></i>
@@ -986,7 +1043,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="d-lg-flex  justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100 ">
+                <form class="d-lg-flex  justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100 " action="#searchResults">
                     <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-sm-4 me-sm-4">
                         <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title="">
                             <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -1192,6 +1249,19 @@
           </div>
         </div>
     </div>
+    <footer class="footer text-white py-4 d-flex justify-content-center align-items-center">
+        <div class="tmp w-90  row m-0">
+        <p class="mt-4 col-lg-8 text-center">
+            Copyright ©2022 All rights reserved | This template is made with  by Colorlib
+        </p>
+        <div class="media col-lg-4 gap-3 justify-content-center align-items-center d-flex">
+           <a href="https://www.facebook.com/" target="_blank" class="text-white"> <i class="fa-brands fa-facebook hover"></i></a></i>
+           <a href="https://www.instagram.com/" target="_blank"  class="text-white">   <i class="fa-brands fa-instagram hover"></i></a></i>
+           <a href="https://www.twitter.com/" target="_blank"  class="text-white"> <i class="fa-brands fa-twitter hover"></i></i></a></i>
+           <a href="https://www.skype.com/" target="_blank"  class="text-white">  <i class="fa-brands fa-skype hover"></i></i></a></i>
+        </div>
+    </div>
+    </footer> 
     <!-- main  file -->
     <script src="js/main.js"></script>
         <!-- Owl Plug-in -->

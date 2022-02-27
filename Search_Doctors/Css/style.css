@@ -259,7 +259,12 @@ aside form{
 .accordion-button::after{
     transform: rotate(270deg) !important;
 }
-
+.accordion-body ul,.accordion-body ul *,.sorting *{
+    cursor: pointer;
+}
+.accordion-body ul li:hover,.sorting li:hover{
+    background-color:rgba(182, 218, 253, 0.7);
+}
 /* 
 --------------------- Arwa's part -------------
 
@@ -267,3 +272,69 @@ Appointment's part
 
 
 */
+
+
+/*navbar style*/
+.color-nav
+{
+    background-color:rgba(182, 218, 253, 0.7);
+}
+.fs
+{
+    font-size: 40px !important;
+}
+.handle-nav
+{
+    display: block;
+}
+.handle-m
+{
+    margin: 0 auto;
+}
+.textc:hover
+{
+    background-color:rgba(182, 218, 253, 0.7)!important;
+}
+@media screen and (max-width: 576px) {
+  .margin-o-small
+  {
+      margin-top: 15px;
+  }
+  }
+  @media screen and (max-width: 992px) {
+    .handle-nav
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .handle-m
+{
+    margin: 0;
+}
+.marginLarge
+{
+    margin-top: 15px;
+}
+  }
+  /* footer */
+  .footer
+{
+    background-color:rgba(3, 24, 46, 0.986);
+}
+.media
+{
+    font-size: 20px;
+}
+.w-90
+{
+    width: 90%;
+}
+.hover:hover
+{
+    cursor: pointer;
+    color: var(--color2);
+}
+.hover
+{
+    font-size: 20px;
+}
