@@ -273,6 +273,44 @@ Appointment's part
 
 */
 
+.timing{
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    color: var(--color2);
+}
+.timing li:hover{
+    background-color:var(--color2);
+    border-radius: 20px;
+    /* padding: 8px 10px; */
+    color: #fff;
+}
+/* and (max-width:1313px) */
+@media screen and (max-width:1612px)  {
+    .timing li span{
+        font-size: 14px;
+    }
+    /* .owl-one .owl-item{
+        width: 100px !important;
+    } */
+}
+.owl-theme .owl-dots{
+    visibility: hidden !important;
+}
+.owl-nav .owl-prev span,.owl-nav .owl-next span{
+    font-size: 40px !important;
+}
+.owl-prev, .owl-next{
+    background-color: #fff!important;
+    color: var(--color2) !important;}
+.owl-prev:hover, .owl-next:hover{
+    background-color: var(--color2) !important;
+    color: #fff !important;
+} 
+
+
+
 
 /*navbar style*/
 .color-nav
@@ -338,3 +376,5 @@ Appointment's part
 {
     font-size: 20px;
 }
+
+
