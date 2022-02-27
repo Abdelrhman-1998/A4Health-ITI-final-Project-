@@ -24,14 +24,28 @@
     });
 
     $('.owl-two ').owlCarousel({
-        items:1,
-        margin:10,
-        autoHeight:true,
         loop:true,
-    }); AutoHeight.Defaults = {
-        autoHeight: false,
-        autoHeightClass: 'owl-height'
-    };
+        margin:10,
+        nav:true,
+        
+        responsiveClass:true,
+
+        responsive:{
+            0:{
+                items:1,
+                nav:true
+            },
+            600:{
+                items:1,
+                nav:false
+            },
+            1000:{
+                items:2,
+                nav:true,
+                loop:true
+            }
+        }
+    }); 
 
 
 
