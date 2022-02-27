@@ -198,6 +198,10 @@ header{
    font-weight: bold;
    font-size: 36px;
 }
+.meetdoc-pra{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
 .MeetDoctors .doctor{
     border-radius: 16px;
     transition: 0.3s;
@@ -338,6 +342,38 @@ header{
 {
     margin-top: 15px;
 }
+}
+@media screen and (max-width: 420px){
+    .c-feedback{
+        width: 200px;
+    }
+    .c-feedback p{
+        /* width :230px; */
+        /* height: 20vh; */
+        /* padding:50% ; */
+        font-size: 13px !important;
+    }
+    .c-feedback img{
+        width: 71px;
+        height: 74px;
+    }
+    .owl-stage-outer .owl-height{
+        height: 550px !important;
+    }
+    /* .owl-item .cloned{
+        margin-right: 0px !important;
+        margin-left: 10px !important;
+    } */
+    .item-container{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .owl-nav{
+        visibility: hidden;
+    }
+    .owl-one .owl-dots{
+        visibility: visible !important;
+    }
 }
 /*@media screen and (max-width: 848px) and (min-width: 848px) {
 
