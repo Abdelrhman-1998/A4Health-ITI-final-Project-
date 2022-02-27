@@ -325,6 +325,10 @@ header{
 {
      font-size: 30px; 
 }
+.marginLarge
+{
+    margin-top: 15px;
+}
 
   }
 @media screen and (max-width: 576px) {
