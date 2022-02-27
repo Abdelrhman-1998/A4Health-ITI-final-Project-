@@ -259,7 +259,12 @@ aside form{
 .accordion-button::after{
     transform: rotate(270deg) !important;
 }
-
+.accordion-body ul,.accordion-body ul *,.sorting *{
+    cursor: pointer;
+}
+.accordion-body ul li:hover,.sorting li:hover{
+    background-color:rgba(182, 218, 253, 0.7);
+}
 /* 
 --------------------- Arwa's part -------------
 
@@ -267,6 +272,8 @@ Appointment's part
 
 
 */
+
+
 /*navbar style*/
 .color-nav
 {
