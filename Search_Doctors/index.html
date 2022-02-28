@@ -25,25 +25,34 @@
 <body>
     <header>
             <!-- navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav ">
+            <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav">
                 <div class="container-fluid">
-                    <h1 class="navbar-brand fs" class="title"><span class="text-danger fs">me</span><span
-                            class="text-primary fs">dic</span></h1>
+                    <a class="navbar-brand" href="#">
+                    <img src="images/logo-removebg-preview.png" alt="" width="55" height="40">
+                    <span
+                    class="text-primary">A</span><span class="text-danger">4</span><span
+                            class="text-primary">Health</span>
+                            </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav nav-pills d-flex justify-content-evenly text-white w-50  handle-nav handle-m ">
+                        <ul class="nav nav-pills d-flex justify-content-end text-white w-100  handle-nav handle-m ">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home" type="button"
-                                    role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home"
+                                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
                             </li>
                             <li class="nav-item">
                                 <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
                                     aria-selected="false">About us</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                    aria-selected="false">Make An Appointment</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
@@ -51,37 +60,105 @@
                                     aria-selected="false">Service</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <div class="btn-group">
-                                    <button type="button" class="btn  btn-outline-primary marginLarge  dropdown-toggle"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        User Name<i class="fa-solid fa-caret-down ms-2"></i>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li class="">
-                                            <a class="dropdown-item text-primary textc  "
-                                                href="#">
-                                                <i class="fa-solid fa-user me-3"></i>My info</a>
-                                        </li>
-                                        <li class="">
-                                            <a class="dropdown-item text-primary textc  "
-                                                href="#">
-                                                <i class="fa-solid fa-calendar-day me-3"></i>My Appointment </a>
-                                        </li>
-                                        <li class="">
-                                            <a class="dropdown-item text-primary textc  "
-                                                href="#">
-                                                <i class="fa-solid fa-shield me-3"></i>Insurance</a>
-                                        </li>
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">Community</button>
+                            </li>
+                            <!-- show to user -->
+                            <div class="btn-group d-none">
+                                <button type="button" class="btn  btn-outline-primary marginLarge  dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    User Name<i class="fa-solid fa-caret-down ms-2"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="">
+                                        <a class="dropdown-item text-primary textc  "
+                                            href="#">
+                                            <i class="fa-solid fa-user me-3"></i>My info</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="dropdown-item text-primary textc  "
+                                            href="#">
+                                            <i class="fa-solid fa-calendar-day me-3"></i>My Appointment </a>
+                                    </li>
+                                    <li class="">
+                                        <a class="dropdown-item text-primary textc  "
+                                            href="#">
+                                            <i class="fa-solid fa-shield me-3"></i>Insurance</a>
+                                    </li>
+    
+                                </ul>
+                            </div>
+                            <div id="not-bell" class="d-none">
+                            <li class="nav-item"  role="presentation">
+                                <i class="fa-regular fa-bell text-primary fs-4"></i>
+                                <span class="position-absolute  translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                    <span class="visually-hidden">unread messages</span>
+                                  </span>
+                            </li>
+                        </div>
+                            <li>
+                                <button data-bs-toggle="modal" data-bs-target="#signin" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign In</button>
         
-                                    </ul>
-                                </div>
+                            </li>
+                            <li>
+                                <button class="btn btn-outline-primary margin-o-small  mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign Up</button>
+        
                             </li>
                         </ul>
-                        <button type="button"
-                            class="btn btn-outline-primary margin-o-small  mt-lg-0  mt-sm-3  px-4 rounded-pill">Contact</button>
                     </div>
                 </div>
             </nav>
+              <!-- Modal -->
+              <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-primary" id="signinLabel">Sign In</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form  class="needs-validation" novalidate> 
+                            <div class="form-floating my-3 text-center">
+                                <input type="text" class="form-control " id=" floatingName"
+                                    placeholder="name@example.com"  name="username" value="" required>
+                                <label class="text-primary" for="floatingName" >username</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                </div>
+                            <div class="form-floating my-3">
+                                <input type="password" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com" name="password" value="" required>
+                                <label class="text-primary" for="floatingInput">Password</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+    
+                            </div> 
+                             <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                          </form>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+              <!-- notification  handling in angular-->
+              <!-- <div class="m-4  notification-body">              
+              <div class="toast" id="myToast" data-bs-autohide="false">
+              <div class="toast-header">
+                  <strong class="me-auto"><i class="fa-regular fa-circle-question"></i> You have new notification</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+              </div>
+              <div class="toast-body">
+                  It's been a long time since you visited us. We've something special for you. <a href="#">Click here!</a>
+              </div>
+              </div>
+              </div> -->
 
     </header>
     <main>
@@ -1712,9 +1789,16 @@
         </div>
     </div>
     </footer> 
+    <!-- main -->
  <script src="js/main.js"></script>
     <!-- Owl Plug-in -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="js/owl.carousel.min.js"></script>
-<script src="js/owl.js"></script></body>
+<script src="js/owl.js"></script>
+<!-- validation -->
+<script src="js/validatiom.js"></script>
+<!-- notification -->
+<script src="js/notification.js"></script>
+
+</body>
 </html>
