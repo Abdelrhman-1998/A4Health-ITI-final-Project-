@@ -77,9 +77,9 @@ body{
     color: white;
     outline: none;
 }
-.search-field > li:last-child  div:last-child{
+/* .search-field > li:last-child  div:last-child{
     background-color: red;
-}
+} */
 .search-field > li:last-child >  div:first-child input::placeholder{
     color: var(--color2);
     font-weight: bold;
