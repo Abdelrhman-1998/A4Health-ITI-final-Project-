@@ -11291,3 +11291,24 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+.addAppointment{
+  box-shadow: 3px 3px 10px 0px #ddd;
+  border-radius: 16px;
+  overflow-x: auto;
+}
+
+.addAppointment button{
+  width: 200px;
+}
+.AppointmentHeader{
+  color: black;
+}
+.appointmentContainer{
+  overflow-x: auto;
+}
+#editModal{
+  color: black;
+}
+th{
+  color: black;
+}
