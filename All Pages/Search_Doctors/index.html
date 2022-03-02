@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A 4 Health">
+    <title>Appointment</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/daab4a7a52.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- sofia pro font -->
+    <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
+
+    <!-- Owl Plug-in -->
+    <link rel="stylesheet" href="Css/owl.carousel.min.css">
+    <link rel="stylesheet" href="Css/owl.theme.default.min.css">    
+</head>
+<body>
+    <header>
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                    <img src="images/logo-removebg-preview.png" alt="" width="55" height="40">
+                    <span
+                    class="text-primary">A</span><span class="text-danger">4</span><span
+                            class="text-primary">Health</span>
+                            </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav nav-pills d-flex justify-content-end text-white w-100  handle-nav handle-m ">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home"
+                                    type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                    aria-selected="false">About us</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                    aria-selected="false">Make An Appointment</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">Service</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                    aria-selected="false">Community</button>
+                            </li>
+                            <!-- show to user -->
+                            <div class="btn-group d-none">
+                                <button type="button" class="btn  btn-outline-primary marginLarge  dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    User Name<i class="fa-solid fa-caret-down ms-2"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li class="">
+                                        <a class="dropdown-item text-primary textc  "
+                                            href="#">
+                                            <i class="fa-solid fa-user me-3"></i>My info</a>
+                                    </li>
+                                    <li class="">
+                                        <a class="dropdown-item text-primary textc  "
+                                            href="#">
+                                            <i class="fa-solid fa-calendar-day me-3"></i>My Appointment </a>
+                                    </li>
+                                    <li class="">
+                                        <a class="dropdown-item text-primary textc  "
+                                            href="#">
+                                            <i class="fa-solid fa-shield me-3"></i>Insurance</a>
+                                    </li>
+    
+                                </ul>
+                            </div>
+                            <div id="not-bell" class="d-none">
+                            <li class="nav-item"  role="presentation">
+                                <i class="fa-regular fa-bell text-primary fs-4"></i>
+                                <span class="position-absolute  translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                    <span class="visually-hidden">unread messages</span>
+                                  </span>
+                            </li>
+                        </div>
+                            <li>
+                                <button data-bs-toggle="modal" data-bs-target="#signin" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign In</button>
+        
+                            </li>
+                            <li>
+                                <button class="btn btn-outline-primary margin-o-small  mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign Up</button>
+        
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+              <!-- Modal -->
+              <div class="modal fade" id="signin" tabindex="-1" aria-labelledby="signinLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title text-primary" id="signinLabel">Sign In</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form  class="needs-validation" novalidate> 
+                            <div class="form-floating my-3 text-center">
+                                <input type="text" class="form-control " id=" floatingName"
+                                    placeholder="name@example.com"  name="username" value="" required>
+                                <label class="text-primary" for="floatingName" >username</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                </div>
+                            <div class="form-floating my-3">
+                                <input type="password" class="form-control" id="floatingInput"
+                                    placeholder="name@example.com" name="password" value="" required>
+                                <label class="text-primary" for="floatingInput">Password</label>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+    
+                            </div> 
+                             <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                          </form>
+                    </div>
+                  
+                  </div>
+                </div>
+              </div>
+              <!-- notification  handling in angular-->
+              <!-- <div class="m-4  notification-body">              
+              <div class="toast" id="myToast" data-bs-autohide="false">
+              <div class="toast-header">
+                  <strong class="me-auto"><i class="fa-regular fa-circle-question"></i> You have new notification</strong>
+                  <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+              </div>
+              <div class="toast-body">
+                  It's been a long time since you visited us. We've something special for you. <a href="#">Click here!</a>
+              </div>
+              </div>
+              </div> -->
+
+    </header>
+    <main>
+        <section  class="secondary_section position-relative" >
+            <div class="row m-0">
+                <div class=" col-lg-8 search_header ps-lg-5 p-0">
+                    <h2 class=" text-lg-start text-center ">
+                        Best Doctors in Egypt
+                    </h2>
+                    <p class="section_paragraph text-lg-start text-center">
+                        Book online or call
+                        <i class="fa-solid fa-phone text-danger"></i>
+                        16676 
+                    </p>
+                    <p class="section_paragraph text-lg-start text-center ps-3 pe-3 p-lg-0">
+                        15000 Doctors - 9000 Professors and Consultants - More than 40 Specialties
+                    </p>
+                </div>
+                <div class="doctors_bg mt-2 col-lg-4  justify-content-center p-0 d-none d-sm-flex">
+                        <img src="./images/pngwing.com.png" alt="pic">
+                </div>
+            </div>
+            <form class="d-lg-flex d-none justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100" action="#searchResults">
+                <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-4 me-4">
+                    <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title="">
+                        <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                select a specialty
+                                <i class="fa-solid fa-angle-down"></i>
+                               </p>
+                               <p  class="d-flex align-items-center gap-2 ps-2 pe-2">
+                                 <i class="fa-solid fa-stethoscope"></i>
+                                 <span>
+                                     Choose specialty
+                                 </span>
+                               </p>
+                        </div>
+                            <select  size="4" name='speciality' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton1">
+                                <option value="Dermatology" >
+                                    Dermatology (Skin)
+                                </option>
+                                <option value="Dentistry"  >
+                                    Dentistry (Teeth)
+                                </option>
+                                <option value="Psychiatry" >
+                                    Psychiatry
+                                </option>
+                                <option value="Pediatrics"  >
+                                    Pediatrics and New Born (Child)
+                                </option>
+                                <option value="Neurology" >
+                                    Neurology (Brain & Nerves)
+                                </option>
+                                <option value="Orthopedics">
+                                    Orthopedics (Bones)
+                                </option>
+                                <option value="Gynaecology" >
+                                    Gynaecology and Infertility
+                                </option>
+                                <option value="ENT" >
+                                    Ear, Nose and Throat
+                                </option>
+                                <option value="Heart" >
+                                    Cardiology and Vascular Disease
+                                </option>
+                              </select>
+                    </li>
+                    <li  class="search-listItem dropdown searchItems" title="">
+                        <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <p class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                In this city
+                                <i class="fa-solid fa-angle-down"></i>
+                              </p>
+                              <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <span>
+                                    Choose City
+                                </span>
+                              </p>
+                        </div>
+                            <select  size="4" name='city' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2">
+                                <option value="Alexandria"  >
+                                    Alexandria
+                                </option>
+                                <option value="Assiut" >
+                                    Assiut
+                                </option>
+                                <option value="Aswan" >
+                                    Aswan
+                                </option>
+                                <option value="Beheira"  >
+                                    Beheira
+                                </option>
+                                <option value="Bani Suef" >
+                                    Bani Suef
+                                </option>
+                                <option value="Cairo">
+                                    Cairo
+                                </option>
+                                <option value="Daqahliya" >
+                                    Daqahliya
+                                </option>
+                                <option value="Damietta" >
+                                    Damietta
+                                </option>
+                                <option value="Fayyoum" >
+                                    Fayyoum
+                                </option>
+                                <option value="Gharbiya" >
+                                    Gharbiya
+                                </option>
+                                <option value="Giza" >
+                                    Giza
+                                </option>
+                                <option value="Helwan" >
+                                    Helwan
+                                </option>
+                                <option value="Ismailia" >
+                                    Ismailia
+                                </option>
+                              </select>
+                    </li>
+                    <li  class="search-listItem dropdown searchItems" title="">
+                        <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                            <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                In this Area
+                                <i class="fa-solid fa-angle-down"></i>
+                            </p>
+                            <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                                <i class="fa-solid fa-location-dot"></i>
+                              <span>
+                                Choose Area
+                              </span>
+                            </p>
+                        </div>
+                        <select  size="4" name='area' class=" dropdown-menu p-0" aria-labelledby="dropdownMenuButton3">
+                            <option value="Alexandria"  >
+                                Alexandria
+                            </option>
+                            <option value="Assiut" >
+                                Assiut
+                            </option>
+                            <option value="Aswan" >
+                                Aswan
+                            </option>
+                            <option value="Beheira"  >
+                                Beheira
+                            </option>
+                            <option value="Bani Suef" >
+                                Bani Suef
+                            </option>
+                            <option value="Cairo">
+                                Cairo
+                            </option>
+                            <option value="Daqahliya" >
+                                Daqahliya
+                            </option>
+                            <option value="Damietta" >
+                                Damietta
+                            </option>
+                            <option value="Fayyoum" >
+                                Fayyoum
+                            </option>
+                            <option value="Gharbiya" >
+                                Gharbiya
+                            </option>
+                            <option value="Giza" >
+                                Giza
+                            </option>
+                            <option value="Helwan" >
+                                Helwan
+                            </option>
+                            <option value="Ismailia" >
+                                Ismailia
+                            </option>
+                          </select>
+                    </li>
+                    <li  class="search-listItem dropdown searchItems" title="">
+                        <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                            <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                    Offers
+                                <i class="fa-solid fa-angle-down"></i>
+                            </p>
+                            <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                              <span>
+                                Choose offers
+                              </span>
+                            </p>
+                        </div>
+                        <select  size="2" name='offers' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton4">
+                            <option value="offer1">
+                                offer1
+                            </option>
+                            <option value="offer2">
+                                offer2
+                            </option>
+                        </select>
+                    </li>
+                    <li  class="d-flex flex-column flex-lg-row" title="">
+                      
+                            <div class="search-listItem ">
+                                <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                    Or search by name
+                                </p>
+                                <p class="d-flex align-items-center gap-2 position-relative ps-2 pe-2">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                    <input type="search" name="serach" placeholder="Doctor name" class="flex-grow-1">
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center p-1  justify-content-center bg-danger">
+                                <button class="d-flex gap-2" type="submit" class="d-flex">
+                                        <i class="fa-solid fa-magnifying-glass" style="display: block; transform:rotate(90deg); color: white; font-size: 24px;"></i>
+                                        <span>
+                                            Search
+                                        </span>
+                                </button>
+                            </div>
+                    </li>
+                </ul>
+            </form>
+            <div class="d-lg-none d-flex justify-content-center ">
+                    <div class="d-flex bg-white bookingDoctor mt-sm-0 mt-3 mb-3 ps-sm-5 pe-sm-5 pt-3 pb-3 ps-2 pe-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                        <div class="d-flex justify-content-center align-items-center p-3">
+                            <i class="fa-solid fa-calendar-plus"></i>
+                        </div>
+                        <div>
+                            <p class="m-0  fw-bold">
+                                Book a doctor
+                            </p>
+                            <p class="m-0">
+                                Examination or procedure
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </section>
+        <section class="row m-0 g-5">
+            <aside class="col-3 autoSubmittedForm d-lg-block d-none">
+                <form action="#searchResults" method="" class="filteredForm " onchange="submit()">
+                    <ul class="list-unstyled accordion filteredList" id="accordionExample">
+                        <li class=" p-3">
+                            <i class="fa-solid fa-filter"></i>
+                            <span>
+                                Filters
+                            </span>
+                        </li>
+                        <li  class=" p-3">
+
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                    <span >
+                                        Title
+                                    </span>
+                                </button>
+                              </h2>
+                              <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body p-0 ">
+                                        <ul  class="list-unstyled">
+                                            <li>
+                                                <input type="radio" name="title" id="title0" value="All">
+                                                <label for="title0">
+                                                All
+                                                 </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="title" id="title1" value="Professors">
+                                                <label for="title1">
+                                                 Professors
+                                                 </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="title" id="title2" value="Lecturer">
+                                                <label for="title2">
+                                                 Lecturer
+                                                 </label>
+                                             </li>
+                                             <li>
+                                                <input type="radio" name="title" id="title3" value="Consultant">
+                                                <label for="title3">
+                                                 Consultant
+                                                 </label>
+                                             </li>
+                                             <li>
+                                                <input type="radio" name="title" id="title4" value="Specialist">
+                                                <label for="title4">
+                                                 Specialist
+                                                 </label>
+                                             </li>
+                                        </ul>
+                                </div>
+                              </div>
+                        </li>
+                        <li  class=" p-3">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="fa-solid fa-venus-mars"></i>
+                                    <span>
+                                        Gender
+                                    </span>
+                                </button>
+                              </h2>
+                              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body p-0 ">
+                                        <ul  class="list-unstyled">
+                                            <li>
+                                                <input type="radio" name="gender" id="gender1" value="Male">
+                                                <label for="gender1">
+                                                 Male
+                                                 </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="gender" id="gender2" value="Female">
+                                                <label for="gender2">
+                                                 Female
+                                                 </label>
+                                             </li>
+                                             <li>
+                                                <input type="radio" name="gender" id="genderAll" value="All">
+                                                <label for="genderAll">
+                                                 All
+                                                </label>
+                                             </li>
+                                        </ul>
+                                </div>
+                              </div>
+                        </li>
+                        <li  class=" p-3">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>
+                                       Avaliabilty
+                                    </span>
+                                </button>
+                              </h2>
+                              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body p-0 ">
+                                        <ul  class="list-unstyled">
+                                            <li>
+                                                <input type="radio" name="avaliabilty" id="avaliabilty1" value="anyDay">
+                                                <label for="avaliabilty1">
+                                                 Any day
+                                                 </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="avaliabilty" id="avaliabilty2" value="today">
+                                                <label for="avaliabilty2">
+                                                 Today
+                                                 </label>
+                                             </li>
+                                             <li>
+                                                <input type="radio" name="avaliabilty" id="avaliabilty3" value="tomorrow">
+                                                <label for="avaliabilty3">
+                                                    Tomorrow
+                                                </label>
+                                             </li>
+                                        </ul>
+                                </div>
+                              </div>
+                        </li>
+                        <li  class=" p-3">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                    <i class="fa-solid fa-money-bill-wave"></i>
+                                    <span class="pe-3">
+                                        Examination Fees
+                                    </span>
+                                </button>
+                              </h2>
+                              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div class="accordion-body p-0 ">
+                                        <ul  class="list-unstyled">
+                                            <li>
+                                                <input type="radio" name="fees" id="fee1" value="any">
+                                                <label for="fee1">
+                                                Any
+                                                 </label>
+                                            </li>
+                                            <li>
+                                                <input type="radio" name="fees" id="fee2" value="lt-50">
+                                                <label for="fee2">
+                                                 Less than 50
+                                                 </label>
+                                             </li>
+                                             <li>
+                                                <input type="radio" name="fees" id="fee3" value="50-100">
+                                                <label for="fee3">
+                                                    From 50 to 100
+                                                </label>
+                                             </li>
+                                             <li>
+                                                <input type="radio" name="fees" id="fee4" value="100-200">
+                                                <label for="fee4">
+                                                    From 100 to 200
+                                                </label>
+                                             </li>
+                                             <li>
+                                                <input type="radio" name="fees" id="fee5" value="200-300">
+                                                <label for="fee5">
+                                                    From 200 to 300
+                                                </label>
+                                             </li>
+                                             <li>
+                                                <input type="radio" name="fees" id="fee6" value="gt-300">
+                                                <label for="fee6">
+                                                    Greater than 300
+                                                </label>
+                                             </li>
+                                        </ul>
+                                </div>
+                              </div>
+                        </li>
+                        <li  class=" p-3">
+
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                    <i class="fa-solid fa-percent"></i>
+                                    <span class="ps-1 pe-3">
+                                        Offers
+                                    </span>
+                                </button>
+                              </h2>
+                              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                <div class="accordion-body p-0 ">
+                                        <ul  class="list-unstyled">
+                                            <li>
+                                                <input type="radio" name="offers" id="offer1" value="offer1">
+                                                <label for="offer1">
+                                               offer1
+                                                </label>
+                                            </li>
+                                                <li>
+                                                    <input type="radio" name="offers" id="offer2" value="offer2">
+                                                    <label for="offer2">
+                                                   offer2
+                                                    </label>
+                                             </li>
+                   
+                                        </ul>
+                                </div>
+                              </div>
+                        </li>
+                    </ul>
+                </form>
+            </aside>
+            <section class="col-lg-9" id="searchResults">
+                    <div class="d-flex flex-column flex-md-row sortingHeader mt-2 mb-2 gap-3">
+                        <p class="  m-0 flex-grow-1 text-center text-md-start ">
+                            All Specialities
+                        </p>
+                        <div class="d-flex gap-3 flex-wrap justify-content-center">
+                            <div class="d-flex gap-1 d-lg-none  ">
+                                <div class="dropdown d-flex align-items-center flex-column justify-content-center m-0">
+                                    <p class="btn btn-secondary dropdown-toggle m-0 sortingParagraph" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                      Filter
+                                    </p>
+                                  </div>
+                            </div>
+                            <div class="d-flex gap-1 ">
+                                <div class="dropdown d-flex align-items-center flex-column justify-content-center m-0">
+                                    <p class="btn btn-secondary dropdown-toggle m-0 sortingParagraph" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
+                                      Sort
+                                    </p>
+                                    <form class="dropdown-menu sorting autoSubmittedForm" aria-labelledby="dropdownMenuButton6" action="#searchResults" method="" onchange="submit()">
+                                        <ul class="list-unstyled">
+                                            <li class="d-flex align-items-center p-2" >
+                                                <input type="radio" name="sorting" id="sorting1" class="pe-1" value="TR">
+                                                <label for="sorting1" class="ps-1">
+                                                    Top rated
+                                                </label>
+                                            </li>
+
+                                            <li class="d-flex  align-items-center p-2" >
+                                                <input type="radio" name="sorting" id="sorting3" value="LH" >
+                                                <label for="sorting3" class="ps-1">
+                                                    Price Low to High
+                                                </label>
+                                            </li>
+                                            <li class="d-flex  align-items-center p-2" >
+                                                <input type="radio" name="sorting" id="sorting4" value="HL">
+                                                <label for="sorting4" class="ps-1">
+                                                    Price High to Low
+                                                </label>
+                                            </li>
+
+                                        </ul>
+                                    </form>
+                                  </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p class="mt-3 mb-3 text-center text-md-start ">
+                        Search results :<span> 5767</span> doctors
+                    </p>
+                <div class="doctor-card row m-0 mt-3 mb-3 p-3">
+                    <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0">
+                        <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
+                                <img src="images/doctor-ahmed-el-gazar-urology_20180728183517015.jpg" alt="doctor-image" class="rounded-circle ms-2 me-2">
+                        </div>
+                        <div class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center">
+                                <h4 class="doctor-name pt-2 pb-2 m-0">
+                                    <span>Doctor : </span>
+                                    <span>Tamer El Bigawy</span>
+                                </h4>
+                                <p class="doctor-specialization pb-2 m-0 fw-bold">
+                                    Psychiatry Specialist
+                                </p>
+                                <div class="rating d-flex gap-3 pb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                </div>
+                                <p class="number-ratings pb-2 m-0">
+                                    Overall ratings from <span>900</span> visitors
+                                </p>
+                                <p class="pb-2 m-0 doctor-location">
+                                    <i class="fa-solid fa-location-dot pe-2"></i>
+                                    <span class="city fw-bold">
+                                        Alexandria:
+                                    </span>
+                                    <span class="Area street">
+                                        next to sednawy hospital
+                                    </span>
+                                </p>
+                                <p class="pb-2 m-0 doctor-fees">
+                                    <i class="fa-solid fa-money-bill-wave pe-2"></i>
+                                    <span class="fw-bold">
+                                        Fees:
+                                    </span>
+                                    <span class="fees">
+                                        150 LE
+                                    </span>
+                                </p>
+
+                                <button class=" btn btn-danger d-lg-none " data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        </div>
+                    </div>
+                    <div class="Appointments col-lg-4 ps-0 d-none d-lg-block">
+                        <div class="owl-one owl-carousel owl-theme">                                  
+                                <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+                                         <button class=" btn btn-danger">Book</button>
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                        </div>
+                         
+                    </div>
+
+                  
+                       
+                      
+                </div>
+                <div class="doctor-card row m-0 mt-3 mb-3 p-3">
+                    <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0">
+                        <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
+                                <img src="images/doctor-ahmed-el-gazar-urology_20180728183517015.jpg" alt="doctor-image" class="rounded-circle ms-2 me-2">
+                        </div>
+                        <div class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center">
+                                <h4 class="doctor-name pt-2 pb-2 m-0">
+                                    <span>Doctor : </span>
+                                    <span>Tamer El Bigawy</span>
+                                </h4>
+                                <p class="doctor-specialization pb-2 m-0 fw-bold">
+                                    Psychiatry Specialist
+                                </p>
+                                <div class="rating d-flex gap-3 pb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                </div>
+                                <p class="number-ratings pb-2 m-0">
+                                    Overall ratings from <span>900</span> visitors
+                                </p>
+                                <p class="pb-2 m-0 doctor-location">
+                                    <i class="fa-solid fa-location-dot pe-2"></i>
+                                    <span class="city fw-bold">
+                                        Alexandria:
+                                    </span>
+                                    <span class="Area street">
+                                        next to sednawy hospital
+                                    </span>
+                                </p>
+                                <p class="pb-2 m-0 doctor-fees">
+                                    <i class="fa-solid fa-money-bill-wave pe-2"></i>
+                                    <span class="fw-bold">
+                                        Fees:
+                                    </span>
+                                    <span class="fees">
+                                        150 LE
+                                    </span>
+                                </p>
+
+                                <button class=" btn btn-danger d-lg-none " data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        </div>
+                    </div>
+                    <div class="Appointments col-lg-4 ps-0 d-none d-lg-block">
+                        <div class="owl-one owl-carousel owl-theme">                                  
+                                <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+                                         <button class=" btn btn-danger">Book</button>
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                        </div>
+                         
+                    </div>
+
+                  
+                       
+                      
+                </div>
+                <div class="doctor-card row m-0 mt-3 mb-3 p-3">
+                    <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0">
+                        <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
+                                <img src="images/doctor-ahmed-el-gazar-urology_20180728183517015.jpg" alt="doctor-image" class="rounded-circle ms-2 me-2">
+                        </div>
+                        <div class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center">
+                                <h4 class="doctor-name pt-2 pb-2 m-0">
+                                    <span>Doctor : </span>
+                                    <span>Tamer El Bigawy</span>
+                                </h4>
+                                <p class="doctor-specialization pb-2 m-0 fw-bold">
+                                    Psychiatry Specialist
+                                </p>
+                                <div class="rating d-flex gap-3 pb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                </div>
+                                <p class="number-ratings pb-2 m-0">
+                                    Overall ratings from <span>900</span> visitors
+                                </p>
+                                <p class="pb-2 m-0 doctor-location">
+                                    <i class="fa-solid fa-location-dot pe-2"></i>
+                                    <span class="city fw-bold">
+                                        Alexandria:
+                                    </span>
+                                    <span class="Area street">
+                                        next to sednawy hospital
+                                    </span>
+                                </p>
+                                <p class="pb-2 m-0 doctor-fees">
+                                    <i class="fa-solid fa-money-bill-wave pe-2"></i>
+                                    <span class="fw-bold">
+                                        Fees:
+                                    </span>
+                                    <span class="fees">
+                                        150 LE
+                                    </span>
+                                </p>
+
+                                <button class=" btn btn-danger d-lg-none " data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        </div>
+                    </div>
+                    <div class="Appointments col-lg-4 ps-0 d-none d-lg-block">
+                        <div class="owl-one owl-carousel owl-theme">                                  
+                                <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+                                         <button class=" btn btn-danger">Book</button>
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                        </div>
+                         
+                    </div>
+
+                  
+                       
+                      
+                </div>
+                <div class="doctor-card row m-0 mt-3 mb-3 p-3">
+                    <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0">
+                        <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
+                                <img src="images/doctor-ahmed-el-gazar-urology_20180728183517015.jpg" alt="doctor-image" class="rounded-circle ms-2 me-2">
+                        </div>
+                        <div class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center">
+                                <h4 class="doctor-name pt-2 pb-2 m-0">
+                                    <span>Doctor : </span>
+                                    <span>Tamer El Bigawy</span>
+                                </h4>
+                                <p class="doctor-specialization pb-2 m-0 fw-bold">
+                                    Psychiatry Specialist
+                                </p>
+                                <div class="rating d-flex gap-3 pb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                </div>
+                                <p class="number-ratings pb-2 m-0">
+                                    Overall ratings from <span>900</span> visitors
+                                </p>
+                                <p class="pb-2 m-0 doctor-location">
+                                    <i class="fa-solid fa-location-dot pe-2"></i>
+                                    <span class="city fw-bold">
+                                        Alexandria:
+                                    </span>
+                                    <span class="Area street">
+                                        next to sednawy hospital
+                                    </span>
+                                </p>
+                                <p class="pb-2 m-0 doctor-fees">
+                                    <i class="fa-solid fa-money-bill-wave pe-2"></i>
+                                    <span class="fw-bold">
+                                        Fees:
+                                    </span>
+                                    <span class="fees">
+                                        150 LE
+                                    </span>
+                                </p>
+
+                                <button class=" btn btn-danger d-lg-none " data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        </div>
+                    </div>
+                    <div class="Appointments col-lg-4 ps-0 d-none d-lg-block">
+                        <div class="owl-one owl-carousel owl-theme">                                  
+                                <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+                                         <button class=" btn btn-danger">Book</button>
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                        </div>
+                         
+                    </div>
+
+                  
+                       
+                      
+                </div>
+                <div class="doctor-card row m-0 mt-3 mb-3 p-3">
+                    <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0">
+                        <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
+                                <img src="images/doctor-ahmed-el-gazar-urology_20180728183517015.jpg" alt="doctor-image" class="rounded-circle ms-2 me-2">
+                        </div>
+                        <div class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center">
+                                <h4 class="doctor-name pt-2 pb-2 m-0">
+                                    <span>Doctor : </span>
+                                    <span>Tamer El Bigawy</span>
+                                </h4>
+                                <p class="doctor-specialization pb-2 m-0 fw-bold">
+                                    Psychiatry Specialist
+                                </p>
+                                <div class="rating d-flex gap-3 pb-2">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>
+                                </div>
+                                <p class="number-ratings pb-2 m-0">
+                                    Overall ratings from <span>900</span> visitors
+                                </p>
+                                <p class="pb-2 m-0 doctor-location">
+                                    <i class="fa-solid fa-location-dot pe-2"></i>
+                                    <span class="city fw-bold">
+                                        Alexandria:
+                                    </span>
+                                    <span class="Area street">
+                                        next to sednawy hospital
+                                    </span>
+                                </p>
+                                <p class="pb-2 m-0 doctor-fees">
+                                    <i class="fa-solid fa-money-bill-wave pe-2"></i>
+                                    <span class="fw-bold">
+                                        Fees:
+                                    </span>
+                                    <span class="fees">
+                                        150 LE
+                                    </span>
+                                </p>
+
+                                <button class=" btn btn-danger d-lg-none " data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        </div>
+                    </div>
+                    <div class="Appointments col-lg-4 ps-0 d-none d-lg-block">
+                        <div class="owl-one owl-carousel owl-theme">                                  
+                                <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+                                         <button class=" btn btn-danger">Book</button>
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                                 <div class="item ">
+                                    <div class="card text-center">
+                                        <div class="card-header bg-primary text-white">
+                                          Today
+                                        </div>
+                                        <div class="card-body">
+                                          <ul class="timing lh-lg w-100">
+                                            <li><span>3:40 PM</span></li>
+                                            <li><span>4:10 PM</span></li>
+                                            <li><span>4:40 PM</span></li>
+                                            <li><span>5:10 PM</span></li>
+                                            <li><span>5:40 PM</span></li>
+                                            <li><span>6:10 PM</span></li>
+                                            <li><span>6:40 PM</span></li>
+                                        </ul>
+                                        </div>
+            
+                                         <button class=" btn btn-danger">Book</button>
+            
+                                      </div>
+                                 </div>
+                        </div>
+                         
+                    </div>
+
+                  
+                       
+                      
+                </div>
+                <!-- modal -->
+
+            </section>
+        </section>
+    </main>
+    <footer>
+        <!-- footer -->
+    </footer>
+    <!-- 
+      -----Models----
+     -->
+    <div class="modal d-lg-none fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered ">
+          <div class="modal-content bg-transparent border-0">
+            <div class="modal-body  ">
+                <aside class="autoSubmittedForm ">
+                    <form action="#searchResults" method="" class="filteredForm " onchange="submit()">
+                        <ul class="list-unstyled accordion filteredList shadow-none" id="accordionExample2">
+                            <li class=" p-3">
+                                <i class="fa-solid fa-filter"></i>
+                                <span>
+                                    Filters
+                                </span>
+                            </li>
+                            <li  class=" p-3">
+    
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                        <span >
+                                            Title
+                                        </span>
+                                    </button>
+                                  </h2>
+                                  <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0 ">
+                                            <ul  class="list-unstyled">
+                                                <li>
+                                                    <input type="radio" name="title" id="title0" value="All">
+                                                    <label for="title0">
+                                                     All
+                                                     </label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" name="title" id="title1" value="Professors">
+                                                    <label for="title1">
+                                                     Professors
+                                                     </label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" name="title" id="title2" value="Lecturer">
+                                                    <label for="title2">
+                                                     Lecturer
+                                                     </label>
+                                                 </li>
+                                                 <li>
+                                                    <input type="radio" name="title" id="title3" value="Consultant">
+                                                    <label for="title3">
+                                                     Consultant
+                                                     </label>
+                                                 </li>
+                                                 <li>
+                                                    <input type="radio" name="title" id="title4" value="Specialist">
+                                                    <label for="title4">
+                                                     Specialist
+                                                     </label>
+                                                 </li>
+                                            </ul>
+                                    </div>
+                                  </div>
+                            </li>
+                            <li  class=" p-3">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="fa-solid fa-venus-mars"></i>
+                                        <span>
+                                            Gender
+                                        </span>
+                                    </button>
+                                  </h2>
+                                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0 ">
+                                            <ul  class="list-unstyled">
+                                                <li>
+                                                    <input type="radio" name="gender" id="gender1" value="Male">
+                                                    <label for="gender1">
+                                                     Male
+                                                     </label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" name="gender" id="gender2" value="Female">
+                                                    <label for="gender2">
+                                                     Female
+                                                     </label>
+                                                 </li>
+                                                 <li>
+                                                    <input type="radio" name="gender" id="genderAll" value="All">
+                                                    <label for="genderAll">
+                                                     All
+                                                    </label>
+                                                 </li>
+                                            </ul>
+                                    </div>
+                                  </div>
+                            </li>
+                            <li  class=" p-3">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <span>
+                                           Avaliabilty
+                                        </span>
+                                    </button>
+                                  </h2>
+                                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0 ">
+                                            <ul  class="list-unstyled">
+                                                <li>
+                                                    <input type="radio" name="avaliabilty" id="avaliabilty1" value="anyDay">
+                                                    <label for="avaliabilty1">
+                                                     Any day
+                                                     </label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" name="avaliabilty" id="avaliabilty2" value="today">
+                                                    <label for="avaliabilty2">
+                                                     Today
+                                                     </label>
+                                                 </li>
+                                                 <li>
+                                                    <input type="radio" name="avaliabilty" id="avaliabilty3" value="tomorrow">
+                                                    <label for="avaliabilty3">
+                                                        Tomorrow
+                                                    </label>
+                                                 </li>
+                                            </ul>
+                                    </div>
+                                  </div>
+                            </li>
+                            <li  class=" p-3">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                        <i class="fa-solid fa-money-bill-wave"></i>
+                                        <span class="pe-3">
+                                            Examination Fees
+                                        </span>
+                                    </button>
+                                  </h2>
+                                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0 ">
+                                            <ul  class="list-unstyled">
+                                                <li>
+                                                    <input type="radio" name="fees" id="fee1" value="any">
+                                                    <label for="fee1">
+                                                    Any
+                                                     </label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" name="fees" id="fee2" value="lt-50">
+                                                    <label for="fee2">
+                                                     Less than 50
+                                                     </label>
+                                                 </li>
+                                                 <li>
+                                                    <input type="radio" name="fees" id="fee3" value="50-100">
+                                                    <label for="fee3">
+                                                        From 50 to 100
+                                                    </label>
+                                                 </li>
+                                                 <li>
+                                                    <input type="radio" name="fees" id="fee4" value="100-200">
+                                                    <label for="fee4">
+                                                        From 100 to 200
+                                                    </label>
+                                                 </li>
+                                                 <li>
+                                                    <input type="radio" name="fees" id="fee5" value="200-300">
+                                                    <label for="fee5">
+                                                        From 200 to 300
+                                                    </label>
+                                                 </li>
+                                                 <li>
+                                                    <input type="radio" name="fees" id="fee6" value="gt-300">
+                                                    <label for="fee6">
+                                                        Greater than 300
+                                                    </label>
+                                                 </li>
+                                            </ul>
+                                    </div>
+                                  </div>
+                            </li>
+                            <li  class=" p-3">
+    
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button p-0 " type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                        <i class="fa-solid fa-percent"></i>
+                                        <span class="ps-1 pe-3">
+                                            Offers
+                                        </span>
+                                    </button>
+                                  </h2>
+                                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0 ">
+                                            <ul  class="list-unstyled">
+                                                <li>
+                                                    <input type="radio" name="offers" id="offer1" value="offer1">
+                                                    <label for="offer1">
+                                                   offer1
+                                                    </label>
+                                                </li>
+                                                    <li>
+                                                        <input type="radio" name="offers" id="offer2" value="offer2">
+                                                        <label for="offer2">
+                                                       offer2
+                                                        </label>
+                                                 </li>
+                       
+                                            </ul>
+                                    </div>
+                                  </div>
+                            </li>
+                            <li class="  d-flex justify-content-end border-0">
+                                <button type="button" class="btn btn-primary m-0 mb-3 me-3 " data-bs-dismiss="modal">Close</button>
+                            </li>
+                        </ul>
+                    </form>
+                </aside>
+            </div>
+
+          </div>
+        </div>
+    </div>
+    <div class="modal d-lg-none fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+        <div class=" modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="staticBackdropLabel1">
+                <i class="fa-solid fa-magnifying-glass" style="transform: rotate(90deg);"></i>
+                   Search for a doctor
+                </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="d-lg-flex  justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100 " action="#searchResults">
+                    <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-sm-4 me-sm-4">
+                        <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title="">
+                            <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                    select a specialty
+                                    <i class="fa-solid fa-angle-down"></i>
+                                   </p>
+                                   <p  class="d-flex align-items-center gap-2 ps-2 pe-2">
+                                     <i class="fa-solid fa-stethoscope"></i>
+                                     <span>
+                                         Choose specialty
+                                     </span>
+                                   </p>
+                            </div>
+                                <select  size="4" name='speciality' class=" dropdown-menu p-0 w-100 " aria-labelledby="dropdownMenuButton1">
+                                    <option value="Dermatology" >
+                                        Dermatology (Skin)
+                                    </option>
+                                    <option value="Dentistry"  >
+                                        Dentistry (Teeth)
+                                    </option>
+                                    <option value="Psychiatry" >
+                                        Psychiatry
+                                    </option>
+                                    <option value="Pediatrics"  >
+                                        Pediatrics and New Born (Child)
+                                    </option>
+                                    <option value="Neurology" >
+                                        Neurology (Brain & Nerves)
+                                    </option>
+                                    <option value="Orthopedics">
+                                        Orthopedics (Bones)
+                                    </option>
+                                    <option value="Gynaecology" >
+                                        Gynaecology and Infertility
+                                    </option>
+                                    <option value="ENT" >
+                                        Ear, Nose and Throat
+                                    </option>
+                                    <option value="Heart" >
+                                        Cardiology and Vascular Disease
+                                    </option>
+                                  </select>
+                        </li>
+                        <li  class="search-listItem dropdown searchItems" title="">
+                            <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                <p class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                    In this city
+                                    <i class="fa-solid fa-angle-down"></i>
+                                  </p>
+                                  <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>
+                                        Choose City
+                                    </span>
+                                  </p>
+                            </div>
+                                <select  size="4" name='city' class=" w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2">
+                                    <option value="Alexandria"  >
+                                        Alexandria
+                                    </option>
+                                    <option value="Assiut" >
+                                        Assiut
+                                    </option>
+                                    <option value="Aswan" >
+                                        Aswan
+                                    </option>
+                                    <option value="Beheira"  >
+                                        Beheira
+                                    </option>
+                                    <option value="Bani Suef" >
+                                        Bani Suef
+                                    </option>
+                                    <option value="Cairo">
+                                        Cairo
+                                    </option>
+                                    <option value="Daqahliya" >
+                                        Daqahliya
+                                    </option>
+                                    <option value="Damietta" >
+                                        Damietta
+                                    </option>
+                                    <option value="Fayyoum" >
+                                        Fayyoum
+                                    </option>
+                                    <option value="Gharbiya" >
+                                        Gharbiya
+                                    </option>
+                                    <option value="Giza" >
+                                        Giza
+                                    </option>
+                                    <option value="Helwan" >
+                                        Helwan
+                                    </option>
+                                    <option value="Ismailia" >
+                                        Ismailia
+                                    </option>
+                                  </select>
+                        </li>
+                        <li  class="search-listItem dropdown searchItems" title="">
+                            <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                                <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                    In this Area
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </p>
+                                <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                  <span>
+                                    Choose Area
+                                  </span>
+                                </p>
+                            </div>
+                            <select  size="4" name='area' class="w-100 dropdown-menu p-0" aria-labelledby="dropdownMenuButton3">
+                                <option value="Alexandria"  >
+                                    Alexandria
+                                </option>
+                                <option value="Assiut" >
+                                    Assiut
+                                </option>
+                                <option value="Aswan" >
+                                    Aswan
+                                </option>
+                                <option value="Beheira"  >
+                                    Beheira
+                                </option>
+                                <option value="Bani Suef" >
+                                    Bani Suef
+                                </option>
+                                <option value="Cairo">
+                                    Cairo
+                                </option>
+                                <option value="Daqahliya" >
+                                    Daqahliya
+                                </option>
+                                <option value="Damietta" >
+                                    Damietta
+                                </option>
+                                <option value="Fayyoum" >
+                                    Fayyoum
+                                </option>
+                                <option value="Gharbiya" >
+                                    Gharbiya
+                                </option>
+                                <option value="Giza" >
+                                    Giza
+                                </option>
+                                <option value="Helwan" >
+                                    Helwan
+                                </option>
+                                <option value="Ismailia" >
+                                    Ismailia
+                                </option>
+                              </select>
+                        </li>
+                        <li  class="search-listItem dropdown searchItems" title="">
+                            <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                                <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                        Offers
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </p>
+                                <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                                    <i class="fa-solid fa-hand-holding-dollar"></i>
+                                  <span>
+                                    Choose offers
+                                  </span>
+                                </p>
+                            </div>
+                            <select  size="2" name='offers' class=" w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton4">
+                                <option value="offer1">
+                                    offer1
+                                </option>
+                                <option value="offer2">
+                                    offer2
+                                </option>
+                            </select>
+                        </li>
+                        <li  class="d-flex flex-column flex-lg-row" title="">
+                          
+                                <div class="search-listItem ">
+                                    <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                        Or search by name
+                                    </p>
+                                    <p class="d-flex align-items-center gap-2 position-relative ps-2 pe-2">
+                                        <i class="fa-solid fa-user-doctor"></i>
+                                        <input type="search" name="serach" placeholder="Doctor name" class="flex-grow-1">
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center p-1  justify-content-center">
+                                    <button class="d-flex gap-2" type="submit" class="d-flex">
+                                            <i class="fa-solid fa-magnifying-glass" style="display: block; transform:rotate(90deg); color: white; font-size: 24px;"></i>
+                                            <span>
+                                                Search
+                                            </span>
+                                    </button>
+                                </div>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="modal  fade" id="Appointments" tabindex="-1" aria-labelledby="AppointmentsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-primary" id="AppointmentsLabel">Make An Appointments</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="owl-two owl-carousel owl-theme">                                  
+                    <div class="item ">
+                        <div class="card text-center">
+                            <div class="card-header bg-primary text-white">
+                              Today
+                            </div>
+                            <div class="card-body">
+                              <ul class="timing lh-lg">
+                                <li><span>3:40 PM</span></li>
+                                <li><span>4:10 PM</span></li>
+                                <li><span>4:40 PM</span></li>
+                                <li><span>5:10 PM</span></li>
+                                <li><span>5:40 PM</span></li>
+                                <li><span>6:10 PM</span></li>
+                                <li><span>6:40 PM</span></li>
+                            </ul>
+                            </div>
+                             <button class=" btn btn-danger">Book</button>
+                          </div>
+                     </div>
+                     <div class="item ">
+                        <div class="card text-center">
+                            <div class="card-header bg-primary text-white">
+                              Today
+                            </div>
+                            <div class="card-body">
+                              <ul class="timing lh-lg w-100">
+                                <li><span>3:40 PM</span></li>
+                                <li><span>4:10 PM</span></li>
+                                <li><span>4:40 PM</span></li>
+                                <li><span>5:10 PM</span></li>
+                                <li><span>5:40 PM</span></li>
+                                <li><span>6:10 PM</span></li>
+                                <li><span>6:40 PM</span></li>
+                            </ul>
+                            </div>
+
+                             <button class=" btn btn-danger">Book</button>
+
+                          </div>
+                     </div>
+                     <div class="item ">
+                        <div class="card text-center">
+                            <div class="card-header bg-primary text-white">
+                              Today
+                            </div>
+                            <div class="card-body">
+                              <ul class="timing lh-lg w-100">
+                                <li><span>3:40 PM</span></li>
+                                <li><span>4:10 PM</span></li>
+                                <li><span>4:40 PM</span></li>
+                                <li><span>5:10 PM</span></li>
+                                <li><span>5:40 PM</span></li>
+                                <li><span>6:10 PM</span></li>
+                                <li><span>6:40 PM</span></li>
+                            </ul>
+                            </div>
+
+                             <button class=" btn btn-danger">Book</button>
+
+                          </div>
+                     </div>
+                     <div class="item ">
+                        <div class="card text-center">
+                            <div class="card-header bg-primary text-white">
+                              Today
+                            </div>
+                            <div class="card-body">
+                              <ul class="timing lh-lg w-100">
+                                <li><span>3:40 PM</span></li>
+                                <li><span>4:10 PM</span></li>
+                                <li><span>4:40 PM</span></li>
+                                <li><span>5:10 PM</span></li>
+                                <li><span>5:40 PM</span></li>
+                                <li><span>6:10 PM</span></li>
+                                <li><span>6:40 PM</span></li>
+                            </ul>
+                            </div>
+
+                             <button class=" btn btn-danger">Book</button>
+
+                          </div>
+                     </div>
+            </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+
+    <footer class="footer text-white py-4 d-flex justify-content-center align-items-center">
+        <div class="tmp w-90  row m-0">
+        <p class="mt-4 col-lg-8 text-center">
+            Copyright ©2022 All rights reserved | This template is made with  by Colorlib
+        </p>
+        <div class="media col-lg-4 gap-3 justify-content-center align-items-center d-flex">
+           <a href="https://www.facebook.com/" target="_blank" class="text-white"> <i class="fa-brands fa-facebook hover"></i></a></i>
+           <a href="https://www.instagram.com/" target="_blank"  class="text-white">   <i class="fa-brands fa-instagram hover"></i></a></i>
+           <a href="https://www.twitter.com/" target="_blank"  class="text-white"> <i class="fa-brands fa-twitter hover"></i></i></a></i>
+           <a href="https://www.skype.com/" target="_blank"  class="text-white">  <i class="fa-brands fa-skype hover"></i></i></a></i>
+        </div>
+    </div>
+    </footer> 
+    <!-- main -->
+ <script src="js/main.js"></script>
+    <!-- Owl Plug-in -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/owl.js"></script>
+<!-- validation -->
+<script src="js/validatiom.js"></script>
+<!-- notification -->
+<script src="js/notification.js"></script>
+
+</body>
+</html>
