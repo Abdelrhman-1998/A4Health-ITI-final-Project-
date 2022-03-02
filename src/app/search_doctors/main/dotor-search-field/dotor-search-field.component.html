@@ -33,7 +33,7 @@
                        </p>
                 </div>
                     <select  size="4" name='speciality' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton1">
-                        <option value="Dermatology" >
+                        <!-- <option value="Dermatology" >
                             Dermatology (Skin)
                         </option>
                         <option value="Dentistry"  >
@@ -59,6 +59,9 @@
                         </option>
                         <option value="Heart" >
                             Cardiology and Vascular Disease
+                        </option> -->
+                        <option *ngFor="let item of Specialization_options_arr" value="{{item}}">
+                            {{item}}
                         </option>
                       </select>
             </li>
@@ -76,7 +79,7 @@
                       </p>
                 </div>
                     <select  #city size="4" name='city' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2" >
-                        <option value="Alexandria">
+                        <!-- <option value="Alexandria">
                             Alexandria
                         </option>
                         <option value="Assiut" >
@@ -114,7 +117,10 @@
                         </option>
                         <option value="Ismailia" >
                             Ismailia
-                        </option>
+                        </option> -->
+                        <option *ngFor="let item of City_options_arr" value="{{item}}"  >
+                            {{item}}
+                          </option>
                       </select>
             </li>
             <li  class="search-listItem dropdown searchItems" title="" >
@@ -131,7 +137,7 @@
                     </p>
                 </div>
                 <select  size="4" name='area' class=" dropdown-menu p-0" aria-labelledby="dropdownMenuButton3">
-                    <option value="Alexandria"  >
+                    <!-- <option value="Alexandria"  >
                         Alexandria
                     </option>
                     <option value="Assiut" >
@@ -169,6 +175,9 @@
                     </option>
                     <option value="Ismailia" >
                         Ismailia
+                    </option> -->
+                    <option *ngFor="let item of Area_options_arr"  value="{{item}}">
+                        {{item}}
                     </option>
                   </select>
             </li>
@@ -186,11 +195,14 @@
                     </p>
                 </div>
                 <select  size="2" name='offers' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton4">
-                    <option value="offer1">
+                    <!-- <option value="offer1">
                         offer1
                     </option>
                     <option value="offer2">
                         offer2
+                    </option> -->
+                    <option *ngFor="let item of offers_options_arr " value="{{item}}">
+                        {{item}}
                     </option>
                 </select>
             </li>
@@ -259,7 +271,10 @@
                                </p>
                         </div>
                             <select  size="4" name='speciality' class=" dropdown-menu p-0 w-100 " aria-labelledby="dropdownMenuButton1">
-                                <option value="Dermatology" >
+                                <option *ngFor="let item of Specialization_options_arr" value="{{item}}">
+                                    {{item}}
+                                </option>
+                                <!-- <option value="Dermatology" >
                                     Dermatology (Skin)
                                 </option>
                                 <option value="Dentistry"  >
@@ -285,7 +300,7 @@
                                 </option>
                                 <option value="Heart" >
                                     Cardiology and Vascular Disease
-                                </option>
+                                </option> -->
                               </select>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
@@ -302,10 +317,10 @@
                               </p>
                         </div>
                             <select  size="4" name='city' class=" w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2">
-                                <option value="Alexandria"  >
-                                    Alexandria
+                                <option *ngFor="let item of City_options_arr" value="{{item}}"  >
+                                  {{item}}
                                 </option>
-                                <option value="Assiut" >
+                                <!-- <option value="Assiut" >
                                     Assiut
                                 </option>
                                 <option value="Aswan" >
@@ -340,7 +355,7 @@
                                 </option>
                                 <option value="Ismailia" >
                                     Ismailia
-                                </option>
+                                </option> -->
                               </select>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
@@ -356,8 +371,15 @@
                               </span>
                             </p>
                         </div>
-                        <select  size="4" name='area' class="w-100 dropdown-menu p-0" aria-labelledby="dropdownMenuButton3">
-                            <option value="Alexandria"  >
+                        <select size="4" name='area'  class="w-100 dropdown-menu p-0" aria-labelledby="dropdownMenuButton3">
+                            <option *ngFor="let item of Area_options_arr"  value="{{item}}">
+                                {{item}}
+                            </option>
+                            <!-- <app-option></app-option>
+                            <app-option></app-option>
+                            <app-option></app-option>
+                            <app-option></app-option> -->
+                            <!-- <option value="Alexandria">
                                 Alexandria
                             </option>
                             <option value="Assiut" >
@@ -395,7 +417,7 @@
                             </option>
                             <option value="Ismailia" >
                                 Ismailia
-                            </option>
+                            </option> -->
                           </select>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
@@ -412,11 +434,14 @@
                             </p>
                         </div>
                         <select  size="2" name='offers' class=" w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton4">
-                            <option value="offer1">
+                            <!-- <option value="offer1">
                                 offer1
                             </option>
                             <option value="offer2">
                                 offer2
+                            </option> -->
+                            <option *ngFor="let item of offers_options_arr " value="{{item}}">
+                                {{item}}
                             </option>
                         </select>
                     </li>

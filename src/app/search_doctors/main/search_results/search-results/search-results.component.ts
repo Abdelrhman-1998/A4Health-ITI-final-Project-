@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-results.component.css']
 })
 export class SearchResultsComponent implements OnInit {
-
+  p: any = 1;
+  count: any = 5;
+  doctors=[1,2,3,4,5,6,7];
   constructor() { 
 
   }

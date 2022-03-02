@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DotorSearchFieldComponent } from './dotor-search-field.component';
-describe('DotorSearchFieldComponent', () => {
-  let component: DotorSearchFieldComponent;
-  let fixture: ComponentFixture<DotorSearchFieldComponent>;
+import { OptionComponent } from './option.component';
+
+describe('OptionComponent', () => {
+  let component: OptionComponent;
+  let fixture: ComponentFixture<OptionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DotorSearchFieldComponent ]
+      declarations: [ OptionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DotorSearchFieldComponent);
+    fixture = TestBed.createComponent(OptionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
