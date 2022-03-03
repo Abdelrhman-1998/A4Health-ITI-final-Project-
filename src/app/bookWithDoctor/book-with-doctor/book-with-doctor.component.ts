@@ -7,8 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookWithDoctorComponent implements OnInit {
   constructor() { }
+  show:boolean=false;
 
+  showAllReviews :boolean=false;
   ngOnInit(): void {
   }
+showMore(){
+  this.show=!this.show;
+}
+showReviews(){
+this.showAllReviews=!this.showAllReviews;
+}
 
 }
+
+

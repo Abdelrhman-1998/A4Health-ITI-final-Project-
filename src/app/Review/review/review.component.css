@@ -25,3 +25,14 @@
     box-sizing: border-box !important;
     box-shadow: 3px 3px 10px 0px #ddd;
 }
+@media screen and (max-width:991px) {
+    .review{
+        text-align: center !important;
+    }
+    .rating{
+        justify-content: center !important;
+    }
+    .rate-number{
+        margin: auto;
+    }
+}
