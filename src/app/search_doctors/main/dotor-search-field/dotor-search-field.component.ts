@@ -9,10 +9,18 @@ export class DotorSearchFieldComponent implements OnInit {
   Area_options_arr!:any;
   City_options_arr!:any;
   Specialization_options_arr!:any;
+
+  set_class=false;
+  myFunction(x:any){
+    console.log(x);
+  
+  }
+
   reset_arrows(x1:any,x2:any,x3:any) {
     x1.style.transform="";
     x2.style.transform="";
     x3.style.transform="";
+ 
   };
 
   constructor() {

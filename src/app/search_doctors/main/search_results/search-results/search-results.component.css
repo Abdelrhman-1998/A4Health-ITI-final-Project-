@@ -194,11 +194,13 @@ Appointment's part
         transform: translateX(-30px);
         background-color: var(--color2) !important;
         color: white !important;
+        font-size: 20px !important;
     }
     .owl-next{
         transform: translateX(30px);
         background-color: var(--color2) !important;
         color: white !important;
+        font-size: 20px !important;
     }
     .owl-theme{
         position: relative;

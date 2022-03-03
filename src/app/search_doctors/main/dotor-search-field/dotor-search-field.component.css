@@ -216,3 +216,12 @@ option{
         border-radius: 0px;
     }
 }
+.search-listItem:first-child{
+    min-width: 180px;
+}
+.search-listItem{
+    min-width: 160px;
+}
+.modal.search-listItem.dropdown{
+    width: 100%;
+}
