@@ -58,27 +58,31 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <form  class="needs-validation" novalidate> 
-                <div class="form-floating my-3 text-center">
+            <form [formGroup]="loginForm"  class="needs-validation" novalidate> 
+                <div class="form-floating my-3">
                     <input type="text" class="form-control " id=" floatingName"
-                        placeholder="name@example.com"  name="username" value="" required>
+                        placeholder="name@example.com"  name="username" value="" required formControlName="username">
                     <label class="text-primary" for="floatingName" >username</label>
-                    <div class="valid-feedback">
-                        Looks good!
-                      </div>
-                    </div>
+                    <div class="alert alert-warning" role="alert" *ngIf="username && username.invalid && username.touched">
+                    <span>
+                        username input filed is not valid
+                    </span>
+                </div>
+                </div>
                 <div class="form-floating my-3">
                     <input type="password" class="form-control" id="floatingInput"
-                        placeholder="name@example.com" name="password" value="" required>
-                    <label class="text-primary" for="floatingInput">Password</label>
-                    <div class="valid-feedback">
-                        Looks good!
-                      </div>
+                        placeholder="name@example.com" name="password" value="" required formControlName="password">
+                    <label class="text-primary" for="floatingInput" >Password</label>
+                    <div class="alert alert-warning" role="alert" *ngIf="password && password.invalid && password.touched">
+                    <span >
+                        password input filed is not valid
+                    </span>
+                </div>
 
                 </div> 
                  <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Sign In</button>
+          <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary" (ngSubmit)="loginUser()">Sign In</button>
         </div>
               </form>
         </div>
