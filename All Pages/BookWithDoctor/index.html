@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book With Doctor</title>
+    <link rel="icon" sizes="152*152" href="images/logo-removebg-preview.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/daab4a7a52.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- sofia pro font -->
+    <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet" />
+    <!-- Owl Plug-in -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <!-- main style -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
+    </header>
+    <main>
+      <!-- search bar with doctor name like :
+    1--Book now with Doctor Mohamed El Anany
+    2--search section
+    -->
+      <section>
+        <div class="main">
+          <div class="container">
+            <span><a href="#">Vezeeta</a> / Doctor Mohamed El Anany </span>
+
+            <div class="row">
+              <div class="col-lg-8 gy-3">
+                <div class=" doctor-card card mb-3 d-flex align-items-center py-3">
+                  <div class="row g-0 ">
+                    <div class="col-md-4 d-flex align-items-start justify-content-center doctor-img">
+                      <img
+                        src="images/doctor-ahmed-el-gazar-urology_20180728183517015.jpg"
+                        class="img-fluid rounded-circle "
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h4 class="text-secondary doctor-name">
+                          Doctor Mohamed El Anany
+                        </h4>
+                        <p class="text-secondary doctor-info">
+                          Professor of Surgery ; Breast , Endocrine & Colorectal
+                          surgery Lap. and Bariatric Surgery
+                        </p>
+                        <p>
+                          <a href="#">General Surgeon Specialized in</a> <a href="#">Liver Tumor</a>, <a href="#">Obesity Surgery</a> ,<a href="#">Adult General Surgery</a>,<a href="#"> Colon Tumor</a>, <a href="#">Breast
+                            Tumor</a>,<a href="#"> Adult Oncology Surgery</a>,<span id="dots"
+                            >....</span
+                          ><span id="more">
+                           <a href="#"> Gynaecologic Oncological Surgery</a>,<a href="#"> Trauma and
+                            Accident Surgery</a> <a href="#">Adult Gastroenterological Surgery</a>
+                            , <a href="#">Endocrinal Surgery</a> , <a href="#">Abdominal Surgery and Stomach
+                                Tumor</a></span
+                          ><span id="less" onclick=" seeMore()"><a>Read More</a></span>
+                        </p>
+                        <div class="rating d-flex gap-3 pb-2">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star-half"></i>
+
+                          <a href="#reviews">Show all reviews</a>
+                        </div>
+                        <div class="top-rated-review p-2">
+                            <i class="fa-solid  fa-quote-left quote"></i>
+                            <p class="message text-center">
+                            دكتور ممتاز واخلاق وذوق والجودة الطبيه كويسة
+                          </p>
+                          <div class="d-flex gap-5">
+                          <div class="rating d-flex gap-3 pb-2">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                          </div>
+                          <span class="text-muted">Ahmed S.Tuesday, 28 August 2018</span>
+                        </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="about-doctor card py-3 mb-3 " >
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary"><i class="fa-solid fa-exclamation exclamation px-3"></i>
+                            About The Doctor</h5>
+                        <p class="card-text text-secondary px-2">Professor of General and Onco Surgery. Al-Azhar Faculty of Medicine and University Hospitals. Head of the Department of Surgery A, Al-Hussein University Hospital. Visiting Professor at Ireland Hospitals for Breast and Endocrine & Colorectal and Anal Surgery. Consultant of G.I. & Gynecological Onco-surgery. Laparoscopic surgery For obesity.
+                       (Sleeve Gastrectomy) Neck surgery (Thyroid, parotid, salivary and lymph Glands). Renal and Testicular Tumors Surgery. Abdominal wall Reconstruction.<p>
+                      </div>
+                </div>
+                <div class="insurance card py-3 mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary"><i class="fa-solid fa-umbrella umbrella px-3"></i></i>Insurance Companies :</h5>
+                        <div class="py-2 px-2">
+                            <a type="button" class="btn btn-outline-primary">Medright</a>
+                            <a type="button" class="btn btn-outline-primary">INAYA Egypt</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="review card py-3 mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary"><i class="fa-solid fa-star-half-stroke px-3 star"></i>Patients’ Reviews :</h5>
+                        <div class="py-2 px-2 ">
+                            <div class="rating d-flex gap-3 pb-2 justify-content-center">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half"></i>
+                              </div> 
+                              <div class="text-center text-secondary">
+                                  <p>Overall Rating</p>
+                                  <p>From 272 Visitors</p>
+                              </div>
+                              <div class="row gx-5" >
+                                <div class="col-lg-4">
+                                    <div class="rating d-flex gap-3 pb-2 justify-content-center">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half"></i>
+                                      </div> 
+                                      <div class="text-center text-secondary">
+                                         
+                                          <p>Assistant Rating</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <div class="rating d-flex gap-3 pb-2 justify-content-center">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star-half"></i>
+                                      </div> 
+                                      <div class="text-center text-secondary">
+                                         
+                                          <p>Clinic Rating</p>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                      <div class=" text-center">
+                                          <span class="tota-rate"><span>4.5 /</span>
+                                          <span>5</span></span>
+                                      </div>
+                                       
+                                      <div class="text-center text-secondary py-1">
+                                         
+                                        <p>Doctor Rating</p>
+                                    </div>
+                                  </div>
+                              </div>
+                                                    
+                        </div>
+                      </div>
+                </div>
+                <div class="review card py-3 mb-3">
+                    <div class="review-body py-2 border-bottom">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                            <div class="rating d-flex gap-3 pb-2 justify-content-start">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half"></i>
+                          </div> 
+                          <div class="text-secondary">
+                            <p>Overall Rating</p>
+                          </div>
+                          <div class="message">
+                              <p class="text-secondary">دكتور ممتاز واخلاق وذوق والجودة الطبيه كويسة </p>
+                              <span class="timing text-secondary">Sunday, 20 February 2022 08:26 PM</span>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 d-flex align-items-center">
+                            <div class=" text-center justify-content-center">
+                                <span class="tota-rate fs-4 text p-2 ">5</span>
+                                <p class="px15 text-secondary py-2">Doctor Rating </p>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="review-body py-2 border-bottom">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                            <div class="rating d-flex gap-3 pb-2 justify-content-start">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                          </div> 
+                          <div class="text-secondary">
+                            <p>Overall Rating</p>
+                          </div>
+                          <div class="message">
+                              <p class="text-secondary">دكتور ممتاز واخلاق وذوق والجودة الطبيه كويسة </p>
+                              <span class="timing text-secondary">Sunday, 20 February 2022 08:26 PM</span>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 d-flex align-items-center">
+                            <div class=" text-center justify-content-center">
+                                <span class="tota-rate fs-4 text p-2 ">2</span>
+                                <p class="px15 text-secondary py-2">Doctor Rating </p>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="review-body py-2 border-bottom">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                            <div class="rating d-flex gap-3 pb-2 justify-content-start">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                         </div> 
+                          <div class="text-secondary">
+                            <p>Overall Rating</p>
+                          </div>
+                          <div class="message">
+                              <p class="text-secondary">دكتور ممتاز واخلاق وذوق والجودة الطبيه كويسة </p>
+                              <span class="timing text-secondary">Sunday, 20 February 2022 08:26 PM</span>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 d-flex align-items-center">
+                            <div class=" text-center justify-content-center">
+                                <span class="tota-rate fs-4 text p-2 ">4</span>
+                                <p class="px15 text-secondary py-2">Doctor Rating </p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="review-body py-2 border-bottom">
+                        <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8">
+                            <div class="rating d-flex gap-3 pb-2 justify-content-start">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                          </div> 
+                          <div class="text-secondary">
+                            <p>Overall Rating</p>
+                          </div>
+                          <div class="message">
+                              <p class="text-secondary">دكتور ممتاز واخلاق وذوق والجودة الطبيه كويسة </p>
+                              <span class="timing text-secondary">Sunday, 20 February 2022 08:26 PM</span>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 d-flex align-items-center">
+                            <div class=" text-center justify-content-center">
+                                <span class="tota-rate fs-4 text p-2 ">5</span>
+                                <p class="px15 text-secondary py-2">Doctor Rating </p>
+
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    <span class="text-center text-primary">Veiw more</span>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                  <aside>
+                    <div class="card ">
+                        <div class="card-header text-center bg-primary text-light">
+                            Booking Information
+                        </div>
+                        <div class="card-body border-bottom">
+                            <div class="text-center">
+                                <p class="text-secondary">Book</p>
+                                <span class="text-primary">Examination</span>
+                            </div>
+                          </div>
+                          <div class="card-body border-bottom">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="text-center">
+                                          <i class="fa-solid fa-money-bill-1-wave text-primary fs-4"></i>
+                                          <p class="text-secondary px15">Fees :<span class="fw-bold px15">300 EGP</span></p>
+                                        </div>
+                                       </div>
+                                        <div class="col-lg-6">
+                                        <div class="text-center text-success">
+                                          <i class="fa-solid fa-stopwatch fs-4 "></i>
+                                          <p class="px15">Waiting Time : 8 Minutes</p>
+                                        </div>
+                                      </div>
+                                   
+                                </div>
+                            </div>
+                          </div>
+                          <div class="card-body border-bottom">
+                            <div class="location">
+                              <i class="fa-solid fa-location-dot text-primary"></i>
+                              <span class="px15 text-secondary"> New Cairo : Medical Park one </span>
+                              <p class="fw-bold text-secondary fs-6">Book now to receive the clinic’s address details and phone number</p>
+                            </div>
+                          </div>
+                          <div class="card-body border-bottom  gy-3 text-center">
+                            <div class="my-2">
+                              <button class="btn btn-danger"> <a>Make An Appointment </a></button>
+                            </div>
+                            <div class="px-2">                            
+                              <button class="btn btn-success"> <a>Review Your Doctor </a></button>
+                            </div>
+                          </div>
+                          <div class="card-body border-bottom d-flex flex-row calender ">
+                            
+                            <p><i class="fa-solid fa-calendar-check text-success fs-1"></i></p>
+                              <div class="book px-3">
+                              <span class="text-secondary fw-bold">Book online, Pay at the clinic!</span>
+                              <span class="px15 text-secondary">Doctor requires reservation!</span>
+                              </div>
+                            
+                          </div>
+                  </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Owl Plug-in -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/owl.js"></script>
+    <!-- see more -->
+    <script src="js/seeMore.js"></script>
+  </body>
+</html>
