@@ -7,17 +7,21 @@ import { DotorSearchFieldComponent } from './search_doctors/main/dotor-search-fi
 import { SearchResultsComponent } from './search_doctors/main/search_results/search-results/search-results.component';
 import { OptionComponent } from './search_doctors/main/dotor-search-field/option/option.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent,
     DotorSearchFieldComponent,
     SearchResultsComponent,
-    OptionComponent,
+    OptionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

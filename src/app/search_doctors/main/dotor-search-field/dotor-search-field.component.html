@@ -19,11 +19,11 @@
     </div>
     <form class="d-lg-flex d-none justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100" action="#searchResults">
         <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-4 me-4">
-            <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title=""  >
+            <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title="" (click)="reset_arrows(city,offer,area)" (click)="specialization.style.transform==''?specialization.style.transform='rotate(180deg)':specialization.style.transform=''"  >
                 <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                     <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                         select a specialty
-                        <i class="fa-solid fa-angle-down" ></i>
+                        <i class="fa-solid fa-angle-down" #specialization ></i>
                        </p>
                        <p  class="d-flex align-items-center gap-2 ps-2 pe-2">
                          <i class="fa-solid fa-stethoscope"></i>
@@ -33,43 +33,16 @@
                        </p>
                 </div>
                     <select  size="4" name='speciality' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton1">
-                        <!-- <option value="Dermatology" >
-                            Dermatology (Skin)
-                        </option>
-                        <option value="Dentistry"  >
-                            Dentistry (Teeth)
-                        </option>
-                        <option value="Psychiatry" >
-                            Psychiatry
-                        </option>
-                        <option value="Pediatrics"  >
-                            Pediatrics and New Born (Child)
-                        </option>
-                        <option value="Neurology" >
-                            Neurology (Brain & Nerves)
-                        </option>
-                        <option value="Orthopedics">
-                            Orthopedics (Bones)
-                        </option>
-                        <option value="Gynaecology" >
-                            Gynaecology and Infertility
-                        </option>
-                        <option value="ENT" >
-                            Ear, Nose and Throat
-                        </option>
-                        <option value="Heart" >
-                            Cardiology and Vascular Disease
-                        </option> -->
                         <option *ngFor="let item of Specialization_options_arr" value="{{item}}">
                             {{item}}
                         </option>
                       </select>
             </li>
-            <li  class="search-listItem dropdown searchItems" title="" >
-                <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            <li  class="search-listItem dropdown searchItems" title="" (click)="reset_arrows(offer,area,specialization)"  (click)="city.style.transform==''?city.style.transform='rotate(180deg)':city.style.transform=''">
+                <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" >
                     <p class="d-flex justify-content-between mb-2 ps-2 pe-2">
                         In this city
-                        <i class="fa-solid fa-angle-down" ></i>
+                        <i class="fa-solid fa-angle-down" [ngClass]="reset_arrows?'fa-solid fa-angle-down':'fa-solid fa-angle-down'" #city ></i>
                       </p>
                       <p class="d-flex align-items-center gap-2 ps-2 pe-2">
                         <i class="fa-solid fa-location-dot"></i>
@@ -79,55 +52,16 @@
                       </p>
                 </div>
                     <select  #city size="4" name='city' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2" >
-                        <!-- <option value="Alexandria">
-                            Alexandria
-                        </option>
-                        <option value="Assiut" >
-                            Assiut
-                        </option>
-                        <option value="Aswan" >
-                            Aswan
-                        </option>
-                        <option value="Beheira"  >
-                            Beheira
-                        </option>
-                        <option value="Bani Suef" >
-                            Bani Suef
-                        </option>
-                        <option value="Cairo">
-                            Cairo
-                        </option>
-                        <option value="Daqahliya" >
-                            Daqahliya
-                        </option>
-                        <option value="Damietta" >
-                            Damietta
-                        </option>
-                        <option value="Fayyoum" >
-                            Fayyoum
-                        </option>
-                        <option value="Gharbiya" >
-                            Gharbiya
-                        </option>
-                        <option value="Giza" >
-                            Giza
-                        </option>
-                        <option value="Helwan" >
-                            Helwan
-                        </option>
-                        <option value="Ismailia" >
-                            Ismailia
-                        </option> -->
                         <option *ngFor="let item of City_options_arr" value="{{item}}"  >
                             {{item}}
                           </option>
                       </select>
             </li>
-            <li  class="search-listItem dropdown searchItems" title="" >
+            <li  class="search-listItem dropdown searchItems" title="" (click)="reset_arrows(city,offer,specialization)" (click)="area.style.transform==''?area.style.transform='rotate(180deg)':area.style.transform=''" >
                 <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                     <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                         In this Area
-                        <i class="fa-solid fa-angle-down" ></i>
+                        <i class="fa-solid fa-angle-down"  #area ></i>
                     </p>
                     <p class="d-flex align-items-center gap-2 ps-2 pe-2">
                         <i class="fa-solid fa-location-dot"></i>
@@ -137,55 +71,16 @@
                     </p>
                 </div>
                 <select  size="4" name='area' class=" dropdown-menu p-0" aria-labelledby="dropdownMenuButton3">
-                    <!-- <option value="Alexandria"  >
-                        Alexandria
-                    </option>
-                    <option value="Assiut" >
-                        Assiut
-                    </option>
-                    <option value="Aswan" >
-                        Aswan
-                    </option>
-                    <option value="Beheira"  >
-                        Beheira
-                    </option>
-                    <option value="Bani Suef" >
-                        Bani Suef
-                    </option>
-                    <option value="Cairo">
-                        Cairo
-                    </option>
-                    <option value="Daqahliya" >
-                        Daqahliya
-                    </option>
-                    <option value="Damietta" >
-                        Damietta
-                    </option>
-                    <option value="Fayyoum" >
-                        Fayyoum
-                    </option>
-                    <option value="Gharbiya" >
-                        Gharbiya
-                    </option>
-                    <option value="Giza" >
-                        Giza
-                    </option>
-                    <option value="Helwan" >
-                        Helwan
-                    </option>
-                    <option value="Ismailia" >
-                        Ismailia
-                    </option> -->
                     <option *ngFor="let item of Area_options_arr"  value="{{item}}">
                         {{item}}
                     </option>
                   </select>
             </li>
-            <li  class="search-listItem dropdown searchItems" title=""  >
+            <li  class="search-listItem dropdown searchItems" title="" (click)="reset_arrows(city,area,specialization)" (click)="offer.style.transform==''?offer.style.transform='rotate(180deg)':offer.style.transform=''" >
                 <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
                     <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                             Offers
-                        <i class="fa-solid fa-angle-down"></i>
+                        <i class="fa-solid fa-angle-down" #offer></i>
                     </p>
                     <p class="d-flex align-items-center gap-2 ps-2 pe-2">
                         <i class="fa-solid fa-hand-holding-dollar"></i>
@@ -195,12 +90,6 @@
                     </p>
                 </div>
                 <select  size="2" name='offers' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton4">
-                    <!-- <option value="offer1">
-                        offer1
-                    </option>
-                    <option value="offer2">
-                        offer2
-                    </option> -->
                     <option *ngFor="let item of offers_options_arr " value="{{item}}">
                         {{item}}
                     </option>
@@ -257,11 +146,11 @@
         <div class="modal-body">
             <form class="d-lg-flex  justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100 " action="#searchResults">
                 <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-sm-4 me-sm-4">
-                    <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title="">
+                    <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title=""  (click)="reset_arrows(city_modal,area_modal,offer_modal)"     (click)="specialization_modal.style.transform==''?specialization_modal.style.transform='rotate(180deg)':specialization_modal.style.transform=''">
                         <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                                 select a specialty
-                                <i class="fa-solid fa-angle-down"></i>
+                                <i class="fa-solid fa-angle-down" #specialization_modal></i>
                                </p>
                                <p  class="d-flex align-items-center gap-2 ps-2 pe-2">
                                  <i class="fa-solid fa-stethoscope"></i>
@@ -304,10 +193,10 @@
                               </select>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
-                        <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(offer_modal,area_modal,specialization_modal)"     (click)="city_modal.style.transform==''?city_modal.style.transform='rotate(180deg)':city_modal.style.transform=''">
                             <p class="d-flex justify-content-between mb-2 ps-2 pe-2">
                                 In this city
-                                <i class="fa-solid fa-angle-down"></i>
+                                <i class="fa-solid fa-angle-down" #city_modal></i>
                               </p>
                               <p class="d-flex align-items-center gap-2 ps-2 pe-2">
                                 <i class="fa-solid fa-location-dot"></i>
@@ -359,10 +248,10 @@
                               </select>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
-                        <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(city_modal,offer_modal,specialization_modal)"     (click)="area_modal.style.transform==''?area_modal.style.transform='rotate(180deg)':area_modal.style.transform=''">
                             <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                                 In this Area
-                                <i class="fa-solid fa-angle-down"></i>
+                                <i class="fa-solid fa-angle-down" #area_modal></i>
                             </p>
                             <p class="d-flex align-items-center gap-2 ps-2 pe-2">
                                 <i class="fa-solid fa-location-dot"></i>
@@ -421,10 +310,10 @@
                           </select>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
-                        <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city_modal,area_modal,specialization_modal)"     (click)="offer_modal.style.transform==''?offer_modal.style.transform='rotate(180deg)':offer_modal.style.transform=''">
                             <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                                     Offers
-                                <i class="fa-solid fa-angle-down"></i>
+                                <i class="fa-solid fa-angle-down" #offer_modal></i>
                             </p>
                             <p class="d-flex align-items-center gap-2 ps-2 pe-2">
                                 <i class="fa-solid fa-hand-holding-dollar"></i>
@@ -434,12 +323,6 @@
                             </p>
                         </div>
                         <select  size="2" name='offers' class=" w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton4">
-                            <!-- <option value="offer1">
-                                offer1
-                            </option>
-                            <option value="offer2">
-                                offer2
-                            </option> -->
                             <option *ngFor="let item of offers_options_arr " value="{{item}}">
                                 {{item}}
                             </option>

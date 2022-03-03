@@ -173,15 +173,51 @@ Appointment's part
     background-color: #f5f5f5;
 
 }
-.owl-dots{
+/* .owl-dots{
     display: none;
+} */
+.owl-carousel {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    }
+@media (min-width:992px){
+    .owl-nav{
+        position: absolute;
+        top:calc(50% - 20px);
+        margin: 0px !important;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: -1;
+    }
+    .owl-prev{
+        transform: translateX(-30px);
+        background-color: var(--color2) !important;
+        color: white !important;
+    }
+    .owl-next{
+        transform: translateX(30px);
+        background-color: var(--color2) !important;
+        color: white !important;
+    }
+    .owl-theme{
+        position: relative;
+       
+    }
 }
-.owl-nav{
-    display: none;
-}
+
 .accordion-button::after {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
 }
 .bookingDoctor,.bookingDoctor *{
     cursor: pointer;
+}
+.card-body{
+    background-color: var(--color4);
+}
+.card-body li{
+    cursor: pointer;
+}
+.card-body span{
+    font-size: 16px !important;
 }

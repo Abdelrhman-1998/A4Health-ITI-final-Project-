@@ -9,6 +9,12 @@ export class DotorSearchFieldComponent implements OnInit {
   Area_options_arr!:any;
   City_options_arr!:any;
   Specialization_options_arr!:any;
+  reset_arrows(x1:any,x2:any,x3:any) {
+    x1.style.transform="";
+    x2.style.transform="";
+    x3.style.transform="";
+  };
+
   constructor() {
 
 }
@@ -17,27 +23,5 @@ export class DotorSearchFieldComponent implements OnInit {
     this.City_options_arr=["Alexandria","Cairo","Aswan"];
     this.Specialization_options_arr=["Dermatology (Skin)","Dentistry (Teeth)","Psychiatry"];
     this.offers_options_arr=["offer1","offer2"];
-  // handling arrow using native DOM
-
-
-  //   let arrows = document.getElementsByClassName("searchItems") as HTMLCollectionOf<HTMLElement>; 
-  //   let ele_arrows=document.getElementsByClassName("fa-angle-down") as HTMLCollectionOf<HTMLElement>; 
-  //   for (let key in arrows) {
-  //   if(!isNaN(+key)){
-  //       let ele=arrows[key];
-  //       let ele_arrow=ele_arrows[key];
-  //       let index=key;
-  //       ele.addEventListener("click",function toggle_arrow(){ 
-  //          for (let key in ele_arrows ){
-  //           if(!isNaN(+key)){
-  //               if(key!=index){
-  //                   ele_arrows[key].style.transform="";
-  //               }
-  //           }
-  //          }
-  //           ele_arrow.style.transform==""?ele_arrow.style.transform="rotate(180deg)":ele_arrow.style.transform="";
-  //       });
-  //   }}
-  // }
 
 }}
