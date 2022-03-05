@@ -24,7 +24,7 @@ import { ReviewComponent } from './Review/review/review.component';
     ServicesComponent,
     MeetDoctorsComponent,
     FeedbackComponent,
-    BookWithDoctorComponent,
+    BookWithDoctorComponent,   
     ReviewComponent,
   ],
   imports: [

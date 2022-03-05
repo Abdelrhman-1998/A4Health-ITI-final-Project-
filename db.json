@@ -1,0 +1,134 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "fname": "Ahmed",
+      "lname": "Ali",
+      "specialization": "Dentistry",
+      "title": "professor",
+      "fees": 150,
+      "rating": 4.5,
+      "city": "Alexandria",
+      "street": "50 vic",
+      "gender": "male",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
+    },
+    {
+      "id": 2,
+      "fname": "Ali",
+      "lname": "Adam",
+      "specialization": "Neurology",
+      "title": "lecturer",
+      "fees": 250,
+      "rating": 2.5,
+      "city": "cairo",
+      "gender": "male",
+      "street": "20 flem",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZXM52PbV_WTmgWz7zw58m3E5HQs7TO9YCOw&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "fname": "Mona",
+      "lname": "Abdelrhman",
+      "specialization": "Dermatology",
+      "title": "Consultant",
+      "fees": 200,
+      "rating": 2,
+      "city": "Aswan",
+      "street": "30 roshdy",
+      "gender": "female",
+      "image_name": "https://th.bing.com/th/id/R.13adf4ef100e2a30947be8324abcc7e0?rik=b55B9K7wMHb7zQ&pid=ImgRaw&r=0"
+    },
+    {
+      "id": 4,
+      "fname": "Aya",
+      "lname": "Adam",
+      "specialization": "Orthopedics",
+      "title": "professor",
+      "fees": 100,
+      "rating": 3,
+      "city": "Luxor",
+      "street": "70 gin",
+      "gender": "female",
+      "image_name": "https://media.gettyimages.com/photos/young-woman-doctor-nurse-in-office-picture-id184932855?s=170667a"
+    },
+    {
+      "id": 5,
+      "fname": "Abdelrhman",
+      "lname": "Ali",
+      "specialization": "Audiology",
+      "title": "professor",
+      "fees": 100,
+      "rating": 5,
+      "city": "Giza",
+      "street": "60 vic",
+      "gender": "male",
+      "image_name": "https://lucknow.apollohospitals.com/wp-content/uploads/2021/09/26.jpg"
+    },
+    {
+      "id": 6,
+      "fname": "Abdelrhman",
+      "lname": "Ali",
+      "specialization": "Family Medicine",
+      "title": "professor",
+      "fees": 100,
+      "rating": 3,
+      "city": "Giza",
+      "street": "60 vic",
+      "gender": "male",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iFYPHG__g3I3FSh1SSh0jU31ATUhjKLIN4Wa4ZvEhCm0g97lNxVnBXfOfjjnhpAEGFE&usqp=CAU"
+    },
+    {
+      "id": 7,
+      "fname": "Eman",
+      "lname": "Mohamed",
+      "specialization": "Family Medicine",
+      "title": "consultant",
+      "fees": 150,
+      "rating": 4.5,
+      "city": "Giza",
+      "street": "60 vic",
+      "gender": "female",
+      "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
+    },
+    {
+      "id": 8,
+      "fname": "Arwa",
+      "lname": "Mohamed",
+      "specialization": "Family Medicine",
+      "title": "consultant",
+      "fees": 200,
+      "rating": 4.5,
+      "city": "Giza",
+      "street": "60 vic",
+      "gender": "female",
+      "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
+    }
+  ],
+  "specialties": [
+    {
+      "id": 1,
+      "name": "Allergists"
+    },
+    {
+      "id": 2,
+      "name": "Dermatologists"
+    },
+    {
+      "id": 3,
+      "name": "Nephrologists"
+    },
+    {
+      "id": 4,
+      "name": "Gastroenterologists"
+    },
+    {
+      "id": 5,
+      "name": "Endocrinologists"
+    },
+    {
+      "id": 6,
+      "name": "Cardiologists"
+    }
+  ]
+}
