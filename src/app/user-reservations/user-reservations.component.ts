@@ -17,5 +17,18 @@ export class UserReservationsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  delete(name:any)
+  {
+    console.log(name);
+    for(let i = 0 ; i<this.homeData.length ; i++)
+    {
+      if( this.homeData[i].name == name)
+      {
+        this.homeData.splice( i,1);
+      }
+    }
+    //console.log( this.homeData[0].Location);
+    //this.homeData.splice( 1,1); 
+  }
 
 }
