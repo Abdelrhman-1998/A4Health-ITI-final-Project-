@@ -7,7 +7,7 @@ import { UserReservationsComponent } from './user-reservations/user-reservations
 import { UserManageProfileComponent } from './user-manage-profile/user-manage-profile.component';
 import { UserChangePasswordComponent } from './user-change-password/user-change-password.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
-
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

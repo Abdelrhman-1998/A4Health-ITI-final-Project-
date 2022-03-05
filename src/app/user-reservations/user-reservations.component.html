@@ -66,55 +66,16 @@
              </tbody>
            </table>
         </div> -->
-        <div class="col-4 g-3">
+        <div *ngFor="let user of homeData" class="col-4 g-3">
           <div class="cont bg-white db rounded-3 shadow p-3 hover-c">
-          <h5 class="py-2">Dr Mark</h5>
-          <h6 class="py-2">Maadi Cairo</h6>
-          <p class="py-2">3am Thursday 16/12/2020</p>
+          <h5 class="py-2">{{user.name}}</h5>
+          <h6 class="py-2">{{user.Location}}</h6>
+          <p class="py-2">{{user.Date}}</p>
           <button class="btn btn-danger w-100">Delete</button>
         </div>
-        </div>
-        <div class="col-4 g-3">
-          <div class="cont bg-white db rounded-3 shadow p-3 hover-c">
-          <h5 class="py-2">Dr Mark</h5>
-          <h6 class="py-2">Maadi Cairo</h6>
-          <p class="py-2">3am Thursday 16/12/2020</p>
-          <button class="btn btn-danger w-100">Delete</button>
-        </div>
-        </div>
-        <div class="col-4 g-3">
-          <div class="cont bg-white db rounded-3 shadow p-3 hover-c">
-          <h5 class="py-2">Dr Mark</h5>
-          <h6 class="py-2">Maadi Cairo</h6>
-          <p class="py-2">3am Thursday 16/12/2020</p>
-          <button class="btn btn-danger w-100">Delete</button>
-        </div>
-        </div>
-        <div class="col-4 g-3">
-          <div class="cont bg-white db rounded-3 shadow p-3 hover-c">
-          <h5 class="py-2">Dr Mark</h5>
-          <h6 class="py-2">Maadi Cairo</h6>
-          <p class="py-2">3am Thursday 16/12/2020</p>
-          <button class="btn btn-danger w-100">Delete</button>
-        </div>
-        </div>
-        <div class="col-4 g-3">
-          <div class="cont bg-white db rounded-3 shadow p-3 hover-c">
-          <h5 class="py-2">Dr Mark</h5>
-          <h6 class="py-2">Maadi Cairo</h6>
-          <p class="py-2">3am Thursday 16/12/2020</p>
-          <button class="btn btn-danger w-100">Delete</button>
-        </div>
-        </div>
-        <div class="col-4 g-3">
-          <div class="cont bg-white db rounded-3 shadow p-3 hover-c">
-          <h5 class="py-2">Dr Mark</h5>
-          <h6 class="py-2">Maadi Cairo</h6>
-          <p class="py-2">3am Thursday 16/12/2020</p>
-          <button class="btn btn-danger w-100">Delete</button>
-        </div>
-        </div>
-        
+       
+      </div>
+
       </div>
         
 </section>
