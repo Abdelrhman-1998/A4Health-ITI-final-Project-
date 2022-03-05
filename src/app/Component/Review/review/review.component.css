@@ -1,0 +1,38 @@
+
+.rating i{
+    color: #FFB624;
+}
+.top-rated-review{
+    border-radius: 5px 20px 5px;
+    background-color: rgb(245, 245, 245);
+}
+.top-rated-review .quote{
+    color: #0075ff;
+    rotate: 180deg;
+    transform: rotateY(180deg);
+    font-size: 25px;
+    
+    }
+.tota-rate{
+        background-color: #0075ff;
+        color: #fff;
+        padding: 5px 5px;
+        border-radius: 5px  ;
+    }
+   .card{
+    background-color: white;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+    box-shadow: 3px 3px 10px 0px #ddd;
+}
+@media screen and (max-width:991px) {
+    .review{
+        text-align: center !important;
+    }
+    .rating{
+        justify-content: center !important;
+    }
+    .rate-number{
+        margin: auto;
+    }
+}

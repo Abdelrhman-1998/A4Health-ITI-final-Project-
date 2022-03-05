@@ -1,0 +1,324 @@
+<section>
+  <div class="main">
+    <div class="container">
+      <span><a href="#">Vezeeta</a> / Doctor Mohamed El Anany </span>
+
+      <div class="row">
+        <div class="col-lg-8 gy-3">
+          <div class="doctor-card card row m-0 mt-3 mb-3 p-3">
+            <div class="doctor-info col-lg-12 p-0 pe-sm-2 row m-0">
+              <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center"
+              >
+                <img
+                  src="../../../assets/landing_images/images/doctor-ahmed-el-gazar-urology_20180728183517015.jpg"
+                  class="img-fluid rounded-circle"
+                />
+              </div>
+              <div
+                class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center"
+              >
+                <h4 class="doctor-name pt-2 pb-2 m-0">
+                  <span>Doctor : </span>
+                  <span>Tamer El Bigawy</span>
+                </h4>
+                <p class="text-secondary doctor-info">
+                  Professor of Surgery ; Breast , Endocrine & Colorectal surgery
+                  Lap. and Bariatric Surgery
+                </p>
+                <p>
+                  <a href="#">General Surgeon Specialized in</a>
+                  <a href="#">Liver Tumor</a>,
+                  <a href="#">Obesity Surgery</a> ,<a href="#"
+                    >Adult General Surgery</a
+                  >,<a href="#"> Colon Tumor</a>,
+                  <a href="#">Breast Tumor</a>,<a href="#">
+                    Adult Oncology Surgery</a
+                  >,<span id="dots">....</span>
+                  <span *ngIf="show" id="more">
+                    <a href="#"> Gynaecologic Oncological Surgery</a>,<a
+                      href="#"
+                    >
+                      Trauma and Accident Surgery</a
+                    >
+                    <a href="#">Adult Gastroenterological Surgery</a> ,
+                    <a href="#">Endocrinal Surgery</a> ,
+                    <a href="#">Abdominal Surgery and Stomach Tumor</a></span
+                  >
+                </p>
+                <span (click)="showMore()" id="less" type="button">
+                  <a> {{ show ? "Show Less" : "Show More" }}</a></span
+                >
+
+                <div class="top-rated-review p-2">
+                  <i class="fa-solid fa-quote-left quote"></i>
+                  <p class="message text-center">
+                    دكتور ممتاز واخلاق وذوق والجودة الطبيه كويسة
+                  </p>
+                  <div class="full-rate">
+                    <div class="rating d-flex gap-3 pb-2">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half"></i>
+                      <span class="text-muted"
+                        >Ahmed S.Tuesday, 28 August 2018</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card mb-3 d-lg-none d-md-block">
+            <div class="card-header text-center bg-primary text-light">
+              Booking Information
+            </div>
+            <div class="card-body border-bottom">
+              <div class="text-center">
+                <p class="text-secondary">Book</p>
+                <span class="text-primary">Examination</span>
+              </div>
+            </div>
+            <div class="card-body border-bottom">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="text-center">
+                      <i
+                        class="fa-solid fa-money-bill-1-wave text-primary fs-4"
+                      ></i>
+                      <p class="text-secondary px15">
+                        Fees :<span class="fw-bold px15">300 EGP</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="text-center text-success">
+                      <i class="fa-solid fa-stopwatch fs-4"></i>
+                      <p class="px15">Waiting Time : 8 Minutes</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-body border-bottom">
+              <div class="location">
+                <i class="fa-solid fa-location-dot text-primary"></i>
+                <span class="px15 text-secondary">
+                  New Cairo : Medical Park one
+                </span>
+                <p class="fw-bold text-secondary fs-6">
+                  Book now to receive the clinic’s address details and phone
+                  number
+                </p>
+              </div>
+            </div>
+            <div class="card-body border-bottom gy-3 text-center">
+              <div class="my-2">
+                <button class="btn btn-danger">
+                  <a>Make An Appointment </a>
+                </button>
+              </div>
+              <div class="px-2">
+                <button class="btn btn-success">
+                  <a>Review Your Doctor </a>
+                </button>
+              </div>
+            </div>
+            <div class="card-body border-bottom d-flex flex-row calender">
+              <p>
+                <i class="fa-solid fa-calendar-check text-success fs-1"></i>
+              </p>
+              <div class="book px-3">
+                <span class="text-secondary fw-bold"
+                  >Book online, Pay at the clinic!</span
+                >
+                <span class="px15 text-secondary"
+                  >Doctor requires reservation!</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="about-doctor card py-3 mb-3">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">
+                <i class="fa-solid fa-exclamation exclamation px-3"></i> About
+                The Doctor
+              </h5>
+              <p class="card-text text-secondary px-2">
+                Professor of General and Onco Surgery. Al-Azhar Faculty of
+                Medicine and University Hospitals. Head of the Department of
+                Surgery A, Al-Hussein University Hospital. Visiting Professor at
+                Ireland Hospitals for Breast and Endocrine & Colorectal and Anal
+                Surgery. Consultant of G.I. & Gynecological Onco-surgery.
+                Laparoscopic surgery For obesity. (Sleeve Gastrectomy) Neck
+                surgery (Thyroid, parotid, salivary and lymph Glands). Renal and
+                Testicular Tumors Surgery. Abdominal wall Reconstruction.
+              </p>
+              <p></p>
+            </div>
+          </div>
+          <div class="insurance card py-3 mb-3">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">
+                <i class="fa-solid fa-umbrella umbrella px-3"></i>Insurance
+                Companies :
+              </h5>
+              <div class="py-2 px-2">
+                <a type="button" class="btn btn-outline-primary">Medright</a>
+                <a type="button" class="btn btn-outline-primary">INAYA Egypt</a>
+              </div>
+            </div>
+          </div>
+          <div class="review card py-3 mb-3">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">
+                <i class="fa-solid fa-star-half-stroke px-3 star"></i>Patients’
+                Reviews :
+              </h5>
+              <div class="py-2 px-2">
+                <div class="rating d-flex gap-3 pb-2 justify-content-center">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <div class="text-center text-secondary">
+                  <p>Overall Rating</p>
+                  <p>From 272 Visitors</p>
+                </div>
+                <div class="row gx-5">
+                  <div class="col-lg-4">
+                    <div
+                      class="rating d-flex gap-3 pb-2 justify-content-center"
+                    >
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <div class="text-center text-secondary">
+                      <p>Assistant Rating</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div
+                      class="rating d-flex gap-3 pb-2 justify-content-center"
+                    >
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star-half"></i>
+                    </div>
+                    <div class="text-center text-secondary">
+                      <p>Clinic Rating</p>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="text-center">
+                      <span class="tota-rate"
+                        ><span>4.5 /</span> <span>5</span></span
+                      >
+                    </div>
+
+                    <div class="text-center text-secondary py-1">
+                      <p>Doctor Rating</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <app-review id="reviews" *ngIf="showAllReviews"></app-review>
+          <button
+            class="showReviews btn btn-primary d-flex my-3"
+            *ngIf="!showAllReviews"
+            (click)="showReviews()"
+          >
+            Show all reviews
+          </button>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <aside class="py-3">
+            <div class="card">
+              <div class="card-header text-center bg-primary text-light">
+                Booking Information
+              </div>
+              <div class="card-body border-bottom">
+                <div class="text-center">
+                  <p class="text-secondary">Book</p>
+                  <span class="text-primary">Examination</span>
+                </div>
+              </div>
+              <div class="card-body border-bottom">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="text-center">
+                        <i
+                          class="fa-solid fa-money-bill-1-wave text-primary fs-4"
+                        ></i>
+                        <p class="text-secondary px15">
+                          Fees :<span class="fw-bold px15">300 EGP</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="text-center text-success">
+                        <i class="fa-solid fa-stopwatch fs-4"></i>
+                        <p class="px15">Waiting Time : 8 Minutes</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-body border-bottom">
+                <div class="location">
+                  <i class="fa-solid fa-location-dot text-primary"></i>
+                  <span class="px15 text-secondary">
+                    New Cairo : Medical Park one
+                  </span>
+                  <p class="fw-bold text-secondary fs-6">
+                    Book now to receive the clinic’s address details and phone
+                    number
+                  </p>
+                </div>
+              </div>
+              <div class="card-body border-bottom gy-3 text-center">
+                <div class="my-2">
+                  <button class="btn btn-danger">
+                    <a>Make An Appointment </a>
+                  </button>
+                </div>
+                <div class="px-2">
+                  <button class="btn btn-success">
+                    <a>Review Your Doctor </a>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body border-bottom d-flex flex-row calender">
+                <p>
+                  <i class="fa-solid fa-calendar-check text-success fs-1"></i>
+                </p>
+                <div class="book px-3">
+                  <span class="text-secondary fw-bold"
+                    >Book online, Pay at the clinic!</span
+                  >
+                  <span class="px15 text-secondary"
+                    >Doctor requires reservation!</span
+                  >
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

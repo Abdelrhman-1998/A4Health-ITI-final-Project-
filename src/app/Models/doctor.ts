@@ -9,5 +9,5 @@ export interface Doctor {
     city:string;
     street:string;
     gender:string;
-    imgUrl?:string
+    image_name?:string
 }
