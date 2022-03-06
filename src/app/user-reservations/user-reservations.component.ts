@@ -17,12 +17,11 @@ export class UserReservationsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  delete(name:any)
+  delete(fname:any)
   {
-    console.log(name);
     for(let i = 0 ; i<this.homeData.length ; i++)
     {
-      if( this.homeData[i].name == name)
+      if( this.homeData[i].name == fname)
       {
         this.homeData.splice( i,1);
       }
