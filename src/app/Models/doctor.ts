@@ -10,4 +10,5 @@ export interface Doctor {
     street:string;
     gender:string;
     image_name?:string
+    description:string
 }

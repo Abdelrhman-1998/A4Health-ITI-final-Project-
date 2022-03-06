@@ -20,8 +20,8 @@ export class ReviewsService {
   getReviewByDoctorID(doctor_id:number):Observable<Review[]>{
     return this.httpClient.get<Review[]>(`${environment.ApiUrl}/reviews?doctor_id=${doctor_id}`)
   }
-  getReviewByRating(rating:number):Observable<Review>{
-    return this.httpClient.get<Review>(`${environment.ApiUrl}/reviews?rating=${rating}`)
+  getReviewByRating(rating:number,doctor_id:number):Observable<Review>{
+    return this.httpClient.get<Review>(`${environment.ApiUrl}/reviews?rating=${rating}?id=${doctor_id}`)
   }
   deleteReview(review_id:number):Observable<Review>{
     return this.httpClient.delete<Review>(`${environment.ApiUrl}/reviews/${review_id}`)

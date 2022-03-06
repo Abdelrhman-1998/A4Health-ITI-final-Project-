@@ -16,18 +16,28 @@ export class ReviewComponent implements OnInit {
   patients:Patient[]=[];
   rewiews:Review[]=[];
   doctors:Doctor[]=[];
+  stars:number[]=[];
   constructor(
-    private patientServices:PatientsService,
-    private doctorServices:DoctorsService,
+    // private patientServices:PatientsService,
+    // private doctorServices:DoctorsService,
     private reviewService:ReviewsService,
   ) { }
 
   ngOnInit(): void {
-
+this.getAllReviews()
   }
 getAllReviews(){
-
-  this.reviewService.getAllReviews().subscribe(review=>this.rewiews=review)
+  this.reviewService.getAllReviews().subscribe(
+    (review)=>{
+     for(let rev of review){
+       this.stars.length=rev.rating;
+       console.log(this.stars);
+     }
+      this.rewiews=review
+    })
+}
+counter(i: number) {
+  return new Array(i);
 }
 
 
