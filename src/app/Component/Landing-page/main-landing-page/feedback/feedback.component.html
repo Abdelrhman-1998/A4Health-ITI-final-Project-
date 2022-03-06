@@ -6,19 +6,20 @@
             </div>
             <div class="row g-5 m-0 mt-3">
                 <owl-carousel-o [options]="customOptions">
-                    <ng-template carouselSlide>
+                    <ng-template carouselSlide *ngFor="let review of reviews; index as i">
+                        <div>
                     <div class=" item-container mt-5 mb-5">
                     <div class="card c-feedback">
                         <div class="qoutL">
                             <i class="fa-solid fa-quote-left"></i>
                         </div>
                         <div class="card-body text-center">
-                          <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!</p>
+                          <p class="card-text">{{review.message}}</p>
                           
                           <div class="user d-flex justify-content-center justify-content-sm-between flex-sm-row flex-column flex-wrap align-items-center">
-                              <img  class=" rounded-circle " src="../../../../assets/landing_images/images/images.png">
+                              <img  class=" rounded-circle " [src]="patientWithReview[i].image_name">
                              <div class="info d-flex justify-content-center align-items-center flex-column">
-                                <p class="fw-bold pt-2 pb-2 m-0"> Pual Peterson</p>
+                                <p class="fw-bold pt-2 pb-2 m-0" *ngIf="review.patient_id==patientWithReview[i].id" >{{patientWithReview[i].username}} </p>
                                 <p class=" m-0">patient</p>
                              </div>
                           </div>
@@ -28,8 +29,9 @@
                           </div>
                       </div>
                     </div>
+                </div>
                 </ng-template>
-                <ng-template carouselSlide>
+                <!-- <ng-template carouselSlide>
                     <div class=" item-container mt-5 mb-5">
                     <div class="card c-feedback">
                         <div class="qoutL2">
@@ -72,7 +74,7 @@
                           </div>
                       </div>
                       </div>
-                    </ng-template>
+                    </ng-template> -->
             </owl-carousel-o>
             </div>
         </div>

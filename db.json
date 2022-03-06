@@ -130,5 +130,113 @@
       "id": 6,
       "name": "Cardiologists"
     }
+  ],
+  "reviews": [
+    {
+      "id": 3,
+      "patient_id": 1,
+      "doctor_id": 2,
+      "rating": 4,
+      "message": "Arwa Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+   
+    {
+      "id": 4,
+      "patient_id": 3,
+      "doctor_id": 1,
+      "rating": 5,
+      "message": "saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 5,
+      "patient_id": 3,
+      "doctor_id": 2,
+      "rating": 5,
+      "message": "saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 6,
+      "patient_id": 5,
+      "doctor_id": 7,
+      "rating": 4,
+      "message": "Reda Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 7,
+      "patient_id": 3,
+      "doctor_id": 4,
+      "rating": 3,
+      "message": " saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 8,
+      "patient_id": 4,
+      "doctor_id": 2,
+      "rating": 4,
+      "message": "Aymen Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 10,
+      "patient_id": 6,
+      "doctor_id": 2,
+      "rating": 4,
+      "message": "Asiel Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    }
+  ],
+  "patients":[
+    {
+      "id": 1,
+      "fname": "Arwa",
+      "lname": "Mohamed",
+      "gender": "female",
+      "username":"arwamohamed",
+      "password":"password",
+      "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
+    },
+    {
+      "id": 2,
+      "fname": "Abdelrahman",
+      "lname": "Ashraf",
+      "gender": "male",
+      "username":"abdoashraf",
+      "password":"password",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "fname": "Abdelrahman",
+      "lname": "saied",
+      "gender": "male",
+      "username":"abdosaiad",
+      "password":"password",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
+    },
+    {
+      "id": 4,
+      "fname": "Ahmed",
+      "lname": "Aymen",
+      "gender": "male",
+      "username":"AhmedAymen",
+      "password":"password",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
+    },
+    {
+      "id": 5,
+      "fname": "Ahmed",
+      "lname": "Reda",
+      "gender": "male",
+      "username":"ahmedreda",
+      "password":"password",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
+    },
+    {
+      "id": 6,
+      "fname": "Asiel",
+      "lname": "Mohamed",
+      "gender": "female",
+      "username":"asilmohamed",
+      "password":"password",
+      "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
+    }
   ]
 }

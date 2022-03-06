@@ -31,8 +31,8 @@ getAllDoctors(){
     touchDrag: true,
     pullDrag: true,
     dots: true,
-    navSpeed: 700,
-    navText: ['', ''],
+    navSpeed: 600,
+    navText:  ['&#8249', '&#8250;'],
     responsive: {
       0: {
         items: 1

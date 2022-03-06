@@ -12,7 +12,7 @@
 }
 .feedBack
 {
-    background-image: url("../../../../assets/landing_images/images/wavy.jpg");
+    background-image: url("../../../../../assets/landing_images/images/wavy.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -67,6 +67,13 @@
 }
 .user img{
     width: 23%;
+}
+.owl-prev{
+position: absolute !important;
+left: -4%!important;
+top: 37% !important;
+background: blue !important; 
+font-size: 30px !important;
 }
 @media screen and (max-width: 492px){
     .qoutL, .qoutL2{
