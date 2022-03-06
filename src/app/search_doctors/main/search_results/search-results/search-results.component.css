@@ -223,3 +223,24 @@ Appointment's part
 .card-body span{
     font-size: 16px !important;
 }
+.submitForm{
+    background-color: var(--color2) !important;
+    border-radius: 0px 0px 16px 16px;
+}
+.submitForm i{
+    transition: 0.3s;
+}
+.submitForm:hover i{
+    transform: translateX(10px);
+}
+.modalCloseButton{
+    position: absolute !important;
+    top: 0;
+    margin-top: 9px;
+}
+.sortButton i{
+    transition: 0.3s;
+}
+.sortButton:hover i{
+    transform: translateX(5px);
+}

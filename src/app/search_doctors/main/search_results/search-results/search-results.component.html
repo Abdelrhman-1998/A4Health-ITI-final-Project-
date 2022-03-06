@@ -1,6 +1,6 @@
 <section class="row m-0 g-5">
     <aside class="col-3 autoSubmittedForm d-lg-block d-none">
-        <form action="#searchResults" method="" class="filteredForm " onchange="submit()">
+        <form  #form3="ngForm"   class="filteredForm " (ngSubmit)="showResults(form3.value)">
             <ul class="list-unstyled accordion filteredList" id="accordionExample">
                 <li class=" p-3">
                     <i class="fa-solid fa-filter"></i>
@@ -22,31 +22,31 @@
                         <div class="accordion-body p-0 ">
                                 <ul  class="list-unstyled">
                                     <li>
-                                        <input type="radio" name="title" id="title0" value="All"  class="me-1">
+                                        <input type="radio" name="title" id="title0" value="All"  class="me-1" ngModel >
                                         <label for="title0">
                                         All
                                          </label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="title" id="title1" value="Professors"  class="me-1">
+                                        <input type="radio" name="title" id="title1" value="Professor"  class="me-1" ngModel >
                                         <label for="title1">
-                                         Professors
+                                         Professor
                                          </label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="title" id="title2" value="Lecturer"  class="me-1">
+                                        <input type="radio" name="title" id="title2" value="Lecturer"  class="me-1" ngModel>
                                         <label for="title2">
                                          Lecturer
                                          </label>
                                      </li>
                                      <li>
-                                        <input type="radio" name="title" id="title3" value="Consultant"  class="me-1">
+                                        <input type="radio" name="title" id="title3" value="Consultant"  class="me-1" ngModel >
                                         <label for="title3">
                                          Consultant
                                          </label>
                                      </li>
                                      <li>
-                                        <input type="radio" name="title" id="title4" value="Specialist"  class="me-1">
+                                        <input type="radio" name="title" id="title4" value="Specialist"  class="me-1" ngModel >
                                         <label for="title4">
                                          Specialist
                                          </label>
@@ -68,19 +68,19 @@
                         <div class="accordion-body p-0 ">
                                 <ul  class="list-unstyled">
                                     <li>
-                                        <input type="radio" name="gender" id="gender1" value="Male"  class="me-1">
+                                        <input type="radio" name="gender" id="gender1" value="Male"  class="me-1" ngModel>
                                         <label for="gender1">
                                          Male
                                          </label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="gender" id="gender2" value="Female"  class="me-1">
+                                        <input type="radio" name="gender" id="gender2" value="Female"  class="me-1" ngModel >
                                         <label for="gender2">
                                          Female
                                          </label>
                                      </li>
                                      <li>
-                                        <input type="radio" name="gender" id="genderAll" value="All"  class="me-1">
+                                        <input type="radio" name="gender" id="genderAll" value="All"  class="me-1" ngModel >
                                         <label for="genderAll">
                                          All
                                         </label>
@@ -102,19 +102,19 @@
                         <div class="accordion-body p-0 ">
                                 <ul  class="list-unstyled">
                                     <li>
-                                        <input type="radio" name="avaliabilty" id="avaliabilty1" value="anyDay"  class="me-1">
+                                        <input type="radio" name="avaliabilty" id="avaliabilty1" value="anyDay"  class="me-1" ngModel>
                                         <label for="avaliabilty1">
                                          Any day
                                          </label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="avaliabilty" id="avaliabilty2" value="today"  class="me-1">
+                                        <input type="radio" name="avaliabilty" id="avaliabilty2" value="today"  class="me-1" ngModel >
                                         <label for="avaliabilty2">
                                          Today
                                          </label>
                                      </li>
                                      <li>
-                                        <input type="radio" name="avaliabilty" id="avaliabilty3" value="tomorrow"  class="me-1">
+                                        <input type="radio" name="avaliabilty" id="avaliabilty3" value="tomorrow"  class="me-1" ngModel>
                                         <label for="avaliabilty3">
                                             Tomorrow
                                         </label>
@@ -136,37 +136,37 @@
                         <div class="accordion-body p-0 ">
                                 <ul  class="list-unstyled">
                                     <li>
-                                        <input type="radio" name="fees" id="fee1" value="any"  class="me-1">
+                                        <input type="radio" name="fees" id="fee1" value="any"  class="me-1" ngModel >
                                         <label for="fee1">
                                         Any
                                          </label>
                                     </li>
                                     <li>
-                                        <input type="radio" name="fees" id="fee2" value="lt-50"  class="me-1">
+                                        <input type="radio" name="fees" id="fee2" value="lt-50"  class="me-1"  ngModel>
                                         <label for="fee2">
                                          Less than 50
                                          </label>
                                      </li>
                                      <li>
-                                        <input type="radio" name="fees" id="fee3" value="50-100"  class="me-1">
+                                        <input type="radio" name="fees" id="fee3" value="50-100"  class="me-1" ngModel>
                                         <label for="fee3">
                                             From 50 to 100
                                         </label>
                                      </li>
                                      <li>
-                                        <input type="radio" name="fees" id="fee4" value="100-200"  class="me-1">
+                                        <input type="radio" name="fees" id="fee4" value="100-200"  class="me-1" ngModel>
                                         <label for="fee4">
                                             From 100 to 200
                                         </label>
                                      </li>
                                      <li>
-                                        <input type="radio" name="fees" id="fee5" value="200-300"  class="me-1">
+                                        <input type="radio" name="fees" id="fee5" value="200-300"  class="me-1" ngModel>
                                         <label for="fee5">
                                             From 200 to 300
                                         </label>
                                      </li>
                                      <li>
-                                        <input type="radio" name="fees" id="fee6" value="gt-300"  class="me-1">
+                                        <input type="radio" name="fees" id="fee6" value="sorting"  class="me-1" ngModel>
                                         <label for="fee6">
                                             Greater than 300
                                         </label>
@@ -189,13 +189,13 @@
                         <div class="accordion-body p-0 ">
                                 <ul  class="list-unstyled">
                                     <li>
-                                        <input type="radio" name="offers" id="offer1" value="offer1"  class="me-1">
+                                        <input type="radio" name="offers" id="offer1" value="offer1"  class="me-1" ngModel>
                                         <label for="offer1">
                                        offer1
                                         </label>
                                     </li>
                                         <li>
-                                            <input #offer type="radio" name="offers" id="offer2" value="offer2"  class="me-1">
+                                            <input #offer type="radio" name="offers" id="offer2" value="offer2"  class="me-1" ngModel>
                                             <label for="offer2">
                                            offer2
                                             </label>
@@ -205,6 +205,7 @@
                         </div>
                       </div>
                 </li>
+                <li class="p-3 submitForm"><i class="fa-solid fa-right-to-bracket text-white"></i><button class="btn text-white" type="submit" (click)="navigate()" (click)="submitFilter(form3.value)"> Submit</button></li>
             </ul>
         </form>
     </aside>
@@ -222,32 +223,38 @@
                           </div>
                     </div>
                     <div class="d-flex gap-1 ">
-                        <div class="dropdown d-flex align-items-center flex-column justify-content-center m-0">
-                            <p class="btn btn-secondary dropdown-toggle m-0 sortingParagraph" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="dropdown  d-flex align-items-center flex-column justify-content-center m-0">
+                            <p data-bs-auto-close="outside" class="btn btn-secondary dropdown-toggle m-0 sortingParagraph" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false"  >
                               Sort
                             </p>
-                            <form class="dropdown-menu sorting autoSubmittedForm" aria-labelledby="dropdownMenuButton6" action="#searchResults" method="" onchange="submit()">
-                                <ul class="list-unstyled">
+                            <form #form5="ngForm" (ngSubmit)="showResults(form5.value)" class="dropdown-menu sorting autoSubmittedForm" aria-labelledby="dropdownMenuButton6">
+                                <ul class="list-unstyled mb-0">
                                     <li class="d-flex align-items-center p-2" >
-                                        <input type="radio" name="sorting" id="sorting1" class="pe-1" value="TR">
+                                        <input type="radio" name="sorting" id="sorting1" class="pe-1" value="TR" ngModel>
                                         <label for="sorting1" class="ps-1">
                                             Top rated
                                         </label>
                                     </li>
 
                                     <li class="d-flex  align-items-center p-2" >
-                                        <input type="radio" name="sorting" id="sorting3" value="LH" >
+                                        <input type="radio" name="sorting" id="sorting3" value="LH" ngModel >
                                         <label for="sorting3" class="ps-1">
                                             Price Low to High
                                         </label>
                                     </li>
                                     <li class="d-flex  align-items-center p-2" >
-                                        <input type="radio" name="sorting" id="sorting4" value="HL">
+                                        <input type="radio" name="sorting" id="sorting4" value="HL" ngModel>
                                         <label for="sorting4" class="ps-1">
                                             Price High to Low
                                         </label>
                                     </li>
+                                    <li class="bg-primary p-2 sortButton" >
+                                        <button type="submit" class="btn m-0 p-0 text-white " (click)="submitSort(form5.value)">
+                                            <i class=" me-2 fa-solid fa-arrow-right-to-bracket text-white"></i>
+                                            Submit
+                                        </button>
 
+                                    </li>
                                 </ul>
                             </form>
                           </div>
@@ -256,9 +263,9 @@
 
             </div>
             <p class="mt-3 mb-3 text-center text-md-start ">
-                Search results :<span> {{data_length}}</span> doctors
+                Search results :<span> {{view_length}}</span> doctors
             </p>
-        <div class="doctor-card row m-0 mt-3 mb-3 p-3" *ngFor="let item of doctor_data| paginate: { itemsPerPage: count, currentPage: p }">
+        <div class="doctor-card row m-0 mt-3 mb-3 p-3" *ngFor="let item of view_data| paginate: { itemsPerPage: count, currentPage: p }">
             <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0">
                 <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
                     <img src={{item.image_name}} alt="doctor-image" class="rounded-circle ms-2 me-2">
@@ -399,7 +406,7 @@
               <div class="modal-content bg-transparent border-0">
                 <div class="modal-body  ">
                     <aside class="autoSubmittedForm ">
-                        <form action="#searchResults" method="" class="filteredForm " onchange="submit()">
+                        <form #form4="ngForm" class="filteredForm " (ngSubmit)="showResults(form4.value)">
                             <ul class="list-unstyled accordion filteredList shadow-none" id="accordionExample2">
                                 <li class=" p-3">
                                     <i class="fa-solid fa-filter"></i>
@@ -421,31 +428,31 @@
                                         <div class="accordion-body p-0 ">
                                                 <ul  class="list-unstyled">
                                                     <li>
-                                                        <input type="radio" name="title" id="title0" value="All" class="me-1">
+                                                        <input type="radio" name="title" id="title0" value="All" class="me-1" ngModel>
                                                         <label for="title0">
                                                          All
                                                          </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" name="title" id="title1" value="Professors"  class="me-1">
+                                                        <input type="radio" name="title" id="title1" value="Professor"  class="me-1" ngModel>
                                                         <label for="title1">
-                                                         Professors
+                                                         Professor
                                                          </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" name="title" id="title2" value="Lecturer"  class="me-1">
+                                                        <input type="radio" name="title" id="title2" value="Lecturer"  class="me-1" ngModel>
                                                         <label for="title2">
                                                          Lecturer
                                                          </label>
                                                      </li>
                                                      <li>
-                                                        <input type="radio" name="title" id="title3" value="Consultant"  class="me-1">
+                                                        <input type="radio" name="title" id="title3" value="Consultant"  class="me-1" ngModel>
                                                         <label for="title3">
                                                          Consultant
                                                          </label>
                                                      </li>
                                                      <li>
-                                                        <input type="radio" name="title" id="title4" value="Specialist" class="me-1">
+                                                        <input type="radio" name="title" id="title4" value="Specialist" class="me-1" ngModel>
                                                         <label for="title4">
                                                          Specialist
                                                          </label>
@@ -467,19 +474,19 @@
                                         <div class="accordion-body p-0 ">
                                                 <ul  class="list-unstyled">
                                                     <li>
-                                                        <input type="radio" name="gender" id="gender1" value="Male"  class="me-1">
+                                                        <input type="radio" name="gender" id="gender1" value="Male"  class="me-1" ngModel>
                                                         <label for="gender1">
                                                          Male
                                                          </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" name="gender" id="gender2" value="Female"  class="me-1">
+                                                        <input type="radio" name="gender" id="gender2" value="Female"  class="me-1" ngModel>
                                                         <label for="gender2">
                                                          Female
                                                          </label>
                                                      </li>
                                                      <li>
-                                                        <input type="radio" name="gender" id="genderAll" value="All"  class="me-1">
+                                                        <input type="radio" name="gender" id="genderAll" value="All"  class="me-1" ngModel>
                                                         <label for="genderAll">
                                                          All
                                                         </label>
@@ -501,19 +508,19 @@
                                         <div class="accordion-body p-0 ">
                                                 <ul  class="list-unstyled">
                                                     <li>
-                                                        <input type="radio" name="avaliabilty" id="avaliabilty1" value="anyDay"  class="me-1">
+                                                        <input type="radio" name="avaliabilty" id="avaliabilty1" value="anyDay"  class="me-1" ngModel>
                                                         <label for="avaliabilty1">
                                                          Any day
                                                          </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" name="avaliabilty" id="avaliabilty2" value="today"  class="me-1">
+                                                        <input type="radio" name="avaliabilty" id="avaliabilty2" value="today"  class="me-1" ngModel>
                                                         <label for="avaliabilty2">
                                                          Today
                                                          </label>
                                                      </li>
                                                      <li>
-                                                        <input type="radio" name="avaliabilty" id="avaliabilty3" value="tomorrow"  class="me-1">
+                                                        <input type="radio" name="avaliabilty" id="avaliabilty3" value="tomorrow"  class="me-1" ngModel>
                                                         <label for="avaliabilty3">
                                                             Tomorrow
                                                         </label>
@@ -535,37 +542,37 @@
                                         <div class="accordion-body p-0 ">
                                                 <ul  class="list-unstyled">
                                                     <li>
-                                                        <input type="radio" name="fees" id="fee1" value="any"  class="me-1">
+                                                        <input type="radio" name="fees" id="fee1" value="any"  class="me-1" ngModel>
                                                         <label for="fee1">
                                                         Any
                                                          </label>
                                                     </li>
                                                     <li>
-                                                        <input type="radio" name="fees" id="fee2" value="lt-50"  class="me-1">
+                                                        <input type="radio" name="fees" id="fee2" value="lt-50"  class="me-1" ngModel>
                                                         <label for="fee2">
                                                          Less than 50
                                                          </label>
                                                      </li>
                                                      <li>
-                                                        <input type="radio" name="fees" id="fee3" value="50-100"  class="me-1">
+                                                        <input type="radio" name="fees" id="fee3" value="50-100"  class="me-1" ngModel>
                                                         <label for="fee3">
                                                             From 50 to 100
                                                         </label>
                                                      </li>
                                                      <li>
-                                                        <input type="radio" name="fees" id="fee4" value="100-200"  class="me-1">
+                                                        <input type="radio" name="fees" id="fee4" value="100-200"  class="me-1" ngModel>
                                                         <label for="fee4">
                                                             From 100 to 200
                                                         </label>
                                                      </li>
                                                      <li>
-                                                        <input type="radio" name="fees" id="fee5" value="200-300"  class="me-1">
+                                                        <input type="radio" name="fees" id="fee5" value="200-300"  class="me-1" ngModel>
                                                         <label for="fee5">
                                                             From 200 to 300
                                                         </label>
                                                      </li>
                                                      <li>
-                                                        <input type="radio" name="fees" id="fee6" value="gt-300"  class="me-1">
+                                                        <input type="radio" name="fees" id="fee6" value="gt-300"  class="me-1" ngModel>
                                                         <label for="fee6">
                                                             Greater than 300
                                                         </label>
@@ -588,13 +595,13 @@
                                         <div class="accordion-body p-0 ">
                                                 <ul  class="list-unstyled">
                                                     <li>
-                                                        <input type="radio" name="offers" id="offer1" value="offer1"  class="me-1">
+                                                        <input type="radio" name="offers" id="offer1" value="offer1"  class="me-1" ngModel>
                                                         <label for="offer1">
                                                        offer1
                                                         </label>
                                                     </li>
                                                         <li>
-                                                            <input type="radio" name="offers" id="offer2" value="offer2"  class="me-1">
+                                                            <input type="radio" name="offers" id="offer2" value="offer2"  class="me-1" ngModel>
                                                             <label for="offer2">
                                                            offer2
                                                             </label>
@@ -604,8 +611,11 @@
                                         </div>
                                       </div>
                                 </li>
+                                <li class="p-3 submitForm"><i class="fa-solid fa-right-to-bracket text-white"></i><button class="btn text-white" type="submit" data-bs-dismiss="modal" (click)="navigate()" (click)="submitFilter(form4.value)"> Submit</button></li>
                                 <li class="  d-flex justify-content-end border-0">
-                                    <button type="button" class="btn btn-primary m-0 mb-3 me-3 " data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn  modalCloseButton" data-bs-dismiss="modal">
+                                        <i class="fa-solid fa-xmark text-white fs-4"></i>
+                                    </button>
                                 </li>
                             </ul>
                         </form>

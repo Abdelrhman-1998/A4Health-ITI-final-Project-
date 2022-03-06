@@ -61,7 +61,7 @@ body{
     font-size: 14px;
     color: #777;
 }
-.search-listItem p:nth-child(2){
+.search-listItem p:nth-child(2),.search-listItem div:nth-child(2){
     color: var(--color2);
     font-weight: bold;
 }
@@ -224,4 +224,10 @@ option{
 }
 .modal.search-listItem.dropdown{
     width: 100%;
+}
+.cancel-icon{
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+    visibility: hidden;
 }

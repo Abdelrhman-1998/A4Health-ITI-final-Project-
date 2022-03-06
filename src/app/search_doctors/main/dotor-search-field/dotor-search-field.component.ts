@@ -3,6 +3,7 @@ import { NgModel } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { doctor } from 'src/app/Models/doctor';
 import { DoctorService } from 'src/app/Services/doctor.service';
+
 @Component({
   selector: 'app-dotor-search-field',
   templateUrl: './dotor-search-field.component.html',
@@ -16,7 +17,13 @@ export class DotorSearchFieldComponent implements OnInit{
   Specialization_options_arr!:any;
   test_array!:doctor[];
   data_arrived:boolean=false;
-
+  resetSpans(x1:any,x2:any,x3:any,x4:any){
+      x1.innerText='Choose specialty';
+      x2.innerText='Choose offers';
+      x3.innerText='Choose Area';
+      x4.innerText='Choose City';
+    
+  }
    
   // reset search arrows
   search_results:doctor[]=[];
@@ -27,14 +34,22 @@ export class DotorSearchFieldComponent implements OnInit{
     x3.style.transform="";
  
   };
+  resetAllArrows(x1:any,x2:any,x3:any,x4:any){
+    x1.style.transform="";
+    x2.style.transform="";
+    x3.style.transform="";
+    x4.style.transform="";
+ 
+  }
 
   showResults(data:any){
-    // console.log(data);
+    console.log(data);
   this.search_results=this.test_array;
     console.log(this.test_array);
     console.log(data);
-    for (const key in data) {
-    if(data[key]!=""){
+  for (const key in data) {
+    if((data[key]!="") && (data[key]!=null)){
+      console.log('entered')
           switch (key) {
             case "search":
               this.search_results=this.Doctor_Service.filterByName(data["search"],this.search_results);
@@ -57,7 +72,7 @@ export class DotorSearchFieldComponent implements OnInit{
               break;
           }
     }
-    window.scrollTo(0, document.getElementById('searchResults')!.offsetTop)
+    window.scrollTo(0, document.getElementById('searchResults')!.offsetTop);
     
   }
   console.log(this.search_results);
