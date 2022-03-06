@@ -256,27 +256,23 @@
 
             </div>
             <p class="mt-3 mb-3 text-center text-md-start ">
-                Search results :<span> 5767</span> doctors
+                Search results :<span> {{data_length}}</span> doctors
             </p>
-        <div class="doctor-card row m-0 mt-3 mb-3 p-3" *ngFor="let item of doctors | paginate: { itemsPerPage: count, currentPage: p }">
+        <div class="doctor-card row m-0 mt-3 mb-3 p-3" *ngFor="let item of doctor_data| paginate: { itemsPerPage: count, currentPage: p }">
             <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0">
                 <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
-                    <img src="../../../../assets/search_images/images/doctor-ahmed-el-gazar-urology_20180728183517015.jpg" alt="doctor-image" class="rounded-circle ms-2 me-2">
+                    <img src={{item.image_name}} alt="doctor-image" class="rounded-circle ms-2 me-2">
                 </div>
                 <div class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center ">
                         <h4 class="doctor-name pt-2 pb-2 m-0">
                             <span>Doctor : </span>
-                            <span>Tamer El Bigawy</span>
+                            <span>{{item.fname}}</span><span> {{item.lname}}</span>
                         </h4>
                         <p class="doctor-specialization pb-2 m-0 fw-bold">
-                            Psychiatry Specialist
+                           <span>{{item.specialization}} </span> <span>{{item.title}}</span>
                         </p>
-                        <div class="rating d-flex gap-3 pb-2 ">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star-half"></i>
+                        <div class="rating d-flex gap-3 pb-2 " >
+                            <i class={{item2}} *ngFor=" let item2 of item.rating|ratingStars"></i>
                         </div>
                         <p class="number-ratings pb-2 m-0">
                             Overall ratings from <span>900</span> visitors
@@ -284,10 +280,10 @@
                         <p class="pb-2 m-0 doctor-location">
                             <i class="fa-solid fa-location-dot pe-2"></i>
                             <span class="city fw-bold">
-                                Alexandria:
+                                    {{item.city}}
                             </span>
                             <span class="Area street">
-                                next to sednawy hospital
+                                {{item.street}}
                             </span>
                         </p>
                         <p class="pb-2 m-0 doctor-fees">
@@ -296,7 +292,7 @@
                                 Fees:
                             </span>
                             <span class="fees">
-                                150 LE
+                                {{item.fees}} LE
                             </span>
                         </p>
 

@@ -9,19 +9,26 @@ import { OptionComponent } from './search_doctors/main/dotor-search-field/option
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FormsModule } from '@angular/forms';
+import{HttpClientModule} from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { RatingStarsPipe } from './rating-stars.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     DotorSearchFieldComponent,
     SearchResultsComponent,
-    OptionComponent
+    OptionComponent,
+    RatingStarsPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
