@@ -129,13 +129,6 @@ ng-template * {
 /* .owl-one .owl-dots {
   visibility: visible;
 }  */
-.owl-carousel.owl-drag .owl-item{
-  display: flex !important;
-  justify-content: center !important;
-}
-.item-card{
-  max-width: 300px;
-}
 
 @keyframes moveArrow {
   0% {

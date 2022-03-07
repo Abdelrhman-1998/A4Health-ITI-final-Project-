@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { Doctor } from "app/Models/doctor";
-import { Patient } from "app/Models/patient";
-import { Review } from "app/Models/review";
-import { DoctorsService } from "app/Services/doctors.service";
-import { PatientsService } from "app/Services/patients.service";
-import { ReviewsService } from "app/Services/reviews.service";
+import { Doctor } from "../../../../../app/Models/doctor";
+import { Patient } from "../../../../../app/Models/patient";
+import { Review } from "../../../../../app/Models/review";
+import { DoctorsService } from "../../../../../app/Services/doctors.service";
+import { PatientsService } from "../../../../../app/Services/patients.service";
+import { ReviewsService } from "../../../../../app/Services/reviews.service";
 import { OwlOptions } from "ngx-owl-carousel-o";
 
 @Component({
@@ -36,11 +36,13 @@ export class FeedbackComponent implements OnInit {
             .subscribe((patient) => {
               this.patients = patient;
               this.reviews = review;
-             this.patientWithReview.push(this.patients);
-            });      
+              this.patientWithReview.push(this.patients);
+            });
         }
         console.log(this.patientWithReview);
-      }
+      },
+      (err) => console.log("HTTP Error", err),
+      () => console.log("HTTP request completed.")
     );
   }
 

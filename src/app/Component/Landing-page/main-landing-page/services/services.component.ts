@@ -18,7 +18,7 @@ export class ServicesComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 700,
-    navText: ['', ''],
+    navText:  ['&#8249', '&#8250;'],
     responsive: {
       0: {
         items: 1

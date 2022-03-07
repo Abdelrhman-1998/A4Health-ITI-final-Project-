@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Doctor } from 'app/Models/doctor';
-import { DoctorsService } from 'app/Services/doctors.service';
+import { Doctor } from '../../../../Models/doctor';
+import { DoctorsService } from 'src/app/Services/doctors.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({

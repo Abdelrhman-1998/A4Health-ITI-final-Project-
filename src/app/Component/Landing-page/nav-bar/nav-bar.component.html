@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-        <img src="../../../assets/landing_images/images/logo-removebg-preview.png" alt="" width="55" height="40">
+        <img src="../../../assets/landing_page/images/logo-removebg-preview.png" alt="" width="55" height="40">
         <span
         class="text-primary">A</span><span class="text-danger">4</span><span
                 class="text-primary">Health</span>
@@ -63,7 +63,7 @@
                     <input type="text" class="form-control " id=" floatingName"
                         placeholder="name@example.com"  name="username" value="" required formControlName="username">
                     <label class="text-primary" for="floatingName" >username</label>
-                    <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
+                    <div class="alert alert-warning" role="alert" *ngIf="username && username.invalid && username.touched">
                     <span>
                         username input filed is not valid
                     </span>
@@ -73,7 +73,7 @@
                     <input type="password" class="form-control" id="floatingInput"
                         placeholder="name@example.com" name="password" value="" required formControlName="password">
                     <label class="text-primary" for="floatingInput" >Password</label>
-                    <div class="alert alert-danger" role="alert" *ngIf="password && password.invalid && password.touched">
+                    <div class="alert alert-warning" role="alert" *ngIf="password && password.invalid && password.touched">
                     <span >
                         password input filed is not valid
                     </span>

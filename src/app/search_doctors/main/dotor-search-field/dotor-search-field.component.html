@@ -1,0 +1,322 @@
+<section  class="secondary_section position-relative" >
+    <div class="row m-0">
+        <div class=" col-lg-8 search_header ps-lg-5 p-0">
+            <h2 class=" text-lg-start text-center ">
+                Best Doctors in Egypt
+            </h2>
+            <!-- <p class="section_paragraph text-lg-start text-center">
+                Book online 
+                <i class="fa-solid fa-calendar-plus text-danger fs-5"></i>
+            </p> -->
+            <p class="section_paragraph text-lg-start text-center ps-3 pe-3 p-lg-0">
+                15000 Doctors - 9000 Professors and Consultants - More than 40 Specialties
+            </p>
+        </div>
+        <div   class="doctors_bg mt-2 col-lg-4  justify-content-center p-0 d-none d-sm-flex">
+                <img   draggable="false" (dragstart)="false;" class="unselectable"   src="../../../../assets/search_images/images/pngwing.com.png" alt="pic">
+        </div>
+    </div>
+    <form  #form1="ngForm" (ngSubmit)="showResults(form1.value)" class="d-lg-flex d-none justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100" >
+        <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-4 me-4">
+            <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title=""  >
+                <div  class="dropdown-toggle"   id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(city,area)" (click)="specialization.style.transform==''?specialization.style.transform='rotate(180deg)':specialization.style.transform=''">
+                    <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                        select a specialty
+                        <i class="fa-solid fa-angle-down" #specialization ></i>
+                       </p>
+                       <p  class="d-flex align-items-center gap-2 ps-2 pe-2">
+                         <i class="fa-solid fa-stethoscope"></i>
+                         <span #choose_specialty>
+                             Choose specialty
+                         </span>
+                       </p>
+                </div>
+                    <select  size="4" name='speciality' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton1" ngModel>
+                        <option #specialization_option (click)="choose_specialty.innerText=specialization_option.value" *ngFor="let item of Specialization_options_arr" value="{{item}}">
+                            {{item}}
+                        </option>
+                      </select>
+            </li>
+            <li  class="search-listItem dropdown searchItems" title="" >
+                <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(area,specialization)"  (click)="city.style.transform==''?city.style.transform='rotate(180deg)':city.style.transform=''" >
+                    <p class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                        In this city
+                        <i class="fa-solid fa-angle-down" [ngClass]="reset_arrows?'fa-solid fa-angle-down':'fa-solid fa-angle-down'" #city ></i>
+                      </p>
+                      <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span #choose_city>
+                            Choose City
+                        </span>
+                      </p>
+                </div>
+                    <select  #city size="4" name='city' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2" ngModel>
+                        <option #city_option (click)="choose_city.innerText=city_option.value"  *ngFor="let item of City_options_arr" value="{{item}}"  >
+                            {{item}}
+                          </option>
+                      </select>
+            </li>
+            <li  class="search-listItem dropdown searchItems" title="" >
+                <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city,specialization)" (click)="area.style.transform==''?area.style.transform='rotate(180deg)':area.style.transform=''" >
+                    <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                        In this Area
+                        <i class="fa-solid fa-angle-down"  #area ></i>
+                    </p>
+                    <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                        <i class="fa-solid fa-location-dot"></i>
+                      <span #choose_area>
+                        Choose Area
+                      </span>
+                    </p>
+                </div>
+                <select  size="4" name='area' class=" dropdown-menu p-0" aria-labelledby="dropdownMenuButton3" ngModel>
+                    <option #area_option (click)="choose_area.innerText=area_option.value" *ngFor="let item of Area_options_arr"  value="{{item}}">
+                        {{item}}
+                    </option>
+                  </select>
+            </li>
+            <!-- <li  class="search-listItem dropdown searchItems" title=""  >
+                <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city,area,specialization)" (click)="offer.style.transform==''?offer.style.transform='rotate(180deg)':offer.style.transform=''">
+                    <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                            Offers
+                        <i class="fa-solid fa-angle-down" #offer></i>
+                    </p>
+                    <p class="d-flex align-items-center gap-2 ps-2 pe-2">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                      <span #choose_offers >
+                        Choose offers
+                      </span>
+                    </p>
+                </div>
+                <select  size="2" name='offers' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton4" ngModel>
+                    <option #offers_option (click)="choose_offers.innerText=offers_option.value" *ngFor="let item of offers_options_arr " value="{{item}}" >
+                        {{item}}
+                    </option>
+                </select>
+            </li> -->
+            <li  class="d-flex flex-column flex-lg-row" title="">
+              
+                    <div class="search-listItem ">
+                        <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                            Or search by name
+                        </p>
+                        <p class="d-flex align-items-center gap-2 position-relative ps-2 pe-2">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <input  type="search" name="search" placeholder="Doctor name" class="flex-grow-1"  ngModel >
+                        </p>
+                    </div>
+                    <div  class="d-flex align-items-center p-1 position-relative  justify-content-center bg-danger">
+                        <button class="d-flex gap-2" type="submit" [disabled]="!data_arrived" [ngStyle]="!data_arrived?{opacity:0.5}:{opacity:1}">
+                                <i class="fa-solid fa-magnifying-glass searchIcon"></i>                     
+                                    Search
+                        </button>
+                    </div>
+            </li>
+        </ul>
+    </form>
+    <div class="d-lg-none d-flex justify-content-center ">
+            <div class="d-flex bg-white bookingDoctor mt-sm-0 mt-3 mb-3 ps-sm-5 pe-sm-5 pt-3 pb-3 ps-2 pe-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop1">
+                <div class="d-flex justify-content-center align-items-center p-3">
+                    <i class="fa-solid fa-calendar-plus "></i>
+                </div>
+                <div>
+                    <p class="m-0  fw-bold">
+                        Book a doctor
+                    </p>
+                    <p class="m-0">
+                        Examination or procedure
+                    </p>
+                </div>
+            </div>
+    </div>
+
+<!-- modal -->
+<div class="modal d-lg-none fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+    <div class=" modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel1">
+            <i class="fa-solid fa-magnifying-glass" style="transform: rotate(90deg);"></i>
+               Search for a doctor
+            </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form #form2="ngForm" (ngSubmit)="showResults(form2.value)" id="form2" class="d-lg-flex  justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100 " >
+                <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-sm-4 me-sm-4">
+                    <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title=""  >
+                        <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city_modal,area_modal)"     (click)="specialization_modal.style.transform==''?specialization_modal.style.transform='rotate(180deg)':specialization_modal.style.transform=''">
+                            <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                select a specialty
+                                <i class="fa-solid fa-angle-down" #specialization_modal></i>
+                               </p>
+                               <div  class="d-flex align-items-center justify-content-between gap-2 ps-2 pe-2">
+                                   <div class="d-flex align-items-center gap-2">
+                                    <i class="fa-solid fa-stethoscope "></i>
+                                    <span #choose_specilty_modal>
+                                        Choose specialty
+                                    </span>
+
+                                   </div>
+                                    <div>
+                                        <i class="fa-solid fa-x cancel-icon text-danger"></i>
+                                    </div>
+                                </div>
+                        </div>
+                            <select  size="4" name='speciality' class=" dropdown-menu p-0 w-100 " aria-labelledby="dropdownMenuButton1" ngModel>
+                                <option #speciality_option_modal (click)="choose_specilty_modal.innerText=speciality_option_modal.value" *ngFor="let item of Specialization_options_arr" value="{{item}}" >
+                                    {{item}}
+                                </option>
+  
+                              </select>
+                    </li>
+                    <li  class="search-listItem dropdown searchItems" title="">
+                        <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(area_modal,specialization_modal)"     (click)="city_modal.style.transform==''?city_modal.style.transform='rotate(180deg)':city_modal.style.transform=''">
+                            <p class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                In this city
+                                <i class="fa-solid fa-angle-down" #city_modal></i>
+                              </p>
+                              <div class="d-flex align-items-center justify-content-between gap-2 ps-2 pe-2">
+                                <div class="d-flex gap-2 align-items-center">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span #choose_city_modal>
+                                        Choose City
+                                    </span>
+
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-x cancel-icon text-danger"></i>
+                                </div>
+                            </div>
+                        </div>
+                            <select  size="4" name='city' class="w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2" ngModel>
+                                <option  #city_option_modal (click)="choose_city_modal.innerText=city_option_modal.value" *ngFor="let item of City_options_arr" value="{{item}}"  >
+                                  {{item}}
+                                </option>
+                                <!-- <option value="Assiut" >
+                                    Assiut
+                                </option>
+                                <option value="Aswan" >
+                                    Aswan
+                                </option>
+                                <option value="Beheira"  >
+                                    Beheira
+                                </option>
+                                <option value="Bani Suef" >
+                                    Bani Suef
+                                </option>
+                                <option value="Cairo">
+                                    Cairo
+                                </option>
+                                <option value="Daqahliya" >
+                                    Daqahliya
+                                </option>
+                                <option value="Damietta" >
+                                    Damietta
+                                </option>
+                                <option value="Fayyoum" >
+                                    Fayyoum
+                                </option>
+                                <option value="Gharbiya" >
+                                    Gharbiya
+                                </option>
+                                <option value="Giza" >
+                                    Giza
+                                </option>
+                                <option value="Helwan" >
+                                    Helwan
+                                </option>
+                                <option value="Ismailia" >
+                                    Ismailia
+                                </option> -->
+                              </select>
+                    </li>
+                    <li  class="search-listItem dropdown searchItems" title="">
+                        <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(city_modal,specialization_modal)"     (click)="area_modal.style.transform==''?area_modal.style.transform='rotate(180deg)':area_modal.style.transform=''">
+                            <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                In this Area
+                                <i class="fa-solid fa-angle-down" #area_modal></i>
+                            </p>
+                            <div class="d-flex align-items-center justify-content-between gap-2 ps-2 pe-2">
+                                <div class="d-flex align-items-center gap-2">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span #choode_area_modal>
+                                      Choose Area
+                                    </span>
+
+                                </div>
+                                <div>
+                                    <i class="fa-solid fa-x cancel-icon text-danger"></i>
+                                </div>
+    
+        
+                            </div>
+                        </div>
+                        <select size="4" name='area'  class="w-100 dropdown-menu p-0" aria-labelledby="dropdownMenuButton3" ngModel #select_area>
+                            <option #area_option_modal  (click)="choode_area_modal.innerText=area_option_modal.value" *ngFor="let item of Area_options_arr"  value="{{item}}">
+                                {{item}}
+                            </option>
+                          
+                          </select>
+                    </li>
+                    <!-- <li  class="search-listItem dropdown searchItems" title="">
+                        <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city_modal,area_modal,specialization_modal)"
+                        (click)="offer_modal.style.transform==''?offer_modal.style.transform='rotate(180deg)':offer_modal.style.transform=''">
+                            <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                    Offers
+                                <i class="fa-solid fa-angle-down" #offer_modal></i>
+                            </p>
+                            <div class="d-flex align-items-center justify-content-between gap-2 ps-2 pe-2">
+                              <div class="d-flex align-items-center gap-2">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                                <span #choose_offer_modal>
+                                  Choose offers
+                                </span>
+                              </div>
+                              <div>
+                                <i class="fa-solid fa-x cancel-icon text-danger"></i>
+                              </div>
+
+                            
+                            </div>
+                        </div>
+                        <select   size="2" name='offers' class=" w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton4" ngModel>
+                            <option #offer_option_modal (click)="choose_offer_modal.innerText=offer_option_modal.value" *ngFor="let item of offers_options_arr " value="{{item}}" >
+                                {{item}}
+                            </option>
+                        </select>
+                    </li> -->
+                    <li  class="d-flex flex-column flex-lg-row" title="">
+                      
+                            <div class="search-listItem ">
+                                <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
+                                    Or search by name
+                                </p>
+                                <p class="d-flex align-items-center gap-2 position-relative ps-2 pe-2">
+                                    <i class="fa-solid fa-user-doctor"></i>
+                                    <input type="search" name="search" placeholder="Doctor name" class="flex-grow-1" ngModel>
+                                </p>
+                            </div>
+                            <div class="d-flex align-items-center p-1  justify-content-center bg-danger">
+                                <button class="d-flex align-items-center " type="submit">
+                                        <i class="fa-solid fa-magnifying-glass" style="display: block; transform:rotate(90deg); color: white; font-size: 24px;"></i>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                    Search
+                                            </button>
+                                        
+                                </button>
+                            </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+        <div class="modal-footer d-flex">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-secondary" (click)="form2.reset()" (click)="resetSpans(choose_specilty_modal,choode_area_modal,choose_city_modal)" (click)="resetAllArrows(area_modal,specialization_modal,city_modal)">
+                    Reset
+            </button>
+        </div>
+      </div>
+    </div>
+</div>
+</section>

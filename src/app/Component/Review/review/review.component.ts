@@ -1,10 +1,10 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { Doctor } from 'app/Models/doctor';
-import { Patient } from 'app/Models/patient';
-import { Review } from 'app/Models/review';
-import { DoctorsService } from 'app/Services/doctors.service';
-import { PatientsService } from 'app/Services/patients.service';
-import { ReviewsService } from 'app/Services/reviews.service';
+import { Component, OnInit } from '@angular/core';
+import { Doctor } from '../../../../app/Models/doctor';
+import { Patient } from '../../../../app/Models/patient';
+import { Review } from '../../../../app/Models/review';
+import { DoctorsService } from '../../../../app/Services/doctors.service';
+import { PatientsService } from '../../../../app/Services/patients.service';
+import { ReviewsService } from '../../../../app/Services/reviews.service';
 
 @Component({
   selector: 'app-review',
@@ -15,11 +15,8 @@ export class ReviewComponent implements OnInit {
 
   patients:Patient[]=[];
   rewiews:Review[]=[];
-  reviewwithDoctorID:Review[]=[];
   doctors:Doctor[]=[];
   stars:number[]=[];
-  cardDoctorId:number=2
- 
   constructor(
     // private patientServices:PatientsService,
     // private doctorServices:DoctorsService,
@@ -27,27 +24,17 @@ export class ReviewComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getReviewByDoctorId()
-// this.getAllReviews()
+this.getAllReviews()
   }
-// getAllReviews(){
-//   this.reviewService.getAllReviews().subscribe(
-//     (review)=>{
-//      for(let rev of review){
-//        this.stars.length=rev.rating;
-//        console.log(this.stars);
-//      }
-//       this.rewiews=review
-//     })
-// }
-getReviewByDoctorId(){
-
-  this.reviewService.getReviewByDoctorID(this.cardDoctorId).subscribe((review)=>{
-    for(let rev of review){
-    this.stars.length=rev.rating;
-    }
-    this.reviewwithDoctorID=review;
-  })
+getAllReviews(){
+  this.reviewService.getAllReviews().subscribe(
+    (review)=>{
+     for(let rev of review){
+       this.stars.length=rev.rating;
+       console.log(this.stars);
+     }
+      this.rewiews=review
+    })
 }
 counter(i: number) {
   return new Array(i);
@@ -55,7 +42,3 @@ counter(i: number) {
 
 
 }
-function newEventEmitter<T>() {
-  throw new Error('Function not implemented.');
-}
-

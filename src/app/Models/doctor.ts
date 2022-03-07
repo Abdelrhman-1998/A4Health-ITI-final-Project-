@@ -1,14 +1,16 @@
-export interface Doctor {
-    id:number;
+export interface Doctor{
     fname:string;
     lname:string;
+    gender:string;
     specialization:string;
     title:string;
     fees:number;
-    rating:number;
+    rating:any;
     city:string;
     street:string;
-    gender:string;
-    image_name?:string
-    description:string
+    image_name?:string;
+    description:string;
+    id:number;
+
 }
+

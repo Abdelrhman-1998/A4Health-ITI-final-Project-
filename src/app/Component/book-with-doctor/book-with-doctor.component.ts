@@ -1,9 +1,9 @@
 import { HttpClient } from "@angular/common/http";
-import { Component, Input, OnInit } from "@angular/core";
-import { Doctor } from "app/Models/doctor";
-import { Review } from "app/Models/review";
-import { DoctorsService } from "app/Services/doctors.service";
-import { ReviewsService } from "app/Services/reviews.service";
+import { Component, OnInit } from "@angular/core";
+import { Doctor } from "../../../app/Models/doctor";
+import { Review } from "../../../app/Models/review";
+import { DoctorsService } from "../../../app/Services/doctors.service";
+import { ReviewsService } from "../../../app/Services/reviews.service";
 
 @Component({
   selector: "app-book-with-doctor",
@@ -54,17 +54,16 @@ export class BookWithDoctorComponent implements OnInit {
         review.forEach((revRate)=>{
           total += revRate.rating
           this.totalRate =total/ review.length;
+          
+          
         })
-          if(total% review.length ===1){
+        if(total% review.length ===1){
             this.halfstar=true;            
             this.stars.length=(this.totalRate )
           }else{
             this.stars.length=(this.totalRate )
           }
-
         this.overAllRating=review;
-        // console.log(this.overAllRating);
-        
 
       }
     );

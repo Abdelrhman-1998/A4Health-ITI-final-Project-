@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("./app/search_doctors/main/dotor-search-field/dotor-search-field.component.css");
+@import url("./app/search_doctors/main/search_results/search-results/search-results.component.css");

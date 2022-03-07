@@ -12,19 +12,16 @@
 }
 header{
     font-family: 'Inter', sans-serif;
-    
 }
 .home-pic{
     background-color: #ebeeff;
     border-radius: 25px;
     box-shadow:3px 3px 10px 4px #ddd;
 }
-#home{
-    height: 100vh;
-}
+
 #home,.aboutUs
 {
-    background-image: url("../../../../assets/landing_images/images/wavy.jpg");
+    background-image: url("../../../../assets/landing_page/images/wavy.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -97,12 +94,3 @@ header{
     perspective: 100px;
 }
 
-
-@media (min-width:767px){
-   header{
-        height: 100vh;
-    }
-    #home{
-        flex-grow: 1;
-    }
-}
