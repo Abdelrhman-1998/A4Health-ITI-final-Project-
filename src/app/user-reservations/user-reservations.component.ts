@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { UserreservationsService } from '../userreservations.service';
 
@@ -9,8 +10,9 @@ import { UserreservationsService } from '../userreservations.service';
 })
 export class UserReservationsComponent implements OnInit {
   homeData:any[]=[];
+
   constructor(private _UserreservationsService:UserreservationsService) { 
-    
+
   }
 
   ngOnInit(): void {

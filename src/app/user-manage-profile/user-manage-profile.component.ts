@@ -26,19 +26,25 @@ city:string[]=[];
 manageProfileForm:FormGroup = new FormGroup({
   fName:new FormControl(this.userData.fName , [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
   lName:new FormControl(this.userData.lName, [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
-  Gender:new FormControl(this.userData.Gender,),
-  Phones:new FormControl(this.userData.Phones,),
-  City:new FormControl(this.userData.City)
+  Gender:new FormControl(this.userData.Gender, [Validators.required]),
+  Phones:new FormControl(this.userData.Phones,[Validators.required]),
+  City:new FormControl(this.userData.City,[Validators.required])
 }); 
 
   ngOnInit(): void {
     this.numbers.push(546456);
     this.numbers.push(2301231);
     this.city.push("giza");
-    this.city.push("cairo");
+    this.city.push("Cairo");
     this._UserreservationsService.getUserData().subscribe((response)=>{
       this.userData = response;
-      console.log( this.userData);
+      this.manageProfileForm = new FormGroup({
+        fName:new FormControl(this.userData.fName , [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+        lName:new FormControl(this.userData.lName, [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+        Gender:new FormControl(this.userData.Gender, [Validators.required]),
+        Phones:new FormControl(this.userData.Phones,[Validators.required]),
+        City:new FormControl(this.userData.City,[Validators.required])
+      }); 
       
     });
     
@@ -69,14 +75,13 @@ manageProfileForm:FormGroup = new FormGroup({
 
   submitManageProfile(form:any)
   {
-    console.log(form);
-    /*if(form.fName && form.lName && form.Gender && form.Phones && form.City)
+    if(form.fName && form.lName && form.Gender && form.Phones && form.City)
     {
       console.log(form);
     }
     else
     {
       console.log(form.Phones);
-    }*/
+    }
   }
 }

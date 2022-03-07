@@ -1,0 +1,117 @@
+<div class="container-fluid appointmentContainer">
+
+    <!-- Page Heading -->
+    <h3 class=" mb-4 AppointmentHeader fw-bold  ">
+        <i class="fa-solid fa-calendar-plus text-white fs-3  text-primary"></i>
+         New Appointment
+    </h3>
+    <form action="#" class="bg-white addAppointment p-sm-5 p-3 d-flex justify-content-between  gap-3 flex-lg-row  flex-column align-items-center">
+        <div class="d-flex align-items-center justify-content-center gap-sm-4 gap-3 flex-sm-row flex-column">
+            <input type="date"  name="AppointmentDate" id="AppointmentDate">
+            <input type="time" name="time" id="AppointmentTime">
+        </div>
+
+        <button type="submit" class="btn btn-primary ">Add New Appointment</button>
+    </form>
+    <h3 class=" mb-4 mt-4 mt-3 AppointmentHeader  fw-bold ">
+        <i class="fa-solid fa-calendar-days fs-3 text-primary"></i>
+         Your Appointments
+    </h3>
+
+<div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Patients' Appointments</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead class="text-center">
+                        <tr>
+                            <th>Time</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="text-center">
+                            <td>07:00</td>
+                            <td>01-Jun-2021</td>
+                            <td>
+                                <a href="#" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
+                                    <i class="fa-solid fa-pencil " ></i>
+                                </a>
+                                <a href="#" title="delete Appointment">
+                                    <i class="fa-solid fa-calendar-xmark "></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="text-center">
+                            <td>07:30</td>
+                            <td>02-Jun-2021</td>
+                            <td>
+                                <a href="#" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
+                                    <i class="fa-solid fa-pencil " ></i>
+                                </a>
+                                <a href="#" title="delete Appointment">
+                                    <i class="fa-solid fa-calendar-xmark "></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="text-center">
+                            <td>08:00</td>
+                            <td>01-July-2021</td>
+                            <td>
+                                <a href="#" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
+                                    <i class="fa-solid fa-pencil " ></i>
+                                </a>
+                                <a href="#" title="delete Appointment">
+                                    <i class="fa-solid fa-calendar-xmark "></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr class="text-center">
+                            <td>08:30</td>
+                            <td>05-Jun-2021</td>
+                            <td>
+                                <a href="#" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
+                                    <i class="fa-solid fa-pencil " ></i>
+                                </a>
+                                <a href="#" title="delete Appointment">
+                                    <i class="fa-solid fa-calendar-xmark "></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+aria-hidden="true">
+<form class=" modal-dialog modal-dialog-centered" role="document" action="" method="">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">Edit Appointment</h5>
+
+        </div>
+        <div class="modal-body">
+               <div class="mt-2 mb-2">
+                   <input type="Date" name="modalAppointmentDate" id="modalAppointmentDate">
+               </div>
+               <div  class="mt-2 mb-2">
+                <input type="time" name="modalAppointmentTime" id="modalAppointmentTime">
+                </div>
+                <div>
+
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="submit">
+                Save 
+           </button>
+            <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</form>
+</div>
