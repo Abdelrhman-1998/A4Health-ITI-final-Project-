@@ -19,7 +19,7 @@
     <form  #form1="ngForm" (ngSubmit)="showResults(form1.value)" class="d-lg-flex d-none justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100" >
         <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-4 me-4">
             <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title=""  >
-                <div  class="dropdown-toggle"   id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(city,offer,area)" (click)="specialization.style.transform==''?specialization.style.transform='rotate(180deg)':specialization.style.transform=''">
+                <div  class="dropdown-toggle"   id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(city,area)" (click)="specialization.style.transform==''?specialization.style.transform='rotate(180deg)':specialization.style.transform=''">
                     <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                         select a specialty
                         <i class="fa-solid fa-angle-down" #specialization ></i>
@@ -38,7 +38,7 @@
                       </select>
             </li>
             <li  class="search-listItem dropdown searchItems" title="" >
-                <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(offer,area,specialization)"  (click)="city.style.transform==''?city.style.transform='rotate(180deg)':city.style.transform=''" >
+                <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(area,specialization)"  (click)="city.style.transform==''?city.style.transform='rotate(180deg)':city.style.transform=''" >
                     <p class="d-flex justify-content-between mb-2 ps-2 pe-2">
                         In this city
                         <i class="fa-solid fa-angle-down" [ngClass]="reset_arrows?'fa-solid fa-angle-down':'fa-solid fa-angle-down'" #city ></i>
@@ -57,7 +57,7 @@
                       </select>
             </li>
             <li  class="search-listItem dropdown searchItems" title="" >
-                <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city,offer,specialization)" (click)="area.style.transform==''?area.style.transform='rotate(180deg)':area.style.transform=''" >
+                <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city,specialization)" (click)="area.style.transform==''?area.style.transform='rotate(180deg)':area.style.transform=''" >
                     <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                         In this Area
                         <i class="fa-solid fa-angle-down"  #area ></i>
@@ -75,7 +75,7 @@
                     </option>
                   </select>
             </li>
-            <li  class="search-listItem dropdown searchItems" title=""  >
+            <!-- <li  class="search-listItem dropdown searchItems" title=""  >
                 <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city,area,specialization)" (click)="offer.style.transform==''?offer.style.transform='rotate(180deg)':offer.style.transform=''">
                     <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                             Offers
@@ -93,7 +93,7 @@
                         {{item}}
                     </option>
                 </select>
-            </li>
+            </li> -->
             <li  class="d-flex flex-column flex-lg-row" title="">
               
                     <div class="search-listItem ">
@@ -145,7 +145,7 @@
             <form #form2="ngForm" (ngSubmit)="showResults(form2.value)" id="form2" class="d-lg-flex  justify-content-center  search-container pt-3 pb-3   p-lg-0 w-100 " >
                 <ul class="list-unstyled d-flex flex-column flex-lg-row m-0 search-field ms-sm-4 me-sm-4">
                     <li class="search-listItem position-relative dropdown searchItems d-flex flex-column " title=""  >
-                        <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city_modal,area_modal,offer_modal)"     (click)="specialization_modal.style.transform==''?specialization_modal.style.transform='rotate(180deg)':specialization_modal.style.transform=''">
+                        <div class="dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city_modal,area_modal)"     (click)="specialization_modal.style.transform==''?specialization_modal.style.transform='rotate(180deg)':specialization_modal.style.transform=''">
                             <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                                 select a specialty
                                 <i class="fa-solid fa-angle-down" #specialization_modal></i>
@@ -171,7 +171,7 @@
                               </select>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
-                        <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(offer_modal,area_modal,specialization_modal)"     (click)="city_modal.style.transform==''?city_modal.style.transform='rotate(180deg)':city_modal.style.transform=''">
+                        <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(area_modal,specialization_modal)"     (click)="city_modal.style.transform==''?city_modal.style.transform='rotate(180deg)':city_modal.style.transform=''">
                             <p class="d-flex justify-content-between mb-2 ps-2 pe-2">
                                 In this city
                                 <i class="fa-solid fa-angle-down" #city_modal></i>
@@ -232,7 +232,7 @@
                               </select>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
-                        <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(city_modal,offer_modal,specialization_modal)"     (click)="area_modal.style.transform==''?area_modal.style.transform='rotate(180deg)':area_modal.style.transform=''">
+                        <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(city_modal,specialization_modal)"     (click)="area_modal.style.transform==''?area_modal.style.transform='rotate(180deg)':area_modal.style.transform=''">
                             <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                                 In this Area
                                 <i class="fa-solid fa-angle-down" #area_modal></i>
@@ -259,8 +259,9 @@
                           
                           </select>
                     </li>
-                    <li  class="search-listItem dropdown searchItems" title="">
-                        <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city_modal,area_modal,specialization_modal)"     (click)="offer_modal.style.transform==''?offer_modal.style.transform='rotate(180deg)':offer_modal.style.transform=''">
+                    <!-- <li  class="search-listItem dropdown searchItems" title="">
+                        <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city_modal,area_modal,specialization_modal)"
+                        (click)="offer_modal.style.transform==''?offer_modal.style.transform='rotate(180deg)':offer_modal.style.transform=''">
                             <p  class="d-flex justify-content-between mb-2 ps-2 pe-2">
                                     Offers
                                 <i class="fa-solid fa-angle-down" #offer_modal></i>
@@ -284,7 +285,7 @@
                                 {{item}}
                             </option>
                         </select>
-                    </li>
+                    </li> -->
                     <li  class="d-flex flex-column flex-lg-row" title="">
                       
                             <div class="search-listItem ">
@@ -311,7 +312,7 @@
         </div>
         <div class="modal-footer d-flex">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button class="btn btn-secondary" (click)="form2.reset()" (click)="resetSpans(choose_specilty_modal,choose_offer_modal,choode_area_modal,choose_city_modal)" (click)="resetAllArrows(offer_modal,area_modal,specialization_modal,city_modal)">
+            <button class="btn btn-secondary" (click)="form2.reset()" (click)="resetSpans(choose_specilty_modal,choode_area_modal,choose_city_modal)" (click)="resetAllArrows(area_modal,specialization_modal,city_modal)">
                     Reset
             </button>
         </div>

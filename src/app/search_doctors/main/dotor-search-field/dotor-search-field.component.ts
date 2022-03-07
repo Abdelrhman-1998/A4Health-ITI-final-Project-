@@ -17,9 +17,8 @@ export class DotorSearchFieldComponent implements OnInit{
   Specialization_options_arr!:any;
   test_array!:doctor[];
   data_arrived:boolean=false;
-  resetSpans(x1:any,x2:any,x3:any,x4:any){
+  resetSpans(x1:any,x3:any,x4:any){
       x1.innerText='Choose specialty';
-      x2.innerText='Choose offers';
       x3.innerText='Choose Area';
       x4.innerText='Choose City';
     
@@ -28,17 +27,15 @@ export class DotorSearchFieldComponent implements OnInit{
   // reset search arrows
   search_results:doctor[]=[];
   @Output() update_search_results:EventEmitter <doctor[]> = new EventEmitter <doctor[]>();
-  reset_arrows(x1:any,x2:any,x3:any) {
+  reset_arrows(x1:any,x2:any) {
     x1.style.transform="";
     x2.style.transform="";
-    x3.style.transform="";
  
   };
-  resetAllArrows(x1:any,x2:any,x3:any,x4:any){
+  resetAllArrows(x1:any,x2:any,x3:any){
     x1.style.transform="";
     x2.style.transform="";
     x3.style.transform="";
-    x4.style.transform="";
  
   }
 

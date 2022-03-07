@@ -306,22 +306,39 @@
                         <button class=" btn btn-danger d-lg-none " data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
                 </div>
             </div>
-            <div class="Appointments col-lg-4 ps-0 d-none d-lg-block ">
-                        <owl-carousel-o [options]="customOptions">
+            <div class="Appointments col-lg-4 ps-0 d-none d-lg-flex flex-column ">
+                        <owl-carousel-o [options]="customOptions" class="p-lg-3">
                             <ng-template carouselSlide *ngFor="let item of Appointments_date">
-                                <div class="slide">
+                                <!-- <div class="slide">
                                     <div class="card text-center">
                                         <div class="card-header bg-primary text-white">
                                         Today {{item}}
                                         </div>
                                         <div class="card-body">
-                                        <ul class="timing lh-lg" *ngFor="let item of Appointments_time">
+                                        <ul class="timing lh-lg w-100" *ngFor="let item of Appointments_time">
                                             <li><span>{{item}}</span></li>
                                         </ul>
                                         </div>
                                         <button class=" btn btn-danger">Book</button>
                                     </div>
-                                </div>
+                                </div> -->
+                                <div class="card text-center slide ms-2 me-2">
+                                    <div class=" card-header bg-primary text-white">
+                                      Today{{item}}
+                                    </div>
+                                    <div class="card-body">
+                                      <ul class="timing lh-lg w-100">
+                                        <li><span>3:40 PM</span></li>
+                                        <li><span>4:10 PM</span></li>
+                                        <li><span>4:40 PM</span></li>
+                                        <li><span>5:10 PM</span></li>
+                                        <li><span>5:40 PM</span></li>
+                                        <li><span>6:10 PM</span></li>
+                                        <li><span>6:40 PM</span></li>
+                                    </ul>
+                                    </div>
+                                     <button class=" btn btn-danger">Book</button>
+                                  </div>
                             </ng-template>                              
          
                         </owl-carousel-o>
@@ -609,8 +626,9 @@
                           <span class="visually-hidden">Previous</span>
                           <span class="visually-hidden">Next</span>
                         </button>
-                      </div>
-                  </div>
+                    </div>
+
+                </div>
                 </div>
               </div>
             </div>
