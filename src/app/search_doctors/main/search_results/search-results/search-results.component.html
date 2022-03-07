@@ -223,11 +223,11 @@
                           </div>
                     </div>
                     <div class="d-flex gap-1 ">
-                        <div class="dropdown  d-flex align-items-center flex-column justify-content-center m-0">
-                            <p data-bs-auto-close="outside" class="btn btn-secondary dropdown-toggle m-0 sortingParagraph" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false"  >
+                        <div class="dropdown d-flex align-items-center flex-column justify-content-center m-0">
+                            <p  data-bs-auto-close="outside"  class="btn btn-secondary dropdown-toggle m-0 sortingParagraph" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown" aria-expanded="false" (click)="toggleStatus()" >
                               Sort
                             </p>
-                            <form #form5="ngForm" (ngSubmit)="showResults(form5.value)" class="dropdown-menu sorting autoSubmittedForm" aria-labelledby="dropdownMenuButton6">
+                            <form #form5="ngForm" (ngSubmit)="showResults(form5.value)" class="dropdown-menu sorting autoSubmittedForm" aria-labelledby="dropdownMenuButton6" id="sortForm" [ngStyle]="sort_list_status?{'display': 'block'}:{'display':'none'}">
                                 <ul class="list-unstyled mb-0">
                                     <li class="d-flex align-items-center p-2" >
                                         <input type="radio" name="sorting" id="sorting1" class="pe-1" value="TR" ngModel>
@@ -249,7 +249,7 @@
                                         </label>
                                     </li>
                                     <li class="bg-primary p-2 sortButton" >
-                                        <button type="submit" class="btn m-0 p-0 text-white " (click)="submitSort(form5.value)">
+                                        <button type="submit" class="btn m-0 p-0 text-white dropdown-toggle " (click)="submitSort(form5)">
                                             <i class=" me-2 fa-solid fa-arrow-right-to-bracket text-white"></i>
                                             Submit
                                         </button>
@@ -323,70 +323,7 @@
                                     </div>
                                 </div>
                             </ng-template>                              
-                            <!-- <ng-template carouselSlide>
-                                <div class="slide">
-                                    <div class="card text-center">
-                                        <div class="card-header bg-primary text-white">
-                                        Today
-                                        </div>
-                                        <div class="card-body">
-                                        <ul class="timing lh-lg">
-                                            <li><span>3:40 PM</span></li>
-                                            <li><span>4:10 PM</span></li>
-                                            <li><span>4:40 PM</span></li>
-                                            <li><span>5:10 PM</span></li>
-                                            <li><span>5:40 PM</span></li>
-                                            <li><span>6:10 PM</span></li>
-                                            <li><span>6:40 PM</span></li>
-                                        </ul>
-                                        </div>
-                                        <button class=" btn btn-danger">Book</button>
-                                    </div>
-                                </div>
-                            </ng-template>                              
-                            <ng-template carouselSlide>
-                                <div class="slide">
-                                    <div class="card text-center">
-                                        <div class="card-header bg-primary text-white">
-                                        Today
-                                        </div>
-                                        <div class="card-body">
-                                        <ul class="timing lh-lg">
-                                            <li><span>3:40 PM</span></li>
-                                            <li><span>4:10 PM</span></li>
-                                            <li><span>4:40 PM</span></li>
-                                            <li><span>5:10 PM</span></li>
-                                            <li><span>5:40 PM</span></li>
-                                            <li><span>6:10 PM</span></li>
-                                            <li><span>6:40 PM</span></li>
-                                        </ul>
-                                        </div>
-                                        <button class=" btn btn-danger">Book</button>
-                                    </div>
-                                </div>
-                            </ng-template>                              
-                            <ng-template carouselSlide>
-                                <div class="slide">
-                                    <div class="card text-center">
-                                        <div class="card-header bg-primary text-white">
-                                        Today
-                                        </div>
-                                        <div class="card-body">
-                                        <ul class="timing lh-lg">
-                                            <li><span>3:40 PM</span></li>
-                                            <li><span>4:10 PM</span></li>
-                                            <li><span>4:40 PM</span></li>
-                                            <li><span>5:10 PM</span></li>
-                                            <li><span>5:40 PM</span></li>
-                                            <li><span>6:10 PM</span></li>
-                                            <li><span>6:40 PM</span></li>
-                                        </ul>
-                                        </div>
-                                        <button class=" btn btn-danger">Book</button>
-                                    </div>
-                                </div>
-                            </ng-template>                               -->
-
+         
                         </owl-carousel-o>
                  
             </div> 
@@ -396,7 +333,8 @@
               
         </div>
         <div class="text-right d-flex justify-content-center">
-            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <pagination-controls (pageChange)="p = $event">
+            </pagination-controls>
         </div>
     
 

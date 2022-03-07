@@ -244,3 +244,12 @@ Appointment's part
 .sortButton:hover i{
     transform: translateX(5px);
 }
+
+@media (min-width:280px){
+    #sortForm {
+        position: absolute !important;
+        margin: 0px !important;
+        inset: 0px auto auto 0px !important;
+        transform: translate3d(0px, 40px, 0px) !important;
+    }
+}

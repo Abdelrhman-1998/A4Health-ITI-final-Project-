@@ -5,6 +5,7 @@ import { DoctorService } from 'src/app/Services/doctor.service';
 import { RatingStarsPipe } from 'src/app/rating-stars.pipe';
 import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { AppModule } from 'src/app/app.module';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -35,7 +36,7 @@ export class SearchResultsComponent implements OnInit {
   @Input() doctor_data!:doctor[];
   data_length!:number;
 
-
+sort_list_status:boolean=false;
  
 showResults(x:any){
     console.log(x)
@@ -47,12 +48,14 @@ navigate(){
   window.scrollTo(0, document.getElementById('searchResults')!.offsetTop);
 }
 
-
+toggleStatus(){
+  this.sort_list_status=!this.sort_list_status;
+}
 // on submit sort lisy
 submitSort(x:any){
-  console.log(x["sorting"]);
+  console.log(x.value["sorting"]);
   let sorted_data=this.view_data;
-        switch (x["sorting"]){
+        switch (x.value["sorting"]){
           case "TR":
             sorted_data=this.doctor_service.sortByRating(this.view_data);
             break;
@@ -67,11 +70,15 @@ submitSort(x:any){
         }
   this.view_data=sorted_data;
   this.view_length=sorted_data.length;
-  // test sort top_rated
+  this.sort_list_status=!this.sort_list_status;
 
+  // go back to first page
+  this.p=1;
+
+
+  // test sort top_rated
   // this.view_data=this.doctor_service.sortByRating(this.view_data);
   // this.view_length=this.view_data.length;
- 
   // --------------------------------
 
   // test lowest price
@@ -120,6 +127,12 @@ submitFilter(x:any){
   }
   this.view_data=filtered_data;
   this.view_length=filtered_data.length;
+
+
+   // go back to first page
+   
+   this.p=1;
+
   // test gender filter 
 
   // console.log(x);
@@ -185,7 +198,9 @@ submitFilter(x:any){
 
     this.view_data=this.doctor_data;
     this.view_length= this.view_data?.length;
-   
+    
+    // go back to first page
+    this.p=1;
    
     
   }
