@@ -29,7 +29,7 @@
                     <div class="text-primary px-4">
                         <div class="form-floating my-3 text-center">
                             <!-- <h2>{{manageProfileForm.get('fName')?.errors|json}}</h2> -->
-                            <input formControlName="fName" name="fName" type="text" class="form-control " id="floatingfName"
+                            <input formControlName="fName" name="fName" type="text" class="form-control " id="floatingfName" [value]="userData.fName"
                                 placeholder="name@example.com">
                             <label for="floatingfName">First Name</label>
                         </div>
@@ -40,15 +40,15 @@
                             <p class="m-0" *ngIf="manageProfileForm.get('fName')?.errors?.['maxlength']">first name Max length is 20</p>
                         </div>
                         <div class="form-floating my-3 text-center">
-                            <input formControlName="lName" name="lName" type="text" class="form-control " id="floatinglName"
+                            <input formControlName="lName" name="lName" type="text" class="form-control " id="floatinglName" [value]="userData.lName"
                                 placeholder="name@example.com">
                             <label for="floatinglName">Last Name</label>
                         </div>
                         <div class="alert alert-danger" 
                         *ngIf="manageProfileForm.get('lName')?.errors && manageProfileForm.get('lName')?.touched">
-                            <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['required']">first name is required</p>
-                            <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['minlength']">first name min length is 2</p>
-                            <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['maxlength']">first name Max length is 20</p>
+                            <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['required']">last name is required</p>
+                            <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['minlength']">last name min length is 2</p>
+                            <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['maxlength']">last name Max length is 20</p>
                         </div>
                         <!-- <div class="form-floating my-3">
                             <input type="email" class="form-control" id="floatingInput"
@@ -59,14 +59,18 @@
                             <label>Gender</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio1"
-                                value="Male ">
+                            <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio1" 
+                                >
                             <label class="form-check-label" for="inlineRadio1">Male</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="Gender" id="inlineRadio2"
-                                value="Female">
+                            <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio2" 
+                                >
                             <label class="form-check-label" for="inlineRadio2">Female</label>
+                        </div>
+                        <div class="alert alert-danger" 
+                        *ngIf="manageProfileForm.get('Gender')?.errors && manageProfileForm.get('Gender')?.touched">
+                            <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['required']">Gender is required</p>
                         </div>
                         <div class="form-floating my-3 d-flex justify-content-between ">
                             <input #phone type="number" class="form-control w-75" id="floatingphone"
@@ -76,9 +80,9 @@
                             <button (click)="deletePhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Delete</button>
                         </div>
                         <div class="d position-relative">
-                            <select formControlName="Phones" #Phones name="phones" class="form-select text-primary my-3" aria-label="Default select example">
+                            <select  #Phones name="phones" class="form-select text-primary my-3" aria-label="Default select example">
                                 <option disabled selected style="display:none;"> Your Phones </option>
-                                <option *ngFor="let num of numbers"  class="text-primary" [value]="num">{{num}}</option>
+                                <option *ngFor="let num of userData.Phones"  class="text-primary" [value]="num">{{num}}</option>
                             </select>
                         </div>
                         <!-- <div class="form-floating text-primary my-3">
@@ -88,12 +92,16 @@
                         </div> -->
                         <div class="d position-relative">
                             <!-- formControlName="City" -->
-                            <select formControlName="City"  class="form-select text-primary my-3" aria-label="Default select example">
+                            <select formControlName="City"  class="form-select text-primary my-3" aria-label="Default select example" [value]="userData.City">
                                 <option disabled selected style="display:none;"> City </option>
 
                                 <option *ngFor="let c of city"  class="text-primary" [value]="c">{{c}}</option>
 
                             </select>
+                        </div>
+                        <div class="alert alert-danger" 
+                        *ngIf="manageProfileForm.get('City')?.errors && manageProfileForm.get('City')?.touched">
+                            <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['required']">City is required</p>
                         </div>
                         <button [disabled]="manageProfileForm.invalid" type="submit" class="btn btn-danger">Save</button>
                         <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->

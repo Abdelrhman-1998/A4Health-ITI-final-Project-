@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup,Validators } from '@angular/forms';
+import { UserreservationsService } from '../userreservations.service';
 
 @Component({
   selector: 'app-user-manage-profile',
@@ -7,46 +8,61 @@ import { FormControl, FormGroup,Validators } from '@angular/forms';
   styleUrls: ['./user-manage-profile.component.css']
 })
 export class UserManageProfileComponent implements OnInit {
-
-  constructor() { }
-  manageProfileForm:FormGroup = new FormGroup({
-    fName:new FormControl(null , [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
-    lName:new FormControl(null, [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
-    Gender:new FormControl(null, [Validators.required]),
-    Phones:new FormControl(null),
-    City:new FormControl(null)
-  }); 
+userData:any={fName:"",lName:"",Gender:"",Phones:[],City:""}
+  constructor(private _UserreservationsService:UserreservationsService) {
+    
+   }
+ 
   
 numbers:number[]=[];
 city:string[]=[];
+/*manageProfileForm:FormGroup = new FormGroup({
+  fName:new FormControl(null , [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+  lName:new FormControl(null, [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+  Gender:new FormControl(null, [Validators.required]),
+  Phones:new FormControl(this.numbers,[Validators.required]),
+  City:new FormControl(null,[Validators.required])
+}); */
+manageProfileForm:FormGroup = new FormGroup({
+  fName:new FormControl(this.userData.fName , [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+  lName:new FormControl(this.userData.lName, [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
+  Gender:new FormControl(this.userData.Gender,),
+  Phones:new FormControl(this.userData.Phones,),
+  City:new FormControl(this.userData.City)
+}); 
 
   ngOnInit(): void {
     this.numbers.push(546456);
     this.numbers.push(2301231);
     this.city.push("giza");
     this.city.push("cairo");
-
+    this._UserreservationsService.getUserData().subscribe((response)=>{
+      this.userData = response;
+      console.log( this.userData);
+      
+    });
+    
   }
   addPhone(formphone:any)
   {
     console.log(formphone);
-    if( this.numbers.includes(formphone))
+    if( this.userData.Phones.includes(formphone))
     {
       console.log("already in");
     }
     else
     {
-      this.numbers.push(formphone);
+      this.userData.Phones.push(formphone);
     }
     
   }
   deletePhone(formphone:any)
   {
-    for(let i = 0 ; i<this.numbers.length ; i++)
+    for(let i = 0 ; i<this.userData.Phones ; i++)
     {
-      if( this.numbers[i] == formphone)
+      if( this.userData.Phones[i] == formphone)
       {
-        this.numbers.splice( i,1);
+        this.userData.Phones.splice( i,1);
       }
     }
   }
@@ -54,6 +70,13 @@ city:string[]=[];
   submitManageProfile(form:any)
   {
     console.log(form);
+    /*if(form.fName && form.lName && form.Gender && form.Phones && form.City)
+    {
+      console.log(form);
+    }
+    else
+    {
+      console.log(form.Phones);
+    }*/
   }
-
 }

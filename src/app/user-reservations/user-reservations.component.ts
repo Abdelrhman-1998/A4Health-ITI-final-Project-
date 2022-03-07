@@ -10,12 +10,13 @@ import { UserreservationsService } from '../userreservations.service';
 export class UserReservationsComponent implements OnInit {
   homeData:any[]=[];
   constructor(private _UserreservationsService:UserreservationsService) { 
-    _UserreservationsService.getReservations().subscribe((response)=>{
-      this.homeData = response;
-    });
+    
   }
 
   ngOnInit(): void {
+    this._UserreservationsService.getReservations().subscribe((response)=>{
+      this.homeData = response;
+    });
   }
   delete(fname:any)
   {
