@@ -36,13 +36,11 @@ export class FeedbackComponent implements OnInit {
             .subscribe((patient) => {
               this.patients = patient;
               this.reviews = review;
-              this.patientWithReview.push(this.patients);
-            });
+             this.patientWithReview.push(this.patients);
+            });      
         }
         console.log(this.patientWithReview);
-      },
-      (err) => console.log("HTTP Error", err),
-      () => console.log("HTTP request completed.")
+      }
     );
   }
 
