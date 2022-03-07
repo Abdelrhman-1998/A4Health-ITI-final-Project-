@@ -4,6 +4,7 @@ import { SearchResultsComponent } from './search_doctors/main/search_results/sea
 const routes: Routes = [
  
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
@@ -11,3 +12,4 @@ const routes: Routes = [
 export class AppRoutingModule {
  
  }
+

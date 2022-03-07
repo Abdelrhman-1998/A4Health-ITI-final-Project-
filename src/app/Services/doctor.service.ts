@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { doctor } from '../Models/doctor';
+import { Doctor } from '../Models/doctor';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class DoctorService {
   // search
 
 
-  filterByName(user_entry:string,all_data:doctor[]){
+  filterByName(user_entry:string,all_data:Doctor[]){
     user_entry = user_entry.toLowerCase();
 
   let filterd_data=all_data.filter(ele => {
@@ -40,21 +40,21 @@ export class DoctorService {
       return filterd_data;
   }
 
-  filterByCity(city:"string",all_data:doctor[]){
+  filterByCity(city:"string",all_data:Doctor[]){
     let filterd_data=all_data.filter(ele => {
       return ele.city.toLowerCase()==city.toLowerCase();
     });
     return filterd_data;
   }
 
-  filterByArea(street:"string",all_data:doctor[]){
+  filterByArea(street:"string",all_data:Doctor[]){
     let filterd_data=all_data.filter(ele => {
       return ele.street.toLowerCase()== street.toLowerCase();
     });
     return filterd_data;
   }
 
-  filterBySpecilaization(specilaization:"string",all_data:doctor[]){
+  filterBySpecilaization(specilaization:"string",all_data:Doctor[]){
     let filterd_data=all_data.filter(ele => {
       return ele.specialization.toLowerCase()== specilaization.toLowerCase();
     });
@@ -65,7 +65,7 @@ export class DoctorService {
 
   // filters
 
-  filterByGender(gender:string,search_results:doctor[]){
+  filterByGender(gender:string,search_results:Doctor[]){
     if(gender!="All"){
       let filterd_data=search_results.filter(ele => {
         return ele.gender.toLowerCase()== gender.toLowerCase();
@@ -77,7 +77,7 @@ export class DoctorService {
     }
   }
 
-  filterByTitle(title:string,search_results:doctor[]){
+  filterByTitle(title:string,search_results:Doctor[]){
     if(title!="All"){
       let filterd_data=search_results.filter(ele => {
         return ele.title.toLowerCase()== title.toLowerCase();
@@ -104,7 +104,7 @@ export class DoctorService {
     }
   }
 
-  filterByFees(fees:string,search_results:doctor[]){
+  filterByFees(fees:string,search_results:Doctor[]){
       let filterd_data;
       switch(fees)
       {
@@ -153,17 +153,17 @@ export class DoctorService {
 
   // sort
 
-  sortByRating(view_results:doctor[]){
+  sortByRating(view_results:Doctor[]){
 
     // get rating first
 
     // sort rating 
 
-    // match rating with doctors
+    // match rating with Doctors
 
     // remove duplication 
 
-    // reorder doctors
+    // reorder Doctors
 
     let ratings:any=[];
 
@@ -187,7 +187,7 @@ export class DoctorService {
    return sorted_data;
   }
 
- sortByLowestPrice(view_results:doctor[]){
+ sortByLowestPrice(view_results:Doctor[]){
   let fees:any=[];
   view_results.forEach(element => {
     fees.push(element.fees);
@@ -213,7 +213,7 @@ export class DoctorService {
 
   }
 
-  sortByHighestPrice(view_results:doctor[]){
+  sortByHighestPrice(view_results:Doctor[]){
     let fees:any=[];
     view_results.forEach(element => {
       fees.push(element.fees);

@@ -1,4 +1,4 @@
-export interface doctor{
+export interface Doctor{
     fname:string;
     lname:string;
     gender:string;
@@ -9,4 +9,8 @@ export interface doctor{
     city:string;
     street:string;
     image_name?:string;
+    description:string;
+    id:number;
+
 }
+

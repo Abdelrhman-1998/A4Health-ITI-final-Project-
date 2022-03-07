@@ -1,6 +1,6 @@
 import { Component, Input, OnInit,OnChanges, ViewChild,SimpleChanges } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { doctor } from 'src/app/Models/doctor';
+import { Doctor } from 'src/app/Models/doctor';
 import { DoctorService } from 'src/app/Services/doctor.service';
 import { RatingStarsPipe } from 'src/app/rating-stars.pipe';
 import { NgModule } from '@angular/core';
@@ -14,7 +14,7 @@ import { AppModule } from 'src/app/app.module';
 export class SearchResultsComponent implements OnInit {
 
 
-  constructor(private doctor_service:DoctorService) { 
+  constructor(private Doctor_service:DoctorService) { 
       
   }
   // pagination
@@ -29,11 +29,11 @@ export class SearchResultsComponent implements OnInit {
   sort_status:boolean=false;
 
  // display
-  view_data!:doctor[];
+  view_data!:Doctor[];
   view_length!:any;
 
   // output search
-  @Input() doctor_data!:doctor[];
+  @Input() Doctor_data!:Doctor[];
   data_length!:number;
 
 sort_list_status:boolean=false;
@@ -57,13 +57,13 @@ submitSort(x:any){
   let sorted_data=this.view_data;
         switch (x.value["sorting"]){
           case "TR":
-            sorted_data=this.doctor_service.sortByRating(this.view_data);
+            sorted_data=this.Doctor_service.sortByRating(this.view_data);
             break;
           case "LH":
-            sorted_data=this.doctor_service.sortByLowestPrice(this.view_data);
+            sorted_data=this.Doctor_service.sortByLowestPrice(this.view_data);
             break;
           case "HL":
-            sorted_data=this.doctor_service.sortByHighestPrice(this.view_data);
+            sorted_data=this.Doctor_service.sortByHighestPrice(this.view_data);
             break;
           default:
             break;
@@ -77,13 +77,13 @@ submitSort(x:any){
 
 
   // test sort top_rated
-  // this.view_data=this.doctor_service.sortByRating(this.view_data);
+  // this.view_data=this.Doctor_service.sortByRating(this.view_data);
   // this.view_length=this.view_data.length;
   // --------------------------------
 
   // test lowest price
 
-  // this.view_data=this.doctor_service.sortByLowestPrice(this.view_data);
+  // this.view_data=this.Doctor_service.sortByLowestPrice(this.view_data);
   // this.view_length=this.view_data.length;
 
   //---------------------
@@ -91,7 +91,7 @@ submitSort(x:any){
 
     // test Highest price 
 
-    // this.view_data=this.doctor_service.sortByHighestPrice(this.view_data);
+    // this.view_data=this.Doctor_service.sortByHighestPrice(this.view_data);
     // this.view_length=this.view_data.length;
   
     //--------------------
@@ -101,19 +101,19 @@ submitSort(x:any){
 // on submit filter list
 submitFilter(x:any){
 
-  let filtered_data:any=this.doctor_data;
+  let filtered_data:any=this.Doctor_data;
 
   for (let key in x) {
         if(x[key]!="" && x[key] !=null){
          switch(key){
            case "gender":
-             filtered_data=this.doctor_service.filterByGender(x[key],filtered_data);
+             filtered_data=this.Doctor_service.filterByGender(x[key],filtered_data);
              break;
            case "title":
-            filtered_data=this.doctor_service.filterByTitle(x[key],filtered_data);
+            filtered_data=this.Doctor_service.filterByTitle(x[key],filtered_data);
              break;
            case "fees":
-            filtered_data=this.doctor_service.filterByFees(x[key],filtered_data);
+            filtered_data=this.Doctor_service.filterByFees(x[key],filtered_data);
              break;
           // case "":
           //   break;
@@ -137,8 +137,8 @@ submitFilter(x:any){
 
   // console.log(x);
   // console.log(x.gender);
-  // console.log(this.doctor_data);
-  // let filterResult=this.doctor_service.filterByGender(x.gender,this.doctor_data);
+  // console.log(this.Doctor_data);
+  // let filterResult=this.Doctor_service.filterByGender(x.gender,this.Doctor_data);
   // this.view_data=filterResult;
   // this.view_length=this.view_data?.length;
 
@@ -149,8 +149,8 @@ submitFilter(x:any){
 
   // console.log(x);
   // console.log(x.title);
-  // console.log(this.doctor_data);
-  // let filterResult=this.doctor_service.filterByTitle(x.title,this.doctor_data);
+  // console.log(this.Doctor_data);
+  // let filterResult=this.Doctor_service.filterByTitle(x.title,this.Doctor_data);
   // this.view_data=filterResult;
   // this.view_length=this.view_data?.length;
   
@@ -167,7 +167,7 @@ submitFilter(x:any){
 
   // console.log(x);
   // console.log(x.fees);
-  // let filterResult:any=this.doctor_service.filterByFees(x.fees,this.doctor_data);
+  // let filterResult:any=this.Doctor_service.filterByFees(x.fees,this.Doctor_data);
   // this.view_data=filterResult;
   // this.view_length=this.view_data?.length;
   
@@ -180,11 +180,11 @@ submitFilter(x:any){
 // owl carousel 
   ngOnInit(): void {
     //display data from api
-    this.doctor_service.getDataFromApi().subscribe(
+    this.Doctor_service.getDataFromApi().subscribe(
       res=>{  
         console.log(res);
-        // this.doctor_model_data=res as any;
-        this.doctor_data=res as any;
+        // this.Doctor_model_data=res as any;
+        this.Doctor_data=res as any;
         this.view_data=res as any;
         this.view_length=this.view_data.length;
         console.log(res);
@@ -196,7 +196,7 @@ submitFilter(x:any){
   }
   ngOnChanges(){
 
-    this.view_data=this.doctor_data;
+    this.view_data=this.Doctor_data;
     this.view_length= this.view_data?.length;
     
     // go back to first page

@@ -1,13 +1,20 @@
+
 import { Component, Input,OnChanges,SimpleChanges } from '@angular/core';
-import { doctor } from './Models/doctor';
+import { Doctor } from './Models/doctor';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  /// Arwa
   title = 'Angular_project';
-  updated_search_results!:doctor[];
+  // ------ 
+
+  // Abdelrhman 
+  updated_search_results!:Doctor[];
   onUpdateSearchResults(x:any){
     console.log(x);
     this.updated_search_results=x;
@@ -17,4 +24,5 @@ export class AppComponent {
   ngonChange(){
 
   }
+  // -----
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, Output} from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
-import { doctor } from 'src/app/Models/doctor';
+import { Doctor } from 'src/app/Models/doctor';
 import { DoctorService } from 'src/app/Services/doctor.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class DotorSearchFieldComponent implements OnInit{
   Area_options_arr!:any;
   City_options_arr!:any;
   Specialization_options_arr!:any;
-  test_array!:doctor[];
+  test_array!:Doctor[];
   data_arrived:boolean=false;
   resetSpans(x1:any,x3:any,x4:any){
       x1.innerText='Choose specialty';
@@ -25,8 +25,8 @@ export class DotorSearchFieldComponent implements OnInit{
   }
    
   // reset search arrows
-  search_results:doctor[]=[];
-  @Output() update_search_results:EventEmitter <doctor[]> = new EventEmitter <doctor[]>();
+  search_results:Doctor[]=[];
+  @Output() update_search_results:EventEmitter <Doctor[]> = new EventEmitter <Doctor[]>();
   reset_arrows(x1:any,x2:any) {
     x1.style.transform="";
     x2.style.transform="";

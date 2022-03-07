@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300&display=swap');
+*{
+    font-size: 16px;
+}
+:root{
+    --color1:#043d75;
+    --color2:#0075ff;
+    --color3:#FF8C83;
+    --color4:#e7eef6;
+    --color5:#ebeeff;
+    --color6:#fee1d3;
+    --color7:#e4e7ec;
+    --color8:#6eb4d8;
+    --color9:#ffd5bf;
+    scroll-behavior: smooth;
+}
+section{
+    background-color:#e7eef6 !important;
+    transition: all ease-in-out 0.3s;
+}
+.more{
+    display: none;
+}
+.dots,.less{
+    cursor: pointer;
+    color: #043d75;
+}
+.rating i{
+    color: #FFB624;
+}
+.top-rated-review{
+    /* max-width: 90%;
+    border-radius: 5px 20px 5px;
+    background-color: rgb(245, 245, 245); */
+    background: rgb(245, 245, 245) none repeat scroll 0% 0%;
+margin: 20px 0px 5px;
+padding: 10px 0px;
+min-height: 50px;
+display: flex;
+flex-direction: column;
+-moz-box-pack: start;
+justify-content: flex-start;
+align-items: flex-start;
+border: 0.5px solid rgb(238, 238, 238);
+position: relative;
+font-family: TheSans;
+border-radius: 0px 22px;
+width: 95%;
+}
+.top-rated-review .quote{
+color: #0075ff;
+rotate: 180deg;
+transform: rotateY(180deg);
+font-size: 25px;
+
+}
+.card,.card-header{
+    background-color: white;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+    box-shadow: 3px 3px 10px 0px #ddd;
+}
+.doctor-img img{
+    width: 150px !important;
+    height: 150px;
+}
+.exclamation,.umbrella,.star{
+    color: #0075ff;
+    font-size: 20px;
+}
+.tota-rate{
+    background-color: #0075ff;
+    color: #fff;
+    padding: 5px 5px;
+    border-radius: 5px  ;
+}
+.timing{
+    font-size: 10px;
+}
+.card-header{
+     border-radius: 10px 10px 0px 0px !important;
+}
+aside{
+    position: sticky !important;
+    top:5%;
+   
+    
+}
+.px15{font-size: 10px;}
+.book{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+.calender{
+    display: flex;
+-moz-box-pack: center;
+justify-content: center;
+-moz-box-align: center;
+align-items: center;
+}
+#less{
+    color: #0075ff;
+}
+.full-rate{
+    display: flex;
+-moz-box-pack: start;
+justify-content: flex-start;
+align-items: flex-end;
+margin: 8px 0px 0px 35px;
+}
+@media screen and (max-width:376px) {
+    .rating {
+        display: block !important;
+    }
+}
+@media screen and(max-width:1400px) {
+    .top-rated-review{
+        width: 100%;
+        padding: 10px;
+    }
+    .full-rate,.rating{
+        display: block !important;
+    }
+}
+.showReviews{
+    margin: auto;
+}
