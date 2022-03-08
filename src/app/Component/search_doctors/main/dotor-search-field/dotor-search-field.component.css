@@ -105,8 +105,11 @@ body{
     outline: none !important;
     border: 2px solid blue !important;
 }
- select::-webkit-scrollbar {
-    width: 0px;
+ select{
+    scrollbar-width: none;
+}
+select::-webkit-scrollbar{
+    width: 0;
 }
 select option {
     font-size: 14px;

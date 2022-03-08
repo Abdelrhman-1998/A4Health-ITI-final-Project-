@@ -1,11 +1,12 @@
-import { Component, Input, OnInit,OnChanges, ViewChild,SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit,OnChanges, ViewChild,SimpleChanges, ElementRef } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Doctor } from 'src/app/Models/doctor';
 import { DoctorService } from 'src/app/Services/doctor.service';
-import { RatingStarsPipe } from 'src/app/rating-stars.pipe';
+import { RatingStarsPipe } from 'src/app/Pipes/rating-stars.pipe';
 import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -17,17 +18,36 @@ export class SearchResultsComponent implements OnInit {
   constructor(private Doctor_service:DoctorService) { 
       
   }
+
   // pagination
 
   p: any = 1;
   count: any = 3;
-
+  goToTop(x:any){
+      x.scrollTop=0;
+  }
   //------------------
-
-  Appointments_date=[1,2,3,4,5,6,7];
-  Appointments_time=["3:30PM","4:00PM","4:30PM","5:00PM","5:30PM","6:00PM","6:30PM"];
+  submitAppointment(x:any,y:any){
+    x.value.date=y.value;
+      console.log(x.value);
+  }
+  Appointments_date=["2022-01-13",
+"2022-01-24","2022-01-28","2022-02-08",
+"2022-02-24","2022-02-26","2022-03-01"];
+  Appointments_time=["3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM"];
   sort_status:boolean=false;
+  switch_status!:boolean;
+  offers_status!:boolean;
+  top_arrow!:boolean;
+  checkScroll(x:any,y:any){
+   if(x.scrollTop==0){
+     y.style="display:none";
+   }
+   else{
+    y.style="display:block";
+   }
 
+  }
  // display
   view_data!:Doctor[];
   view_length!:any;
@@ -52,7 +72,8 @@ toggleStatus(){
   this.sort_list_status=!this.sort_list_status;
 }
 // on submit sort lisy
-submitSort(x:any){
+submitSort(x:NgForm){
+  x.ngSubmit.emit();
   console.log(x.value["sorting"]);
   let sorted_data=this.view_data;
         switch (x.value["sorting"]){
@@ -75,7 +96,7 @@ submitSort(x:any){
   // go back to first page
   this.p=1;
 
-
+  // x.resetForm();
   // test sort top_rated
   // this.view_data=this.Doctor_service.sortByRating(this.view_data);
   // this.view_length=this.view_data.length;
@@ -99,39 +120,64 @@ submitSort(x:any){
 }
 
 // on submit filter list
-submitFilter(x:any){
-
+submitFilter(x:NgForm,y:NgForm){
+  if(x.value["offers"]){
+      this.offers_status=true;
+  }
+  else{
+    this.offers_status=false;
+  }
   let filtered_data:any=this.Doctor_data;
-
-  for (let key in x) {
-        if(x[key]!="" && x[key] !=null){
+  console.log(filtered_data);
+  for (let key in x.value) {
+        if(x.value[key]!="" && x.value[key] !=null){
          switch(key){
            case "gender":
-             filtered_data=this.Doctor_service.filterByGender(x[key],filtered_data);
+             filtered_data=this.Doctor_service.filterByGender(x.value[key],filtered_data);
              break;
            case "title":
-            filtered_data=this.Doctor_service.filterByTitle(x[key],filtered_data);
+            filtered_data=this.Doctor_service.filterByTitle(x.value[key],filtered_data);
              break;
            case "fees":
-            filtered_data=this.Doctor_service.filterByFees(x[key],filtered_data);
+            filtered_data=this.Doctor_service.filterByFees(x.value[key],filtered_data);
              break;
-          // case "":
-          //   break;
-          // case "":
-          //   break;
           default:
             break;
          }
 
         }
   }
-  this.view_data=filtered_data;
-  this.view_length=filtered_data.length;
+  console.log(filtered_data);
+  // this.view_data=filtered_data;
+  // this.view_length=filtered_data.length;
+  
 
 
-   // go back to first page
-   
-   this.p=1;
+  // check if any of sort list inputs are checked
+  let sorted_data=filtered_data;
+
+
+  let key=y.value["sorting"];
+  console.log(key);
+  switch (key){
+    case "TR":
+      sorted_data=this.Doctor_service.sortByRating(sorted_data);
+      break;
+    case "LH":
+      sorted_data=this.Doctor_service.sortByLowestPrice(sorted_data);
+      break;
+    case "HL":
+      sorted_data=this.Doctor_service.sortByHighestPrice(sorted_data);
+      break;
+    default:
+      break;
+  }
+  
+  this.view_data=sorted_data;
+  this.view_length=sorted_data.length;
+
+     // go back to first page
+     this.p=1;
 
   // test gender filter 
 
@@ -197,11 +243,11 @@ submitFilter(x:any){
   ngOnChanges(){
 
     this.view_data=this.Doctor_data;
-    this.view_length= this.view_data?.length;
-    
+    this.view_length= this.view_data?.length; 
+  
     // go back to first page
     this.p=1;
-   
+
     
   }
   customOptions: OwlOptions = {

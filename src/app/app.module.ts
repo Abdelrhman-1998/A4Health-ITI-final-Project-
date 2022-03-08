@@ -4,16 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DotorSearchFieldComponent } from './search_doctors/main/dotor-search-field/dotor-search-field.component';
-import { SearchResultsComponent } from './search_doctors/main/search_results/search-results/search-results.component';
-import { OptionComponent } from './search_doctors/main/dotor-search-field/option/option.component';
+import { DotorSearchFieldComponent } from './Component/search_doctors/main/dotor-search-field/dotor-search-field.component';
+import { SearchResultsComponent } from './Component/search_doctors/main/search_results/search-results/search-results.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FormsModule } from '@angular/forms';
 import{HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { RatingStarsPipe } from './rating-stars.pipe';
+import { RatingStarsPipe } from './Pipes/rating-stars.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
 import { NavBarComponent } from './Component/Landing-page/nav-bar/nav-bar.component';
 import { MainLandingPageComponent } from './Component/Landing-page/main-landing-page/main-landing-page.component';
@@ -34,7 +33,6 @@ import { ReviewComponent } from './Component/Review/review/review.component';
     ServicesComponent,
     DotorSearchFieldComponent,
     SearchResultsComponent,
-    OptionComponent,
     RatingStarsPipe,
     MeetDoctorsComponent,
     FeedbackComponent,
