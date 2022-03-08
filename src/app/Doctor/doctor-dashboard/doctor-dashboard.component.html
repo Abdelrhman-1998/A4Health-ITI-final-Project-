@@ -17,7 +17,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" routerLink="profile">
                     <i class="fa-solid fa-user text-white"></i>
                     <span class="fw-bold">Profile</span></a>
             </li>
@@ -25,14 +25,14 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link"  routerLink="editprofile">
                     <i class="fa-solid fa-user-pen text-white"></i>
                     <span class="fw-bold">Edit Profile</span></a>
             </li>
             <hr class="sidebar-divider">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" routerLink="appointment">
                     <i class="fa-solid fa-calendar-days text-white"></i>
                     <span class="fw-bold">Appointment</span></a>
             </li>
@@ -41,7 +41,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" routerLink="dreservations">
                     <i class="fa-solid fa-hospital-user text-white"></i>
                     <span class="fw-bold">Reservations</span></a>
             </li>
@@ -50,7 +50,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" routerLink="feedback">
                     <i class="fa-solid fa-comment text-white"></i>
                     <span class="fw-bold">Feedbacks</span></a>
             </li>
@@ -175,7 +175,8 @@
                     <!-- <app-doctor-edit-profile></app-doctor-edit-profile> -->
                     <!-- <app-doctor-feedback></app-doctor-feedback> -->
                     <!-- <app-doctor-appiontment></app-doctor-appiontment> -->
-                    <app-doctor-reservations></app-doctor-reservations>
+                    <!-- <app-doctor-reservations></app-doctor-reservations> -->
+                    <router-outlet></router-outlet>
                 </div>
                 <!-- /.container-fluid -->
 
