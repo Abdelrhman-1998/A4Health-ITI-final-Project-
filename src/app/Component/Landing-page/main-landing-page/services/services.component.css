@@ -1,13 +1,4 @@
 :root {
-  --color1: #043d75;
-  --color2: #0075ff;
-  --color3: #ff8c83;
-  --color4: #e7eef6;
-  --color5: #ebeeff;
-  --color6: #fee1d3;
-  --color7: #e4e7ec;
-  --color8: #6eb4d8;
-  --color9: #ffd5bf;
   scroll-behavior: smooth;
 }
 .services {
@@ -81,13 +72,37 @@
 .services .row > div {
   perspective: 100px;
 }
-ng-template {
+.owl-next {
+  transform: translateX(30px);
+  background-color: var(--color2) !important;
+  color: white !important;
+  font-size: 20px !important;
+}
+.owl-theme .owl-dots{
+  visibility: hidden !important;
+}
+.owl-nav .owl-prev span,.owl-nav .owl-next span{
+  font-size: 40px !important;
+}
+.owl-prev, .owl-next{
+  background-color: #fff!important;
+  color: var(--color2) !important;}
+.owl-prev:hover, .owl-next:hover{
+  background-color: var(--color2) !important;
+  color: #fff !important;
+} 
+
+.item-con{
+  display: flex !;
+  justify-content: center !important;
+}
+/* ng-template {
   display: flex;
   justify-content: center;
 }
 ng-template * {
   max-width: 300px;
-}
+} */
 
 /* .owl-one .owl-next {
   right: -3% !important;
@@ -139,4 +154,19 @@ ng-template * {
     -webkit-transform: translateX(10px);
     transform: translateX(10px);
   }
+}
+@media screen and (max-width:991px) {
+  .owl-prev, .owl-next{
+    background-color: #fff!important;
+    color: var(--color2) !important;}
+}
+
+@media screen and (max-width:767px){
+  .item-card{
+    width: 300px !important;
+  }
+  .owl-carousel.owl-drag .owl-item{
+    display: flex !important;
+    justify-content: center !important;
+}
 }
