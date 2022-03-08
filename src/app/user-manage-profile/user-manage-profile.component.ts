@@ -64,12 +64,12 @@ manageProfileForm:FormGroup = new FormGroup({
   }
   deletePhone(formphone:any)
   {
-    for(let i = 0 ; i<this.userData.Phones ; i++)
+    if( this.userData.Phones.includes(formphone))
     {
-      if( this.userData.Phones[i] == formphone)
-      {
-        this.userData.Phones.splice( i,1);
-      }
+      this.userData.Phones.splice(this.userData.Phones.indexOf(formphone) ,1);    }
+    else
+    {
+      console.log("not included")
     }
   }
 
@@ -83,5 +83,9 @@ manageProfileForm:FormGroup = new FormGroup({
     {
       console.log(form.Phones);
     }
+  }
+  clear(formphone:any)
+  {
+    formphone=" ";
   }
 }
