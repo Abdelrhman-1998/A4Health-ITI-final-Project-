@@ -123,27 +123,46 @@
   "specialties": [
     {
       "id": 1,
-      "name": "Allergists"
+      "name": "Cardiology and Chest"
     },
     {
       "id": 2,
-      "name": "Dermatologists"
+      "name": "Dentistry"
     },
     {
       "id": 3,
-      "name": "Nephrologists"
+      "name": "Neurological Treatment"
     },
     {
       "id": 4,
-      "name": "Gastroenterologists"
+      "name": "Pediatrics and New Born"
     },
     {
       "id": 5,
-      "name": "Endocrinologists"
+      "name": "Dermatology (skin)"
     },
     {
       "id": 6,
-      "name": "Cardiologists"
+      "name": "Psychiatry"
+    }
+    ,
+    {
+      "id": 7,
+      "name": "Othopedics(Bones)"
+    },
+    {
+      "id": 8,
+      "name": "Ear,Nose and Throat"
+    }
+    ,
+    {
+      "id": 9,
+      "name": "Gynaecology and Infertility"
+    }
+    ,
+    {
+      "id": 10,
+      "name": "hhhh"
     }
   ],
   "reviews": [

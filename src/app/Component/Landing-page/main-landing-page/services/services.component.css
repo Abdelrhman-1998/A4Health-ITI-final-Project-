@@ -92,7 +92,7 @@
   color: #fff !important;
 } 
 
-.item-con{
+.owl-carousel.owl-drag .owl-item{
   display: flex !;
   justify-content: center !important;
 }
@@ -164,9 +164,28 @@ ng-template * {
 @media screen and (max-width:767px){
   .item-card{
     width: 300px !important;
+    margin-left: 19%;
   }
-  .owl-carousel.owl-drag .owl-item{
-    display: flex !important;
+  .owl-item:has >.item-card{
+display: flex !important;
     justify-content: center !important;
+  }
 }
+@media screen and (max-width:450px){
+  .item-card{
+    width: 300px !important;
+    margin-left: 12%;
+  }
+}
+@media screen and (max-width:375px){
+  .item-card{
+    width: 300px !important;
+    margin-left: 0%;
+  }
+}
+@media screen and (max-width:320px){
+  .item-card{
+    width: 250px !important;
+    margin-left: 0%;
+  }
 }

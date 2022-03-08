@@ -29,4 +29,5 @@ export class ReviewsService {
   deleteReview(review_id:number):Observable<Review>{
     return this.httpClient.delete<Review>(`${environment.ApiUrl}/reviews/${review_id}`)
   }
+  
 }
