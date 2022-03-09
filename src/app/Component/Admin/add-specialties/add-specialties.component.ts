@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Specialty } from 'src/app/Models/specialty';
 import{NgForm,FormControl,FormGroup,Validators} from '@angular/forms'
 import { SpecialtiesService } from 'src/app/Services/specialties.service';
@@ -22,13 +22,16 @@ export class AddSpecialtiesComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
 
 
-    ) { }
+    ) {       this.editMood = true;
+    }
+  
 
   
 
   ngOnInit(): void {
+    this.editMood = false;
     console.log(this.activatedRoute.snapshot.url );
-
+    
     // console.log(this.activatedRoute.snapshot.url);
     if(this.activatedRoute.snapshot.url[2].path=='edit'){
       this.editMood = true;
