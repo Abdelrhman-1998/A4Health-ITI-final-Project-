@@ -32,6 +32,7 @@ import { PatientComponent } from './Component/Admin/patient/patient.component';
 import { SpecialtiesComponent } from './Component/Admin/specialties/specialties.component';
 import { AddSpecialtiesComponent } from './Component/Admin/add-specialties/add-specialties.component';
 import { FeedbacksComponent } from './Component/Admin/feedbacks/feedbacks.component';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -58,6 +59,7 @@ import { FeedbacksComponent } from './Component/Admin/feedbacks/feedbacks.compon
      SpecialtiesComponent,
      AddSpecialtiesComponent,
      FeedbacksComponent,
+     FilterPipe,
   ],
   imports: [
     BrowserModule,

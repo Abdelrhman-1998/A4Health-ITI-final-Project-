@@ -12,6 +12,9 @@ import { DoctorsService } from 'src/app/Services/doctors.service';
 export class DoctorsComponent implements OnInit {
   status:string=''
 doctor:Doctor[]=[];
+p: number = 1;
+count: number = 5;
+
   constructor(
     private doctorService:DoctorsService,
     private router:Router

@@ -14,6 +14,8 @@ export class AddSpecialtiesComponent implements OnInit {
   newSpecialty!:Specialty
   specialtyItem!: Specialty
   editMood = false;
+ 
+
   id = this.activatedRoute.snapshot.params['id'];
   title!:any
   updateSpecialty!:Specialty

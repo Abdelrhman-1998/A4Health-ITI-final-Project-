@@ -10,6 +10,8 @@ import { SpecialtiesService } from 'src/app/Services/specialties.service';
 export class SpecialtiesComponent implements OnInit {
   specialties:Specialty[]=[]
   status=''
+  p: number = 1;
+  count: number = 5;
   constructor(private specialtyServer:SpecialtiesService) { }
   
   ngOnInit(): void {

@@ -5,6 +5,7 @@ import { Review } from 'src/app/Models/review';
 import { DoctorsService } from 'src/app/Services/doctors.service';
 import { PatientsService } from 'src/app/Services/patients.service';
 import { ReviewsService } from 'src/app/Services/reviews.service';
+import{NgForm,FormControl,FormGroup,Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-feedbacks',
@@ -16,6 +17,9 @@ export class FeedbacksComponent implements OnInit {
   patients:Patient[]=[]
   doctors:Doctor[]=[]
   status=''
+  searchResult:string=''
+  p: number = 1;
+count: number = 5;
   constructor(
     private reviewsServices:ReviewsService,
     private patientServices:PatientsService,
@@ -60,11 +64,15 @@ export class FeedbacksComponent implements OnInit {
       () => console.log('HTTP request completed.')
     );
   }
+
   delete(id:number){
     this.reviewsServices.deleteReview(id).subscribe(() => {
       this.status = 'Delete successful'
     this.ngOnInit()
     })
 
+  }
+  counter(i: number) {
+    return new Array(i);
   }
 }

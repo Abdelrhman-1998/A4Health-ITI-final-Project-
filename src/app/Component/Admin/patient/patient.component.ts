@@ -10,6 +10,8 @@ import { PatientsService } from 'src/app/Services/patients.service';
 export class PatientComponent implements OnInit {
   patients:Patient[]=[]
   status=''
+  p: number = 1;
+  count: number = 5;
   constructor(private patientService:PatientsService) { }
 
   ngOnInit(): void {
