@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Specialties</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Specialty's Data</h6>
+        </div>
+        <div class="card-body bg-light">
+            <div class="table-responsive">
+                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let specialty of specialties">
+                            <td>{{specialty.id}}</td>
+                            <td>{{specialty.name}}</td>
+                            <td class="text-center"><button class="btn btn-success w-100" 
+                                [routerLink]="['/admin/specialty','edit',specialty.id]"
+                                > Edit  </button></td>
+                            <td class="text-center"><button class="btn btn-danger w-100" type="submit" routerLink="/admin/specialties" (click)="delete(specialty.id)" >Delete</button></td>
+                        </tr>
+                     
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

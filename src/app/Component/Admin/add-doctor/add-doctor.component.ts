@@ -68,8 +68,9 @@ export class AddDoctorComponent implements OnInit {
     
     
   }
+  
   getAllSpecialties(){
-    this.specialtyService.getAllReviews().subscribe(
+    this.specialtyService.getAllSpecialties().subscribe(
       (specialty)=>{
         this.specialty=specialty;
       }

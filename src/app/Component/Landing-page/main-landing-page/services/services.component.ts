@@ -41,7 +41,7 @@ export class ServicesComponent implements OnInit {
   }
   getAllSpecialities() {
     let x:string
-    this.specialityServices.getAllReviews().subscribe((spe) => {
+    this.specialityServices.getAllSpecialties().subscribe((spe) => {
       spe.forEach(spe => {
         this.icons.forEach(i=>{
           

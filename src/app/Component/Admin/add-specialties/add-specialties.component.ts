@@ -1,0 +1,70 @@
+import { Component, OnInit } from '@angular/core';
+import { Specialty } from 'src/app/Models/specialty';
+import{NgForm,FormControl,FormGroup,Validators} from '@angular/forms'
+import { SpecialtiesService } from 'src/app/Services/specialties.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
+@Component({
+  selector: 'app-add-specialties',
+  templateUrl: './add-specialties.component.html',
+  styleUrls: ['./add-specialties.component.css']
+})
+export class AddSpecialtiesComponent implements OnInit {
+  specialty!:any
+  newSpecialty!:Specialty
+  specialtyItem!: Specialty
+  editMood = false;
+  id = this.activatedRoute.snapshot.params['id'];
+  title!:any
+  updateSpecialty!:Specialty
+  constructor(
+    private specialtiesService:SpecialtiesService,    
+    private activatedRoute: ActivatedRoute,
+
+
+    ) { }
+
+  
+
+  ngOnInit(): void {
+    console.log(this.activatedRoute.snapshot.url );
+
+    // console.log(this.activatedRoute.snapshot.url);
+    if(this.activatedRoute.snapshot.url[2].path=='edit'){
+      this.editMood = true;
+    }
+    if(this.editMood){
+      this.getdoctorId()
+    }
+
+  }
+  sendDataOfspecialty(data:NgForm){
+    this.specialty=data
+    this.specialtiesService.addSpecialty(this.specialty).subscribe(
+      (spe)=>{
+        this.newSpecialty=spe
+      }
+    )    
+  }
+  // updateDataOfspecialty(data:NgForm){
+  //   this.title=data
+  //   this.specialtiesService.updateSpecialty(this.id,this.title).subscribe(
+  //     (res)=>{
+  //       this.title.id=res.id
+  //       this.title.name=res.name
+  //     }
+      
+  //   )
+  //    console.log(this.updateSpecialty);
+  // } 
+ 
+  getdoctorId(){
+  this.specialtiesService.getSpecialtyByID(this.id).subscribe(
+    (spe)=>{
+      this.specialtyItem=spe
+    }
+  );
+    console.log(this.specialtyItem);
+    
+  }
+}
