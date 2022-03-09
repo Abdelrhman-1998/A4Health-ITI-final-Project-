@@ -22,6 +22,8 @@ import {MeetDoctorsComponent } from './Component/Landing-page/main-landing-page/
 import { FeedbackComponent } from './Component/Landing-page/main-landing-page/feedback/feedback.component';
 import { BookWithDoctorComponent } from './Component/book-with-doctor/book-with-doctor.component';
 import { ReviewComponent } from './Component/Review/review/review.component';
+import { AppointmentPipe } from "./Pipes/appointment-pipe.pipe";
+import { SortAppointmentsPipe } from './Pipes/sort-appointments.pipe';
 
 
 @NgModule({
@@ -37,7 +39,7 @@ import { ReviewComponent } from './Component/Review/review/review.component';
     MeetDoctorsComponent,
     FeedbackComponent,
     BookWithDoctorComponent,   
-    ReviewComponent,
+    ReviewComponent, AppointmentPipe, SortAppointmentsPipe,
   ],
   imports: [
     BrowserModule,

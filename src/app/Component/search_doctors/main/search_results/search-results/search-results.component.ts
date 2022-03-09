@@ -6,7 +6,6 @@ import { RatingStarsPipe } from 'src/app/Pipes/rating-stars.pipe';
 import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
-
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -18,11 +17,6 @@ export class SearchResultsComponent implements OnInit {
   switch_status!:boolean;
   offers_status!:boolean;
   top_arrow!:boolean;//appointment
-  Appointments_date=["2022-01-13",
-  "2022-01-24","2022-01-28","2022-02-08",
-  "2022-02-24","2022-02-26","2022-03-01"];
-    Appointments_time=["3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM"];
-   
   appointment_previous_element!:any;
   constructor(private Doctor_service:DoctorService) { 
       
@@ -146,6 +140,7 @@ submitFilter(x:NgForm,y:NgForm){
   console.log(filtered_data);
   for (let key in x.value) {
         if(x.value[key]!="" && x.value[key] !=null){
+          console.log(x.value);
          switch(key){
            case "gender":
              filtered_data=this.Doctor_service.filterByGender(x.value[key],filtered_data);
@@ -156,6 +151,13 @@ submitFilter(x:NgForm,y:NgForm){
            case "fees":
             filtered_data=this.Doctor_service.filterByFees(x.value[key],filtered_data);
              break;
+            case "avaliabilty":
+              filtered_data=this.Doctor_service.filterByAvaliability(x.value[key],filtered_data);
+              break;
+            case "offers":
+              filtered_data=this.Doctor_service.filterByOffers(filtered_data);
+            break;
+
           default:
             break;
          }

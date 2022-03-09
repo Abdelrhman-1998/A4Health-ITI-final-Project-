@@ -2,6 +2,8 @@ export interface Doctor{
     fname:string;
     lname:string;
     gender:string;
+    offers:boolean;
+    appointments:[{"Date":string,"Time":[]}];
     specialization:string;
     title:string;
     fees:number;
@@ -11,6 +13,5 @@ export interface Doctor{
     image_name?:string;
     description:string;
     id:number;
-
 }
 
