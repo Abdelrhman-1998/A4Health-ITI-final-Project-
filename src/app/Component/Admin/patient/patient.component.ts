@@ -26,6 +26,6 @@ export class PatientComponent implements OnInit {
   }
   delete(id:number){
     this.patientService.deletePatientByID(id).subscribe(() => this.status = 'Delete successful')
-    window.location.reload();
+    // window.location.reload();
     }
 }

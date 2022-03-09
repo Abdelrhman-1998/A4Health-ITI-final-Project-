@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Doctor } from 'src/app/Models/doctor';
+import { Patient } from 'src/app/Models/patient';
+import { Review } from 'src/app/Models/review';
+import { DoctorsService } from 'src/app/Services/doctors.service';
+import { PatientsService } from 'src/app/Services/patients.service';
+import { ReviewsService } from 'src/app/Services/reviews.service';
 
 @Component({
   selector: 'app-feedbacks',
@@ -6,10 +12,59 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedbacks.component.css']
 })
 export class FeedbacksComponent implements OnInit {
-
-  constructor() { }
+  reviews:Review[]=[]
+  patients:Patient[]=[]
+  doctors:Doctor[]=[]
+  status=''
+  constructor(
+    private reviewsServices:ReviewsService,
+    private patientServices:PatientsService,
+    private doctorsServices:DoctorsService
+  ) { }
 
   ngOnInit(): void {
+    this.getAllReviews()
   }
+  getAllReviews() {
+    this.reviewsServices.getAllReviews().subscribe(
+      (review) => {
+        this.reviews = review;
+        this.patientServices.getAllPatients().subscribe((patient) => {
+          // this.patients = patient;
+          review.forEach(rev => {
+            patient.forEach(pat => {
+              if(rev.patient_id==pat.id){
+                this.patients.push(pat)
+                console.log(rev.patient_id+" "+pat.fname);
+              }
+            });
+          });
+          console.log(this.patients);
+          console.log(this.reviews);
+        });
+        this.doctorsServices.getAllDoctors().subscribe((patient) => {
+          // this.patients = patient;
+          review.forEach(rev => {
+            patient.forEach(pat => {
+              if(rev.doctor_id==pat.id){
+                this.doctors.push(pat)
+                console.log(rev.doctor_id+" "+pat.fname);
+              }
+            });
+          });
+          console.log(this.doctors);
+          console.log(this.reviews);
+        });
+      },
+      (err) => console.log('HTTP Error', err),
+      () => console.log('HTTP request completed.')
+    );
+  }
+  delete(id:number){
+    this.reviewsServices.deleteReview(id).subscribe(() => {
+      this.status = 'Delete successful'
+    this.ngOnInit()
+    })
 
+  }
 }

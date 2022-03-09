@@ -167,16 +167,13 @@
     {
       "id": 9,
       "name": "Gynaecology and Infertility"
+    },
+    {
+      "name": "est",
+      "id": 10
     }
   ],
   "reviews": [
-    {
-      "id": 3,
-      "patient_id": 1,
-      "doctor_id": 2,
-      "rating": 4,
-      "message": "Arwa Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
-    },
     {
       "id": 4,
       "patient_id": 3,
@@ -192,13 +189,6 @@
       "message": "saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     },
     {
-      "id": 20,
-      "patient_id": 5,
-      "doctor_id": 2,
-      "rating": 3,
-      "message": "saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
-    },
-    {
       "id": 6,
       "patient_id": 5,
       "doctor_id": 7,
@@ -211,20 +201,6 @@
       "doctor_id": 4,
       "rating": 3,
       "message": " saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
-    },
-    {
-      "id": 8,
-      "patient_id": 4,
-      "doctor_id": 2,
-      "rating": 4,
-      "message": "Aymen Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
-    },
-    {
-      "id": 10,
-      "patient_id": 6,
-      "doctor_id": 2,
-      "rating": 4,
-      "message": "Asiel Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     }
   ],
   "patients": [

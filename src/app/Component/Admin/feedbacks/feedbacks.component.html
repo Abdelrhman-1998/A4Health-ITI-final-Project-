@@ -1,1 +1,44 @@
-<p>feedbacks works!</p>
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Patient's Feedbacks</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3 d-flex justify-content-between" >
+            <h6 class="m-0 font-weight-bold text-primary">Feedbacks</h6>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-primary" type="submit">Search</button>
+              </form>
+        </div>
+        <div class="card-body bg-light">
+            <div class="table-responsive">
+                <table class="table table-bordered text-center text-dark" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Feedback Messages</th>
+                            <th>Doctor</th>
+                            <th>Delete</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor="let review of reviews; index as i; ">
+                            <td>{{patients[i].username}}</td>
+                            <td class="w-50">{{review.message}}</td>
+                            <td><span>Dr.</span> {{doctors[i].fname+' '+doctors[i].lname}}</td>
+                            <td class="text-center"><button class="btn btn-danger w-100"
+                                (click)="delete(review.id)"
+                                >Delete</button></td>
+
+                        </tr>
+                        
+                  
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
