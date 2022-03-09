@@ -24,6 +24,10 @@ export class DoctorserviceService {
   {
     return this._HttpClient.get("https://api.jsonbin.io/b/62286dbea703bb674926551b/1");
   }
+  getDoctorPaitnetsAppiontmets():Observable<any>
+  {
+    return this._HttpClient.get("  https://api.jsonbin.io/b/6228b888a703bb6749268ea5");
+  }
  
 }
 

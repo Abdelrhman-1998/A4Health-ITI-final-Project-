@@ -32,9 +32,9 @@ export class DoctorEditProfileComponent implements OnInit {
       this.editDocData = response;
       console.log(this.editDocData);
       this.doctorEditForm= new FormGroup({
-        firstname:new FormControl(this.editDocData.firstname , [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
-       lastname:new FormControl(this.editDocData.lastname, [Validators.required , Validators.minLength(2) , Validators.maxLength(20)]),
-        dy:new FormControl(this.editDocData.dy, [Validators.required]),
+        firstname:new FormControl(this.editDocData.firstname , [Validators.required , Validators.minLength(4)]),
+       lastname:new FormControl(this.editDocData.lastname, [Validators.required , Validators.minLength(4)]),
+        dy:new FormControl(this.editDocData.dy, [Validators.required ]),
         fees:new FormControl(this.editDocData.fees, [Validators.required]),
         street:new FormControl(this.editDocData.street, [Validators.required]),
         city:new FormControl(this.editDocData.city, [Validators.required]),

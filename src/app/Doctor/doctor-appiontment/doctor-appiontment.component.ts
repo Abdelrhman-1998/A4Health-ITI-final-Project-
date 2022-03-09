@@ -15,6 +15,8 @@ export class DoctorAppiontmentComponent implements OnInit {
   addAppiontment:FormGroup = new FormGroup({
     date:new FormControl(null , [Validators.required] ),
     time:new FormControl(null, [Validators.required]),
+    patientLimit:new FormControl(null, [Validators.required]),
+    examinationTime:new FormControl(null, [Validators.required]),
   }); 
   editAppiontment:FormGroup = new FormGroup({
     date:new FormControl(null , [Validators.required] ),

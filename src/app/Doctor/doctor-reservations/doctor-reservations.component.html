@@ -22,66 +22,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center">
-                        <td >07:00</td>
-                        <td>01-Jun-2021</td>
-                        <td>Ahmed Mohamed</td>
-                        <td >Male</td>
-                        <td>01069160088</td>
+                    <tr *ngFor="let dpa of doctorPaitnetsAppiontmets ; index as i" class="text-center">
+                        <td >{{dpa.time}}</td>
+                        <td>{{dpa.date}}</td>
+                        <td>{{dpa.patient}}</td>
+                        <td >{{dpa.gender}}</td>
+                        <td>{{dpa.phone}}</td>
                         <td>
-                            <button type="button" class="btn btn-primary btn-sm w-100">Pending</button>
+                    <!-- <button type="button" class="btn btn-primary btn-sm w-100">{{dpa.status}}</button>  -->
+                    <!-- <button type="button" class="btn btn-danger btn-sm w-100">{{dpa.status}}</button> 
+                    <button type="button" class="btn btn-success btn-sm w-100">{{dpa.status}}</button>  -->
+
+
+                            <button type="button" class="btn btn-primary btn-sm w-100" [ngClass]="{
+                                'btn-danger':doctorPaitnetsAppiontmets[i].status=='missed',
+                                'btn-success':doctorPaitnetsAppiontmets[i].status=='completed'
+                            }">{{dpa.status}}</button>
                         </td>
                         <td>
-                            <a href="#" class=""  data-toggle="modal" data-target="#exampleModalCenter">
+                            <a  (click)="getIndexChanged(dpa)"  data-toggle="modal" data-target="#exampleModalCenter">
                                 <i class="fa-solid fa-pencil"></i>
                             </a>
                         </td>
                     </tr>
-                    <tr class="text-center">
-                        <td >07:30</td>
-                        <td>02-Jun-2021</td>
-                        <td>Abdelrhman Ashraf</td>
-                        <td >Male</td>
-                        <td>01069190088</td>
-                        <td>
-                            <button type="button" class="btn btn-primary btn-sm w-100">Pending</button>
-                        </td>
-                        <td>
-                            <a href="#" class="" data-toggle="modal" data-target="#exampleModalCenter">
-                                <i class="fa-solid fa-pencil"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td>08:00</td>
-                        <td>01-July-2021</td>
-                        <td>Mona Ahmed</td>
-                        <td >Female</td>
-                        <td>01069160077</td>
-                        <td>
-                            <button type="button" class="btn btn-primary w-100 btn-sm">Pending</button>
-                        </td>
-                        <td>
-                            <a href="#" class=""  data-toggle="modal" data-target="#exampleModalCenter">
-                                <i class="fa-solid fa-pencil"></i>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr class="text-center">
-                        <td >08:30</td>
-                        <td>05-Jun-2021</td>
-                        <td>Ahmed Adam</td>
-                        <td >Male</td>
-                        <td>01269160088</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm w-100">Finished</button>
-                        </td>
-                        <td>
-                            <a href="#" class=""  data-toggle="modal" data-target="#exampleModalCenter">
-                                <i class="fa-solid fa-pencil"></i>
-                            </a>
-                        </td>
-                    </tr>
+                   
                 </tbody>
             </table>
         </div>
@@ -116,7 +80,7 @@
 
 <!-- Modal -->
 <div class="modal fade text-dark" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-<form class="modal-dialog modal-dialog-centered" role="document">
+<form class="modal-dialog modal-dialog-centered" role="document" [formGroup]="patientStatus">
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title" id="exampleModalLongTitle">
@@ -129,17 +93,17 @@
     </div>
     <div class="modal-body ">
         <div>
-            <input type="radio" name="status" value="completed" id="status1">
+            <input formControlName="status" type="radio" name="status" value="completed" id="status1">
             <label class="ms-2" for="status1"> completed </label>
         </div>
         <div>
-            <input type="radio" name="status" value="missed" id="status2">
+            <input formControlName="status" type="radio" name="status" value="missed" id="status2">
             <label  class="ms-2" for="status2"> missed </label>
         </div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <input type="submit" value="Save changes" class="btn btn-primary">
+      <input (click)="changeStatus(patientStatus.value)" type="submit" value="Save changes" class="btn btn-primary">
   </div>
 </div>
 </form>

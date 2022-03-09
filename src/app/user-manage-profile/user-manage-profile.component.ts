@@ -52,21 +52,24 @@ manageProfileForm:FormGroup = new FormGroup({
   addPhone(formphone:any)
   {
     console.log(formphone);
-    if( this.userData.Phones.includes(formphone))
+    const phone = Number(formphone);
+    if( this.userData.Phones.includes(phone))
     {
       console.log("already in");
     }
     else
     {
-      this.userData.Phones.push(formphone);
+      this.userData.Phones.push(phone);
     }
     
   }
   deletePhone(formphone:any)
   {
-    if( this.userData.Phones.includes(formphone))
+    const phone = Number(formphone);
+
+    if( this.userData.Phones.includes(phone))
     {
-      this.userData.Phones.splice(this.userData.Phones.indexOf(formphone) ,1);    }
+      this.userData.Phones.splice(this.userData.Phones.indexOf(phone) ,1);    }
     else
     {
       console.log("not included")
