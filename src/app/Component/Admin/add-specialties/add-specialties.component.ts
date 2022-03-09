@@ -40,23 +40,26 @@ export class AddSpecialtiesComponent implements OnInit {
   }
   sendDataOfspecialty(data:NgForm){
     this.specialty=data
+    
     this.specialtiesService.addSpecialty(this.specialty).subscribe(
       (spe)=>{
         this.newSpecialty=spe
       }
     )    
   }
-  // updateDataOfspecialty(data:NgForm){
-  //   this.title=data
-  //   this.specialtiesService.updateSpecialty(this.id,this.title).subscribe(
-  //     (res)=>{
-  //       this.title.id=res.id
-  //       this.title.name=res.name
-  //     }
+  updateDataOfspecialty(data:NgForm){
+  console.log(this.title=data);
+  
+    
+
+    this.specialtiesService.updateSpecialty(this.id,this.title).subscribe(
+      (res)=>{
+        
+      }
       
-  //   )
-  //    console.log(this.updateSpecialty);
-  // } 
+    )
+     console.log(this.updateSpecialty);
+  } 
  
   getdoctorId(){
   this.specialtiesService.getSpecialtyByID(this.id).subscribe(

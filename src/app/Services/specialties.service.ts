@@ -29,10 +29,9 @@ export class SpecialtiesService {
     });
   }
   updateSpecialty(Id: number, updateDoctor: Specialty): Observable<Specialty> {
-    const body = JSON.stringify(updateDoctor);
+    // const body = JSON.stringify(updateDoctor);
     return this.httpClient.put<Specialty>(
-      `${environment.ApiUrl}/specialties/${Id}`,
-      body
+      `${environment.ApiUrl}/specialties/${Id}`, updateDoctor
     );
   }
 }

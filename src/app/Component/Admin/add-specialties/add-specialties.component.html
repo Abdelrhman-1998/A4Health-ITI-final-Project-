@@ -43,7 +43,7 @@
           />
           </div>
           <button [disabled]="addSpecialty.invalid" type="submit" class="btn btn-primary" *ngIf="!editMood" (click)="sendDataOfspecialty(addSpecialty.value)" routerLink="/admin/specialties">Add</button>
-          <button [disabled]="addSpecialty.invalid" type="submit" class="btn btn-primary" *ngIf="editMood " routerLink="/admin/specialties">Edit</button>
+          <button [disabled]="addSpecialty.invalid" type="submit" class="btn btn-primary" *ngIf="editMood " routerLink="/admin/specialties" (click)="updateDataOfspecialty(addSpecialty.value)">Edit</button>
           <!-- (click)="updateDataOfspecialty(addSpecialty.value)" -->
         </form>
       </div>
