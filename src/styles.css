@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* 
-@import url('assets/css/style.css');  */
-@import url("./app/Component/search_doctors/main/dotor-search-field/dotor-search-field.component.css");
-@import url("./app/Component/search_doctors/main/search_results/search-results/search-results.component.css");
+
+@import url('assets/css/style.css');  
+/* @import url("./app/Component/search_doctors/main/dotor-search-field/dotor-search-field.component.css");
+@import url("./app/Component/search_doctors/main/search_results/search-results/search-results.component.css"); */

@@ -1,4 +1,4 @@
-import { Component, OnInit, Output} from '@angular/core';
+import { Component, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { Doctor } from 'src/app/Models/doctor';
@@ -7,7 +7,8 @@ import { DoctorService } from 'src/app/Services/doctor.service';
 @Component({
   selector: 'app-dotor-search-field',
   templateUrl: './dotor-search-field.component.html',
-  styleUrls: ['./dotor-search-field.component.css']
+  styleUrls: ['./dotor-search-field.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class DotorSearchFieldComponent implements OnInit{
 
