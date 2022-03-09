@@ -25,8 +25,11 @@ export class BookWithDoctorComponent implements OnInit {
     private httpClient: HttpClient,
     private doctorService: DoctorsService,
     private reviewsService: ReviewsService
+    //
   ) {}
  
+
+
   ngOnInit(): void {
     this.getDoctorByID();
     this.getOverAllRating();

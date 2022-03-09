@@ -203,7 +203,7 @@
             </ul>
         </form>
     </aside>
-    <section class="col-lg-9" id="searchResults">
+    <section class="col-lg-9" id="searchResults" #searchReults>
             <div class="d-flex flex-column flex-md-row sortingHeader mt-2 mb-2 gap-3">
                 <p class="  m-0 flex-grow-1 text-center text-md-start ">
                     All Specialities
@@ -252,9 +252,9 @@
             <p class="mt-3 mb-3 text-center text-md-start ">
                 Search results :<span> {{view_length}}</span> doctors
             </p>
-        <form #doctor1="ngForm" class="doctor-card row m-0 mt-3 mb-3 p-3 position-relative" *ngFor="let item of view_data| paginate: { itemsPerPage: count, currentPage: p }">
+        <div  class="doctor-card row m-0 mt-3 mb-3 p-3 position-relative" *ngFor="let item of view_data| paginate: { itemsPerPage: count, currentPage: p }">
             <div class=" offer-icon position-absolute" [ngStyle]="offers_status?{'display':'block'}:{'display':'none'}">
-                <a href="#" title="view offers" class="position-absolute ">
+                <a [routerLink]="['/booking']"  routerLinkActive="active" title="view offers" class="position-absolute ">
                     <i class="fa-solid fa-dollar-sign"></i>
                 </a>
          
@@ -266,6 +266,7 @@
                     <img src={{item.image_name}} alt="doctor-image" class="rounded-circle ms-2 me-2">
                 </div>
                 <div class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center ">
+                    <div class="text-lg-start text-center">
                         <h4 class="doctor-name pt-2 pb-2 m-0">
                             <span>Doctor : </span>
                             <span>{{item.fname}}</span><span> {{item.lname}}</span>
@@ -273,7 +274,7 @@
                         <p class="doctor-specialization pb-2 m-0 fw-bold">
                            <span>{{item.specialization}} </span> <span>{{item.title}}</span>
                         </p>
-                        <div class="rating d-flex gap-3 pb-2 " >
+                        <div class="rating d-flex gap-3 pb-2 justify-content-center justify-content-lg-start " >
                             <i class={{item2}} *ngFor=" let item2 of item.rating|ratingStars"></i>
                         </div>
                         <p class="number-ratings pb-2 m-0">
@@ -288,7 +289,7 @@
                                 {{item.street}}
                             </span>
                         </p>
-                        <p class="pb-2 m-0 doctor-fees">
+                        <p class="pb-2 m-0 mb-2 doctor-fees">
                             <i class="fa-solid fa-money-bill-wave pe-2"></i>
                             <span class="fw-bold">
                                 Fees:
@@ -297,52 +298,54 @@
                                 {{item.fees}} LE
                             </span>
                         </p>
+                    </div>
 
+                        <button class=" btn btn-primary mb-2 viewOffers" [ngClass]="offers_status?'d-block;':'d-none'">
+                                <a [routerLink]="['/booking']"  routerLinkActive="active" class="text-white decoration-none">
+                                    View offers
+                                </a>
+                        </button>
                         <button class=" btn btn-danger d-lg-none " data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                   
                 </div>
             </div>
             <div class="Appointments col-lg-4 ps-0 d-none d-lg-flex flex-column ">
                         <owl-carousel-o [options]="customOptions" class="p-lg-3">
                             <ng-template carouselSlide *ngFor="let date_item of Appointments_date;let a=index">
 
-                                <div   class="card text-center slide ms-2 me-2">
+                                <form #AppointmentForm="ngForm"   class="card text-center slide ms-2 me-2">
                                     <div class=" card-header bg-primary text-white">
                                      {{date_item}}
                                     </div>
                                     <div class="card-body position-relative" >
                                         <input #date type="hidden" name="date" value={{date_item}}>
-                                         <select #selectList class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectList,Arrow)">
-                                        <option #option *ngFor="let item of  Appointments_time" value={{item}} class="mt-1 mb-1">
+                                         <select #selectList class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectList,Arrow)" (click)="disableAllbuttons(bookingButton)">
+                                        <option #option *ngFor="let item of  Appointments_time" value={{item}} class="mt-1 mb-1" >
                                             {{item}}
                                         </option>
                                         </select>
-                                        <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectList)">
-                                            <i class="fa-solid fa-arrow-up"></i>
-                                        </div>
                                     </div>
-                                     <button class=" btn btn-danger position-relative" type="submit" (click)="submitAppointment(doctor1,date)">
+                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"  (click)="submitAppointment(AppointmentForm,date)" data-bs-target="#confirm_appointment" data-bs-toggle="modal" >
+                                        <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectList)" >
+                                            <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
+                                        </div>
                                          Book
-
                                      </button>
-
-                                </div>
+        
+                                </form>
                             </ng-template>                              
          
                         </owl-carousel-o>
                  
             </div> 
-
-          
-               
-              
-        </form>
+        </div>
         <div class="text-right d-flex justify-content-center">
             <pagination-controls (pageChange)="p = $event">
             </pagination-controls>
         </div>
-    
 
-        <!-- modal -->
+
+        <!-- modals -->
         <div class="modal d-lg-none fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered ">
               <div class="modal-content bg-transparent border-0">
@@ -546,7 +549,7 @@
                                         </div>
                                       </div>
                                 </li>
-                                <li class="p-3 submitForm"><i class="fa-solid fa-right-to-bracket text-white"></i><button class="btn text-white" type="submit" (click)="submitFilter(form4,form5)" (click)="navigate()"  data-bs-dismiss="modal" > Submit</button></li>
+                                <li class="p-3 submitForm"><i class="fa-solid fa-right-to-bracket text-white"></i><button class="btn text-white" type="submit" (click)="submitFilter(form4,form5)" (click)="navigate(searchReults)"  data-bs-dismiss="modal" > Submit</button></li>
                                 <li class="  d-flex justify-content-end border-0">
                                     <button type="button" class="btn  modalCloseButton" data-bs-dismiss="modal">
                                         <i class="fa-solid fa-xmark text-white fs-4"></i>
@@ -564,38 +567,35 @@
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header ">
-                  <h5 class="modal-title text-primary" id="AppointmentsLabel">Make An Appointments</h5>
+                  <h5 class="modal-title text-primary" id="AppointmentsLabel">Make An Appointment</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner" >
-                          <div class="carousel-item active" >
-                            <div class="card text-center">
-                                <div class="card-header bg-primary text-white">
-                                Today 
+                          <div class="carousel-item"  *ngFor="let date_item of Appointments_date;let i=index" [ngClass]="i==0?'active':''" >
+                            <form #AppointmentFormModal="ngForm"   class="card text-center slide">
+                                <div class=" card-header bg-primary text-white">
+                                 {{date_item}}
                                 </div>
-                                <div class="card-body">
-                                <ul class="timing lh-lg" *ngFor="let item of Appointments_time">
-                                    <li><span>{{item}}</span></li>
-                                </ul>
+                                <div class="card-body position-relative" >
+                                    <input #dateModal type="hidden" name="date" value={{date_item}}>
+                                     <select #selectListModal class="form-select  timing lh-lg w-100 h-100" name="appointment_modal" size="10" ngModel (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
+                                    <option #option *ngFor="let item of  Appointments_time" value={{item}} class="mt-1 mb-1">
+                                        {{item}}
+                                    </option>
+                                    </select>
                                 </div>
-                                <button class=" btn btn-danger">Book</button>
-                            </div>
+                                 <button #bookingButton disabled class=" btn btn-danger position-relative" type="submit" (click)="submitAppointment(AppointmentFormModal,dateModal)" data-bs-toggle="modal" data-bs-target="#confirm_appointment">
+                                    <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
+                                        <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
+                                    </div>
+                                     Book
+                                 </button>
+
+                            </form>
                           </div>
-                          <div class="carousel-item"  *ngFor="let item of Appointments_date" >
-                            <div class="card text-center">
-                                <div class="card-header bg-primary text-white">
-                                Today {{item}}
-                                </div>
-                                <div class="card-body">
-                                <ul class="timing lh-lg" *ngFor="let item of Appointments_time">
-                                    <li><span>{{item}}</span></li>
-                                </ul>
-                                </div>
-                                <button class=" btn btn-danger">Book</button>
-                            </div>
-                          </div>
+                          
                         </div>
                         <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                             <i class="fa-solid fa-angle-left carousel-control-prev-icon text-primary fs-2"></i>
@@ -611,8 +611,31 @@
                 </div>
                 </div>
               </div>
-            </div>
-          
-    
+        </div>
+        <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div id="confirm_appointment" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div  class="modal-dialog modal-dialog-centered modal-confirm ">
+		<div class="modal-content ">
+			<div class="modal-header d-flex flex-column">
+				<div class="icon-box">
+                    <i class="fa-solid fa-calendar-check material-icon text-primary"></i>
+				</div>				
+				<h4 class="modal-title text-primary w-100">Awesome!</h4>
+			</div>
+			<div class="modal-body">
+      
+				<p class="text-center">Your booking has been confirmed. Check your profile for detials.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn w-100" data-bs-dismiss="modal">OK</button>
+			</div>
+		</div>
+	</div>
+</div>     
     </section>
 </section>
+
+

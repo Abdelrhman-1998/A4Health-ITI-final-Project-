@@ -14,7 +14,16 @@ import { AppModule } from 'src/app/app.module';
 })
 export class SearchResultsComponent implements OnInit {
 
-
+  sort_status:boolean=false;
+  switch_status!:boolean;
+  offers_status!:boolean;
+  top_arrow!:boolean;//appointment
+  Appointments_date=["2022-01-13",
+  "2022-01-24","2022-01-28","2022-02-08",
+  "2022-02-24","2022-02-26","2022-03-01"];
+    Appointments_time=["3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM"];
+   
+  appointment_previous_element!:any;
   constructor(private Doctor_service:DoctorService) { 
       
   }
@@ -23,6 +32,11 @@ export class SearchResultsComponent implements OnInit {
 
   p: any = 1;
   count: any = 3;
+
+  //-----------------
+
+  // Appointment details
+
   goToTop(x:any){
       x.scrollTop=0;
   }
@@ -31,23 +45,24 @@ export class SearchResultsComponent implements OnInit {
     x.value.date=y.value;
       console.log(x.value);
   }
-  Appointments_date=["2022-01-13",
-"2022-01-24","2022-01-28","2022-02-08",
-"2022-02-24","2022-02-26","2022-03-01"];
-  Appointments_time=["3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM","3:30 PM","4:00 PM","4:30 PM","5:00 PM","5:30 PM","6:00 PM","6:30 PM"];
-  sort_status:boolean=false;
-  switch_status!:boolean;
-  offers_status!:boolean;
-  top_arrow!:boolean;
   checkScroll(x:any,y:any){
-   if(x.scrollTop==0){
-     y.style="display:none";
+    if(x.scrollTop==0){
+      y.style="display:none";
+    }
+    else{
+     y.style="display:block";
+    }
+ 
    }
-   else{
-    y.style="display:block";
+   disableAllbuttons(x:any){
+    if(this.appointment_previous_element){
+      this.appointment_previous_element.disabled=true;
+    }
+      x.disabled=false;
+      this.appointment_previous_element=x;
    }
+//-------------------------------------
 
-  }
  // display
   view_data!:Doctor[];
   view_length!:any;
@@ -64,10 +79,10 @@ showResults(x:any){
 
 
 // to navigate to top of the section
-navigate(){
-  window.scrollTo(0, document.getElementById('searchResults')!.offsetTop);
+navigate(x:any){
+  window.scrollTo(0, x!.offsetTop);
 }
-
+// toggle sort status
 toggleStatus(){
   this.sort_list_status=!this.sort_list_status;
 }
