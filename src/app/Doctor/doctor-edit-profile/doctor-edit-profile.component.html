@@ -49,13 +49,13 @@
                 <label for="floatingInput">Last Name</label>
             </div>
             <div class="form-floating my-3">
-                <input formControlName="fees" type="email" class="form-control" id="floatingInput"
+                <input formControlName="fees" type="number" class="form-control" id="floatingInput"
                     placeholder="name@example.com">
                 <label for="floatingInput">Fees</label>
             </div>
             <div class="form-floating my-3 d-flex justify-content-between ">
                            
-                <input #phone type="number" class="form-control w-75" id="floatingphone"
+                <input #phone  type="number" class="form-control w-75" id="floatingphone"
                     placeholder="name@example.com">
                 <label for="floatingphone">Phone</label>
                 <button (click)="addPhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Add</button>
@@ -92,8 +92,8 @@
                 <label for="floatingTextarea2">Describe yourself</label>
             </div>
             <div class="mb-3">
-                <label for="formFile" class="form-label">Choose Image</label>
-                <input class="form-control" type="file" id="formFile" value="15.png">
+                <label  for="formFile" class="form-label">Choose Image</label>
+                <input formControlName="photo" class="form-control" type="file" id="formFile" >
               </div>
             <button (click)="submitEditDoctor(doctorEditForm.value)" type="submit" class="btn btn-danger">Save</button>
             <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->

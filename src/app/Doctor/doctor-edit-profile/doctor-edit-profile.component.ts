@@ -21,8 +21,10 @@ export class DoctorEditProfileComponent implements OnInit {
     street:new FormControl(this.editDocData.street, [Validators.required]),
     city:new FormControl(this.editDocData.city, [Validators.required]),
     phones:new FormControl(this.editDocData.phones, [Validators.required]),
+    photo:new FormControl(null, [Validators.required]),
   }); 
   
+
   ngOnInit(): void {
     this.cities.push("giza");
     this.cities.push("Cairo");
@@ -37,6 +39,7 @@ export class DoctorEditProfileComponent implements OnInit {
         street:new FormControl(this.editDocData.street, [Validators.required]),
         city:new FormControl(this.editDocData.city, [Validators.required]),
         phones:new FormControl(this.editDocData.phones, [Validators.required]),
+        photo:new FormControl(null, [Validators.required]),
       }); 
     });
   }
@@ -53,6 +56,7 @@ export class DoctorEditProfileComponent implements OnInit {
     {
       this.editDocData.phones.push(formphone);
     }
+    
     
   }
   deletePhone(formphone:any)

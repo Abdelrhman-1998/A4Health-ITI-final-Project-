@@ -5,13 +5,13 @@
         <i class="fa-solid fa-calendar-plus text-white fs-3  text-primary"></i>
          New Appointment
     </h3>
-    <form action="#" class="bg-white addAppointment p-sm-5 p-3 d-flex justify-content-between  gap-3 flex-lg-row  flex-column align-items-center">
+    <form  [formGroup]="addAppiontment" class="bg-white addAppointment p-sm-5 p-3 d-flex justify-content-between  gap-3 flex-lg-row  flex-column align-items-center">
         <div class="d-flex align-items-center justify-content-center gap-sm-4 gap-3 flex-sm-row flex-column">
-            <input type="date"  name="AppointmentDate" id="AppointmentDate">
-            <input type="time" name="time" id="AppointmentTime">
+            <input formControlName="date" type="date"  name="AppointmentDate" id="AppointmentDate">
+            <input formControlName="time" type="time" name="time" id="AppointmentTime">
         </div>
 
-        <button type="submit" class="btn btn-primary ">Add New Appointment</button>
+        <button (click)="addAppiontmets(addAppiontment.value)" type="submit" class="btn btn-primary ">Add New Appointment</button>
     </form>
     <h3 class=" mb-4 mt-4 mt-3 AppointmentHeader  fw-bold ">
         <i class="fa-solid fa-calendar-days fs-3 text-primary"></i>
@@ -33,54 +33,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="text-center">
-                            <td>07:00</td>
-                            <td>01-Jun-2021</td>
+                        <tr *ngFor="let appiontment of doctorAppiontmets" class="text-center">
+                            <td>{{appiontment.time}}</td>
+                            <td>{{appiontment.date}}</td>
                             <td>
-                                <a href="#" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
+                                <a (click)="getIndexAppiontmets(appiontment)" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
                                     <i class="fa-solid fa-pencil " ></i>
                                 </a>
-                                <a href="#" title="delete Appointment">
+                                <a  (click)="deleteAppiontmets(appiontment)" title="delete Appointment" style="cursor: pointer;" class="text-primary">
                                     <i class="fa-solid fa-calendar-xmark "></i>
                                 </a>
                             </td>
                         </tr>
-                        <tr class="text-center">
-                            <td>07:30</td>
-                            <td>02-Jun-2021</td>
-                            <td>
-                                <a href="#" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
-                                    <i class="fa-solid fa-pencil " ></i>
-                                </a>
-                                <a href="#" title="delete Appointment">
-                                    <i class="fa-solid fa-calendar-xmark "></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td>08:00</td>
-                            <td>01-July-2021</td>
-                            <td>
-                                <a href="#" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
-                                    <i class="fa-solid fa-pencil " ></i>
-                                </a>
-                                <a href="#" title="delete Appointment">
-                                    <i class="fa-solid fa-calendar-xmark "></i>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td>08:30</td>
-                            <td>05-Jun-2021</td>
-                            <td>
-                                <a href="#" class="me-2"  title="Edit Appointment" data-toggle="modal" data-target="#editModal">
-                                    <i class="fa-solid fa-pencil " ></i>
-                                </a>
-                                <a href="#" title="delete Appointment">
-                                    <i class="fa-solid fa-calendar-xmark "></i>
-                                </a>
-                            </td>
-                        </tr>
+                    
                     </tbody>
                 </table>
             </div>
@@ -89,7 +54,8 @@
 </div>
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
 aria-hidden="true">
-<form class=" modal-dialog modal-dialog-centered" role="document" action="" method="">
+
+<form class=" modal-dialog modal-dialog-centered" role="document"[formGroup]="editAppiontment">
     <div class="modal-content">
         <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel1">Edit Appointment</h5>
@@ -97,17 +63,17 @@ aria-hidden="true">
         </div>
         <div class="modal-body">
                <div class="mt-2 mb-2">
-                   <input type="Date" name="modalAppointmentDate" id="modalAppointmentDate">
+                   <input formControlName="date" type="Date" name="modalAppointmentDate" id="modalAppointmentDate">
                </div>
                <div  class="mt-2 mb-2">
-                <input type="time" name="modalAppointmentTime" id="modalAppointmentTime">
+                <input formControlName="time" type="time" name="modalAppointmentTime" id="modalAppointmentTime">
                 </div>
                 <div>
 
                 </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary" type="submit" (click)="editAppiontmets(editAppiontment.value)" >
                 Save 
            </button>
             <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
