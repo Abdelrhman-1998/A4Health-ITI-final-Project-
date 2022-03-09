@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import{NgForm,FormControl,FormGroup,Validators} from '@angular/forms'
 import { Doctor } from 'src/app/Models/doctor';
+import { Specialty } from 'src/app/Models/specialty';
 import { DoctorsService } from 'src/app/Services/doctors.service';
+import { SpecialtiesService } from 'src/app/Services/specialties.service';
 @Component({
   selector: 'app-add-doctor',
   templateUrl: './add-doctor.component.html',
@@ -11,7 +13,12 @@ export class AddDoctorComponent implements OnInit {
   doctor!:any
   addnew!:Doctor
   phonePattern="(01)[0-9]{9}";
-  constructor(private doctorSrvice:DoctorsService) { }
+  specialty:Specialty[]=[]
+  constructor(
+    private doctorSrvice:DoctorsService,
+    private specialtyService:SpecialtiesService
+    ) { }
+  // validation
   loginForm=new FormGroup({
     username:new FormControl('',[
       Validators.required,
@@ -49,6 +56,7 @@ export class AddDoctorComponent implements OnInit {
     ])
   })
   ngOnInit(): void {
+    this.getAllSpecialties()
   }
 
   sendDataOfDoctor(data:NgForm){
@@ -60,7 +68,13 @@ export class AddDoctorComponent implements OnInit {
     
     
   }
-
+  getAllSpecialties(){
+    this.specialtyService.getAllReviews().subscribe(
+      (specialty)=>{
+        this.specialty=specialty;
+      }
+    )
+  }
   get username(){
     return this.loginForm.get('username');
   }

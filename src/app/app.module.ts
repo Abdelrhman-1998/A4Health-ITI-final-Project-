@@ -27,6 +27,7 @@ import { AdminSideNavComponent } from './Component/Admin/admin-side-nav/admin-si
 import { AddDoctorComponent } from './Component/Admin/add-doctor/add-doctor.component';
 import { AdminNavbarComponent } from './Component/Admin/admin-navbar/admin-navbar.component';
 import { AdminDashboardComponent } from './Component/Admin/admin-dashboard/admin-dashboard.component';
+import { DoctorsComponent } from './Component/Admin/doctors/doctors.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { AdminDashboardComponent } from './Component/Admin/admin-dashboard/admin
      AddDoctorComponent,
      AdminNavbarComponent,
      AdminDashboardComponent,
+     DoctorsComponent,
   ],
   imports: [
     BrowserModule,

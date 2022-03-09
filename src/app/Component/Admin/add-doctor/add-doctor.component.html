@@ -102,35 +102,9 @@
           <div class="mb-3">
           <div >
             <select ngModel formControlName="speciality" name="speciality" id="" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-                <option  >Choose Speciality</option>
-
-                <option value="Dermatology" >
-                    Dermatology (Skin)
-                </option>
-                <option value="Dentistry"  >
-                    Dentistry (Teeth)
-                </option>
-                <option value="Psychiatry" >
-                    Psychiatry
-                </option>
-                <option value="Pediatrics"  >
-                    Pediatrics and New Born (Child)
-                </option>
-                <option value="Neurology" >
-                    Neurology (Brain & Nerves)
-                </option>
-                <option value="Orthopedics">
-                    Orthopedics (Bones)
-                </option>
-                <option value="Gynaecology" >
-                    Gynaecology and Infertility
-                </option>
-                <option value="ENT" >
-                    Ear, Nose and Throat
-                </option>
-                <option value="Heart" >
-                    Cardiology and Vascular Disease
-                </option>
+                <option selected >Choose Speciality</option>
+                <option *ngFor="let special of specialty" [value]="special.name" >{{special.name}}</option>
+                
         </select>
          </div>
          <div class="alert alert-danger" role="alert" *ngIf="speciality && speciality.invalid && speciality.touched">
