@@ -1,7 +1,8 @@
 export interface Doctor{
     fname:string;
     lname:string;
-    gender:string;
+    gender:string
+    username:string;
     specialization:string;
     title:string;
     fees:number;
@@ -10,6 +11,7 @@ export interface Doctor{
     street:string;
     image_name?:string;
     description:string;
+    phone:string;
     id:number;
 
 }

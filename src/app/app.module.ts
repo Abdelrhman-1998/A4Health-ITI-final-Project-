@@ -28,6 +28,7 @@ import { AddDoctorComponent } from './Component/Admin/add-doctor/add-doctor.comp
 import { AdminNavbarComponent } from './Component/Admin/admin-navbar/admin-navbar.component';
 import { AdminDashboardComponent } from './Component/Admin/admin-dashboard/admin-dashboard.component';
 import { DoctorsComponent } from './Component/Admin/doctors/doctors.component';
+import { PatientComponent } from './Component/Admin/patient/patient.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { DoctorsComponent } from './Component/Admin/doctors/doctors.component';
      AdminNavbarComponent,
      AdminDashboardComponent,
      DoctorsComponent,
+     PatientComponent,
   ],
   imports: [
     BrowserModule,

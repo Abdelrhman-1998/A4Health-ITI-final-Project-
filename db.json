@@ -11,6 +11,11 @@
       "city": "Alexandria",
       "street": "50 vic",
       "gender": "male",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "username": "AhmedAli",
       "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     },
@@ -25,6 +30,11 @@
       "city": "cairo",
       "gender": "male",
       "street": "20 flem",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "username": "AdamAli",
       "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZXM52PbV_WTmgWz7zw58m3E5HQs7TO9YCOw&usqp=CAU",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     },
@@ -39,6 +49,10 @@
       "city": "Aswan",
       "street": "30 roshdy",
       "gender": "female",
+      "phone": [
+        "01123308219"
+      ],
+      "username": "MonaAbdelrhman",
       "image_name": "https://th.bing.com/th/id/R.13adf4ef100e2a30947be8324abcc7e0?rik=b55B9K7wMHb7zQ&pid=ImgRaw&r=0",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     },
@@ -53,6 +67,10 @@
       "city": "Luxor",
       "street": "70 gin",
       "gender": "female",
+      "phone": [
+        "01238488754"
+      ],
+      "username": "AyaAli",
       "image_name": "https://media.gettyimages.com/photos/young-woman-doctor-nurse-in-office-picture-id184932855?s=170667a",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     },
@@ -67,6 +85,10 @@
       "city": "Giza",
       "street": "60 vic",
       "gender": "male",
+      "phone": [
+        "01238488754"
+      ],
+      "username": "AbdelrhmanAli",
       "image_name": "https://lucknow.apollohospitals.com/wp-content/uploads/2021/09/26.jpg",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     },
@@ -81,6 +103,11 @@
       "city": "Giza",
       "street": "60 vic",
       "gender": "male",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "username": "AbdelrhmanAli",
       "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iFYPHG__g3I3FSh1SSh0jU31ATUhjKLIN4Wa4ZvEhCm0g97lNxVnBXfOfjjnhpAEGFE&usqp=CAU",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     },
@@ -95,32 +122,13 @@
       "city": "Giza",
       "street": "60 vic",
       "gender": "female",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "username": "EmanMoahmed",
       "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
-    },
-    {
-      "id": 8,
-      "fname": "Arwa",
-      "lname": "Mohamed",
-      "specialization": "Family Medicine",
-      "title": "consultant",
-      "fees": 200,
-      "rating": 4.5,
-      "city": "Giza",
-      "street": "60 vic",
-      "gender": "female",
-      "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt",
-      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
-    },
-    {
-      "username": "AliMoahmed",
-      "fname": "Ali",
-      "lname": "Mohamed",
-      "gender": "male",
-      "speciality": "Dentistry",
-      "phone": "01238488754",
-      "password": "qasxdcvbnm,mn",
-      "id": 9
     }
   ],
   "specialties": [

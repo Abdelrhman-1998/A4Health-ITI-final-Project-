@@ -37,7 +37,7 @@ export class AddDoctorComponent implements OnInit {
     title:new FormControl('',[
       Validators.required,
     ]),
-    speciality:new FormControl('',[
+    specialization:new FormControl('',[
       Validators.required,
     ]),
     phone:new FormControl('',[
@@ -90,8 +90,8 @@ export class AddDoctorComponent implements OnInit {
   get title(){
     return this.loginForm.get('title');
   }
-  get speciality(){
-    return this.loginForm.get('speciality');
+  get specialization(){
+    return this.loginForm.get('specialization');
   }
   get phone(){
     return this.loginForm.get('phone');

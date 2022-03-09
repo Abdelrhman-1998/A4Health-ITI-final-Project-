@@ -83,8 +83,9 @@
             </span>
         </div> 
           <div class="mb-3">
-            <div ngModel formControlName="title" class="wrapper">
-              <select name="title" id="" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+            <div class="wrapper">
+              <label for="title" >Choose Title</label>
+              <select  ngModel formControlName="title" name="title" id="title" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
                 <option selected>Choose Title</option>
                 <option value="professors">Professors</option>
                 <option value="lecturer">Lecturer</option>
@@ -100,16 +101,17 @@
       </div> 
           </div>
           <div class="mb-3">
-          <div >
-            <select ngModel formControlName="speciality" name="speciality" id="" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-                <option selected >Choose Speciality</option>
-                <option *ngFor="let special of specialty" [value]="special.name" >{{special.name}}</option>
+          <div >       
+            <label for="specialization" >Choose specialization</label>
+            <select  ngModel formControlName="specialization" name="specialization" id="specialization" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+         
+                <option  *ngFor="let special of specialty" [value]="special.name" >{{special.name}}</option>
                 
         </select>
          </div>
-         <div class="alert alert-danger" role="alert" *ngIf="speciality && speciality.invalid && speciality.touched">
+         <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
           <span>
-            speciality input filed is not valid
+            specialization input filed is not valid
           </span>
       </div> 
          </div>
