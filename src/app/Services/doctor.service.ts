@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Doctor } from '../Models/doctor';
 import { HttpClient } from '@angular/common/http';
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,6 +17,7 @@ export class DoctorService {
   // get all data 
 
     getDataFromApi(){
+
       let url ="https://api.jsonbin.io/b/62213a3a7caf5d67835e87b5/11";
        return this.httpClient.get(url);
     }
@@ -119,6 +123,7 @@ export class DoctorService {
         })
         console.log(filtered_data);
         return filtered_data;
+
     }
     else{
       return search_results;
@@ -168,12 +173,14 @@ export class DoctorService {
 
   }
   
+
   filterByOffers(search_results:Doctor[]){
       let filtered_data=search_results.filter(function(ele){
         return ele.offers==true
       })
       return filtered_data;
   }
+
           // offers
 
 // ------------------------------

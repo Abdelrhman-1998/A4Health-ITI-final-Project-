@@ -2,7 +2,9 @@
 {
     background-color:rgba(182, 218, 253, 0.7);
 }
-@media screen and (max-width: 992px) {
+
+@media screen and (max-width: 993px) {
+
     .handle-nav
     {
         display: flex;
@@ -14,4 +16,10 @@
 }}
 .nav-item a{
     text-decoration: none;
+
+   
 }
+.nav-item .nav-link.active a{
+    color: #fff !important;
+}
+

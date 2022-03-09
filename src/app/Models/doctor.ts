@@ -4,6 +4,7 @@ export interface Doctor{
     gender:string;
     offers:boolean;
     appointments:[{"Date":string,"Time":[]}];
+    username:string;
     specialization:string;
     title:string;
     fees:number;
@@ -12,6 +13,7 @@ export interface Doctor{
     street:string;
     image_name?:string;
     description:string;
+    phone:string;
     id:number;
 }
 

@@ -25,10 +25,10 @@ export class BookWithDoctorComponent implements OnInit {
     private httpClient: HttpClient,
     private doctorService: DoctorsService,
     private reviewsService: ReviewsService
-    //
+
+
   ) {}
  
-
 
   ngOnInit(): void {
     this.getDoctorByID();
@@ -43,18 +43,18 @@ export class BookWithDoctorComponent implements OnInit {
   }
   getDoctorByID() {
     this.doctorService.getDoctorWithID(this.cardDoctorId).subscribe(
-      (doctor) => {
+      (doctor:any) => {
         this.doctor = doctor;
       },
-      (err) => console.log("HTTP Error", err),
+      (err:any) => console.log("HTTP Error", err),
       () => console.log("HTTP request completed.")
     );
   }
   getOverAllRating() {
     this.reviewsService.getReviewByDoctorID(this.cardDoctorId).subscribe(
-      (review) => {
+      (review:any) => {
        let total=0
-        review.forEach((revRate)=>{
+        review.forEach((revRate:any)=>{
           total += revRate.rating
           this.totalRate =total/ review.length;
           

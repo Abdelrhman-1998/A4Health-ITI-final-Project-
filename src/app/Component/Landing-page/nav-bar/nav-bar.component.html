@@ -58,16 +58,18 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+
             <form [formGroup]="loginForm"  class="needs-validation" novalidate> 
+
                 <div class="form-floating my-3">
                     <input type="text" class="form-control " id=" floatingName"
                         placeholder="name@example.com"  name="username" value="" required formControlName="username">
                     <label class="text-primary" for="floatingName" >username</label>
                     <div class="alert alert-warning" role="alert" *ngIf="username && username.invalid && username.touched">
-                    <span>
-                        username input filed is not valid
-                    </span>
-                </div>
+                        <span>
+                            username input filed is not valid
+                        </span>
+                    </div>
                 </div>
                 <div class="form-floating my-3">
                     <input type="password" class="form-control" id="floatingInput"
@@ -80,11 +82,11 @@
                 </div>
 
                 </div> 
-                 <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary" (ngSubmit)="loginUser()">Sign In</button>
-        </div>
-              </form>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary" (ngSubmit)="loginUser()">Sign In</button>
+                </div>
+            </form>
         </div>
       
       </div>

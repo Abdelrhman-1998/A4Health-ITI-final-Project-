@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Patients</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Patient's Data</h6>
+        </div>
+        <div class="card-body bg-light">
+            <div class="table-responsive">
+                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>UserName</th>
+                            <th>Gender</th>
+                            <th>Phone Number</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let patient of patients | paginate: { itemsPerPage: count, currentPage: p }">
+                            <td>{{patient.id}}</td>
+                            <td>{{patient.username}}</td>
+                            <td>{{patient.gender}}</td>
+                            <td>{{patient.phone}}</td>
+                            <td class="text-center"><button class="btn btn-danger w-50" type="submit" (click)="delete(patient.id)" routerLink="/admin/patients">Delete</button></td>
+                        </tr>
+                     
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-right">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
+        </div>
+    </div>
+
+</div>

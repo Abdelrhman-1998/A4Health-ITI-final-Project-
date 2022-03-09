@@ -4,214 +4,42 @@
     </h2>
     <p class="text-center ms-auto me-auto w-75 pt-2 pb-2 mb-0  ">
         We offer complete healthcare to individuals with various health concerns.
+
+       <!-- <i class="fa-solid fa-hand-holding-medical"></i> -->
     </p>
     <div class="container serv">
     <owl-carousel-o [options]="customOptions">        
-        <ng-template carouselSlide>
+        <ng-template carouselSlide class="item-con" *ngFor="let specialty of specialties;index as i">
             <div class="item-card">
                 <div class="serviceCard">
-                    <div class="cardIcon">
-                        <i class="fa-solid fa-heart-pulse"></i>
+                    <div class="cardIcon" *ngIf="specialty.name == specialIcon[i].name">
+                        <i [class]="specialIcon[i].icon"></i>
+                    </div>
+                    <div class="cardIcon" *ngIf="specialty.name != specialIcon[i].name">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
                     </div>
                     <div class="cardBody">
                         <p>
-                            Cardiology and Chest
+                            {{specialty.name}}
                         </p>
                     </div>
 
                     <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <a href="#">
+                        <form action="" method="">
+                        <!-- <a class="btn" [href]="specialty.name" role="button"> Learn More</a> -->
+                        <a  type="submit" (click)="sendSpecialtyId(specialty.id)">
                             Learn More
                         </a>
-                        <a href="#">
+                        <a  type="submit" (click)="sendSpecialtyId(specialty.id)">
                             <i class="fas fa-long-arrow-alt-right"></i>
                         </a>
+                    </form>
                     </div>
                 </div>
             </div>
         </ng-template> 
-        <ng-template carouselSlide> 
-            <div class="item-card ">
-            <div class="serviceCard">
-                <div class="cardIcon">
-                    <i class="fa-solid fa-tooth"></i>
-                </div>
-                <div class="cardBody">
-                    <p>
-                        Dentistry
-                    </p>
-                </div>
-                <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                    <a href="#">
-                        Learn More
-                    </a>
-                    <a href="#">
-                        <i class="fas fa-long-arrow-alt-right"></i>
-                    </a>
-                </div>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item-card">
-                <div class="serviceCard">
-                    <div class="cardIcon">
-                        <i class="fa-solid fa-brain"></i>
-                    </div>
-                    <div class="cardBody">
-                        <p>
-                            Neurological Treatment
-                        </p>
-                    </div>
-                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <a href="#">
-                            Learn More
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item-card">
-                <div class="serviceCard">
-                    <div class="cardIcon">
-                        <i class="fa-solid fa-baby"></i>
-                    </div>
-                    <div class="cardBody">
-                        <p>
-                            Pediatrics and New Born
-                        </p>
-                    </div>
-                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <a href="#">
-                            Learn More
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item-card ">
-                <div class="serviceCard">
-                    <div class="cardIcon">
-                        <i class="fa-solid fa-hand-dots"></i>
-                    </div>
-                    <div class="cardBody">
-                        <p>
-                            Dermatology (skin)
-                        </p>
-                    </div>
-                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <a href="#">
-                            Learn More
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>            
-            <div class="item-card">
-                <div class="serviceCard">
-                    <div class="cardIcon">
-                        <i class="fa-solid fa-heart"></i>
-                    </div>
-                    <div class="cardBody">
-                        <p>
-                            Psychiatry
-                        </p>
-                    </div>
-                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <a href="#">
-                            Learn More
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item-card ">
-                <div class="serviceCard">
-                    <div class="cardIcon">
-                        <i class="fa-solid fa-bone"></i>
-                    </div>
-                    <div class="cardBody">
-                        <p>
-                            Othopedics(Bones)
-                        </p>
-                    </div>
-                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <a href="#">
-                            Learn More
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>            
-            <div class="item-card ">
-                <div class="serviceCard">
-                    <div class="cardIcon">
-                        <i class="fa-solid fa-ear-deaf"></i>
-                    </div>
-                    <div class="cardBody">
-                        <p>
-                            Ear,Nose and Throat
-                        </p>
-                    </div>
-                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <a href="#">
-                            Learn More
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item-card ">
-                <div class="serviceCard">
-                    <div class="cardIcon">
-                        <i class="fa-solid fa-venus"></i>
-                    </div>
-                    <div class="cardBody">
-                        <p>
-                            Gynaecology and Infertility
-                        </p>
-                    </div>
-                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <a href="#">
-                            Learn More
-                        </a>
-                        <a href="#">
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </ng-template>
+        
+>>>>>>> origin/Arwa
     </owl-carousel-o>
 
 

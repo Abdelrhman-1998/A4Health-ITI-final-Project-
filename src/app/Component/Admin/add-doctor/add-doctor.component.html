@@ -1,0 +1,159 @@
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+          Add New Doctor
+        </h6>
+      </div>
+      <div
+        class="card-body container-fluid d-flex justify-content-center bg-light"
+      >
+        <form  action="" method="" class="w-75" [formGroup]="loginForm" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
+          <div class="mb-3">
+            <label for="username" class="form-label"
+              >UserName:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              ngModel
+              formControlName="username"
+            />
+            <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
+              <span>
+                  username input filed is not valid
+              </span>
+          </div> 
+          </div>
+          <div class="mb-3">
+            <label for="fname" class="form-label"
+              >First Name:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="fname"
+              name="fname"
+              ngModel
+              formControlName="fname"
+            />
+            <div class="alert alert-danger" role="alert" *ngIf="fname && fname.invalid && fname.touched">
+              <span>
+                  frist name input filed is not valid
+              </span>
+          </div> 
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label"
+              >Last Name:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="lname"
+              name="lname"
+              ngModel
+              formControlName="lname"
+            />
+            <div class="alert alert-danger" role="alert" *ngIf="lname && lname.invalid && lname.touched">
+              <span>
+                  last name input filed is not valid
+              </span>
+          </div> 
+          </div>
+          <div class="mb-3">
+            <label>Gender:</label>
+          </div>
+          <div class="mb-3">
+            <input type="radio" name="gender" id="male" value="male" ngModel formControlName="gender"/>
+            <label for="male"> Male </label>
+          </div>
+          <div class="mb-3">
+            <input type="radio" name="gender" id="female" value="female" ngModel formControlName="gender" />
+            <label for="female"> Female </label>
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="gender && gender.invalid && gender.touched">
+            <span>
+              gender input filed is not valid
+            </span>
+        </div> 
+          <div class="mb-3">
+            <div class="wrapper">
+              <label for="title" >Choose Title</label>
+              <select  ngModel formControlName="title" name="title" id="title" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                <option selected>Choose Title</option>
+                <option value="professors">Professors</option>
+                <option value="lecturer">Lecturer</option>
+                <option value="consultant">Consultant</option>
+                <option value="consultant">Specialist</option>
+
+            </select>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="title && title.invalid && title.touched">
+          <span>
+            title input filed is not valid
+          </span>
+      </div> 
+          </div>
+          <div class="mb-3">
+          <div >       
+            <label for="specialization" >Choose specialization</label>
+            <select  ngModel formControlName="specialization" name="specialization" id="specialization" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+         
+                <option  *ngFor="let special of specialty" [value]="special.name" >{{special.name}}</option>
+                
+        </select>
+         </div>
+         <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
+          <span>
+            specialization input filed is not valid
+          </span>
+      </div> 
+         </div>
+         <div class="mb-3">
+            <label for="phone" class="form-label"
+              >Phone Number:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="phone"
+              ngModel
+              formControlName="phone"
+            />
+            <div class="alert alert-danger" role="alert" *ngIf="phone && phone.invalid && phone.touched">
+              <span>
+                phone number input filed is not valid
+              </span>
+          </div> 
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              ngModel
+              formControlName="password"
+            />
+            <div class="alert alert-danger" role="alert" *ngIf="password && password.invalid && password.touched">
+              <span>
+                password input filed is not valid
+              </span>
+          </div> 
+          </div>
+
+          <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>

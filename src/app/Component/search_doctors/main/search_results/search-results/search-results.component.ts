@@ -6,6 +6,7 @@ import { RatingStarsPipe } from 'src/app/Pipes/rating-stars.pipe';
 import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',

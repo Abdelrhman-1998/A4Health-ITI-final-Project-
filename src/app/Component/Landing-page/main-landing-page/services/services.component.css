@@ -8,6 +8,7 @@
   --color7: #e4e7ec;
   --color8: #6eb4d8;
   --color9: #ffd5bf;
+
   scroll-behavior: smooth;
 }
 .services {
@@ -81,13 +82,41 @@
 .services .row > div {
   perspective: 100px;
 }
-ng-template {
+
+
+
+.owl-next {
+  transform: translateX(30px);
+  background-color: var(--color2) !important;
+  color: white !important;
+  font-size: 20px !important;
+}
+.owl-theme .owl-dots{
+  visibility: hidden !important;
+}
+.owl-nav .owl-prev span,.owl-nav .owl-next span{
+  font-size: 40px !important;
+}
+.owl-prev, .owl-next{
+  background-color: #fff!important;
+  color: var(--color2) !important;}
+.owl-prev:hover, .owl-next:hover{
+  background-color: var(--color2) !important;
+  color: #fff !important;
+} 
+
+.owl-carousel.owl-drag .owl-item{
+  display: flex !;
+  justify-content: center !important;
+}
+/* ng-template {
+
   display: flex;
   justify-content: center;
 }
 ng-template * {
   max-width: 300px;
-}
+
 
 /* .owl-one .owl-next {
   right: -3% !important;
@@ -140,3 +169,39 @@ ng-template * {
     transform: translateX(10px);
   }
 }
+
+@media screen and (max-width:991px) {
+  .owl-prev, .owl-next{
+    background-color: #fff!important;
+    color: var(--color2) !important;}
+}
+
+@media screen and (max-width:767px){
+  .item-card{
+    width: 300px !important;
+    margin-left: 19%;
+  }
+  .owl-item:has >.item-card{
+display: flex !important;
+    justify-content: center !important;
+  }
+}
+@media screen and (max-width:450px){
+  .item-card{
+    width: 300px !important;
+    margin-left: 12%;
+  }
+}
+@media screen and (max-width:375px){
+  .item-card{
+    width: 300px !important;
+    margin-left: 0%;
+  }
+}
+@media screen and (max-width:320px){
+  .item-card{
+    width: 250px !important;
+    margin-left: 0%;
+  }
+}
+
