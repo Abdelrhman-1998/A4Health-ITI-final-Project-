@@ -233,30 +233,16 @@
   ],
   "patients": [
     {
-      "id": 1,
-      "fname": "Arwa",
-      "lname": "Mohamed",
-      "gender": "female",
-      "username": "arwamohamed",
-      "password": "password",
-      "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
-    },
-    {
-      "id": 2,
-      "fname": "Abdelrahman",
-      "lname": "Ashraf",
-      "gender": "male",
-      "username": "abdoashraf",
-      "password": "password",
-      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
-    },
-    {
       "id": 3,
       "fname": "Abdelrahman",
       "lname": "saied",
       "gender": "male",
       "username": "abdosaiad",
       "password": "password",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
       "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
     },
     {
@@ -266,6 +252,10 @@
       "gender": "male",
       "username": "AhmedAymen",
       "password": "password",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
       "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
     },
     {
@@ -275,6 +265,10 @@
       "gender": "male",
       "username": "ahmedreda",
       "password": "password",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
       "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
     },
     {
@@ -284,6 +278,10 @@
       "gender": "female",
       "username": "asilmohamed",
       "password": "password",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
       "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
     }
   ]
