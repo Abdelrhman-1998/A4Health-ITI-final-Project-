@@ -23,6 +23,10 @@ import {MeetDoctorsComponent } from './Component/Landing-page/main-landing-page/
 import { FeedbackComponent } from './Component/Landing-page/main-landing-page/feedback/feedback.component';
 import { BookWithDoctorComponent } from './Component/book-with-doctor/book-with-doctor.component';
 import { ReviewComponent } from './Component/Review/review/review.component';
+import { AdminSideNavComponent } from './Component/Admin/admin-side-nav/admin-side-nav.component';
+import { AddDoctorComponent } from './Component/Admin/add-doctor/add-doctor.component';
+import { AdminNavbarComponent } from './Component/Admin/admin-navbar/admin-navbar.component';
+import { AdminDashboardComponent } from './Component/Admin/admin-dashboard/admin-dashboard.component';
 
 
 @NgModule({
@@ -40,6 +44,10 @@ import { ReviewComponent } from './Component/Review/review/review.component';
     FeedbackComponent,
     BookWithDoctorComponent,   
     ReviewComponent,
+     AdminSideNavComponent,
+     AddDoctorComponent,
+     AdminNavbarComponent,
+     AdminDashboardComponent,
   ],
   imports: [
     BrowserModule,
