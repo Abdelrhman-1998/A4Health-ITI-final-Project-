@@ -22,5 +22,7 @@ export class AdminNavbarComponent implements OnInit {
       this.router.navigate(['admin/login']);
   
     }
+    this.router.navigate(['/admin/login'])
+
   }
 }

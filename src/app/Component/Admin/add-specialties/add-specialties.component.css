@@ -1,1 +1,7 @@
 @import url('../../../../assets/css/style.css');
+.displaynone{
+    display: none;
+}
+.diplayBlock{
+    display: block;
+}

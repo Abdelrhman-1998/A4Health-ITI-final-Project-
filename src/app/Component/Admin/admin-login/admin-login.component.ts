@@ -52,10 +52,11 @@ loginAdmin(data:NgForm){
     this.router.navigate(['admin']);
 
   }
+ 
     }
    
   )
- 
+  this.router.navigate(['/admin/doctor'])
  console.log(this.user);
   
 }
