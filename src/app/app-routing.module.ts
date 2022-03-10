@@ -11,8 +11,9 @@ import { SpecialtiesComponent } from './Component/Admin/specialties/specialties.
 import { SearchResultsComponent } from './search_doctors/main/search_results/search-results/search-results.component';
 const routes: Routes = [
 
-  {path:'admin/login',component:AdminLoginComponent},
+
   {path:'admin',component:AdminDashboardComponent,children:[
+    {path:'login',component:AdminLoginComponent},
     {path:'addDoctor',component:AddDoctorComponent},
     {path:'doctor',component:DoctorsComponent},
     {path:'patient',component:PatientComponent},

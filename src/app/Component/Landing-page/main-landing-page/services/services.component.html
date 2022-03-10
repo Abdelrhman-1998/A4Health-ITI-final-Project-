@@ -26,7 +26,7 @@
                     <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
                         <form action="" method="">
                         <!-- <a class="btn" [href]="specialty.name" role="button"> Learn More</a> -->
-                        <a  type="submit" (click)="sendSpecialtyId(specialty.id)">
+                        <a  type="submit" (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
                             Learn More
                         </a>
                         <a  type="submit" (click)="sendSpecialtyId(specialty.id)">

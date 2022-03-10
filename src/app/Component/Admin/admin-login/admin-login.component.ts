@@ -19,16 +19,13 @@ export class AdminLoginComponent implements OnInit {
   constructor(
     private loginServises:LoginService,
     private router:Router
-    ) {}
-    
+    ) 
+    {}
 
   ngOnInit(): void {
-    
-    
-      if (this.isSuccessful) {
-        this.router.navigate(['admin']);
-      }
-
+  
+      this.isSuccessful==this.loginServises.isUserlogged
+      
   }
 login=new FormGroup({
   username:new FormControl('',[
@@ -50,10 +47,16 @@ loginAdmin(data:NgForm){
   this.loginServises.login(this.user).subscribe(
     (log)=>{
       this.isSuccessful = true;
-      this.isSignUpFailed = false;
+      this.isSignUpFailed = false;  
+       if(this.isSuccessful==this.loginServises.isUserlogged){
+    this.router.navigate(['admin']);
+
+  }
     }
+   
   )
-  console.log(this.user);
+ 
+ console.log(this.user);
   
 }
 }

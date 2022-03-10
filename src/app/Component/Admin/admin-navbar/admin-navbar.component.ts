@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/Services/login.service';
 
 @Component({
   selector: 'app-admin-navbar',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-navbar.component.css']
 })
 export class AdminNavbarComponent implements OnInit {
-
-  constructor() { }
+  isSuccessful:boolean=false
+  constructor(private logOutservices:LoginService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  logOut(){
+    this.logOutservices.logout()
+    console.log("logout");
+    
+    if(this.isSuccessful!=this.logOutservices.isUserlogged){
+      this.router.navigate(['admin/login']);
+  
+    }
+  }
 }
