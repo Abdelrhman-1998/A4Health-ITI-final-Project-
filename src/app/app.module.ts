@@ -33,7 +33,8 @@ import { SpecialtiesComponent } from './Component/Admin/specialties/specialties.
 import { AddSpecialtiesComponent } from './Component/Admin/add-specialties/add-specialties.component';
 import { FeedbacksComponent } from './Component/Admin/feedbacks/feedbacks.component';
 import { FilterPipe } from './filter.pipe';
-import { Pipe, PipeTransform } from '@angular/core'; 
+import { Pipe, PipeTransform } from '@angular/core';
+import { AdminLoginComponent } from './Component/Admin/admin-login/admin-login.component'; 
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { Pipe, PipeTransform } from '@angular/core';
      AddSpecialtiesComponent,
      FeedbacksComponent,
      FilterPipe,
+     AdminLoginComponent,
   ],
   imports: [
     BrowserModule,
