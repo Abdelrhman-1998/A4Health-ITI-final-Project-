@@ -21,13 +21,15 @@ import { SpecialtiesComponent } from './Component/Admin/specialties/specialties.
 import { SearchResultsComponent } from './Component/search_doctors/main/search_results/search-results/search-results.component';
 import { MainLandingPageComponent } from './Component/Landing-page/main-landing-page/main-landing-page.component';
 import { SearchPageComponent } from './Component/search_doctors/main/search_page/search-page/search-page.component';
+import { LandingPageComponent } from './Component/Landing-page/landing_page/landing-page/landing-page.component';
+import { BookingPageComponent } from './Component/book-with-doctor/booking_page/booking-page/booking-page.component';
 export const routes: Routes = [
 
-  {path:'', component:MainLandingPageComponent},
-  {path: 'Home', component:MainLandingPageComponent},
+  {path:'', component: MainLandingPageComponent},
+  {path: 'Home', component: MainLandingPageComponent},
   {path: 'AboutUs', redirectTo: '/Home#aboutUs'},
   {path: 'Service', redirectTo: '/Home#service'},
-  {path: 'booking/:id', component:BookWithDoctorComponent },
+  {path: 'booking/:id', component:BookWithDoctorComponent},
   {path: 'Search', component:SearchPageComponent},
 
 
@@ -50,9 +52,7 @@ export const routes: Routes = [
   {path:'admin/specialties',component:SpecialtiesComponent},
   {path:'admin/addSpecialties',component:AddSpecialtiesComponent},
   {path:'admin/specialty/edit/:id',component:AddSpecialtiesComponent} ,
-  {path:'admin/feadback',component:FeedbacksComponent},
-  {path: 'booking', component:BookWithDoctorComponent },
-  
+  {path:'admin/feadback',component:FeedbacksComponent}
  
 ]
 

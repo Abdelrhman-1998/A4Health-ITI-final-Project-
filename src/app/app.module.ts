@@ -56,6 +56,8 @@ import { routes } from './app-routing.module';
 import { routerOptions } from './app-routing.module';
 import { AppointmentsComponent } from './Component/search_doctors/appointments_tables/appointments/appointments.component';
 import { ConfirmAppointmentComponent } from './Component/search_doctors/confirmAppointment/confirm-appointment/confirm-appointment.component';
+import { LandingPageComponent } from './Component/Landing-page/landing_page/landing-page/landing-page.component';
+import { BookingPageComponent } from './Component/book-with-doctor/booking_page/booking-page/booking-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +96,8 @@ import { ConfirmAppointmentComponent } from './Component/search_doctors/confirmA
      SearchPageComponent,
      AppointmentsComponent,
      ConfirmAppointmentComponent,
+     LandingPageComponent,
+     BookingPageComponent,
   ],
   imports: [
     BrowserModule,

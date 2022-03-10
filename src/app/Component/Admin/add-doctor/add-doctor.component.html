@@ -1,159 +1,365 @@
-<div class="container-fluid">
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">
-          Add New Doctor
-        </h6>
-      </div>
-      <div
-        class="card-body container-fluid d-flex justify-content-center bg-light"
-      >
-        <form  action="" method="" class="w-75" [formGroup]="loginForm" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
-          <div class="mb-3">
-            <label for="username" class="form-label"
-              >UserName:</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              name="username"
-              ngModel
-              formControlName="username"
-            />
-            <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
-              <span>
-                  username input filed is not valid
-              </span>
-          </div> 
-          </div>
-          <div class="mb-3">
-            <label for="fname" class="form-label"
-              >First Name:</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="fname"
-              name="fname"
-              ngModel
-              formControlName="fname"
-            />
-            <div class="alert alert-danger" role="alert" *ngIf="fname && fname.invalid && fname.touched">
-              <span>
-                  frist name input filed is not valid
-              </span>
-          </div> 
-          </div>
-          <div class="mb-3">
-            <label for="lname" class="form-label"
-              >Last Name:</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="lname"
-              name="lname"
-              ngModel
-              formControlName="lname"
-            />
-            <div class="alert alert-danger" role="alert" *ngIf="lname && lname.invalid && lname.touched">
-              <span>
-                  last name input filed is not valid
-              </span>
-          </div> 
-          </div>
-          <div class="mb-3">
-            <label>Gender:</label>
-          </div>
-          <div class="mb-3">
-            <input type="radio" name="gender" id="male" value="male" ngModel formControlName="gender"/>
-            <label for="male"> Male </label>
-          </div>
-          <div class="mb-3">
-            <input type="radio" name="gender" id="female" value="female" ngModel formControlName="gender" />
-            <label for="female"> Female </label>
-          </div>
-          <div class="alert alert-danger" role="alert" *ngIf="gender && gender.invalid && gender.touched">
-            <span>
-              gender input filed is not valid
-            </span>
-        </div> 
-          <div class="mb-3">
-            <div class="wrapper">
-              <label for="title" >Choose Title</label>
-              <select  ngModel formControlName="title" name="title" id="title" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-                <option selected>Choose Title</option>
-                <option value="professors">Professors</option>
-                <option value="lecturer">Lecturer</option>
-                <option value="consultant">Consultant</option>
-                <option value="consultant">Specialist</option>
 
-            </select>
-        </div>
-        <div class="alert alert-danger" role="alert" *ngIf="title && title.invalid && title.touched">
-          <span>
-            title input filed is not valid
-          </span>
-      </div> 
-          </div>
-          <div class="mb-3">
-          <div >       
-            <label for="specialization" >Choose specialization</label>
-            <select  ngModel formControlName="specialization" name="specialization" id="specialization" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-         
-                <option  *ngFor="let special of specialty" [value]="special.name" >{{special.name}}</option>
-                
-        </select>
-         </div>
-         <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
-          <span>
-            specialization input filed is not valid
-          </span>
-      </div> 
-         </div>
-         <div class="mb-3">
-            <label for="phone" class="form-label"
-              >Phone Number:</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputEmail1"
-              name="phone"
-              ngModel
-              formControlName="phone"
-            />
-            <div class="alert alert-danger" role="alert" *ngIf="phone && phone.invalid && phone.touched">
-              <span>
-                phone number input filed is not valid
-              </span>
-          </div> 
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label"
-              >Password</label
-            >
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              name="password"
-              ngModel
-              formControlName="password"
-            />
-            <div class="alert alert-danger" role="alert" *ngIf="password && password.invalid && password.touched">
-              <span>
-                password input filed is not valid
-              </span>
-          </div> 
-          </div>
+<body id="page-top">
 
-          <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Add</button>
-        </form>
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  
+        <!-- Sidebar - Brand -->
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin/doctor">
+                <i class="fa-solid fa-user-doctor  text-white"></i>
+                <span class="fw-bold">Doctors</span></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin/addDoctor">
+                <i class="fa-solid fa-user-doctor  text-white"></i>
+                <span class="fw-bold">+ Add Doctor</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider text-black">
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin/patient">
+                <i class="fa-solid fa-hospital-user text-white"></i>
+                <span class="fw-bold">Patients</span></a>
+        </li>
+          <!-- Divider -->
+          <hr class="sidebar-divider text-black">
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin/specialties">
+                <i class="fa-solid fa-address-book text-white"></i>
+                <span class="fw-bold">Specialties</span></a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin/addSpecialties">
+                <i class="fa-solid fa-address-book text-white"></i>
+                <span class="fw-bold">+ Specialties</span></a>
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider text-black">
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin/feadback">
+                <i class="fa-solid fa-comment text-white"></i>
+                <span class="fw-bold">Feedbacks</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">                        
+
+
+
+
+        <!-- Sidebar Toggler (Sidebar) -->
+
+
+    </ul>
+      <!-- End of Sidebar -->
+
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+
+          <!-- Main Content -->
+          <div id="content">
+
+              <!-- Topbar -->
+              <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                  <!-- Sidebar Toggle (Topbar) -->
+                  <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                      <i class="fa fa-bars"></i>
+                  </button>
+
+                  <!-- Topbar Navbar -->
+                  <ul class="navbar-nav ml-auto">
+                      <!-- Nav Item - Alerts -->
+                      <li class="nav-item dropdown no-arrow mx-1">
+                          <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fas fa-bell fa-fw"></i>
+                              <!-- Counter - Alerts -->
+                              <span class="badge badge-danger badge-counter">3+</span>
+                          </a>
+                          <!-- Dropdown - Alerts -->
+                          <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                              aria-labelledby="alertsDropdown">
+                              <h6 class="dropdown-header">
+                                  Alerts Center
+                              </h6>
+                              <a class="dropdown-item d-flex align-items-center" href="#">
+                                  <div class="mr-3">
+                                      <div class="icon-circle bg-primary">
+                                          <i class="fas fa-file-alt text-white"></i>
+                                      </div>
+                                  </div>
+                                  <div>
+                                      <div class="small text-gray-500">December 12, 2019</div>
+                                      <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                  </div>
+                              </a>
+                              <a class="dropdown-item d-flex align-items-center" href="#">
+                                  <div class="mr-3">
+                                      <div class="icon-circle bg-success">
+                                          <i class="fas fa-donate text-white"></i>
+                                      </div>
+                                  </div>
+                                  <div>
+                                      <div class="small text-gray-500">December 7, 2019</div>
+                                      $290.29 has been deposited into your account!
+                                  </div>
+                              </a>
+                              <a class="dropdown-item d-flex align-items-center" href="#">
+                                  <div class="mr-3">
+                                      <div class="icon-circle bg-warning">
+                                          <i class="fas fa-exclamation-triangle text-white"></i>
+                                      </div>
+                                  </div>
+                                  <div>
+                                      <div class="small text-gray-500">December 2, 2019</div>
+                                      Spending Alert: We've noticed unusually high spending for your account.
+                                  </div>
+                              </a>
+                              <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                          </div>
+                      </li>
+
+                      <!-- Nav Item - Messages -->
+
+                      <div class="topbar-divider d-none d-sm-block"></div>
+
+                      <!-- Nav Item - User Information -->
+                      <li class="nav-item dropdown no-arrow">
+                          <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                              <img class="img-profile rounded-circle"
+                              src="../../../../assets/landing_page/images/undraw_profile.svg" alt="Admin">
+                          </a>
+                          <!-- Dropdown - User Information -->
+                 
+                      </li>
+
+                  </ul>
+
+              </nav>
+              <!-- End of Topbar -->
+
+              <!-- Begin Page Content -->
+                  
+              <div class="container-fluid mt-4">
+                    
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                      Add New Doctor
+                    </h6>
+                  </div>
+                  <div
+                    class="card-body container-fluid d-flex justify-content-center bg-light"
+                  >
+                    <form  action="" method="" class="w-75" [formGroup]="loginForm" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
+                      <div class="mb-3">
+                        <label for="username" class="form-label"
+                          >UserName:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="username"
+                          name="username"
+                          ngModel
+                          formControlName="username"
+                        />
+                        <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
+                          <span>
+                              username input filed is not valid
+                          </span>
+                      </div> 
+                      </div>
+                      <div class="mb-3">
+                        <label for="fname" class="form-label"
+                          >First Name:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="fname"
+                          name="fname"
+                          ngModel
+                          formControlName="fname"
+                        />
+                        <div class="alert alert-danger" role="alert" *ngIf="fname && fname.invalid && fname.touched">
+                          <span>
+                              frist name input filed is not valid
+                          </span>
+                      </div> 
+                      </div>
+                      <div class="mb-3">
+                        <label for="lname" class="form-label"
+                          >Last Name:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="lname"
+                          name="lname"
+                          ngModel
+                          formControlName="lname"
+                        />
+                        <div class="alert alert-danger" role="alert" *ngIf="lname && lname.invalid && lname.touched">
+                          <span>
+                              last name input filed is not valid
+                          </span>
+                      </div> 
+                      </div>
+                      <div class="mb-3">
+                        <label>Gender:</label>
+                      </div>
+                      <div class="mb-3">
+                        <input type="radio" name="gender" id="male" value="male" ngModel formControlName="gender"/>
+                        <label for="male"> Male </label>
+                      </div>
+                      <div class="mb-3">
+                        <input type="radio" name="gender" id="female" value="female" ngModel formControlName="gender" />
+                        <label for="female"> Female </label>
+                      </div>
+                      <div class="alert alert-danger" role="alert" *ngIf="gender && gender.invalid && gender.touched">
+                        <span>
+                          gender input filed is not valid
+                        </span>
+                    </div> 
+                      <div class="mb-3">
+                        <div class="wrapper">
+                          <label for="title" >Choose Title</label>
+                          <select  ngModel formControlName="title" name="title" id="title" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                            <option selected>Choose Title</option>
+                            <option value="professors">Professors</option>
+                            <option value="lecturer">Lecturer</option>
+                            <option value="consultant">Consultant</option>
+                            <option value="consultant">Specialist</option>
+
+                        </select>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="title && title.invalid && title.touched">
+                      <span>
+                        title input filed is not valid
+                      </span>
+                  </div> 
+                      </div>
+                      <div class="mb-3">
+                      <div >       
+                        <label for="specialization" >Choose specialization</label>
+                        <select  ngModel formControlName="specialization" name="specialization" id="specialization" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+                    
+                            <option  *ngFor="let special of specialty" [value]="special.name" >{{special.name}}</option>
+                            
+                    </select>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
+                      <span>
+                        specialization input filed is not valid
+                      </span>
+                  </div> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label"
+                          >Phone Number:</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          name="phone"
+                          ngModel
+                          formControlName="phone"
+                        />
+                        <div class="alert alert-danger" role="alert" *ngIf="phone && phone.invalid && phone.touched">
+                          <span>
+                            phone number input filed is not valid
+                          </span>
+                      </div> 
+                      </div>
+                      <div class="mb-3">
+                        <label for="password" class="form-label"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          name="password"
+                          ngModel
+                          formControlName="password"
+                        />
+                        <div class="alert alert-danger" role="alert" *ngIf="password && password.invalid && password.touched">
+                          <span>
+                            password input filed is not valid
+                          </span>
+                      </div> 
+                      </div>
+
+                      <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- /.container-fluid -->
+
+          </div>
+          <!-- End of Main Content -->
+
+          <!-- Footer -->
+          <footer class="sticky-footer bg-white">
+              <div class="container my-auto">
+                  <div class="copyright text-center my-auto">
+                      <!-- <span>Copyright &copy; Your Website 2020</span> -->
+                  </div>
+              </div>
+          </footer>
+          <!-- End of Footer -->
+
       </div>
-    </div>
+      <!-- End of Content Wrapper -->
+
   </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <!-- <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+  </a> -->
+
+  <!-- Logout Modal-->
+  <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                  <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                  </button>
+              </div>
+              <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+              <div class="modal-footer">
+                  <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                  <a class="btn btn-primary" href="login.html">Logout</a>
+              </div>
+          </div>
+      </div>
+  </div> -->
+
+  
+</body>
+
+
+  
