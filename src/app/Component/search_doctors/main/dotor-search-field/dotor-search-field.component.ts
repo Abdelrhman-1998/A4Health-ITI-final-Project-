@@ -1,4 +1,4 @@
-import { Component, OnInit, Output} from '@angular/core';
+import { Component, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import { NgModel } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { Doctor } from 'src/app/Models/doctor';

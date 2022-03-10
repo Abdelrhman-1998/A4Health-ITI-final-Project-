@@ -14,12 +14,11 @@
     --color9:#ffd5bf;
     scroll-behavior: smooth;
 }
-body{
-    background-color: var(--color4) !important;
-}
+
 .secondary_section{
     background-color:var(--color5);
     box-shadow:3px 3px 10px  0px #ddd;
+ 
 }
 .search_header h2{
     font-size: 24px;

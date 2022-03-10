@@ -4,7 +4,8 @@ import { Doctor } from "../../../app/Models/doctor";
 import { Review } from "../../../app/Models/review";
 import { DoctorsService } from "../../../app/Services/doctors.service";
 import { ReviewsService } from "../../../app/Services/reviews.service";
-
+import { DoctorService } from "src/app/Services/doctor.service";
+import { AppointmentsComponent } from "../search_doctors/appointments_tables/appointments/appointments.component";
 @Component({
   selector: "app-book-with-doctor",
   templateUrl: "./book-with-doctor.component.html",
@@ -31,6 +32,7 @@ export class BookWithDoctorComponent implements OnInit {
  
 
   ngOnInit(): void {
+    
     this.getDoctorByID();
     this.getOverAllRating();
 
