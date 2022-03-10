@@ -1,0 +1,31 @@
+<div class="review card py-3 mb-3" >
+
+    <div class="review-body py-2 mb-3 border-bottom" *ngFor="let review of reviewwithDoctorID">
+
+        <div class="container" >
+        <div class="row">
+            <div class="col-lg-8">
+            <div class="rating d-flex gap-3 pb-2 justify-content-start">
+            <i *ngFor="let star of counter(review.rating)" class="fa-solid fa-star"></i>
+            
+          </div> 
+          <div class="text-secondary">
+            <p>Overall Rating</p>
+          </div>
+          <div class="message">
+              <p class="text-secondary">{{review.message}}</p>
+              <span class="timing text-secondary">Sunday, 20 February 2022 08:26 PM</span>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center">
+            <div class="rate-number py-3 text-center justify-content-center">
+                <span class="tota-rate fs-4 text p-2 ">{{review.rating}}</span>
+                <p class="px15 text-secondary py-2">Doctor Rating </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+   
+    <span class="text-center text-primary">Veiw more</span>
+</div>

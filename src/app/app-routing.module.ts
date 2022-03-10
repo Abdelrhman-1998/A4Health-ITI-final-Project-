@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { DoctorAppiontmentComponent } from './Doctor/doctor-appiontment/doctor-appiontment.component';
 import { DoctorDashboardComponent } from './Doctor/doctor-dashboard/doctor-dashboard.component';
 import { DoctorEditProfileComponent } from './Doctor/doctor-edit-profile/doctor-edit-profile.component';
@@ -10,13 +11,20 @@ import { UserChangePasswordComponent } from './user-change-password/user-change-
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserManageProfileComponent } from './user-manage-profile/user-manage-profile.component';
 import { UserReservationsComponent } from './user-reservations/user-reservations.component';
-
+import { BookWithDoctorComponent } from './Component/book-with-doctor/book-with-doctor.component';
+import { AddDoctorComponent } from './Component/Admin/add-doctor/add-doctor.component';
+import { AddSpecialtiesComponent } from './Component/Admin/add-specialties/add-specialties.component';
+import { DoctorsComponent } from './Component/Admin/doctors/doctors.component';
+import { FeedbacksComponent } from './Component/Admin/feedbacks/feedbacks.component';
+import { PatientComponent } from './Component/Admin/patient/patient.component';
+import { SpecialtiesComponent } from './Component/Admin/specialties/specialties.component';
+import { SearchResultsComponent } from './search_doctors/main/search_results/search-results/search-results.component';
 const routes: Routes = [
   {path:'userdashboard' , component:UserDashboardComponent , children:[
     {path:'reservations' , component:UserReservationsComponent},
     {path:'manageprofile' , component:UserManageProfileComponent},
     {path:'changepassword' , component:UserChangePasswordComponent},
-  ]},
+       ]},
   {path:'doctordashboard' , component:DoctorDashboardComponent , children:[
     {path:'profile' , component:DoctorProfileComponent},
     {path:'editprofile' , component:DoctorEditProfileComponent},
@@ -24,11 +32,25 @@ const routes: Routes = [
     {path:'dreservations' , component:DoctorReservationsComponent},
     {path:'feedback' , component:DoctorFeedbackComponent},
   ]},
+    {path:'admin',redirectTo:'admin/addDoctor'},
+  {path:'admin/addDoctor',component:AddDoctorComponent},
+  {path:'admin/doctor',component:DoctorsComponent},
+  {path:'admin/patient',component:PatientComponent},
+  {path:'admin/specialties',component:SpecialtiesComponent},
+  {path:'admin/addSpecialties',component:AddSpecialtiesComponent},
+  {path:'admin/specialty/edit/:id',component:AddSpecialtiesComponent} ,
+  {path:'admin/feadback',component:FeedbacksComponent},
+  {path: 'booking', component:BookWithDoctorComponent },
+  
  
-];
+]
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
+

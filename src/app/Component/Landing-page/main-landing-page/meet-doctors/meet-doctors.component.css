@@ -1,0 +1,138 @@
+:root{
+
+    --color1:#043d75;
+    --color2:#0075ff;
+    --color3:#FF8C83;
+    --color4:#e7eef6;
+    --color5:#ebeeff;
+    --color6:#fee1d3;
+    --color7:#e4e7ec;
+    --color8:#6eb4d8;
+    --color9:#ffd5bf;
+
+    scroll-behavior: smooth;
+}
+.MeetDoctors{
+    background-color: #e7eef6;
+    box-shadow:3px 3px 10px  0px #ddd;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+.content h2{
+    color: #043d75;
+
+}
+.MeetDoctors .doctor{ 
+    border-radius: 16px;
+    transition: 0.3s;
+    color: #043d75 !important;
+}
+.MeetDoctors .container h2{
+    font-size: 36px;
+    font-weight: bold;
+}
+.doctor:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    border-radius: 16px;
+    overflow: hidden;
+    transform: translateZ(4px) !important;
+
+    background-color: #0075ff !important;
+    color: #fff !important;
+}
+ .doctor:hover .card-body{
+    background-color: #0075ff !important;
+
+}
+.doctor{
+    margin: 10px;
+}
+
+.cardFooter{
+    visibility: hidden;
+}
+
+.doctor:hover .cardFooter{
+    visibility: visible;
+    
+}
+.doctor:hover .cardFooter i{
+    animation-play-state:running;
+}
+.doctor:hover p{
+
+    color: #fff;
+}
+
+
+.doctor:hover i{
+
+    color: #fff !important;
+}
+.doctor:hover span{
+    color: #fff !important;
+}
+
+.doctor:hover a{
+    color: #fff;
+}
+.docImg{
+    border-radius:16px 16px 0px 0px;
+    height: 210px;
+}
+.MeetDoctors .doctor a{
+    text-decoration: none;
+}
+.doctor p {
+    margin:0;
+}
+.MeetDoctors .row div:first-child .doctor div:first-child{
+    background-color: #fee1d3;
+    border-radius: 16px 16px 0px 0px;
+}
+.MeetDoctors .row div:nth-child(2) .doctor div:first-child{
+    background-color: #e4e7ec;
+    border-radius: 16px 16px 0px 0px;
+}
+.MeetDoctors .row div:nth-child(3) .doctor div:first-child{
+    background-color: #6eb4d8;
+    border-radius: 16px 16px 0px 0px;
+}
+.MeetDoctors .row div:nth-child(4) .doctor div:first-child{
+    background-color: #ffd5bf;
+    border-radius: 16px 16px 0px 0px;
+}
+.card-img-top{
+    width: 60% !important;
+    height: 265px !important;
+
+}
+.card-body{
+    background-color: #fff !important;
+}
+.meetdoc-pra{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.doctor .cardFooter i{
+    text-align: center !important;
+    animation-name: moveArrow;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-play-state: paused;
+}
+/* .item-card{
+    display: flex;
+    justify-content: center;
+} */
+@keyframes moveArrow{
+    0%{
+        -webkit-transform: translateX(0px);
+                transform: translateX(0px);
+    }
+    100%{
+        -webkit-transform: translateX(10px);
+                transform: translateX(10px);
+    }
+}

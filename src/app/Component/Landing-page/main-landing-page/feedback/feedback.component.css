@@ -1,0 +1,132 @@
+:root{
+
+    --color1:#043d75;
+    --color2:#0075ff;
+    --color3:#FF8C83;
+    --color4:#e7eef6;
+    --color5:#ebeeff;
+    --color6:#fee1d3;
+    --color7:#e4e7ec;
+    --color8:#6eb4d8;
+    --color9:#ffd5bf;
+
+    scroll-behavior: smooth;
+}
+.feedBack
+{
+    background-image: url("../../../../../assets/landing_page/images/wavy.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.feedBack{
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+.feedBack h2{
+   color: #043d75;
+   font-weight: bold;
+   font-size: 36px;
+}
+.feedback{
+    color: #0075ff;
+}
+.card.c-feedback{
+    position: relative;
+    border-radius: 16px;
+
+}
+.c-feedback:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    transform: translateZ(4px);
+    border-radius: 16px;
+
+}
+.c-feedback .card-text{
+    font-size: 20px;
+}
+.qoutL,.qoutR{
+    color: #0075ff;
+
+    font-size: 50px;
+    position: absolute;
+}
+
+
+.qoutL i,.qoutR i{
+    font-size: 50px;
+}
+
+.qoutL2,.qoutR2{
+    color: gray;
+    font-size: 50px;
+    position: absolute;
+}
+.qoutL,.qoutL2{
+    top: -10%;
+}
+.qoutR,.qoutR2{
+    bottom: -10%;
+    right: 0;
+}
+.feedBack img{
+    height: 130px;
+}
+.c-feedback{
+    margin: 10px;
+}
+.user img{
+    width: 23%;
+}
+.owl-prev{
+position: absolute !important;
+left: -4%!important;
+top: 37% !important;
+background: blue !important; 
+font-size: 30px !important;
+}
+@media screen and (max-width: 492px){
+    .qoutL, .qoutL2{
+        top: -6% !important;
+    }
+    
+}
+@media screen and (max-width: 420px){
+    .owl-carousel.owl-loaded{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .owl-two .owl-item{
+       width: 256px    }
+    .c-feedback img{
+        width: 71px;
+        height: 74px;
+    }
+    .owl-stage-outer .owl-height{
+        height: 550px !important;
+    }
+
+    .item-container{
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .owl-nav{
+        visibility: hidden;
+    }
+    .owl-one .owl-dots{
+        visibility: visible !important;
+    }
+    .qoutR, .qoutR2 {
+        bottom: -9% !important;
+    }
+}
+@media screen and (max-width:390px) {
+    .qoutR, .qoutR2 {
+        bottom: -7% !important;
+    }
+}
+@media screen and (max-width: 280px){
+    .qoutR, .qoutR2 {
+        bottom: -5% !important;
+    }
+    
+}

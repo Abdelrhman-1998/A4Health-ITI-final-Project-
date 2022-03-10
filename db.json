@@ -1,0 +1,262 @@
+{
+
+  "doctors": [
+    {
+      "id": 1,
+      "fname": "Ahmed",
+      "lname": "Ali",
+      "specialization": "Dentistry",
+      "title": "professor",
+      "fees": 150,
+      "rating": 4.5,
+      "city": "Alexandria",
+      "street": "50 vic",
+      "gender": "male",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "username": "AhmedAli",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 2,
+      "fname": "Ali",
+      "lname": "Adam",
+      "specialization": "Neurology",
+      "title": "lecturer",
+      "fees": 250,
+      "rating": 2.5,
+      "city": "cairo",
+      "gender": "male",
+      "street": "20 flem",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "username": "AdamAli",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZXM52PbV_WTmgWz7zw58m3E5HQs7TO9YCOw&usqp=CAU",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 3,
+      "fname": "Mona",
+      "lname": "Abdelrhman",
+      "specialization": "Dermatology",
+      "title": "Consultant",
+      "fees": 200,
+      "rating": 2,
+      "city": "Aswan",
+      "street": "30 roshdy",
+      "gender": "female",
+      "phone": [
+        "01123308219"
+      ],
+      "username": "MonaAbdelrhman",
+      "image_name": "https://th.bing.com/th/id/R.13adf4ef100e2a30947be8324abcc7e0?rik=b55B9K7wMHb7zQ&pid=ImgRaw&r=0",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 4,
+      "fname": "Aya",
+      "lname": "Adam",
+      "specialization": "Orthopedics",
+      "title": "professor",
+      "fees": 100,
+      "rating": 3,
+      "city": "Luxor",
+      "street": "70 gin",
+      "gender": "female",
+      "phone": [
+        "01238488754"
+      ],
+      "username": "AyaAli",
+      "image_name": "https://media.gettyimages.com/photos/young-woman-doctor-nurse-in-office-picture-id184932855?s=170667a",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 5,
+      "fname": "Abdelrhman",
+      "lname": "Ali",
+      "specialization": "Audiology",
+      "title": "professor",
+      "fees": 100,
+      "rating": 5,
+      "city": "Giza",
+      "street": "60 vic",
+      "gender": "male",
+      "phone": [
+        "01238488754"
+      ],
+      "username": "AbdelrhmanAli",
+      "image_name": "https://lucknow.apollohospitals.com/wp-content/uploads/2021/09/26.jpg",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 6,
+      "fname": "Abdelrhman",
+      "lname": "Ali",
+      "specialization": "Family Medicine",
+      "title": "professor",
+      "fees": 100,
+      "rating": 3,
+      "city": "Giza",
+      "street": "60 vic",
+      "gender": "male",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "username": "AbdelrhmanAli",
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iFYPHG__g3I3FSh1SSh0jU31ATUhjKLIN4Wa4ZvEhCm0g97lNxVnBXfOfjjnhpAEGFE&usqp=CAU",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 7,
+      "fname": "Eman",
+      "lname": "Mohamed",
+      "specialization": "Family Medicine",
+      "title": "consultant",
+      "fees": 150,
+      "rating": 4.5,
+      "city": "Giza",
+      "street": "60 vic",
+      "gender": "female",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "username": "EmanMoahmed",
+      "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt",
+      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    }
+  ],
+  "specialties": [
+    {
+      "id": 1,
+      "name": "Cardiology and Chest"
+    },
+    {
+      "id": 2,
+      "name": "Dentistry"
+    },
+    {
+      "id": 3,
+      "name": "Neurological Treatment"
+    },
+    {
+      "id": 4,
+      "name": "Pediatrics and New Born"
+    },
+    {
+      "id": 5,
+      "name": "Dermatology (skin)"
+    },
+    {
+      "id": 6,
+      "name": "Psychiatry"
+    },
+    {
+      "id": 7,
+      "name": "Othopedics(Bones)"
+    },
+    {
+      "id": 8,
+      "name": "Ear,Nose and Throat"
+    },
+    {
+      "id": 9,
+      "name": "Gynaecology and Infertility"
+    },
+    {
+      "name": "kjhg test",
+      "id": 10
+    }
+  ],
+  "reviews": [
+    {
+      "id": 4,
+      "patient_id": 3,
+      "doctor_id": 1,
+      "rating": 5,
+      "message": "saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 5,
+      "patient_id": 3,
+      "doctor_id": 2,
+      "rating": 5,
+      "message": "saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 6,
+      "patient_id": 5,
+      "doctor_id": 7,
+      "rating": 4,
+      "message": "Reda Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    },
+    {
+      "id": 7,
+      "patient_id": 3,
+      "doctor_id": 4,
+      "rating": 3,
+      "message": " saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
+    }
+  ],
+  "patients": [
+    {
+      "id": 3,
+      "fname": "Abdelrahman",
+      "lname": "saied",
+      "gender": "male",
+      "username": "abdosaiad",
+      "password": "password",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
+    },
+    {
+      "id": 4,
+      "fname": "Ahmed",
+      "lname": "Aymen",
+      "gender": "male",
+      "username": "AhmedAymen",
+      "password": "password",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
+    },
+    {
+      "id": 5,
+      "fname": "Ahmed",
+      "lname": "Reda",
+      "gender": "male",
+      "username": "ahmedreda",
+      "password": "password",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "image_name": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC6FnnCm3fwSBZfKiemAI6KlBUlrgCljzttQ&usqp=CAU"
+    },
+    {
+      "id": 6,
+      "fname": "Asiel",
+      "lname": "Mohamed",
+      "gender": "female",
+      "username": "asilmohamed",
+      "password": "password",
+      "phone": [
+        "01238488754",
+        "01123308219"
+      ],
+      "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
+    }
+  ]
+
+}

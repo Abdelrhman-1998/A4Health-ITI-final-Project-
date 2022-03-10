@@ -1,0 +1,196 @@
+<div class="MeetDoctors">
+  <div class="mainContainer py-5">
+    <div class="container">
+      <div class="content text-center">
+        <h2>Meet Medicus Physicians</h2>
+        <p class="meetdoc-pra">
+          L75orem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
+          consectetur veritatis voluptatem odio libero, laudantium doloremque
+          assumenda labore officiis nemo?
+        </p>
+      </div>
+      <div class="row g-5 m-0">
+
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let doctor of doctors">
+            <div class="item-card">
+              <div class="card doctor">
+                <div class="pt-2 d-flex justify-content-center">
+                  <img
+                    class="docImg"
+                    [src]="doctor.image_name"
+                    class="card-img-top"
+                    [alt]="doctor.fname"
+                  />
+                </div>
+                <div class="card-body docinfo text-center">
+                  <p class="card-text fw-bold">Dr.
+                    <span>{{doctor.fname}}</span> 
+                    {{doctor.lname}}</p>
+                  <p class="card-text">{{doctor.specialization}}</p>
+                  <div
+                    class="cardFooter d-flex pt-3 justify-content-between align-items-center flex-nowrap"
+                  >
+                    <a href="#"> Learn More </a>
+                    <a href="#">
+                      <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <!-- <ng-template carouselSlide>
+            <div class="item-card">
+              <div class="card doctor">
+                <div class="pt-2 d-flex justify-content-center">
+                  <img
+                    class="docImg"
+                    src="../../../../assets/landing_images/images/pngegg.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body text-center">
+                  <p class="card-text fw-bold">Dr. Amy Adams</p>
+                  <p class="card-text">Dentist</p>
+                  <div
+                    class="cardFooter d-flex pt-3 justify-content-between align-items-center flex-nowrap"
+                  >
+                    <a href="#"> Learn More </a>
+                    <a href="#">
+                      <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item-card">
+              <div class="card doctor">
+                <div class="pt-2 d-flex justify-content-center">
+                  <img
+                    class="docImg"
+                    src="../../../../assets/landing_images/images/doctor-png-11553965920coieh57tza-removebg-preview.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body text-center">
+                  <p class="card-text fw-bold">Dr.Max Tuner</p>
+                  <p class="card-text">CT & X-Ray</p>
+                  <div
+                    class="cardFooter d-flex pt-3 justify-content-between align-items-center flex-nowrap"
+                  >
+                    <a href="#"> Learn More </a>
+                    <a href="#">
+                      <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="item-card">
+              <div class="card doctor">
+                <div class="pt-2 d-flex justify-content-center">
+                  <img
+                    class="docImg"
+                    src="../../../../assets/landing_images/images/main-qimg-4e6e97f3798814cd6fa1cc62a6a1fc7c-lq-removebg-preview.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body text-center">
+                  <p class="card-text fw-bold">Dr. Julia Jameson</p>
+                  <p class="card-text">Neurlogist</p>
+                  <div
+                    class="cardFooter d-flex pt-3 justify-content-between align-items-center flex-nowrap"
+                  >
+                    <a href="#"> Learn More </a>
+                    <a href="#">
+                      <i class="fas fa-long-arrow-alt-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template> -->
+
+          <!-- <div class="item ">
+                    <div class="item-card">
+                    <div class="card doctor" >
+                        <div class="pt-2  d-flex justify-content-center">
+                        <img class="docImg" src="../../../../assets/landing_images/images/kisspng-health-professional-medicine-physician-nurse-5affc387458874.0429913015267111752848.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr. Julia Jameson
+                          </p>
+                          <p class="card-text">Neurlogist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="item ">
+                    <div class="item-card">
+                    <div class="card doctor" >
+                        <div class="pt-2  d-flex justify-content-center">
+                        <img class="docImg" src="images/pngegg.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr. Julia Jameson
+                          </p>
+                          <p class="card-text">Neurlogist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="item ">
+                    <div class="item-card">
+                    <div class="card doctor" >
+                        <div class="pt-2  d-flex justify-content-center">
+                        <img class="docImg" src="images/doctor-png-11553965920coieh57tza-removebg-preview.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr. Julia Jameson
+                          </p>
+                          <p class="card-text">Neurlogist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                </div> -->
+        </owl-carousel-o>
+
+      </div>
+    </div>
+  </div>
+</div>

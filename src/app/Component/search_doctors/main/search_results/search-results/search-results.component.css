@@ -1,0 +1,495 @@
+
+aside form{
+    position: sticky !important;
+    top:48px;
+}
+.filteredList {
+    border-radius: 16px;
+    background-color: white ;
+    box-shadow: 3px 3px 10px 0px #ddd;
+}
+.filteredList li i{
+    padding: 0px 10px;
+}
+.filteredList li i:not(aside form ul li:first-child i){
+    color: var(--color2);
+}
+.filteredList > li:first-child{
+    background-color: var(--color2);
+    color: white;
+    border-radius: 16px 16px 0px 0px;
+}
+.filteredForm .accordion-body li{
+    box-sizing: border-box;
+    padding: 8px 10px;
+}
+.accordion-button:focus{
+    box-shadow: none !important;
+}
+.accordion-button:not(.collapsed){
+    background-color: transparent!important;
+    color: black !important;
+    box-shadow: none !important;
+}
+.accordion-button:not(.collapsed)::after {
+    transform: rotate(270deg) !important;
+}
+.accordion-button.collapsed::after{
+    transform: rotate(360deg) !important;
+}
+.accordion-button::after{
+    transform: rotate(270deg) !important;
+}
+.accordion-body ul,.accordion-body ul *,.sorting *{
+    cursor: pointer;
+}
+.accordion-body ul li:not(li:last-child):hover,.sorting li:hover{
+    background-color:rgba(182, 218, 253, 0.7);
+}
+/* 
+--------------------- Arwa's part -------------
+
+Appointment's part
+
+
+*/
+
+.timing{
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+    color: var(--color2);
+}
+
+/* and (max-width:1313px) */
+@media screen and (max-width:1612px)  {
+    .timing li span{
+        font-size: 14px;
+    }
+    /* .owl-one .owl-item{
+        width: 100px !important;
+    } */
+}
+.owl-theme .owl-dots{
+    visibility: hidden !important;
+}
+.owl-nav .owl-prev span,.owl-nav .owl-next span{
+    font-size: 40px !important;
+}
+.owl-prev, .owl-next{
+    background-color: #fff!important;
+    color: var(--color2) !important;}
+.owl-prev:hover, .owl-next:hover{
+    background-color: var(--color2) !important;
+    color: #fff !important;
+} 
+
+  /*navbar style*/
+.color-nav
+{
+    background-color:rgba(182, 218, 253, 0.7);
+}
+.fs
+{
+    font-size: 40px !important;
+}
+.handle-nav
+{
+    display: block;
+}
+.handle-m
+{
+    margin: 0 auto;
+}
+.textc:hover
+{
+    background-color:rgba(182, 218, 253, 0.7)!important;
+}
+@media screen and (max-width: 576px) {
+  .margin-o-small
+  {
+      margin-top: 15px;
+  }
+  }
+  @media screen and (max-width: 992px) {
+    .handle-nav
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .handle-m
+{
+    margin: 0;
+}
+.marginLarge
+{
+    margin-top: 15px;
+}
+  }
+  /* footer */
+  .footer
+{
+    background-color:rgba(3, 24, 46, 0.986);
+}
+.media
+{
+    font-size: 20px;
+}
+.w-90
+{
+    width: 90%;
+}
+.hover:hover
+{
+    cursor: pointer;
+    color: var(--color2);
+}
+.hover
+{
+    font-size: 20px;
+}
+
+
+.rounded-pill{
+    left: 87% !important;
+    top: 24%;
+}
+#not-bell{
+    cursor: pointer;
+}
+.notification-body{
+    z-index:99999 ;
+    position: absolute;
+    top: 5%;
+    right:  0px;
+}
+.toast-body{
+    background-color: #f5f5f5;
+
+}
+/* .owl-dots{
+    display: none;
+} */
+.owl-carousel {
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    }
+@media (min-width:992px){
+    .owl-nav{
+        position: absolute;
+        top:calc(50% - 20px);
+        margin: 0px !important;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: -1;
+    }
+    .owl-prev{
+        transform: translateX(-30px);
+        background-color: var(--color2) !important;
+        color: white !important;
+        font-size: 20px !important;
+    }
+    .owl-next{
+        transform: translateX(30px);
+        background-color: var(--color2) !important;
+        color: white !important;
+        font-size: 20px !important;
+    }
+    .owl-theme{
+        position: relative;
+       
+    }
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
+.bookingDoctor,.bookingDoctor *{
+    cursor: pointer;
+}
+.card-body{
+    background-color: var(--color4);
+}
+.card-body li{
+    cursor: pointer;
+}
+.card-body span{
+    font-size: 16px !important;
+}
+.submitForm{
+    background-color: var(--color2) !important;
+    border-radius: 0px 0px 16px 16px;
+}
+.submitForm i{
+    transition: 0.3s;
+}
+.submitForm:hover i{
+    transform: translateX(10px);
+}
+.modalCloseButton{
+    position: absolute !important;
+    top: 0;
+    margin-top: 9px;
+}
+.sortButton i{
+    transition: 0.3s;
+}
+.sortButton:hover i{
+    transform: translateX(5px);
+}
+
+@media (min-width:280px){
+    #sortForm {
+        position: absolute !important;
+        margin: 0px !important;
+        inset: 0px auto auto 0px !important;
+        transform: translate3d(0px, 40px, 0px) !important;
+    }
+}
+.carousel-control-next-icon {
+  background-image: none !important;
+}
+.carousel-control-prev-icon {
+    background-image: none !important;
+  }
+#Appointments .modal-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#Appointments .slide{
+    width: 250px;
+}
+.carousel-control-next {
+    right: -40px;
+}
+.carousel-control-prev {
+    left: -40px;
+}
+.card{
+    border:none !important;
+    border: none !important;
+    border-radius: none !important;
+}
+.card-header:first-child {
+    border-radius: 0px !important;
+ 
+}
+.card button{
+        box-shadow: none !important;
+        border-radius: none !important;
+        border: none !important;
+        border-color: none !important;
+}
+#Appointments .slide{
+    box-shadow: 3px 3px 10px 0px #ddd , -3px -3px 10px 0px #ddd;
+}
+.card .btn{
+    border-radius: 0px!important;
+}
+@media (max-width:360px){
+    .modal-body{
+        padding-bottom: 50px;
+    }
+    .carousel-control-next {
+        right:80px;
+        top:380px;
+
+    }
+    .carousel-control-prev {
+        left: 80px;
+        top: 380px;
+    }
+    .offer-icon{
+        display: none !important;
+    }
+
+}
+.form-check-input:focus {
+
+    box-shadow: none !important;
+}
+#sortForm .form-check-input{
+    margin: 0px ;
+}
+.form-switch .form-check-input {
+    margin-left: 0px !important;
+}
+.fa-tag{
+    font-size: 50px;
+}
+.offer-icon{
+    position: absolute;
+    top: 16px;
+    transition: 0.3s;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.doctor-card:hover .offer-icon{
+    transform: rotate(45deg);
+}
+.offer-icon a{
+    right: 10px;
+    top: 13px;
+    color: white;
+    transform: rotate(-45deg);
+}
+.card-body{
+    height: 272px;
+    overflow: scroll;
+}
+.card-body{
+    scrollbar-width: none;
+}
+.card-body::-webkit-scrollbar{
+    width: 0;
+}
+.form-select {
+    padding-right:0 !important;
+    background-image: none;
+    background-color: var(--color4);
+    border: none !important;
+}
+.form-select:focus{
+    box-shadow: none !important;
+}
+.toTheTop{
+    left: calc(50% - 6px);
+    bottom:40px;
+    color: var(--color2);
+    cursor: pointer;
+    animation-name: moveArrow;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function:ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+    display: none;
+    
+}
+.doctor-card .btn{
+    box-shadow: none !important;
+}
+.doctor-card{
+    cursor: pointer;
+    transition: 0.3s;
+}
+.doctor-card:hover{
+    background-color: aliceblue;
+}
+.viewOffers a{
+    text-decoration: none;
+}
+@media (min-width:992px){
+    .viewOffers{
+        width: 250px;
+    }
+}
+@keyframes moveArrow{
+    0%{
+        transform: translateY(0px);
+  
+    }
+    50%{
+        transform: translateY(-5px);
+  
+    }
+    100%{
+        transform: translateY(5px);
+     
+    }
+}
+
+.modal-confirm {		
+	color: #636363;
+	display: flex;
+}
+.modal-confirm .modal-content {
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+	text-align: center;
+	font-size: 14px;
+}
+.modal-confirm .modal-header {
+	border-bottom: none;   
+	position: relative;
+}
+.modal-confirm h4 {
+	text-align: center;
+	font-size: 26px;
+	margin: 30px 0 -10px;
+}
+.modal-confirm .close {
+	position: absolute;
+	top: -5px;
+	right: -2px;
+}
+.modal-confirm .modal-body {
+
+    color: black;
+}
+.modal-confirm .modal-footer {
+	border: none;
+	text-align: center;		
+	border-radius: 5px;
+	font-size: 13px;
+	padding: 10px 15px 25px;
+ 
+}
+.modal-confirm .modal-footer .btn{
+    background-color: #82CE34;
+    box-shadow: none !important;
+}
+
+.modal-confirm .modal-footer a {
+	color: #999;
+}		
+.modal-confirm .icon-box {
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+	border-radius: 50%;
+	z-index: 9;
+	text-align: center;
+	border: 3px solid var(--color2);
+}
+.modal-confirm .icon-box i {
+	font-size: 46px;
+	display: inline-block;
+	margin-top: 13px;
+
+}
+.modal-confirm .btn, .modal-confirm .btn:active {
+	color: #fff;
+	border-radius: 4px;
+	background: #60c7c1;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	min-width: 120px;
+	border: none;
+	min-height: 40px;
+	border-radius: 3px;
+	margin: 0 5px;
+}
+.modal-confirm .btn-secondary {
+	background: #c1c1c1;
+}
+.modal-confirm .btn-secondary:hover, .modal-confirm .btn-secondary:focus {
+	background: #a8a8a8;
+}
+.modal-confirm .btn-danger {
+	background: #f15e5e;
+}
+.modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+	background: #ee3535;
+}
+.trigger-btn {
+	display: inline-block;
+	margin: 100px auto;
+}

@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Specialties</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+          Add New Specialty
+        </h6>
+      </div>
+      <div
+        class="card-body container-fluid d-flex justify-content-center bg-light"
+      >
+        <form  action="" method="" class="w-75"  #addSpecialty="ngForm" >
+          <div class="mb-3">
+            <label for="name" class="form-label"
+              >Specialty Name:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              ngModel
+              [ngModel]="editMood? specialtyItem.name :''"
+
+            />
+            </div>
+            <div class="mb-3" *ngIf="editMood">
+
+            <label for="id" class="form-label"
+            >ID :</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="id"
+            name="id"
+            ngModel
+            [disabled]="!editMood"
+            [ngModel]="editMood? specialtyItem.id :''"
+
+          />
+          </div>
+          <div> 
+          <button [disabled]="addSpecialty.invalid" type="submit" class="btn btn-primary"  (click)="sendDataOfspecialty(addSpecialty.value)" routerLink="/admin/specialties">Add</button>
+        </div>
+          <button [disabled]="addSpecialty.invalid" type="submit" class="btn btn-primary" *ngIf="editMood " routerLink="/admin/specialties" (click)="updateDataOfspecialty(addSpecialty.value)">Edit</button>
+          <!-- (click)="updateDataOfspecialty(addSpecialty.value)" -->
+        </form>
+      </div>
+    </div>
+  </div>

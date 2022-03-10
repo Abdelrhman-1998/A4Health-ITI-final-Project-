@@ -1,0 +1,236 @@
+*{
+    font-family:'Inter', sans-serif;
+    font-size: 16px;
+}
+:root{
+    --color1:#043d75;
+    --color2:#0075ff;
+    --color3:#FF8C83;
+    --color4:#e7eef6;
+    --color5:#ebeeff;
+    --color6:#fee1d3;
+    --color7:#e4e7ec;
+    --color8:#6eb4d8;
+    --color9:#ffd5bf;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--color4) !important;
+}
+.secondary_section{
+    background-color:var(--color5);
+    box-shadow:3px 3px 10px  0px #ddd;
+}
+.search_header h2{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 0px;
+    color: var(--color1);
+    margin: 0px;
+}
+.search_header p{
+    margin: 0px;
+    padding: 5px 0px;
+}
+.doctors_bg img{
+    width: 280px;
+}
+
+.search-field > li:not(li:last-child){
+    border-right: 2px solid #ddd;
+}
+.search-field > li:first-child{
+    border-radius: 16px 0 0 16px;
+}
+.search-field > li:last-child{
+    border-radius: 0 16px 16px 0;
+}
+.search-field{
+    border: 2px solid var(--color2);
+    border-radius: 16px;
+    /* box-shadow: 3px 3px 5px 0 #eee , -3px -3px 5px 0 #eee; */
+}
+.search-listItem{
+    background-color: white;
+    padding:10px;
+}
+.search-listItem p{
+    margin: 0;
+}
+.search-listItem p:first-child{
+    font-size: 14px;
+    color: #777;
+}
+.search-listItem p:nth-child(2),.search-listItem div:nth-child(2){
+    color: var(--color2);
+    font-weight: bold;
+}
+.search-field > li:last-child > div:last-child{
+    border-radius: 0px 16px 16px 0px;
+}
+.search-field > li:last-child > form,.search-field > li:last-child > form div:last-child {
+    border-radius: 0px 16px 16px 0px;
+}
+.search-field > li:last-child  div:last-child button{
+    border: none;
+    background-color: transparent;
+    color: white;
+    outline: none;
+}
+/* .search-field > li:last-child  div:last-child{
+    background-color: red;
+} */
+.search-field > li:last-child >  div:first-child input::placeholder{
+    color: var(--color2);
+    font-weight: bold;
+}
+.search-field > li:last-child > div:first-child input{
+    width: 120px;
+}
+.search-field > li:last-child >  div:first-child input{
+    border: none;
+    outline: none;
+}
+.dropdown-toggle::after{
+    display: none !important;
+}
+.search-field > li{
+    cursor: pointer;
+}
+.search-container .dropdown-menu{
+    transform: translate3d(0px,90px,0px) !important;
+}
+
+ select{
+    outline: none !important;
+    border: 2px solid blue !important;
+}
+ select{
+    scrollbar-width: none;
+}
+select::-webkit-scrollbar{
+    width: 0;
+}
+select option {
+    font-size: 14px;
+    padding:5px;
+    cursor: pointer;
+    border-radius: inherit;
+}
+select option:hover{
+    background-color: var(--color2) !important;
+    color: white;
+}
+
+option{
+    appearance: none !important; 
+}
+.search-container{
+    bottom: 10px;
+}
+.sortingParagraph{
+    width: 180px;
+    background-color: var(--color2) !important;
+    border: none !important;
+    color: white;
+}
+.sorting{
+    width: 180px !important;
+
+}
+.sortingHeader{
+    color: var(--color1);
+}
+.sortingHeader > p:first-child{
+    font-size: 24px;
+    font-weight: bold;
+}
+.searchResults{
+    font-weight: bold;
+    color: var(--color1);
+}
+.doctor-card{
+    background-color: white;
+    border-radius: 16px;
+    box-sizing: border-box !important;
+    box-shadow: 3px 3px 10px 0px #ddd;
+}
+.doctor-image img{
+    width:150px;
+}
+.doctor-card .rating i{
+    color: #FFB624;
+}
+.doctor-name span:first-child{
+    font-size: 18px;
+    font-weight: bold;
+}
+.doctor-location i,.doctor-fees i, .doctor-waitingTime i{
+    color: var(--color2);
+}
+.bookingDoctor{
+    box-shadow: 3px 3px 10px 0px #ddd;
+    border-radius: 16px;
+    border: 1px solid var(--color1);
+}
+.bookingDoctor p:first-child{
+    font-size: 20px;
+    color: var(--color1);
+}
+.bookingDoctor i{
+    font-size: 30px;
+    color: var(--color2);
+}
+ .modal .search-container .dropdown-menu {
+    transform: translate3d(0px,75px,0px) !important;
+    margin-left:10px !important;
+    width: calc(100% - 20px) !important;
+}
+.searchIcon{
+    display: block; transform:rotate(90deg); color: white; font-size: 24px;
+}
+@media(min-width:992px){
+    .search-container{
+        position: absolute;
+    }
+}
+@media(max-width:991px){
+    .search-container{
+        position: relative;
+    }
+    .search-field > li:first-child{
+        border-radius: 16px 16px 0 0px;
+    }
+    .search-field > li:not(li:last-child){
+        border-right: none;
+        border-bottom: 2px solid #ddd;
+    }
+    .search-field > li:last-child > form div:last-child {
+        border-radius: 0 0 16px 0;
+    }
+    
+.search-field > li:last-child > div:last-child {
+    border-radius: 0px 0px 16px 16px;
+}
+
+}
+@media(max-width:576px){
+    div.search-listItem{
+        border-radius: 0px;
+    }
+}
+.search-listItem:first-child{
+    min-width: 180px;
+}
+.search-listItem{
+    min-width: 160px;
+}
+.modal.search-listItem.dropdown{
+    width: 100%;
+}
+.cancel-icon{
+    color: black;
+    font-size: 12px;
+    cursor: pointer;
+    visibility: hidden;
+}
