@@ -28,7 +28,10 @@
                 <p class="text-secondary doctor-info">
                   {{ doctor.title }} of {{ doctor.specialization }}
                 </p>
-                <p>
+                <p class="card-text text-secondary px-2">
+                  {{ doctor.description }}
+                </p>
+                <!-- <p>
                   <a href="#">General Surgeon Specialized in</a>
                   <a href="#">Liver Tumor</a>,
                   <a href="#">Obesity Surgery</a> ,<a href="#"
@@ -47,10 +50,10 @@
                     <a href="#">Endocrinal Surgery</a> ,
                     <a href="#">Abdominal Surgery and Stomach Tumor</a></span
                   >
-                </p>
-                <span (click)="showMore()" id="less" type="button">
+                </p> -->
+                <!-- <span (click)="showMore()" id="less" type="button">
                   <a> {{ show ? "Show Less" : "Show More" }}</a></span
-                >
+                > -->
 
                 <!-- <div class="top-rated-review p-2">
                   <i class="fa-solid fa-quote-left quote"></i>
@@ -120,15 +123,11 @@
             </div>
             <div class="card-body border-bottom gy-3 text-center">
               <div class="my-2">
-                <button class="btn btn-danger">
-                  <a>Make An Appointment </a>
+                <button routerLink="/Search" class="btn btn-danger">
+                  <a >Make An Appointment </a>
                 </button>
               </div>
-              <div class="px-2">
-                <button class="btn btn-success">
-                  <a>Review Your Doctor </a>
-                </button>
-              </div>
+              
             </div>
             <div class="card-body border-bottom d-flex flex-row calender">
               <p>
@@ -145,7 +144,7 @@
             </div>
           </div>
           <!-- End modal    -->
-          <div class="about-doctor card py-3 mb-3">
+          <!-- <div class="about-doctor card py-3 mb-3">
             <div class="card-body">
               <h5 class="card-title text-secondary">
                 <i class="fa-solid fa-exclamation exclamation px-3"></i> About
@@ -156,7 +155,7 @@
               </p>
               <p></p>
             </div>
-          </div>
+          </div> -->
           <div class="insurance card py-3 mb-3">
             <div class="card-body">
               <h5 class="card-title text-secondary">
@@ -230,11 +229,12 @@
             </div>
           </div>
 
-          <app-review id="reviews" *ngIf="showAllReviews"></app-review>
+          <app-review id="reviews" *ngIf="showAllReviews" [DoctorId]="cardDoctorId"></app-review>
           <button
             class="showReviews btn btn-primary d-flex my-3"
             *ngIf="!showAllReviews"
             (click)="showReviews()"
+           
           >
             Show all reviews
           </button>
@@ -286,7 +286,11 @@
                 </div>
               </div>
               <div class="card-body border-bottom gy-3 text-center">
-                <app-appointments></app-appointments>
+                <div class="my-2">
+                  <button routerLink="/Search" class="btn btn-danger">
+                    <a >Make An Appointment </a>
+                  </button>
+                </div>
               </div>
               <div class="card-body border-bottom d-flex flex-row calender">
                 <p>
@@ -307,6 +311,4 @@
       </div>
     </div>
   </div>
-
 </section>
-

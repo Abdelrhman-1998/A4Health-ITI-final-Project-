@@ -1,11 +1,11 @@
 import { HttpClient } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit, Output } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
 import { Doctor } from "../../../app/Models/doctor";
 import { Review } from "../../../app/Models/review";
 import { DoctorsService } from "../../../app/Services/doctors.service";
 import { ReviewsService } from "../../../app/Services/reviews.service";
-import { DoctorService } from "src/app/Services/doctor.service";
-import { AppointmentsComponent } from "../search_doctors/appointments_tables/appointments/appointments.component";
+
 @Component({
   selector: "app-book-with-doctor",
   templateUrl: "./book-with-doctor.component.html",
@@ -14,7 +14,7 @@ import { AppointmentsComponent } from "../search_doctors/appointments_tables/app
 export class BookWithDoctorComponent implements OnInit {
   show: boolean = false;
   showAllReviews: boolean = false;
-  cardDoctorId: number = 2;
+  // cardDoctorId: number = 2;
   doctor!: Doctor;
   overAllRating!:Review[];
   totalRate:number=0
@@ -22,19 +22,20 @@ export class BookWithDoctorComponent implements OnInit {
   halfstar:boolean=false
   // rateNumber:number=0
   // reviewwithRateNumber!:Review
+  cardDoctorId=this.activatedRoute.snapshot.params['id'];
   constructor(
     private httpClient: HttpClient,
     private doctorService: DoctorsService,
-    private reviewsService: ReviewsService
-
-
+    private reviewsService: ReviewsService,
+    private activatedRoute: ActivatedRoute
   ) {}
  
-
   ngOnInit(): void {
-    
     this.getDoctorByID();
     this.getOverAllRating();
+    this.cardDoctorId= this.activatedRoute.snapshot.params['id'];
+    console.log(this.cardDoctorId);
+    
 
   }
   showMore() {
@@ -45,18 +46,18 @@ export class BookWithDoctorComponent implements OnInit {
   }
   getDoctorByID() {
     this.doctorService.getDoctorWithID(this.cardDoctorId).subscribe(
-      (doctor:any) => {
+      (doctor) => {
         this.doctor = doctor;
       },
-      (err:any) => console.log("HTTP Error", err),
+      (err) => console.log("HTTP Error", err),
       () => console.log("HTTP request completed.")
     );
   }
   getOverAllRating() {
     this.reviewsService.getReviewByDoctorID(this.cardDoctorId).subscribe(
-      (review:any) => {
+      (review) => {
        let total=0
-        review.forEach((revRate:any)=>{
+        review.forEach((revRate)=>{
           total += revRate.rating
           this.totalRate =total/ review.length;
           

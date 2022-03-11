@@ -261,8 +261,8 @@
                 <i class="fa-solid fa-tag text-primary "></i>
             </div>
        
-            <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0" [routerLink]="['/booking',item.id]" routerLink="active">
-                <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
+            <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0" >
+                <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center" [routerLink]="['/booking',item.id]" routerLink="active">
                     <img src={{item.image_name}} alt="doctor-image" class="rounded-circle ms-2 me-2">
                 </div>
                 <div class="col-sm-8 ps-lg-2 pe-lg-2 p-0 d-flex flex-column justify-content-center ">
@@ -305,7 +305,7 @@
                                     View offers
                                 </a>
                         </button>
-                        <button class=" btn btn-danger d-lg-none " data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        <button class=" btn btn-danger d-lg-none showButtonOver" data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
                    
                 </div>
             </div>
@@ -325,7 +325,7 @@
                                         </option>
                                         </select>
                                     </div>
-                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"    (click)="submitAppointment(AppointmentForm,date,myModal)" [routerLink]="!confirm_condition?['/userdashboard']:[]">
+                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"    (click)="submitAppointment(AppointmentForm,date,myModal)" [routerLink]="!confirm_condition?['/login']:[]">
                                          Book
                                      </button>
                                      <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectList)" >
@@ -360,7 +360,7 @@
                                         </option>
                                         </select>
                                     </div>
-                                     <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"   (click)="submitAppointment(AppointmentFormModal,dateModal,bookingButton)" >
+                                     <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)="submitAppointment(AppointmentFormModal,dateModal ,myModal)" [routerLink]="!confirm_condition?['/login']:[]" >
                                         <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
                                             <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
                                         </div>

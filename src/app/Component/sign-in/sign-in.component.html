@@ -1,0 +1,31 @@
+<div class=" my-3 sideMargin w-75 mx-auto">
+    <div class="aaaa bg-white pb-4">
+        <h4 class="bg-primary rounded-top text-white text-center py-2 ">Log in</h4>
+        <form [formGroup]="loginForm">
+        <div class="text-primary px-4">
+            <div class="form-floating my-3 text-center">
+                <input formControlName="Username" name="username" type="text" class="form-control " id="floatingUsername" 
+                    placeholder="name@example.com">
+                <label for="floatingUsername">Username</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="loginForm.get('Username')?.errors && loginForm.get('Username')?.touched">
+                <p class="m-0" *ngIf="loginForm.get('Username')?.errors?.['required']">Username is required</p>
+                <p class="m-0" *ngIf="loginForm.get('Username')?.errors?.['minlength']">Username min length is 4</p>
+            </div>
+            <div class="form-floating my-3 text-center">
+                <input formControlName="Password" name="username" type="password" class="form-control " id="floatingPassword" 
+                    placeholder="name@example.com">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="loginForm.get('Password')?.errors && loginForm.get('Password')?.touched">
+                <p class="m-0" *ngIf="loginForm.get('Password')?.errors?.['required']">Password is required</p>
+                <p class="m-0" *ngIf="loginForm.get('Password')?.errors?.['minlength']">Password min length is 4</p>
+            </div>
+            <button (click)="submitLogIn(loginForm.value)" [disabled]="loginForm.invalid"  type="submit" class="btn btn-danger">Save</button>
+            <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
+        </div>
+    </form>
+    </div>
+</div>

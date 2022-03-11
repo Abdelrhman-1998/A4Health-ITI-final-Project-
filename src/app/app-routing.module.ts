@@ -23,6 +23,12 @@ import { MainLandingPageComponent } from './Component/Landing-page/main-landing-
 import { SearchPageComponent } from './Component/search_doctors/main/search_page/search-page/search-page.component';
 import { LandingPageComponent } from './Component/Landing-page/landing_page/landing-page/landing-page.component';
 import { BookingPageComponent } from './Component/book-with-doctor/booking_page/booking-page/booking-page.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
+import { AdminDashboardComponent } from './Component/Admin/admin-dashboard/admin-dashboard.component';
+import { AdminLoginComponent } from './Component/Admin/admin-login/admin-login.component';
+import { AuthGuard } from './Gaurds/auth.guard';
+import { ReviewComponent } from './Component/Review/review/review.component';
+import { SignInComponent } from './Component/sign-in/sign-in.component';
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -30,8 +36,10 @@ export const routes: Routes = [
   {path: 'AboutUs', redirectTo: '/Home#aboutUs'},
   {path: 'Service', redirectTo: '/Home#service'},
   {path: 'booking/:id', component:BookWithDoctorComponent},
+  {path: 'booking/:id/reviews/:id', component:ReviewComponent},
   {path: 'Search', component:SearchPageComponent},
   {path: 'specialty/:id', component:SearchPageComponent},
+  {path:'login',component:SignInComponent},
 
 
   {path:'userdashboard' , component:UserDashboardComponent , children:[
@@ -39,22 +47,35 @@ export const routes: Routes = [
     {path:'manageprofile' , component:UserManageProfileComponent},
     {path:'changepassword' , component:UserChangePasswordComponent},
        ]},
-  {path:'doctordashboard' , component:DoctorDashboardComponent , children:[
+       {path:'signup',component:UsersignupComponent},
+
+  {path:'doctordashboard',canActivate:[AuthGuard]  ,component:DoctorDashboardComponent , children:[
     {path:'profile' , component:DoctorProfileComponent},
     {path:'editprofile' , component:DoctorEditProfileComponent},
     {path:'appointment' , component:DoctorAppiontmentComponent},
     {path:'dreservations' , component:DoctorReservationsComponent},
     {path:'feedback' , component:DoctorFeedbackComponent},
   ]},
-    {path:'admin',redirectTo:'admin/addDoctor'},
-  {path:'admin/addDoctor',component:AddDoctorComponent},
-  {path:'admin/doctor',component:DoctorsComponent},
-  {path:'admin/patient',component:PatientComponent},
-  {path:'admin/specialties',component:SpecialtiesComponent},
-  {path:'admin/addSpecialties',component:AddSpecialtiesComponent},
-  {path:'admin/specialty/edit/:id',component:AddSpecialtiesComponent} ,
-  {path:'admin/feadback',component:FeedbacksComponent}
+  //   {path:'admin',redirectTo:'admin/addDoctor'},
+  // {path:'admin/addDoctor',component:AddDoctorComponent},
+  // {path:'admin/doctor',component:DoctorsComponent},
+  // {path:'admin/patient',component:PatientComponent},
+  // {path:'admin/specialties',component:SpecialtiesComponent},
+  // {path:'admin/addSpecialties',component:AddSpecialtiesComponent},
+  // {path:'admin/specialty/edit/:id',component:AddSpecialtiesComponent} ,
+  // {path:'admin/feadback',component:FeedbacksComponent},
  
+    {path:'admin',component:AdminDashboardComponent,children:[
+    {path:'login',component:AdminLoginComponent},
+    {path:'addDoctor',component:AddDoctorComponent,canActivate:[AuthGuard]},
+    {path:'doctor',component:DoctorsComponent,canActivate:[AuthGuard]},
+    {path:'patient',component:PatientComponent,canActivate:[AuthGuard]},
+    {path:'specialties',component:SpecialtiesComponent,canActivate:[AuthGuard]},
+    {path:'addSpecialties',component:AddSpecialtiesComponent,canActivate:[AuthGuard]},
+    {path:'specialty/edit/:id',component:AddSpecialtiesComponent,canActivate:[AuthGuard]} ,
+    {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
+   
+  ]},
 ]
 
 export const routerOptions: ExtraOptions = {

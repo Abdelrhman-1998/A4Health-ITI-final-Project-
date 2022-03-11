@@ -1,0 +1,41 @@
+<div class="container-fluid login w-75">
+
+    <div class="">
+        <div class=" sideMargin w-75 mx-auto">
+            <div class="aaaa bg-white pb-4">
+            <h4 class="bg-primary rounded-top text-white text-center py-2 ">Admin Login</h4>
+            <form [formGroup]="login" #loginForm="ngForm" (submit)="loginAdmin(loginForm.value)">
+                <div class="text-primary px-4">
+                    <div class="form-floating my-3 text-center">
+                        <input formControlName="username" name="username" type="text" class="form-control " id="floatingusername" 
+                            placeholder="username" ngModel>
+                        <label for="floatingusername">Username</label>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
+                        <span>
+                            username input filed is not valid
+                        </span>
+                    </div>
+                    <div class="form-floating my-3 text-center">
+                        <input formControlName="password" name="password" type="password" class="form-control " id="password" 
+                            placeholder="password" ngModel>
+                        <label for="floatingpassword">Password</label>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="password && password.invalid && password.touched">
+                        <span>
+                            username input filed is not valid
+                        </span>
+                    </div>
+        
+                    <button  type="submit" class="btn btn-danger" >Login</button>
+                 
+                </div>
+            </form>
+        
+        
+            </div>
+        </div>
+
+        </div>
+
+  </div> 

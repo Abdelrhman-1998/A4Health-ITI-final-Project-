@@ -19,6 +19,7 @@ export class DotorSearchFieldComponent implements OnInit{
   test_array!:Doctor[];
   data_arrived:boolean=false;
   specializtion_name!:string;
+  specializtion_name1!:string;
   resetSpans(x1:any,x3:any,x4:any){
       x1.innerText='Choose specialty';
       x3.innerText='Choose Area';
@@ -100,11 +101,11 @@ export class DotorSearchFieldComponent implements OnInit{
     let specilaiztion = this.route.snapshot.params['id'];
     console.log(specilaiztion);
     if(specilaiztion!="" && specilaiztion!=null){
-
       this.specializtion_name= specilaiztion;
+      this.specializtion_name1=specilaiztion;
     }
     else{
-      this.specializtion_name="Choose specialty";
+      this.specializtion_name1="Choose Speciality"
     }
     //for testing only
    

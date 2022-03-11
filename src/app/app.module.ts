@@ -29,6 +29,7 @@ import { RouterModule } from '@angular/router';
 
 import { RatingStarsPipe } from './Pipes/rating-stars.pipe';
 
+
 import { NavBarComponent } from './Component/Landing-page/nav-bar/nav-bar.component';
 import { MainLandingPageComponent } from './Component/Landing-page/main-landing-page/main-landing-page.component';
 import { FooterComponent } from './Component/Landing-page/footer/footer.component';
@@ -57,6 +58,9 @@ import { AppointmentsComponent } from './Component/search_doctors/appointments_t
 import { ConfirmAppointmentComponent } from './Component/search_doctors/confirmAppointment/confirm-appointment/confirm-appointment.component';
 import { LandingPageComponent } from './Component/Landing-page/landing_page/landing-page/landing-page.component';
 import { BookingPageComponent } from './Component/book-with-doctor/booking_page/booking-page/booking-page.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
+import { AdminLoginComponent } from './Component/Admin/admin-login/admin-login.component';
+import { SignInComponent } from './Component/sign-in/sign-in.component';
 import * as bootstrap from 'bootstrap';
 @NgModule({
   declarations: [
@@ -98,6 +102,9 @@ import * as bootstrap from 'bootstrap';
      ConfirmAppointmentComponent,
      LandingPageComponent,
      BookingPageComponent,
+     UsersignupComponent,
+     AdminLoginComponent,
+     SignInComponent,
   ],
   imports: [
     BrowserModule,

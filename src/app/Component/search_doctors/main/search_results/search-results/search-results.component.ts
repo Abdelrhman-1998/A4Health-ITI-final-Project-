@@ -26,7 +26,7 @@ export class SearchResultsComponent implements OnInit {
  
   }
   // tocken from api stroed in local storage
-  confirm_condition=false;
+  confirm_condition=true;
   printValues(x:any){
       console.log(x.value);
   }
@@ -49,7 +49,12 @@ export class SearchResultsComponent implements OnInit {
     if(this.confirm_condition){
       x.value.date=y.value;
       console.log(x.value);
+      $("#Appointments").modal('hide');
       $("#confirm_appointment").modal('show');
+     
+    }
+    else{
+      $("#Appointments").modal('hide');
     }
   }
   checkScroll(x:any,y:any){
