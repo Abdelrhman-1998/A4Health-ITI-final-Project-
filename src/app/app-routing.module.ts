@@ -31,6 +31,7 @@ export const routes: Routes = [
   {path: 'Service', redirectTo: '/Home#service'},
   {path: 'booking/:id', component:BookWithDoctorComponent},
   {path: 'Search', component:SearchPageComponent},
+  {path: 'specialty/:id', component:SearchPageComponent},
 
 
   {path:'userdashboard' , component:UserDashboardComponent , children:[

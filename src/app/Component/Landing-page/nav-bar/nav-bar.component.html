@@ -61,11 +61,11 @@
         </div>
         <div class="modal-body">
 
-            <form [formGroup]="loginForm"  class="needs-validation" novalidate> 
+            <form  [formGroup]="loginForm"  class="needs-validation" novalidate> 
 
                 <div class="form-floating my-3">
                     <input type="text" class="form-control " id=" floatingName"
-                        placeholder="name@example.com"  name="username" value="" required formControlName="username">
+                        placeholder="name@example.com"  name="username" value="" required formControlName="username" >
                     <label class="text-primary" for="floatingName" >username</label>
                     <div class="alert alert-warning" role="alert" *ngIf="username && username.invalid && username.touched">
                         <span>
@@ -86,7 +86,7 @@
                 </div> 
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary" (ngSubmit)="loginUser()">Sign In</button>
+                <button [disabled]="loginForm.invalid" type="submit" data-bs-dismiss="modal" class="btn btn-primary" (ngSubmit)="loginUser()">Sign In</button>
                 </div>
             </form>
         </div>

@@ -252,7 +252,7 @@
             <p class="mt-3 mb-3 text-center text-md-start ">
                 Search results :<span> {{view_length}}</span> doctors
             </p>
-        <div  class="doctor-card row m-0 mt-3 mb-3 p-3 position-relative" *ngFor="let item of view_data| paginate: { itemsPerPage: count, currentPage: p }">
+        <div  class="doctor-card row m-0 mt-3 mb-3 p-3 position-relative" *ngFor="let item of view_data| paginate: { itemsPerPage: count, currentPage: p }" >
             <div class=" offer-icon position-absolute" [ngStyle]="offers_status?{'display':'block'}:{'display':'none'}">
                 <a [routerLink]="['/booking',item.id]"  routerLinkActive="active" title="view offers" class="position-absolute ">
                     <i class="fa-solid fa-dollar-sign"></i>
@@ -261,7 +261,7 @@
                 <i class="fa-solid fa-tag text-primary "></i>
             </div>
        
-            <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0">
+            <div class="doctor-info col-lg-8 p-0 pe-sm-2  row m-0" [routerLink]="['/booking',item.id]" routerLink="active">
                 <div class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center">
                     <img src={{item.image_name}} alt="doctor-image" class="rounded-circle ms-2 me-2">
                 </div>
@@ -313,7 +313,7 @@
                         <owl-carousel-o [options]="customOptions" class="p-lg-3">
                             <ng-template carouselSlide *ngFor="let appointment_item of item.appointments | sortAppointments ;let a=index">
 
-                                <form #AppointmentForm="ngForm"   class="card text-center slide ms-2 me-2">
+                                <form #AppointmentForm="ngForm"   class="card text-center slide ms-2 me-2" (ngSubmit)="printValues(AppointmentForm)">
                                     <div class=" card-header bg-primary text-white">
                                      {{appointment_item.Date | appointmentPipe}}
                                     </div>
@@ -325,7 +325,7 @@
                                         </option>
                                         </select>
                                     </div>
-                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"  (click)="submitAppointment(AppointmentForm,date)" data-bs-target="#confirm_appointment" data-bs-toggle="modal" >
+                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"    (click)="submitAppointment(AppointmentForm,date,myModal)" [routerLink]="!confirm_condition?['/userdashboard']:[]">
                                          Book
                                      </button>
                                      <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectList)" >
@@ -360,11 +360,13 @@
                                         </option>
                                         </select>
                                     </div>
-                                     <button #bookingButton disabled class=" btn btn-danger position-relative" type="submit" (click)="submitAppointment(AppointmentFormModal,dateModal)" data-bs-toggle="modal" data-bs-target="#confirm_appointment">
+                                     <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"   (click)="submitAppointment(AppointmentFormModal,dateModal,bookingButton)" >
                                         <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
                                             <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
                                         </div>
-                                         Book
+                                       
+                                        Book
+                          
                                      </button>
     
                                 </form>
@@ -616,7 +618,7 @@
         <!-- Button trigger modal -->
 
   <!-- Modal -->
-  <div id="confirm_appointment" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div #myModal  id="confirm_appointment" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 	<div  class="modal-dialog modal-dialog-centered modal-confirm ">
 		<div class="modal-content ">
 			<div class="modal-header d-flex flex-column">
@@ -634,6 +636,7 @@
 			</div>
 		</div>
 	</div>
+    <router-outlet name="modal"></router-outlet>
 </div>     
     </section>
 </section>
