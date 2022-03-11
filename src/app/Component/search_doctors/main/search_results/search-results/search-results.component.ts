@@ -268,18 +268,22 @@ submitFilter(x:NgForm,y:NgForm){
       res=>{  
         console.log(res);
         this.Doctor_data=res as any;
+        this.view_data=res as any;
         // this.Doctor_model_data=res as any;
          // get speciality from home page
 
         let specilaiztion = this.route.snapshot.params['id'];
-         console.log(specilaiztion);       
+        console.log(specilaiztion);
+      
         if(specilaiztion=="" || specilaiztion==null ){
           this.view_data=res as any;
           this.view_length=this.view_data.length;
           console.log(res);
         }
         else{
+          console.log(this.view_data);
               this.view_data=this.Doctor_service.filterBySpecilaization(specilaiztion,this.Doctor_data);
+              console.log(this.view_data);
               this.view_length=this.view_data.length;
         }
      
