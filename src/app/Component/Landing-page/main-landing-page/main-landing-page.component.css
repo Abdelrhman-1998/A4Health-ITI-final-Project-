@@ -1,4 +1,4 @@
-:root{
+/* :root{
     --color1:#043d75;
     --color2:#0075ff;
     --color3:#FF8C83;
@@ -116,5 +116,5 @@ header{
 .pss{
     text-align: center;
 }
-}
-
+} */
+@import url("../../../../../All_Pages/new_Landing_Page/style.css");

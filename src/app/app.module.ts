@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { MdbCarouselModule} from 'mdb-angular-ui-kit/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -109,13 +110,13 @@ import * as bootstrap from 'bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     HttpClientModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
+    MdbCarouselModule,
     BrowserAnimationsModule,RouterModule.forRoot(routes, routerOptions)
   ],
   providers: [],

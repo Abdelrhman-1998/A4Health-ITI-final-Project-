@@ -1,4 +1,20 @@
-:root {
+
+@import url("../../../../../../All_Pages/new_Landing_Page/style.css");
+@import url("../../../../../../All_Pages//new_Landing_Page/Css/style.css");
+.item:hover i{
+  color: white !important;
+}
+.item{
+  display: flex;
+  justify-content: center;
+}
+
+/* @media(max-width:767px){
+  .item{
+    max-width: 300px;
+  }
+} */
+/* :root {
   --color1: #043d75;
   --color2: #0075ff;
   --color3: #ff8c83;
@@ -108,7 +124,7 @@
 .owl-carousel.owl-drag .owl-item{
   display: flex !;
   justify-content: center !important;
-}
+} */
 /* ng-template {
 
   display: flex;
@@ -152,14 +168,14 @@ ng-template * {
   top: 30%;
 }
 */
-.owl-theme .owl-nav{
+/* .owl-theme .owl-nav{
     visibility: hidden !important;
-}
+} */
 /* .owl-one .owl-dots {
   visibility: visible;
 }  */
 
-@keyframes moveArrow {
+/* @keyframes moveArrow {
   0% {
     -webkit-transform: translateX(0px);
     transform: translateX(0px);
@@ -203,5 +219,5 @@ display: flex !important;
     width: 250px !important;
     margin-left: 0%;
   }
-}
+} */
 
