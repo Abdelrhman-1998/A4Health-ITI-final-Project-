@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { MdbCarouselModule} from 'mdb-angular-ui-kit/carousel';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -62,7 +61,6 @@ import { BookingPageComponent } from './Component/book-with-doctor/booking_page/
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { AdminLoginComponent } from './Component/Admin/admin-login/admin-login.component';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
-import * as bootstrap from 'bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,13 +108,13 @@ import * as bootstrap from 'bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     HttpClientModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
-    MdbCarouselModule,
     BrowserAnimationsModule,RouterModule.forRoot(routes, routerOptions)
   ],
   providers: [],

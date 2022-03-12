@@ -1,20 +1,4 @@
-
-@import url("../../../../../../All_Pages/new_Landing_Page/style.css");
-@import url("../../../../../../All_Pages//new_Landing_Page/Css/style.css");
-.item:hover i{
-  color: white !important;
-}
-.item{
-  display: flex;
-  justify-content: center;
-}
-
-/* @media(max-width:767px){
-  .item{
-    max-width: 300px;
-  }
-} */
-/* :root {
+:root {
   --color1: #043d75;
   --color2: #0075ff;
   --color3: #ff8c83;
@@ -99,9 +83,17 @@
   perspective: 100px;
 }
 
+@import url("../../../../../../All_Pages/new_Landing_Page/style.css");
+@import url("../../../../../../All_Pages//new_Landing_Page/Css/style.css");
+.item:hover i{
+  color: white !important;
+}
+.item{
+ 
+  justify-content: center;
+}
 
-
-.owl-next {
+/* .owl-next {
   transform: translateX(30px);
   background-color: var(--color2) !important;
   color: white !important;

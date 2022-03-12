@@ -1,13 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from '../Models/user';
 import { environment } from 'src/environments/environment';
+import { User } from '../Models/user';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
+export class UserloginService {
+
   private isLoggedSub:BehaviorSubject<boolean>
   constructor(private httpClient: HttpClient) { 
     this.isLoggedSub=new BehaviorSubject<boolean>(false)
@@ -18,7 +19,7 @@ export class LoginService {
     let token ="test"
     localStorage.setItem('token',token)
     this.isLoggedSub.next(true)
-    return this.httpClient.post<User>(`${environment.ApiUrl}/doctordashboard`,user)
+    return this.httpClient.post<User>(`${environment.ApiUrl}/admin`,user)
   }
   logout(){
 

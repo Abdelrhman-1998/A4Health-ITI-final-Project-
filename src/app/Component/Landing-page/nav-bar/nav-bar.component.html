@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" [routerLink]="">
         <img src="../../../assets/landing_page/images/logo-removebg-preview.png" alt="" width="55" height="40">
         <span
         class="text-primary">A</span><span class="text-danger">4</span><span
@@ -37,14 +37,14 @@
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                        aria-selected="false"><a href="#community">Community</a></button>
+                        aria-selected="false"><a  [routerLink]="['/Community']">Community</a></button>
                 </li>
                 <li>
-                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign In</button>
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill" routerLink="signin">Sign In</button>
 
                 </li>
                 <li>
-                    <button class="btn btn-outline-primary margin-o-small  mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign Up</button>
+                    <button class="btn btn-outline-primary margin-o-small  mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill" routerLink="signup">Sign Up</button>
 
                 </li>
             </ul>
@@ -52,7 +52,7 @@
     </div>
 </nav>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
       
@@ -60,4 +60,4 @@
       
       </div>
     </div>
-  </div>
+  </div> -->

@@ -3,7 +3,6 @@ import { NgModel } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { Doctor } from 'src/app/Models/doctor';
 import { DoctorService } from 'src/app/Services/doctor.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dotor-search-field',
@@ -18,15 +17,13 @@ export class DotorSearchFieldComponent implements OnInit{
   Specialization_options_arr!:any;
   test_array!:Doctor[];
   data_arrived:boolean=false;
-  specializtion_name!:string;
-  specializtion_name1!:string;
   resetSpans(x1:any,x3:any,x4:any){
       x1.innerText='Choose specialty';
       x3.innerText='Choose Area';
       x4.innerText='Choose City';
     
   }
-      
+   
   // reset search arrows
   search_results:Doctor[]=[];
   @Output() update_search_results:EventEmitter <Doctor[]> = new EventEmitter <Doctor[]>();
@@ -78,8 +75,7 @@ export class DotorSearchFieldComponent implements OnInit{
   console.log(this.search_results);
   this.update_search_results.emit(this.search_results);
   }
-
-  constructor(private Doctor_Service:DoctorService , private route :ActivatedRoute) {
+  constructor(private Doctor_Service:DoctorService) {
 
     this.Area_options_arr=["50 vic","20 flem","30 roshdy","70 gin","60 vic"];
     this.City_options_arr=["Alexandria","Cairo","Aswan","Giza"];
@@ -95,18 +91,8 @@ export class DotorSearchFieldComponent implements OnInit{
     
 }
 
-
-
   ngOnInit(): void {
-    let specilaiztion = this.route.snapshot.params['id'];
-    console.log(specilaiztion);
-    if(specilaiztion!="" && specilaiztion!=null){
-      this.specializtion_name= specilaiztion;
-      this.specializtion_name1=specilaiztion;
-    }
-    else{
-      this.specializtion_name1="Choose Speciality"
-    }
+
     //for testing only
    
 }

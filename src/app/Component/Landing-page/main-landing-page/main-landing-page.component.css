@@ -9,8 +9,8 @@
     --color8:#6eb4d8;
     --color9:#ffd5bf;
     scroll-behavior: smooth;
-}
-
+} */
+@import url("../../../../../All_Pages/new_Landing_Page/style.css");
 header,.aboutUs{
     font-family: 'Inter', sans-serif;
     background-image: url("../../../../assets/landing_page/images/wavy.jpg");
@@ -18,7 +18,7 @@ header,.aboutUs{
     background-size: cover;
 
 }
-.home-pic{
+/* .home-pic{
     background-color: #ebeeff;
     border-radius: 25px;
     box-shadow:3px 3px 10px 4px #ddd;
@@ -116,12 +116,5 @@ header{
 .pss{
     text-align: center;
 }
-} */
-@import url("../../../../../All_Pages/new_Landing_Page/style.css");
-header,.aboutUs{
-    font-family: 'Inter', sans-serif;
-    background-image: url("../../../../assets/landing_page/images/wavy.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
 }
+ */

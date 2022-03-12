@@ -5,7 +5,7 @@
         <div class="text-primary px-4">
             <div class="form-floating my-3 text-center">
                 <!-- <h2>{{manageProfileForm.get('fName')?.errors|json}}</h2> -->
-                <input formControlName="fName" name="fName" type="text" class="form-control " id="floatingfName" 
+                <input [readonly]="ifV" formControlName="fName" name="fName" type="text" class="form-control " id="floatingfName" 
                     placeholder="name@example.com">
                 <label for="floatingfName">First Name</label>
             </div>
@@ -16,7 +16,7 @@
                 
             </div>
             <div class="form-floating my-3 text-center">
-                <input formControlName="lName" name="lName" type="text" class="form-control " id="floatinglName" 
+                <input [readonly]="ifV" formControlName="lName" name="lName" type="text" class="form-control " id="floatinglName" 
                     placeholder="name@example.com">
                 <label for="floatinglName">Last Name</label>
             </div>
@@ -27,7 +27,7 @@
             </div>
 
             <div class="form-floating my-3 text-center">
-                <input formControlName="Username" name="username" type="text" class="form-control " id="floatingUsername" 
+                <input [readonly]="ifV" formControlName="Username" name="username" type="text" class="form-control " id="floatingUsername" 
                     placeholder="name@example.com">
                 <label for="floatingUsername">Username</label>
             </div>
@@ -37,7 +37,7 @@
                 <p class="m-0" *ngIf="signupForm.get('Username')?.errors?.['minlength']">Username min length is 4</p>
             </div>
             <div class="form-floating my-3 text-center">
-                <input formControlName="Password" name="username" type="password" class="form-control " id="floatingPassword" 
+                <input [readonly]="ifV" formControlName="Password" name="username" type="password" class="form-control " id="floatingPassword" 
                     placeholder="name@example.com">
                 <label for="floatingPassword">Password</label>
             </div>
@@ -62,12 +62,12 @@
                     <label>Gender</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio1" 
+                    <input [attr.disabled]="ifV1" formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio1" 
                        value="Male" >
                     <label class="form-check-label" for="inlineRadio1">Male</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio2" 
+                    <input [attr.disabled]="ifV1" formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio2" 
                     value="Female" >
                     <label class="form-check-label" for="inlineRadio2">Female</label>
                 </div>
@@ -83,10 +83,10 @@
             </div> -->
            
             <div class="form-floating my-3 d-flex justify-content-between ">
-                <input formControlName="Phone" #phone type="number" class="form-control w-75" id="floatingphone"
+                <input [readonly]="ifV" formControlName="Phone" #phone type="number" class="form-control w-75" id="floatingphone"
                     placeholder="name@example.com">
                 <label for="floatingphone">Phone +2</label>
-                <button (click)="show()" type="submit" class="btn btn-danger align-self-center">Verify</button>           
+                <button [disabled]="signupForm.invalid" (click)="show();check()" type="submit" class="btn btn-danger align-self-center">Verify</button>           
             </div>
             <div class="alert alert-danger" 
             *ngIf="signupForm.get('Phone')?.errors && signupForm.get('Phone')?.touched">
@@ -95,7 +95,7 @@
             </div>
 
             <div class="form-floating my-3 d-flex justify-content-between" *ngIf="hide">
-                <input  #mv  type="text" class="form-control w-75" id="floatingmassage"
+                <input formControlName="verifyM"  #mv  type="text" class="form-control w-75" id="floatingmassage"
                     placeholder="name@example.com">
                 <label for="floatingmassage">Massage Verification</label>
                 <button (click)="getmv(mv.value)" type="submit" class="btn btn-danger align-self-center">Checked</button>           

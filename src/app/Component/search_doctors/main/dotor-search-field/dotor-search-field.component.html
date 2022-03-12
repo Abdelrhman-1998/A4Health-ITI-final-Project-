@@ -26,13 +26,13 @@
                        </p>
                        <p  class="d-flex align-items-center gap-2 ps-2 pe-2">
                          <i class="fa-solid fa-stethoscope"></i>
-                         <span #choose_specialty >
-                            {{specializtion_name1}}
+                         <span #choose_specialty>
+                             Choose specialty
                          </span>
                        </p>
                 </div>
-                    <select  size="4" name='speciality' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton1" ngModel [(ngModel)]="specializtion_name">
-                        <option #specialization_option (click)="choose_specialty.innerText=specialization_option.value" *ngFor="let item of Specialization_options_arr" value="{{item}}" >
+                    <select  size="4" name='speciality' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton1" ngModel>
+                        <option #specialization_option (click)="choose_specialty.innerText=specialization_option.value" *ngFor="let item of Specialization_options_arr" value="{{item}}">
                             {{item}}
                         </option>
                       </select>
@@ -154,7 +154,7 @@
                                    <div class="d-flex align-items-center gap-2">
                                     <i class="fa-solid fa-stethoscope "></i>
                                     <span #choose_specilty_modal>
-                                        {{specializtion_name1}}
+                                        Choose specialty
                                     </span>
 
                                    </div>
@@ -163,7 +163,7 @@
                                     </div>
                                 </div>
                         </div>
-                            <select  size="4" name='speciality' class=" dropdown-menu p-0 w-100 " aria-labelledby="dropdownMenuButton1" ngModel [(ngModel)]="specializtion_name" >
+                            <select  size="4" name='speciality' class=" dropdown-menu p-0 w-100 " aria-labelledby="dropdownMenuButton1" ngModel>
                                 <option #speciality_option_modal (click)="choose_specilty_modal.innerText=speciality_option_modal.value" *ngFor="let item of Specialization_options_arr" value="{{item}}" >
                                     {{item}}
                                 </option>
