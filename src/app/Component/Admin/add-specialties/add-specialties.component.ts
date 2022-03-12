@@ -21,21 +21,20 @@ export class AddSpecialtiesComponent implements OnInit {
   updateSpecialty!:Specialty
   constructor(
     private specialtiesService:SpecialtiesService,    
-    private activatedRoute: ActivatedRoute,
-
-
-    ) {       this.editMood = true;
+    private activatedRoute: ActivatedRoute
+    ){       
+      // this.editMood = true;
     }
   
 
   
 
   ngOnInit(): void {
-    this.editMood = false;
-    console.log(this.activatedRoute.snapshot.url );
+    // this.editMood = false;
+    // console.log(this.activatedRoute.snapshot.url );
     
-    // console.log(this.activatedRoute.snapshot.url);
-    if(this.activatedRoute.snapshot.url[2].path=='edit'){
+    console.log(this.activatedRoute.snapshot.url);
+    if(this.activatedRoute.snapshot.url[1].path=='edit'){
       this.editMood = true;
     }
     if(this.editMood){
@@ -53,17 +52,15 @@ export class AddSpecialtiesComponent implements OnInit {
     )    
   }
   updateDataOfspecialty(data:NgForm){
-  console.log(this.title=data);
-  
-    
-
+  this.title=data;
     this.specialtiesService.updateSpecialty(this.id,this.title).subscribe(
       (res)=>{
+        console.log(res);
         
       }
       
     )
-     console.log(this.updateSpecialty);
+     console.log(data);
   } 
  
   getdoctorId(){

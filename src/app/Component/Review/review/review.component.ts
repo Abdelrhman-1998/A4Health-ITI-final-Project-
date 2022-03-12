@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Doctor } from '../../../../app/Models/doctor';
 import { Patient } from '../../../../app/Models/patient';
 import { Review } from '../../../../app/Models/review';
@@ -14,21 +15,28 @@ import { ReviewsService } from '../../../../app/Services/reviews.service';
 export class ReviewComponent implements OnInit {
 
   patients:Patient[]=[];
-  rewiews:Review[]=[];
+  rewiews:Review[]=[]; 
   doctors:Doctor[]=[];
   stars:number[]=[];
 
   reviewwithDoctorID:Review[]=[];
-  cardDoctorId:number=2
+  // cardDoctorId:number=2
+  // cardDoctorId:number=2
+ 
+  @Input() DoctorId:any;
 
   constructor(
     // private patientServices:PatientsService,
     // private doctorServices:DoctorsService,
     private reviewService:ReviewsService,
-  ) { }
+    private activatedRoute: ActivatedRoute
+
+  ) { 
+
+  }
 
   ngOnInit(): void {
-
+console.log(this.DoctorId);
 
    // this.getAllReviews()
    this.getReviewByDoctorId()
@@ -45,7 +53,7 @@ export class ReviewComponent implements OnInit {
 // }
 getReviewByDoctorId(){
 
-  this.reviewService.getReviewByDoctorID(this.cardDoctorId).subscribe((review)=>{
+  this.reviewService.getReviewByDoctorID(this.DoctorId).subscribe((review)=>{
     for(let rev of review){
     this.stars.length=rev.rating;
     }

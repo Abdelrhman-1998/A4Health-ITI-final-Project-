@@ -1,5 +1,5 @@
-<section class="row m-0 g-5">
-    <aside class="col-3 autoSubmittedForm d-lg-block d-none">
+<section class="row m-0 g-5 main_section">
+    <aside class="col-3 autoSubmittedForm d-lg-block d-none mb-5">
         <form  #form3="ngForm" class="filteredForm " (ngSubmit)="showResults(form3.value)" >
 
             <ul class="list-unstyled accordion filteredList shadow-none">
@@ -254,7 +254,7 @@
             </p>
         <div  class="doctor-card row m-0 mt-3 mb-3 p-3 position-relative" *ngFor="let item of view_data| paginate: { itemsPerPage: count, currentPage: p }">
             <div class=" offer-icon position-absolute" [ngStyle]="offers_status?{'display':'block'}:{'display':'none'}">
-                <a [routerLink]="['/booking']"  routerLinkActive="active" title="view offers" class="position-absolute ">
+                <a [routerLink]="['/booking',item.id]"  routerLinkActive="active" title="view offers" class="position-absolute ">
                     <i class="fa-solid fa-dollar-sign"></i>
                 </a>
          
@@ -301,7 +301,7 @@
                     </div>
 
                         <button class=" btn btn-primary mb-2 viewOffers" [ngClass]="offers_status?'d-block;':'d-none'">
-                                <a [routerLink]="['/booking']"  routerLinkActive="active" class="text-white decoration-none">
+                                <a [routerLink]="['/booking',item.id]"  routerLinkActive="active" class="text-white decoration-none">
                                     View offers
                                 </a>
                         </button>

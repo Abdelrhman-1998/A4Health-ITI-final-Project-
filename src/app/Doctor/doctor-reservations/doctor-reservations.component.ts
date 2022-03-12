@@ -9,7 +9,12 @@ import { DoctorserviceService } from 'src/app/doctorservice/doctorservice.servic
 })
 export class DoctorReservationsComponent implements OnInit {
   doctorPaitnetsAppiontmets:any[]=[]
+  filter:any[]=[]
+  isFilter:boolean=false;
+
   editIndex!: number;
+  _Status: string="pending"
+
 
   constructor(private _Doctorservic:DoctorserviceService) { }
   patientStatus:FormGroup = new FormGroup({
@@ -34,5 +39,22 @@ export class DoctorReservationsComponent implements OnInit {
 
    console.log(this.doctorPaitnetsAppiontmets[this.editIndex])
    this.doctorPaitnetsAppiontmets[this.editIndex].status=patientStatus.status;
+   //console.log(this.doctorPaitnetsAppiontmets)
+
+  }
+  filterS(status:any)
+  {
+    this.isFilter=true;
+    console.log(status);
+    let filterArr:any = []
+    for(let i = 0 ; i<this.doctorPaitnetsAppiontmets.length ; i++)
+    {
+      if(this.doctorPaitnetsAppiontmets[i].status==status)
+      {
+        filterArr.push(this.doctorPaitnetsAppiontmets[i]);
+      }
+    }
+    console.log(filterArr);
+    this.filter = filterArr;
   }
 }

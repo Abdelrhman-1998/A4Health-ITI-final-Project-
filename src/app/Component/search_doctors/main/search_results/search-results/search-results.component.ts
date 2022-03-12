@@ -1,4 +1,4 @@
-import { Component, Input, OnInit,OnChanges, ViewChild,SimpleChanges, ElementRef } from '@angular/core';
+import { Component, Input, OnInit,OnChanges, ViewChild,SimpleChanges, ElementRef, ViewEncapsulation } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Doctor } from 'src/app/Models/doctor';
 import { DoctorService } from 'src/app/Services/doctor.service';
@@ -6,11 +6,12 @@ import { RatingStarsPipe } from 'src/app/Pipes/rating-stars.pipe';
 import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
-import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.css']
+  styleUrls:['./search-results.component.css']
+  
 })
 export class SearchResultsComponent implements OnInit {
 

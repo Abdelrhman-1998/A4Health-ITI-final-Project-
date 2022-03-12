@@ -17,8 +17,8 @@ import { DoctorAppiontmentComponent } from './Doctor/doctor-appiontment/doctor-a
 import { DoctorReservationsComponent } from './Doctor/doctor-reservations/doctor-reservations.component';
 import { DoctorFeedbackComponent } from './Doctor/doctor-feedback/doctor-feedback.component';
 import { FormsModule }   from '@angular/forms';
-import { DotorSearchFieldComponent } from './search_doctors/main/dotor-search-field/dotor-search-field.component';
-import { SearchResultsComponent } from './search_doctors/main/search_results/search-results/search-results.component';
+import { DotorSearchFieldComponent } from '././Component/search_doctors/main/dotor-search-field/dotor-search-field.component';
+import { SearchResultsComponent } from '././Component/search_doctors/main/search_results/search-results/search-results.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -51,6 +51,16 @@ import { FeedbacksComponent } from './Component/Admin/feedbacks/feedbacks.compon
 import { FilterPipe } from './filter.pipe';
 import { AppointmentPipe } from "./Pipes/appointment-pipe.pipe";
 import { SortAppointmentsPipe } from './Pipes/sort-appointments.pipe';
+import { SearchPageComponent } from './Component/search_doctors/main/search_page/search-page/search-page.component';
+import { routes } from './app-routing.module';
+import { routerOptions } from './app-routing.module';
+import { AppointmentsComponent } from './Component/search_doctors/appointments_tables/appointments/appointments.component';
+import { ConfirmAppointmentComponent } from './Component/search_doctors/confirmAppointment/confirm-appointment/confirm-appointment.component';
+import { LandingPageComponent } from './Component/Landing-page/landing_page/landing-page/landing-page.component';
+import { BookingPageComponent } from './Component/book-with-doctor/booking_page/booking-page/booking-page.component';
+import { UsersignupComponent } from './usersignup/usersignup.component';
+import { AdminLoginComponent } from './Component/Admin/admin-login/admin-login.component';
+import { SignInComponent } from './Component/sign-in/sign-in.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +96,14 @@ import { SortAppointmentsPipe } from './Pipes/sort-appointments.pipe';
      AddSpecialtiesComponent,
      FeedbacksComponent,
      FilterPipe,
+     SearchPageComponent,
+     AppointmentsComponent,
+     ConfirmAppointmentComponent,
+     LandingPageComponent,
+     BookingPageComponent,
+     UsersignupComponent,
+     AdminLoginComponent,
+     SignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,7 +115,7 @@ import { SortAppointmentsPipe } from './Pipes/sort-appointments.pipe';
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,RouterModule.forRoot(routes, routerOptions)
   ],
   providers: [],
   bootstrap: [AppComponent]

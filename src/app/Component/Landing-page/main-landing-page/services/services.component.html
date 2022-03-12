@@ -1,4 +1,4 @@
-    <div class="services pt-3 pb-3">
+    <div class="services pt-3 pb-3" id="service">
     <h2 class="text-center m-0">
         Our Services
     </h2>
@@ -27,10 +27,10 @@
                     <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
                         <form action="" method="">
                         <!-- <a class="btn" [href]="specialty.name" role="button"> Learn More</a> -->
-                        <a  type="submit" (click)="sendSpecialtyId(specialty.id)">
+                        <a  type="submit" (click)="sendSpecialtyId(specialty.id)" (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
                             Learn More
                         </a>
-                        <a  type="submit" (click)="sendSpecialtyId(specialty.id)">
+                        <a  type="submit"  (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
                             <i class="fas fa-long-arrow-alt-right"></i>
                         </a>
                     </form>

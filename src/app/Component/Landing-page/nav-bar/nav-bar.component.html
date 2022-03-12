@@ -15,22 +15,24 @@
             <ul class="nav nav-pills d-flex justify-content-end text-white w-100  handle-nav handle-m ">
                 <li class="nav-item" role="presentation">
                     <button  class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home"
-                        type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a>Home</a></button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                        aria-selected="false"><a href="#aboutUs">About us</a></button>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                        aria-selected="false">Make An Appointment</button>
+                        type="button" role="tab" aria-controls="pills-home" aria-selected="true"><a [routerLink]='["./Home"]'>Home</a></button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                         data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                        aria-selected="false"><a href="#service">Service</a></button>
+                        aria-selected="false"><a [routerLink]="['/Service']">Service</a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false"><a [routerLink]="['/AboutUs']" >About us</a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false"><a [routerLink]="['/Search']" >
+                            Search
+                        </a></button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
@@ -38,11 +40,11 @@
                         aria-selected="false"><a href="#community">Community</a></button>
                 </li>
                 <li>
-                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign In</button>
+                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill" routerLink="signin">Sign In</button>
 
                 </li>
                 <li>
-                    <button class="btn btn-outline-primary margin-o-small  mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill">Sign Up</button>
+                    <button class="btn btn-outline-primary margin-o-small  mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill" routerLink="signup">Sign Up</button>
 
                 </li>
             </ul>
@@ -50,45 +52,12 @@
     </div>
 </nav>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-primary" id="exampleModalLabel">Sign In</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-
-            <form [formGroup]="loginForm"  class="needs-validation" novalidate> 
-
-                <div class="form-floating my-3">
-                    <input type="text" class="form-control " id=" floatingName"
-                        placeholder="name@example.com"  name="username" value="" required formControlName="username">
-                    <label class="text-primary" for="floatingName" >username</label>
-                    <div class="alert alert-warning" role="alert" *ngIf="username && username.invalid && username.touched">
-                        <span>
-                            username input filed is not valid
-                        </span>
-                    </div>
-                </div>
-                <div class="form-floating my-3">
-                    <input type="password" class="form-control" id="floatingInput"
-                        placeholder="name@example.com" name="password" value="" required formControlName="password">
-                    <label class="text-primary" for="floatingInput" >Password</label>
-                    <div class="alert alert-warning" role="alert" *ngIf="password && password.invalid && password.touched">
-                    <span >
-                        password input filed is not valid
-                    </span>
-                </div>
-
-                </div> 
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary" (ngSubmit)="loginUser()">Sign In</button>
-                </div>
-            </form>
-        </div>
+      
+      <app-sign-in></app-sign-in>
       
       </div>
     </div>
-  </div>
+  </div> -->

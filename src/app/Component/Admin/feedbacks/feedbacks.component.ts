@@ -17,7 +17,9 @@ export class FeedbacksComponent implements OnInit {
   patients:Patient[]=[]
   doctors:Doctor[]=[]
   status=''
-  searchResult:string=''
+  searchResultn!:number
+  searchArray:any=[]
+  filter=false;
   p: number = 1;
 count: number = 5;
   constructor(
@@ -46,10 +48,10 @@ count: number = 5;
           console.log(this.patients);
           console.log(this.reviews);
         });
-        this.doctorsServices.getAllDoctors().subscribe((patient) => {
+        this.doctorsServices.getAllDoctors().subscribe((doctor) => {
           // this.patients = patient;
           review.forEach(rev => {
-            patient.forEach(pat => {
+            doctor.forEach(pat => {
               if(rev.doctor_id==pat.id){
                 this.doctors.push(pat)
                 console.log(rev.doctor_id+" "+pat.fname);
@@ -75,4 +77,7 @@ count: number = 5;
   counter(i: number) {
     return new Array(i);
   }
+
+ 
+
 }
