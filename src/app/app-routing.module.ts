@@ -40,6 +40,7 @@ export const routes: Routes = [
   {path: 'booking/:id/reviews/:id', component:ReviewComponent},
   {path: 'Search', component:SearchPageComponent},
   {path: 'Community',  redirectTo: '/Home#Community'},
+  {path: 'specialty/:id', component:SearchPageComponent},
 
 
   {path:'userdashboard' ,canActivate:[UsergGuard], component:UserDashboardComponent , children:[

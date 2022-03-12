@@ -1,4 +1,4 @@
-import { Component, Input, OnInit,OnChanges, ViewChild,SimpleChanges, ElementRef, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit,OnChanges, ViewChild,SimpleChanges, ElementRef, ViewEncapsulation, Output } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Doctor } from 'src/app/Models/doctor';
 import { DoctorService } from 'src/app/Services/doctor.service';
@@ -6,6 +6,7 @@ import { RatingStarsPipe } from 'src/app/Pipes/rating-stars.pipe';
 import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-search-results',
@@ -19,11 +20,17 @@ export class SearchResultsComponent implements OnInit {
   switch_status!:boolean;
   offers_status!:boolean;
   top_arrow!:boolean;//appointment
+ 
   appointment_previous_element!:any;
-  constructor(private Doctor_service:DoctorService) { 
-      
+  constructor(private Doctor_service:DoctorService ,   private route: ActivatedRoute) { 
+ 
   }
-
+  // tocken from api stroed in local storage
+  confirm_condition=true;
+  printValues(x:any){
+      console.log(x.value);
+  }
+ 
   // pagination
 
   p: any = 1;
@@ -37,9 +44,18 @@ export class SearchResultsComponent implements OnInit {
       x.scrollTop=0;
   }
   //------------------
-  submitAppointment(x:any,y:any){
-    x.value.date=y.value;
+  submitAppointment(x:any,y:any,z:any){
+    // check authentication status
+    if(this.confirm_condition){
+      x.value.date=y.value;
       console.log(x.value);
+      $("#Appointments").modal('hide');
+      $("#confirm_appointment").modal('show');
+     
+    }
+    else{
+      $("#Appointments").modal('hide');
+    }
   }
   checkScroll(x:any,y:any){
     if(x.scrollTop==0){
@@ -65,6 +81,9 @@ export class SearchResultsComponent implements OnInit {
 
   // output search
   @Input() Doctor_data!:Doctor[];
+
+
+
   data_length!:number;
 
 sort_list_status:boolean=false;
@@ -248,11 +267,31 @@ submitFilter(x:NgForm,y:NgForm){
     this.Doctor_service.getDataFromApi().subscribe(
       res=>{  
         console.log(res);
-        // this.Doctor_model_data=res as any;
         this.Doctor_data=res as any;
         this.view_data=res as any;
-        this.view_length=this.view_data.length;
-        console.log(res);
+        // this.Doctor_model_data=res as any;
+         // get speciality from home page
+
+        let specilaiztion = this.route.snapshot.params['id'];
+        console.log(specilaiztion);
+      
+        if(specilaiztion=="" || specilaiztion==null ){
+          this.view_data=res as any;
+          this.view_length=this.view_data.length;
+          console.log(res);
+        }
+        else{
+          console.log(this.view_data);
+              this.view_data=this.Doctor_service.filterBySpecilaization(specilaiztion,this.Doctor_data);
+              console.log(this.view_data);
+              this.view_length=this.view_data.length;
+        }
+     
+     
+
+        //--------------------------------
+
+
       },
       err=>{
         console.log(err);

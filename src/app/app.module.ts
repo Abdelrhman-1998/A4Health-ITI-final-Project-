@@ -61,6 +61,7 @@ import { BookingPageComponent } from './Component/book-with-doctor/booking_page/
 import { UsersignupComponent } from './usersignup/usersignup.component';
 import { AdminLoginComponent } from './Component/Admin/admin-login/admin-login.component';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
+import * as bootstrap from 'bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
