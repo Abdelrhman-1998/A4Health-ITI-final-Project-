@@ -1,4 +1,14 @@
 :root {
+  --color1: #043d75;
+  --color2: #0075ff;
+  --color3: #ff8c83;
+  --color4: #e7eef6;
+  --color5: #ebeeff;
+  --color6: #fee1d3;
+  --color7: #e4e7ec;
+  --color8: #6eb4d8;
+  --color9: #ffd5bf;
+
   scroll-behavior: smooth;
 }
 .services {
@@ -72,6 +82,9 @@
 .services .row > div {
   perspective: 100px;
 }
+
+
+
 .owl-next {
   transform: translateX(30px);
   background-color: var(--color2) !important;
@@ -96,13 +109,15 @@
   display: flex !;
   justify-content: center !important;
 }
-/* ng-template {
+ng-container {
+
   display: flex;
   justify-content: center;
 }
+/* 
 ng-template * {
   max-width: 300px;
-} */
+
 
 /* .owl-one .owl-next {
   right: -3% !important;
@@ -155,6 +170,7 @@ ng-template * {
     transform: translateX(10px);
   }
 }
+
 @media screen and (max-width:991px) {
   .owl-prev, .owl-next{
     background-color: #fff!important;
@@ -189,3 +205,4 @@ display: flex !important;
     margin-left: 0%;
   }
 }
+

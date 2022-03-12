@@ -1,0 +1,16 @@
+.db
+{
+  color: var(--color1);
+  font-family: 'Inter', sans-serif !important;
+}
+.hover-c
+{
+    transition: color 1s  ,background-color 1s ,  transform 1s ;
+}
+.hover-c:hover
+{
+    background-color: var(--color1) !important;
+    color: white;
+    transform: scale(1.05);
+}
+@import url('../../assets/css/style.css');

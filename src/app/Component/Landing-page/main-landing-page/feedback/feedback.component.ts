@@ -17,6 +17,7 @@ export class FeedbackComponent implements OnInit {
   reviews: Review[]=[];
   doctors: Doctor[] = [];
   patientname!: string;
+  patientWithReview: Patient[] = [];
 
   constructor(
     private patientServices: PatientsService,
@@ -29,28 +30,31 @@ export class FeedbackComponent implements OnInit {
   }
   getAllReviews() {
     this.reviewService.getAllReviews().subscribe(
-      (review) => {
+      (review:any) => {
         this.reviews = review;
-        this.patientServices.getAllPatients().subscribe((patient) => {
+        this.patientServices.getAllPatients().subscribe((patient:any) => {
+          let patients=this.patients;
           // this.patients = patient;
-          review.forEach(rev => {
-            patient.forEach(pat => {
-              if(rev.patient_id==pat.id){
-                this.patients.push(pat)
-                console.log(rev.patient_id+" "+pat.fname);
+          review.forEach(function(ele:any) {
+            patient.forEach(function(pat:any) {
+              if(ele.patient_id==pat.id){
+                patients.push(pat)
+                console.log(ele.patient_id+" "+pat.fname);
               }
             });
           });
-          
+          this.patients=patients;
+
           console.log(this.patients);
           console.log(this.reviews);
-          
+
         });
       },
-      (err) => console.log('HTTP Error', err),
+      (err:any) => console.log('HTTP Error', err),
       () => console.log('HTTP request completed.')
     );
   }
+
 
   // OWl Plugin
   customOptions: OwlOptions = {
@@ -60,7 +64,9 @@ export class FeedbackComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 600,
-    navText: ['&#8249', '&#8250;'],
+
+    navText:  ['&#8249', '&#8250;'],
+
     responsive: {
       0: {
         items: 1,

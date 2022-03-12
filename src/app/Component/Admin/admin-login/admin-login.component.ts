@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{NgForm,FormControl,FormGroup,Validators} from '@angular/forms'
 import { Router } from '@angular/router';
 import { User } from 'src/app/Models/user';
-import { LoginService } from 'src/app/Services/login.service';
+import { LoginService } from 'src/app/Services/login-service.service';
 
 @Component({
   selector: 'app-admin-login',

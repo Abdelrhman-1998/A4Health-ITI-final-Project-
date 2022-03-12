@@ -1,0 +1,91 @@
+
+div.owl-item{
+    display: flex !important;
+    justify-content: center !important;
+}
+.option{
+    text-align: center;
+}
+.card-body{
+    height: 272px;
+    overflow: scroll;
+    background-color: var(--color4);
+}
+.card-body{
+    scrollbar-width: none;
+}
+.card-body::-webkit-scrollbar{
+    width: 0;
+}
+select{
+    outline: none !important;
+    text-align: center;
+    padding: 0px;
+ 
+}
+ select{
+    scrollbar-width: none;
+    color: var(--color2);
+}
+select::-webkit-scrollbar{
+    width: 0;
+}
+select option {
+    font-size: 14px;
+    padding:5px;
+    cursor: pointer;
+    border-radius: inherit;
+}
+select option:hover{
+    background-color: var(--color2) !important;
+    color: white;
+}
+
+option{
+    appearance: none !important; 
+}
+.form-select {
+    padding-right:0 !important;
+    background-image: none;
+    background-color: var(--color4);
+    border: none !important;
+}
+.form-select:focus{
+    box-shadow: none !important;
+}
+.btn{
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+.card{
+    border-radius: 0 !important;
+    border: 0 !important;
+}
+.toTheTop{
+    left: calc(50% - 6px);
+    bottom:40px;
+    color: var(--color2);
+    cursor: pointer;
+    animation-name: _moveArrow;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    animation-timing-function:ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+    /* display: none; */
+    
+}
+@keyframes _moveArrow{
+    0%{
+        transform: translateY(0px);
+  
+    }
+    50%{
+        transform: translateY(-5px);
+  
+    }
+    100%{
+        transform: translateY(5px);
+     
+    }
+}

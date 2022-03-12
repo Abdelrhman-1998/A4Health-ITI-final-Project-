@@ -137,8 +137,8 @@
       "name": "Cardiology and Chest"
     },
     {
-      "id": 2,
-      "name": "Dentistry"
+      "name": "Dentistry ",
+      "id": 2
     },
     {
       "id": 3,
@@ -167,10 +167,6 @@
     {
       "id": 9,
       "name": "Gynaecology and Infertility"
-    },
-    {
-      "name": "kjhg test",
-      "id": 10
     }
   ],
   "reviews": [
@@ -255,12 +251,6 @@
         "01123308219"
       ],
       "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
-    }
-  ],
-  "admin": [
-    {
-      "username": "admin",
-      "password": "1234"
     }
   ]
 }

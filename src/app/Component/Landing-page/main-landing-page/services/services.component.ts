@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
@@ -60,6 +61,7 @@ export class ServicesComponent implements OnInit {
     // this.router.navigate(['/search'],{queryParams:{id}})
   }
   // Owl Plugin
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -67,18 +69,21 @@ export class ServicesComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 700,
-    navText: ['&#8249', '&#8250;'],
+
+    navText:  ['&#8249', '&#8250;'],
     responsive: {
       0: {
-        items: 1,
+        items: 1
       },
       600: {
-        items: 2,
+        items: 2
       },
       1000: {
-        items: 4,
-      },
+        items: 4
+      }
     },
-    nav: true,
-  };
+    nav: true
+  }
+  
+
 }

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A 4 Health">
+    <title>A 4 Health</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/daab4a7a52.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- sofia pro font -->
+    <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
+</head>
+
+<body>
+    
+    <header class="d-flex flex-column flex-nowrap ">
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top color-nav">
+            <div class="container-fluid">
+                <h1 class="navbar-brand fs" class="title"><span class="text-danger">me</span><span
+                        class="text-primary">dic</span></h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav nav-pills d-flex justify-content-evenly text-white w-50  handle-nav handle-m ">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#pills-home"
+                                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                                aria-selected="false">About us</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                aria-selected="false">Service</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                                aria-selected="false">Community</button>
+                        </li>
+                    </ul>
+                    <button type="button"
+                        class="btn btn-outline-primary margin-o-small  mt-lg-0  mt-sm-3  px-4 rounded-pill">Contact</button>
+                </div>
+            </div>
+        </nav>
+        
+        <div id="home" class="row pt-5 pb-5 m-0">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center flex-column flex-nowrap ps-3 pe-3">
+<!-- text-lg-center text-md-left -->
+                        <h4 class="lineBefore pss text-center  ">A range of programs for health</h4> 
+                        <h2 class="pss fw-bolder fw70">Special Touch</h2>
+                        <p class="lead pss text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet dolorum
+                            maiores veritatis
+                            alias eius dolor id illo necessitatibus atque obcaecati.</p>
+                        <div>
+                            <button type="button" class="btn ps-4 pe-4 pt-3 pb-3 btn-primary pss">Make an
+                                Appiontment</button>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6  pt-md-0 pt-sm-5 d-flex justify-content-center align-items-center">
+                        <div class="home-pic w-75">
+                            <img src="images/model1.png" class="w-100" alt="">
+                        </div>
+                    </div>
+        </div>
+    </header>
+<section class="services pt-3 pb-3 ">
+        <h2 class="text-center m-0">
+            Our Services
+        </h2>
+        <p class="text-center ms-auto me-auto w-75 pt-2 pb-2 mb-0  ">
+            We offer complete healthcare to individuals with various health concerns.
+        </p>
+            <div class="row mt-0 ms-3 me-3 ms-lg-5 me-lg-5 gx-5 gy-3">
+                <div class="col-lg-3 col-sm-6 ">
+                    <div class="serviceCard">
+                        <div class="cardIcon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div class="cardBody">
+                            <p>
+                                Cardiology and Chest
+                            </p>
+                        </div>
+
+                        <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                <div class="serviceCard">
+                    <div class="cardIcon">
+                        <i class="fa-solid fa-tooth"></i>
+                    </div>
+                    <div class="cardBody">
+                        <p>
+                            Dentistry
+                        </p>
+                    </div>
+                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                        <a href="#">
+                            Learn More
+                        </a>
+                        <a href="#">
+                            <i class="fas fa-long-arrow-alt-right"></i>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 ">
+                    <div class="serviceCard">
+                        <div class="cardIcon">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div class="cardBody">
+                            <p>
+                                Neurological Treatment
+                            </p>
+                        </div>
+                        <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6  ">
+                    <div class="serviceCard">
+                        <div class="cardIcon">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+                        <div class="cardBody">
+                            <p>
+                                Pediatrics and New Born
+                            </p>
+                        </div>
+                        <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+</section>
+<section class=" row  m-0 aboutUs ">
+    <div class="col-lg-6 d-flex align-items-center ps-0 pe-0">
+        <div class="p-lg-5 p-3 d-flex flex-column align-items-center">
+            <h2>
+                Why Choose Our Clinic
+            </h2>
+            <p> 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, iusto exercitationem veritatis culpa dolores vero natus architecto qui et quidem odio. Maiores quis voluptates quaerat earum deserunt eos nobis quod?
+            </p>
+            <button type="button" class="btn ps-4 pe-4 pt-3 pb-3 btn-primary">
+                Learn more
+            </button>
+        </div>
+    </div>
+    <div class="col-lg-6 ps-0 pe-0">
+        <div class="row m-0 pt-3 pb-3">
+             <div class="col-lg-6 d-flex flex-column flex-lg-column flex-md-row  justify-content-lg-center  justify-content-evenly align-items-center p-0 aboutCardParent">
+                <div class="aboutCard d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3">
+                    <img src="images/d1bf6ee524c59a7c526b1274c7a0d506-removebg-preview.png" alt="doctors" class=" rounded-circle ">
+                    <p class="mt-3 mb-3">
+                        Professional Doctors
+                    </p>
+                </div>
+                <div class=" aboutCard d-flex flex-column justify-content-center align-items-center mt-4 mb-4 p-3 ">
+                    <img src="images/conversation-furniture-interaction-for-family-day-5e292e3ca37ec4.12258923.png" alt="doctors" class=" rounded-circle">
+                    <p class="mt-3 mb-3">
+                        Family Medicine
+                    </p>
+                </div>
+
+             </div>
+             <div class="col-lg-6 d-flex align-items-center justify-content-center p-0 aboutCardParent">
+                <div class="aboutCard d-flex flex-column justify-content-center align-items-center p-3">
+                    <img src="images/24-hours-doctor-service-logo-icon-sign-247-day-vector-28122184-removebg-preview.png" alt="doctors" class=" rounded-circle">
+                    <p class="mt-3 mb-3">
+                        Family Medicine
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="MeetDoctors">
+    <div class="mainContainer py-5">
+        <div class="container ">
+            <div class="content text-center ">
+                <h2>Meet Medicus Physicians</h2>
+                <p class="w-">L75orem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur veritatis voluptatem odio libero, laudantium doloremque assumenda labore officiis nemo?</p>
+            </div>
+            <div class="row g-5 m-0">
+                <div class="col-lg-3 col-md-6">
+                    <div class="card doctor ">
+                        <div class="pt-2 d-flex justify-content-center">
+                        <img class="docImg"src="images/kisspng-health-professional-medicine-physician-nurse-5affc387458874.0429913015267111752848.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body docinfo text-center" >
+                          <p class="card-text fw-bold">
+                              Dr. Nick Sims
+                          </p>
+                          <p class="card-text">Cardiologist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="card doctor" >
+                        <div class="pt-2 d-flex justify-content-center">
+                        <img class="docImg" src="images/pngegg.png" class="card-img-top" alt="...">
+                    </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr. Amy Adams
+                          </p>
+                          <p class="card-text">Dentist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="card doctor" >
+                        <div class="pt-2 d-flex justify-content-center">
+                        <img class="docImg" src="images/doctor-png-11553965920coieh57tza-removebg-preview.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr.Max Tuner
+                          </p>
+                          <p class="card-text">CT & X-Ray</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-lg-3 col-md-6 ">
+                    <div class="card doctor" >
+                        <div class="pt-2  d-flex justify-content-center">
+                        <img class="docImg" src="images/main-qimg-4e6e97f3798814cd6fa1cc62a6a1fc7c-lq-removebg-preview.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text fw-bold">
+                              Dr. Julia Jameson
+                          </p>
+                          <p class="card-text">Neurlogist</p>
+                          <div class="cardFooter d-flex pt-3  justify-content-between align-items-center flex-nowrap">
+                            <a href="#">
+                                Learn More
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-long-arrow-alt-right"></i>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feedBack">
+    <div class="mainContainer py-5">
+        <div class="container">
+            <div class="feedback">
+                <h2 class="text-center">Feedback</h2>
+            </div>
+            <div class="row g-5 m-0 mt-3">
+                <div class="col-xl-6 col-sm-12">
+                    
+                    <div class="card c-feedback">
+                        <div class="qoutL">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+                        <div class="card-body text-center">
+                          <p class="card-text my-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!</p>
+                          <div class="user d-flex justify-content-center justify-content-sm-between flex-sm-row flex-column flex-wrap align-items-center">
+                              <img  class="rounded-circle "src="imgs/images.png">
+                             <div class="info d-flex justify-content-center align-items-center flex-column">
+                                <p class="fw-bold pt-2 pb-2 m-0"> Pual Peterson</p>
+                                <p class=" m-0">patient</p>
+                             </div>
+                          </div>
+                        </div>
+                        <div class="qoutR">
+                            <i class="fa-solid fa-quote-right"></i>
+                          </div>
+                      </div>
+                      
+                </div>
+                <div class="col-xl-6 col-sm-12">
+                    <div class="card c-feedback">
+                        <div class="qoutL2">
+                            <i class="fa-solid fa-quote-left "></i>
+                        </div>
+                        <div class="card-body">
+                          <p class="card-text text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!</p>
+                          <div class="user d-flex justify-content-center justify-content-sm-between flex-sm-row flex-column flex-wrap align-items-center">
+                              <img  class="rounded-circle" src="imgs/images.png">
+                             <div class="info d-flex justify-content-center align-items-center flex-column ">
+                                <p class="fw-bold pt-2 pb-2 m-0"> Pual Peterson</p>
+                                <p class=" m-0">patient</p>
+                             </div>
+                          </div>
+                        </div>
+                        <div class="qoutR2">
+                            <i class="fa-solid fa-quote-right"></i>
+                          </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer text-white py-4 d-flex justify-content-center align-items-center">
+    <div class="tmp w-90  row m-0">
+    <p class="mt-4 col-lg-8 text-center">
+        Copyright ©2022 All rights reserved | This template is made with  by Colorlib
+    </p>
+    <div class="media col-lg-4 gap-3 justify-content-center align-items-center d-flex">
+       <a href="https://www.facebook.com/" target="_blank" class="text-white"> <i class="fa-brands fa-facebook hover"></i></a></i>
+       <a href="https://www.instagram.com/" target="_blank"  class="text-white">   <i class="fa-brands fa-instagram hover"></i></a></i>
+       <a href="https://www.twitter.com/" target="_blank"  class="text-white"> <i class="fa-brands fa-twitter hover"></i></i></a></i>
+       <a href="https://www.skype.com/" target="_blank"  class="text-white">  <i class="fa-brands fa-skype hover"></i></i></a></i>
+    </div>
+</div>
+</footer> 
+</body>
+</html>

@@ -1,4 +1,15 @@
 :root{
+
+    --color1:#043d75;
+    --color2:#0075ff;
+    --color3:#FF8C83;
+    --color4:#e7eef6;
+    --color5:#ebeeff;
+    --color6:#fee1d3;
+    --color7:#e4e7ec;
+    --color8:#6eb4d8;
+    --color9:#ffd5bf;
+
     scroll-behavior: smooth;
 }
 .feedBack
@@ -35,11 +46,16 @@
 }
 .qoutL,.qoutR{
     color: #0075ff;
+
+    font-size: 50px;
     position: absolute;
 }
+
+
 .qoutL i,.qoutR i{
     font-size: 50px;
 }
+
 .qoutL2,.qoutR2{
     color: gray;
     font-size: 50px;
@@ -52,9 +68,9 @@
     bottom: -10%;
     right: 0;
 }
-.feedBack img{
+/* .feedBack img{
     height: 130px;
-}
+} */
 .c-feedback{
     margin: 10px;
 }

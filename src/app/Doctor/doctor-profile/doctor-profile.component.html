@@ -1,0 +1,33 @@
+<div class="ps-3 pe-3 doctorContainer d-flex flex-column align-items-center ">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 doctorHeader text-black">
+        <i class="fa-solid fa-user-doctor fs-1 text-primary"></i>
+        Profile
+    </h1>
+    <div class="doctorProfile d-flex flex-column align-items-center text-black">
+        <div class="card-body text-center  doctorImage">
+                <img src="/assets/img/logo-removebg-preview.png" alt="">
+        </div>
+        <p class="doctorName pt-2 pb-2 m-0">
+           <span class="fw-bold">Username :</span>  <span> {{doctorData.username}} </span>
+        </p>
+        <p class="doctorName  pb-2 m-0">
+          <span class="fw-bold"> Name : </span> <span> {{doctorData.name}}  </span>
+        </p>
+        <p class="doctorTitle  pb-2 m-0">
+           <span class="fw-bold">Title :</span> <span> {{doctorData.title}}  </span>
+        </p>
+        <p class="doctorSpecializtion m-0 pb-2">
+           <span class="fw-bold">Specializtion :</span><span>{{doctorData.specilization}} </span>
+        </p>
+        <p class=" m-0 pb-2 fw-bold">
+            Description
+        </p>
+        <p class="doctorDescription text-center m-0 mb-2 bg-white p-2 w-75">
+          {{doctorData.description}}
+        </p>
+        
+    </div>
+
+</div>

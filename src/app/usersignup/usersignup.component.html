@@ -1,0 +1,135 @@
+<div class=" my-3 sideMargin w-75 mx-auto">
+    <div class="aaaa bg-white pb-4">
+        <h4 class="bg-primary rounded-top text-white text-center py-2 ">Sign Up</h4>
+        <form [formGroup]="signupForm">
+        <div class="text-primary px-4">
+            <div class="form-floating my-3 text-center">
+                <!-- <h2>{{manageProfileForm.get('fName')?.errors|json}}</h2> -->
+                <input formControlName="fName" name="fName" type="text" class="form-control " id="floatingfName" 
+                    placeholder="name@example.com">
+                <label for="floatingfName">First Name</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="signupForm.get('fName')?.errors && signupForm.get('fName')?.touched">
+                <p class="m-0" *ngIf="signupForm.get('fName')?.errors?.['required']">first name is required</p>
+                <p class="m-0" *ngIf="signupForm.get('fName')?.errors?.['minlength']">first name min length is 4</p>
+                
+            </div>
+            <div class="form-floating my-3 text-center">
+                <input formControlName="lName" name="lName" type="text" class="form-control " id="floatinglName" 
+                    placeholder="name@example.com">
+                <label for="floatinglName">Last Name</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="signupForm.get('lName')?.errors && signupForm.get('lName')?.touched">
+                <p class="m-0" *ngIf="signupForm.get('lName')?.errors?.['required']">last name is required</p>
+                <p class="m-0" *ngIf="signupForm.get('lName')?.errors?.['minlength']">last name min length is 4</p>
+            </div>
+
+            <div class="form-floating my-3 text-center">
+                <input formControlName="Username" name="username" type="text" class="form-control " id="floatingUsername" 
+                    placeholder="name@example.com">
+                <label for="floatingUsername">Username</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="signupForm.get('Username')?.errors && signupForm.get('Username')?.touched">
+                <p class="m-0" *ngIf="signupForm.get('Username')?.errors?.['required']">Username is required</p>
+                <p class="m-0" *ngIf="signupForm.get('Username')?.errors?.['minlength']">Username min length is 4</p>
+            </div>
+            <div class="form-floating my-3 text-center">
+                <input formControlName="Password" name="username" type="password" class="form-control " id="floatingPassword" 
+                    placeholder="name@example.com">
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="signupForm.get('Password')?.errors && signupForm.get('Password')?.touched">
+                <p class="m-0" *ngIf="signupForm.get('Password')?.errors?.['required']">Password is required</p>
+                <p class="m-0" *ngIf="signupForm.get('Password')?.errors?.['minlength']">Password min length is 4</p>
+            </div>
+            <!-- <div class="alert alert-danger" 
+            *ngIf="manageProfileForm.get('lName')?.errors && manageProfileForm.get('lName')?.touched">
+                <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['required']">last name is required</p>
+                <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['minlength']">last name min length is 2</p>
+                <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['maxlength']">last name Max length is 20</p>
+            </div> -->
+            <!-- <div class="form-floating my-3">
+                <input type="email" class="form-control" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div> -->
+            <div class="d-flex align-items-center">
+                <div class="form-check-inline">
+                    <label>Gender</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio1" 
+                       value="Male" >
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input formControlName="Gender" class="form-check-input" type="radio" name="Gender" id="inlineRadio2" 
+                    value="Female" >
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="signupForm.get('Gender')?.errors && signupForm.get('Gender')?.touched">
+                <p class="m-0" *ngIf="signupForm.get('Gender')?.errors?.['required']">Gender is required</p>
+            </div>
+            
+            <!-- <div class="alert alert-danger" 
+            *ngIf="manageProfileForm.get('Gender')?.errors && manageProfileForm.get('Gender')?.touched">
+                <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['required']">Gender is required</p>
+            </div> -->
+           
+            <div class="form-floating my-3 d-flex justify-content-between ">
+                <input formControlName="Phone" #phone type="number" class="form-control w-75" id="floatingphone"
+                    placeholder="name@example.com">
+                <label for="floatingphone">Phone +2</label>
+                <button (click)="show()" type="submit" class="btn btn-danger align-self-center">Verify</button>           
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="signupForm.get('Phone')?.errors && signupForm.get('Phone')?.touched">
+                <p class="m-0" *ngIf="signupForm.get('Phone')?.errors?.['required']">Phone name is required</p>
+                <p class="m-0" *ngIf="signupForm.get('Phone')?.errors?.['pattern']">Phonemust be 13</p>
+            </div>
+
+            <div class="form-floating my-3 d-flex justify-content-between" *ngIf="hide">
+                <input  #mv  type="text" class="form-control w-75" id="floatingmassage"
+                    placeholder="name@example.com">
+                <label for="floatingmassage">Massage Verification</label>
+                <button (click)="getmv(mv.value)" type="submit" class="btn btn-danger align-self-center">Checked</button>           
+            </div>
+       
+            <!-- <div class="d position-relative">
+                <select  #Phones name="phones" class="form-select text-primary my-3" aria-label="Default select example">
+                    <option disabled selected style="display:none;"> Your Phones </option>
+                    <option *ngFor="let num of userData.Phones"  class="text-primary" [value]="num">{{num}}</option>
+                </select>
+            </div> -->
+            <!-- <div class="form-floating text-primary my-3">
+                <input type="date" class="form-control text-danger" id="floatingBirthday"
+                    placeholder="Birthday">
+                <label for="floatingBirthday">Birthday</label>
+            </div> -->
+            <!-- <div class="d position-relative">
+                <select formControlName="City"  class="form-select text-primary my-3" aria-label="Default select example">
+                    <option disabled selected style="display:none;"> City </option>
+
+                    <option *ngFor="let c of city"  class="text-primary" [value]="c">{{c}}</option>
+
+                </select>
+            </div> -->
+            <!-- <div class="alert alert-danger" 
+            *ngIf="manageProfileForm.get('City')?.errors && manageProfileForm.get('City')?.touched">
+                <p class="m-0" *ngIf="manageProfileForm.get('lName')?.errors?.['required']">City is required</p>
+            </div> -->
+            <button (click)="submitManageProfile(signupForm.value)" [disabled]="signupForm.invalid"  type="submit" class="btn btn-danger">Save</button>
+            <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
+         
+        </div>
+    </form>
+
+
+    </div>
+</div>

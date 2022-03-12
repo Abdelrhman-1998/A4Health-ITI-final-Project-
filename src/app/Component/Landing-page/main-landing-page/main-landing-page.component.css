@@ -10,6 +10,7 @@
     --color9:#ffd5bf;
     scroll-behavior: smooth;
 }
+
 header,.aboutUs{
     font-family: 'Inter', sans-serif;
     background-image: url("../../../../assets/landing_page/images/wavy.jpg");
@@ -23,8 +24,16 @@ header,.aboutUs{
     box-shadow:3px 3px 10px 4px #ddd;
 }
 
+x
+#home,.aboutUs
+{
+    background-image: url("../../../../assets/landing_page/images/wavy.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;}
+
 header{
     height: 100vh;
+
 }
 .rounded5
 {
@@ -94,6 +103,7 @@ header{
 .aboutCardParent{
     perspective: 100px;
 }
+
 @media (max-width:767px){
     header{
         height: 126vh;
@@ -107,3 +117,4 @@ header{
     text-align: center;
 }
 }
+

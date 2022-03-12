@@ -1,5 +1,15 @@
 :root{
 
+    --color1:#043d75;
+    --color2:#0075ff;
+    --color3:#FF8C83;
+    --color4:#e7eef6;
+    --color5:#ebeeff;
+    --color6:#fee1d3;
+    --color7:#e4e7ec;
+    --color8:#6eb4d8;
+    --color9:#ffd5bf;
+
     scroll-behavior: smooth;
 }
 .MeetDoctors{
@@ -26,18 +36,23 @@
     border-radius: 16px;
     overflow: hidden;
     transform: translateZ(4px) !important;
+
     background-color: #0075ff !important;
     color: #fff !important;
 }
  .doctor:hover .card-body{
     background-color: #0075ff !important;
+    border-radius: 20px !important;
+
 }
 .doctor{
     margin: 10px;
 }
+
 .cardFooter{
     visibility: hidden;
 }
+
 .doctor:hover .cardFooter{
     visibility: visible;
     
@@ -46,14 +61,19 @@
     animation-play-state:running;
 }
 .doctor:hover p{
+
+    color: #fff;
+}
+
+
+.doctor:hover i{
+
     color: #fff !important;
 }
 .doctor:hover span{
     color: #fff !important;
 }
-.doctor:hover i{
-    color: #fff ;
-}
+
 .doctor:hover a{
     color: #fff;
 }
@@ -86,9 +106,11 @@
 .card-img-top{
     width: 60% !important;
     height: 265px !important;
+
 }
 .card-body{
     background-color: #fff !important;
+    border-radius: 20px !important;
 }
 .meetdoc-pra{
     padding-left: 0px !important;

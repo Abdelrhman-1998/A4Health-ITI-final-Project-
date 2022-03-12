@@ -1,0 +1,381 @@
+/* Abdelrhman's part*/
+:root{
+    --color1:#043d75;
+    --color2:#0075ff;
+    --color3:#FF8C83;
+    --color4:#e7eef6;
+    --color5:#ebeeff;
+    --color6:#fee1d3;
+    --color7:#e4e7ec;
+    --color8:#6eb4d8;
+    --color9:#ffd5bf;
+    scroll-behavior: smooth;
+}
+.services{
+   font-family: 'Inter', sans-serif;
+   background-color: var(--color4);
+   font-size: 18px;
+   box-shadow:3px 3px 10px  0px #ddd;
+}
+.services > h2{
+    color: var(--color1);
+    font-weight: bold;
+    font-size: 36px;
+}
+.services .cardIcon i{
+    color: var(--color2);
+    font-size: 3.5em  ;
+}
+.serviceCard{
+    border-radius:16px;
+    box-sizing: border-box; 
+    padding: 20px;
+    transition: 0.3s;
+    box-shadow:3px 3px 10px  0px #ddd;
+    background-color: white;
+}
+.serviceCard .cardFooter {
+    visibility: hidden;
+}
+.serviceCard .cardFooter a{
+    text-decoration: none;
+}
+.serviceCard .cardFooter i , .doctor .cardFooter i{
+    text-align: center !important;
+    animation-name: moveArrow;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-play-state: paused;
+}
+.serviceCard p{
+    color: var(--color1);
+    font-weight: bold;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+}
+.serviceCard:hover{
+    background-color: var(--color2);
+    transform: translateZ(2px);
+}
+.serviceCard:hover .cardFooter{
+    visibility: visible;
+}
+.serviceCard:hover .cardFooter i{
+    animation-play-state:running;
+}
+.serviceCard:hover a{
+    color: white;
+}
+.serviceCard:hover p{
+    color: white;
+}
+.serviceCard:hover i{
+    color: white;
+}
+.cardIcon{
+    padding-bottom: 60px;
+}
+.services .row > div{
+    perspective: 100px;
+}
+.aboutUs{
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: var(--color1);
+}
+.aboutCard{
+    border-radius: 16px;
+    font-weight: bold;
+    box-shadow:3px 3px 10px  0px #ddd;
+    transition: 0.3s;
+    background-color: white;
+    height: 320px;
+}
+.aboutCard:hover{
+    background-color: var(--color2);
+    color: white;
+    transform: translateZ(2px);
+}
+.aboutCard img{
+   width:200px;
+}
+.aboutUs >div:first-child h2{
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+}
+.aboutUs >div:first-child p{
+    text-align: center;
+    color: black;
+}
+.aboutCardParent{
+    perspective: 100px;
+}
+@keyframes moveArrow{
+    0%{
+        -webkit-transform: translateX(0px);
+                transform: translateX(0px);
+    }
+    100%{
+        -webkit-transform: translateX(10px);
+                transform: translateX(10px);
+    }
+}
+
+/*----------------End-----------------*/
+
+header,.aboutUs,.feedBack
+{
+    background-image: url("images/wavy.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.rounded5
+{
+    border-radius: 10%;
+}
+.content
+{
+    color: rgb(4, 59, 118);
+}
+.fw70
+{
+    font-size: 50px;
+    color: var(--color1);
+}
+.lineBefore
+{
+    position: relative;
+}
+.lineBefore::before
+{
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 5px;
+    left: -15px;
+    top: 0px;
+    background-color: rgb(255, 163, 120);   
+}
+.fs
+{
+    font-size: 40px;
+}
+.ll
+{
+    list-style: none;
+}
+.handle-nav
+{
+    display: block;
+}
+.handle-m
+{
+    margin: 0 auto;
+}
+header{
+    font-family: 'Inter', sans-serif;
+}
+.home-pic{
+    background-color: var(--color5);
+    border-radius: 25px;
+    box-shadow:3px 3px 10px 4px #ddd;
+}
+.MeetDoctors{
+    background-color: var(--color4);
+    box-shadow:3px 3px 10px  0px #ddd;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+.feedBack{
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+.feedBack h2{
+   color: var(--color1);
+   font-weight: bold;
+   font-size: 36px;
+}
+.MeetDoctors .doctor{
+    border-radius: 16px;
+    transition: 0.3s;
+    color: var(--color1);
+}
+.MeetDoctors .container h2{
+    font-size: 36px;
+    font-weight: bold;
+}
+.cardFooter{
+    visibility: hidden;
+}
+.doctor:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    border-radius: 16px;
+    overflow: hidden;
+    transform: translateZ(4px) !important;
+    background-color: var(--color2);
+     color: #fff !important;
+
+}
+
+.doctor:hover .cardFooter{
+    visibility: visible;
+    
+}
+.doctor:hover .cardFooter i{
+    animation-play-state:running;
+}
+.doctor:hover p{
+    color: #fff;
+}
+.doctor:hover span{
+    color: #fff;
+}
+.doctor:hover i{
+    color: #fff;
+}
+.doctor:hover a{
+    color: #fff;
+}
+
+.docImg{
+    border-radius:16px 16px 0px 0px;
+    height: 210px;
+}
+.user p,.feedback{
+    color: var(--color2);
+}
+.card.c-feedback{
+    position: relative;
+    border-radius: 16px;
+
+}
+.c-feedback:hover{
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+    transform: translateZ(4px);
+    border-radius: 16px;
+
+}
+.c-feedback .card-text{
+    font-size: 20px;
+}
+.qoutL,.qoutR{
+    color: var(--color2);
+    font-size: 50px;
+    position: absolute;
+}
+.qoutL2,.qoutR2{
+    color: gray;
+    font-size: 50px;
+    position: absolute;
+}
+.qoutL,.qoutL2{
+    top: -10%;
+}
+.qoutR,.qoutR2{
+    bottom: -10%;
+    right: 0;
+}
+.MeetDoctors .doctor a{
+    text-decoration: none;
+}
+.doctor p {
+    margin:0;
+}
+.MeetDoctors .row div:first-child .doctor div:first-child{
+    background-color: var(--color6);
+    border-radius: 16px 16px 0px 0px;
+}
+.MeetDoctors .row div:nth-child(2) .doctor div:first-child{
+    background-color: var(--color7);
+    border-radius: 16px 16px 0px 0px;
+}
+.MeetDoctors .row div:nth-child(3) .doctor div:first-child{
+    background-color: var(--color8);
+    border-radius: 16px 16px 0px 0px;
+}
+.MeetDoctors .row div:nth-child(4) .doctor div:first-child{
+    background-color: var(--color9);
+    border-radius: 16px 16px 0px 0px;
+}
+.feedBack img{
+    height: 150px;
+}
+@media (min-width:767px){
+    header{
+        height: 100vh;
+    }
+    #home{
+        flex-grow: 1;
+    }
+}
+@media screen and (max-width: 992px) {
+    .handle-nav
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .handle-m
+{
+    margin: 0;
+}
+.fw70
+{
+     font-size: 30px; 
+}
+.marginLarge
+{
+    margin-top: 15px;
+}
+
+  }
+@media screen and (max-width: 576px) {
+
+  .pss
+{
+    margin-top: 15px ;
+    margin-bottom: 15px ;
+}
+.margin-o-small
+{
+    margin-top: 15px;
+}
+}
+/*@media screen and (max-width: 848px) and (min-width: 848px) {
+
+    .pss
+  {
+      margin-top: 15px ;
+      margin-bottom: 15px ;
+  }
+  .margin-o-small
+  {
+      margin-top: 15px;
+  }
+  }*/
+.footer
+{
+    background-color:rgba(3, 24, 46, 0.986);
+}
+.media
+{
+    font-size: 20px;
+}
+.w-90
+{
+    width: 90%;
+}
+.hover:hover
+{
+    cursor: pointer;
+    color: var(--color2);
+}
+.color-nav
+{
+    background-color:rgba(182, 218, 253, 0.7);
+}
+
+
+

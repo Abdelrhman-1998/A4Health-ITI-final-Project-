@@ -1,0 +1,168 @@
+<h1 class="h3 mb-4 patientHeader text-black">
+    <i class="fa-solid fa-hospital-user fs-1 text-primary"></i>
+    Reservations
+</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4 ">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Patients' Appointments</h6>
+    </div>
+    <div class="p-3 w-25"> 
+        <select  #filterStatus class="form-select" aria-label="Default select example">
+        <option selected disabled class="d-none">Status</option>
+         <option value="Pending">Pending</option>
+        <option value="missed">Missed</option>
+        <option value="completed">Completed</option>
+        <option value="cancel">Cancel</option>
+      </select>
+      <button (click)="filterS(filterStatus.value)" type="button" class="btn btn-primary mt-3">Filter</button>
+
+    </div>
+   
+    <!-- Example single danger button -->
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" [ngClass]="{
+                'd-none':isFilter}">
+                <thead class="text-center text-black">
+                    <tr>
+                        <th>Time</th>
+                        <th>Date</th>
+                        <th>Patient</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let dpa of doctorPaitnetsAppiontmets ; index as i" class="text-center">
+                        <td >{{dpa.time}}</td>
+                        <td>{{dpa.date}}</td>
+                        <td>{{dpa.patient}}</td>
+                        <td >{{dpa.gender}}</td>
+                        <td>{{dpa.phone}}</td>
+                        <td>
+                    <!-- <button type="button" class="btn btn-primary btn-sm w-100">{{dpa.status}}</button>  -->
+                    <!-- <button type="button" class="btn btn-danger btn-sm w-100">{{dpa.status}}</button> 
+                    <button type="button" class="btn btn-success btn-sm w-100">{{dpa.status}}</button>  -->
+
+
+                            <button type="button" class="btn btn-primary btn-sm w-100" [ngClass]="{
+                                'btn-danger':doctorPaitnetsAppiontmets[i].status=='missed',
+                                'btn-success':doctorPaitnetsAppiontmets[i].status=='completed'
+                            }">{{dpa.status}}</button>
+                        </td>
+                        <td>
+                            <a  (click)="getIndexChanged(dpa)"  data-toggle="modal" data-target="#exampleModalCenter">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"  [ngClass]="{
+                'd-none':!isFilter}">
+                <thead class="text-center text-black">
+                    <tr>
+                        <th>Time</th>
+                        <th>Date</th>
+                        <th>Patient</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr *ngFor="let dpa of filter ; index as i" class="text-center">
+                        <td >{{dpa.time}}</td>
+                        <td>{{dpa.date}}</td>
+                        <td>{{dpa.patient}}</td>
+                        <td >{{dpa.gender}}</td>
+                        <td>{{dpa.phone}}</td>
+                        <td>
+                    <!-- <button type="button" class="btn btn-primary btn-sm w-100">{{dpa.status}}</button>  -->
+                    <!-- <button type="button" class="btn btn-danger btn-sm w-100">{{dpa.status}}</button> 
+                    <button type="button" class="btn btn-success btn-sm w-100">{{dpa.status}}</button>  -->
+            
+            
+                            <button type="button" class="btn btn-primary btn-sm w-100" [ngClass]="{
+                                'btn-danger':filter[i].status=='missed',
+                                'btn-success':filter[i].status=='completed',
+                                'btn-primary':filter[i].status=='Pending'
+                            }">{{dpa.status}}</button>
+                        </td>
+                        <td>
+                            <a  (click)="getIndexChanged(dpa)"  data-toggle="modal" data-target="#exampleModalCenter">
+                                <i class="fa-solid fa-pencil"></i>
+                            </a>
+                        </td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Edit status modal  -->
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade text-dark" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<form class="modal-dialog modal-dialog-centered" role="document" [formGroup]="patientStatus">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLongTitle">
+        <i class="fa-solid fa-pen-to-square"></i>
+          Edit Appointment's Status
+        </h5>
+      <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+        <!-- <span aria-hidden="true">&times;</span>
+      </button> -->
+    </div>
+    <div class="modal-body ">
+        <div>
+            <input formControlName="status" type="radio" name="status" value="completed" id="status1">
+            <label class="ms-2" for="status1"> completed </label>
+        </div>
+        <div>
+            <input formControlName="status" type="radio" name="status" value="missed" id="status2">
+            <label  class="ms-2" for="status2"> missed </label>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <input (click)="changeStatus(patientStatus.value)" type="submit" value="Save changes" class="btn btn-primary">
+  </div>
+</div>
+</form>
+</div>

@@ -1,0 +1,25 @@
+<h1 class="h3 mb-4 feedBackHeader text-black">
+    <i class="fa-solid fa-comment text-white fs-1 text-primary"></i>
+    Feedbacks
+</h1>
+<div class="feedbackComments text-black">
+    <div *ngFor="let f of feedback" class="card-body text-center bg-white my-3">
+        <p class="card-text my-2">{{f.feedback}}</p>
+        <p class="fw-bold">Rating</p>
+        <div class="d-flex justify-content-center">
+            <div class="d-flex gap-2 align-items-center justify-content-center">
+                <i class="fa-solid fa-star text-warning"></i>
+                <i class="fa-solid fa-star text-warning"></i>
+                <i class="fa-solid fa-star text-warning"></i>
+                <i class="fa-solid fa-star text-warning"></i>
+                <i class="fa-solid fa-star-half text-warning"></i>
+            </div>
+        </div>
+        <p class="text-end mt-1 mb-1">
+            {{f.name}}
+        </p>
+      </div>
+      
+      
+</div>
+

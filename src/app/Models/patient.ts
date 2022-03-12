@@ -7,4 +7,5 @@ export interface Patient {
       password:string;
       image_name:string;
       phone:string;
+
 }

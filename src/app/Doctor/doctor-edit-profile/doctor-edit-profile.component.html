@@ -1,0 +1,136 @@
+<!-- <form class="editProfileForm d-flex flex-column align-items-center" action="#" method="get">
+    <h2>
+    <i class="fa-solid fa-user-pen text-white fs-2 text-primary"></i>
+       Edit Profile
+    </h2>
+    <div class="mt-2 mb-2">
+        <input type="text" name="fname" id="fname" placeholder="Your first name" >
+    </div>
+    <div class="mt-2 mb-2">
+        <input type="text" name="lname" id="lname" placeholder="Your last name" >
+    </div>
+   
+    <div class="mt-2 mb-2">
+        <textarea name="description" id="description" placeholder="Describe yourself"></textarea>
+    </div>
+    <div class="mt-2 mb-2 uploadFile ">
+        <label for="doctorPhoto">Change Photo :</label>
+        <input type="file" name="doctorPhoto" id="doctorPhoto" >
+    </div>
+    <div class="mt-2 mb-2">
+        <input type="submit" value="Send" id="send" name="send" class="bg-primary text-white">
+    </div>
+
+</form> -->
+
+<div class="vh-75 d-flex justify-content-center align-items-center ">
+
+    <div class="aaaa bg-white pb-4  w-50 ">
+        <h4 class="bg-primary rounded-top text-white text-center py-2 ">
+            <i class="fa-solid fa-user-pen text-white fs-2 "></i>
+            Edit Profile
+        </h4>
+        <form   [formGroup]="doctorEditForm">
+        <div class="text-primary px-4">
+            <div class="form-floating my-3 text-center ">
+                <input formControlName="firstname"  type="Name" class="form-control " id="floatingName"
+                    placeholder="name@example.com">
+                <label for="floatingName">First Name</label>
+            </div>
+             <div class="alert alert-danger" 
+            *ngIf="doctorEditForm.get('firstname')?.errors && doctorEditForm.get('firstname')?.touched">
+                <p class="m-0" *ngIf="doctorEditForm.get('firstname')?.errors?.['required']">First name is required</p>
+                <p class="m-0" *ngIf="doctorEditForm.get('firstname')?.errors?.['minlength']">First name min length is 4</p>
+                <!-- <p class="m-0" *ngIf="doctorEditForm.get('password')?.errors?.['maxlength']">Password Max length is 20</p> -->
+            </div> 
+            <div class="form-floating my-3">
+                <input formControlName="lastname" type="email" class="form-control" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Last Name</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="doctorEditForm.get('lastname')?.errors && doctorEditForm.get('lastname')?.touched">
+                <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['required']">Last name is required</p>
+                <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['minlength']">Last name min length is 4</p>
+                <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['maxlength']">Password Max length is 20</p> -->
+            </div> 
+            <div class="form-floating my-3">
+                <input formControlName="fees" type="number" class="form-control" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Fees</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="doctorEditForm.get('fees')?.errors && doctorEditForm.get('fees')?.touched">
+                <p class="m-0" *ngIf="doctorEditForm.get('fees')?.errors?.['required']">Fees is required</p>
+                <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['minlength']">Last name min length is 4</p> -->
+                <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['maxlength']">Password Max length is 20</p> -->
+            </div>
+            <div class="form-floating my-3 d-flex justify-content-between ">
+                           
+                <input #phone  type="number" class="form-control w-75" id="floatingphone"
+                    placeholder="name@example.com">
+                <label for="floatingphone">Phone</label>
+                <button (click)="addPhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Add</button>
+                <button (click)="deletePhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Delete</button>
+           
+            </div>
+            <div class="d position-relative">
+                <select  #Phones name="phones" class="form-select text-primary my-3" aria-label="Default select example">
+                    <option disabled selected style="display:none;"> Your Phones </option>
+                    <option *ngFor="let num of editDocData.phones"  class="text-primary" [value]="num">{{num}}</option>
+                </select>
+            </div>
+            <div class="my-3">
+                <select formControlName="city"  class="form-select text-primary my-3" aria-label="Default select example">
+                    <option disabled selected style="display:none;"> City </option>
+
+                    <option *ngFor="let c of cities"  class="text-primary" [value]="c">{{c}}</option>
+
+                </select>
+            </div>
+            <div class="form-floating my-3">
+                <input formControlName="street" type="email" class="form-control" id="floatingInput"
+                    placeholder="name@example.com">
+                <label for="floatingInput">Street</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="doctorEditForm.get('street')?.errors && doctorEditForm.get('street')?.touched">
+                <p class="m-0" *ngIf="doctorEditForm.get('street')?.errors?.['required']">Street is required</p>
+                <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['minlength']">Last name min length is 4</p> -->
+                <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['maxlength']">Password Max length is 20</p> -->
+            </div>
+            <!-- <div class="alert alert-danger" 
+            *ngIf="changePasswordForm.get('newpassword')?.errors && changePasswordForm.get('newpassword')?.touched">
+                <p class="m-0" *ngIf="changePasswordForm.get('newpassword')?.errors?.['required']">Password is required</p>
+                <p class="m-0" *ngIf="changePasswordForm.get('newpassword')?.errors?.['minlength']">Password min length is 2</p>
+                <p class="m-0" *ngIf="changePasswordForm.get('newpassword')?.errors?.['maxlength']">Password Max length is 20</p>
+            </div>  -->
+            <div class="form-floating my-3">
+                <textarea  formControlName="dy" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                <label for="floatingTextarea2">Describe yourself</label>
+            </div>
+            <div class="alert alert-danger" 
+            *ngIf="doctorEditForm.get('dy')?.errors && doctorEditForm.get('dy')?.touched">
+                <p class="m-0" *ngIf="doctorEditForm.get('dy')?.errors?.['required']">Descripe yourself is required</p>
+                <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['minlength']">Last name min length is 4</p> -->
+                <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['maxlength']">Password Max length is 20</p> -->
+            </div>
+            <div class="mb-3">
+                <label  for="formFile" class="form-label">Choose Image</label>
+                <input formControlName="photo" class="form-control" type="file" id="formFile" >
+              </div>
+              <div class="alert alert-danger" 
+              *ngIf="doctorEditForm.get('photo')?.errors && doctorEditForm.get('photo')?.touched">
+                  <p class="m-0" *ngIf="doctorEditForm.get('photo')?.errors?.['required']">Photo is required</p>
+                  <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['minlength']">Last name min length is 4</p> -->
+                  <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['maxlength']">Password Max length is 20</p> -->
+              </div>
+            <button [disabled]="doctorEditForm.invalid" (click)="submitEditDoctor(doctorEditForm.value)" type="submit" class="btn btn-danger">Save</button>
+            <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
+        </div>
+        </form>
+
+    </div>
+</div>
+
+

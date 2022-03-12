@@ -4,6 +4,7 @@ import { Doctor } from 'src/app/Models/doctor';
 import { Specialty } from 'src/app/Models/specialty';
 import { DoctorsService } from 'src/app/Services/doctors.service';
 import { SpecialtiesService } from 'src/app/Services/specialties.service';
+import { AdminSideNavComponent } from '../admin-side-nav/admin-side-nav.component';
 @Component({
   selector: 'app-add-doctor',
   templateUrl: './add-doctor.component.html',

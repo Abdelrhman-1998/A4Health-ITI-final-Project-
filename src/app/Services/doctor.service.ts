@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Doctor } from '../Models/doctor';
 import { HttpClient } from '@angular/common/http';
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +17,8 @@ export class DoctorService {
   // get all data 
 
     getDataFromApi(){
-      let url ="https://api.jsonbin.io/b/62213a3a7caf5d67835e87b5/8";
+
+      let url ="https://api.jsonbin.io/b/62213a3a7caf5d67835e87b5/11";
        return this.httpClient.get(url);
     }
 
@@ -55,10 +59,14 @@ export class DoctorService {
   }
 
   filterBySpecilaization(specilaization:"string",all_data:Doctor[]){
+    let spec=specilaization.trim();
     let filterd_data=all_data.filter(ele => {
-      return ele.specialization.toLowerCase()== specilaization.toLowerCase();
+              return ele.specialization.trim().toLowerCase() == spec.toLowerCase()
+     
     });
+    console.log(filterd_data);
     return filterd_data;
+   
   }
 
 // ------------------------------
@@ -91,17 +99,40 @@ export class DoctorService {
 
   }
   
-  filterByAvaliability(avaliabilty:string,search_results:any[]){
+  filterByAvaliability(avaliabilty:string,search_results:Doctor[]){
     // do not forget to  change argument type of serach_results
-    if(avaliabilty!="anyDay"){
-      let filterd_data=search_results.filter(ele => {
-        return ele.title.toLowerCase()==avaliabilty.toLowerCase();
-      });
-      return filterd_data;
+    if(avaliabilty=="today"){
+      let today:any= new Date();
+      today=today.toString().split(" ").slice(0,4).join("-");
+        let filtered_data=search_results.filter(function(ele){
+          let dates:any=[];
+                ele.appointments.forEach(function(ele){
+                      dates.push(new Date (ele.Date).toString().split(" ").slice(0,4).join("-"));
+                });
+          return dates.includes(today)
+        })
+        console.log(filtered_data);
+        return filtered_data;
+    }
+    else if(avaliabilty=="tomorrow"){
+      let tomorrow_date:any=new Date();
+      tomorrow_date.setDate(new Date().getDate() + 1);
+      tomorrow_date= tomorrow_date.toString().split(" ").slice(0,4).join("-");
+        let filtered_data=search_results.filter(function(ele){
+          let dates:any=[];
+                ele.appointments.forEach(function(ele){
+                      dates.push(new Date (ele.Date).toString().split(" ").slice(0,4).join("-"));
+                });
+          return dates.includes(tomorrow_date)
+        })
+        console.log(filtered_data);
+        return filtered_data;
+
     }
     else{
       return search_results;
     }
+
   }
 
   filterByFees(fees:string,search_results:Doctor[]){
@@ -146,6 +177,14 @@ export class DoctorService {
 
   }
   
+
+  filterByOffers(search_results:Doctor[]){
+      let filtered_data=search_results.filter(function(ele){
+        return ele.offers==true
+      })
+      return filtered_data;
+  }
+
           // offers
 
 // ------------------------------
