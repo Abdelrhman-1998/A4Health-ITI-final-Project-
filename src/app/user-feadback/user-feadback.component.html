@@ -1,0 +1,39 @@
+<div class="w-75 mx-auto">
+    <form class="dropdown-item  align-items-center" method="" #feedback="ngForm"(submit)="sendFeedback(feedback)">
+       
+        <h4 class="bg-primary rounded-top text-white text-center py-2 ">Rate the Doctor</h4>
+       <div>
+        <label> choose rating</label>
+        <select  ngModel name="rating" id="rate" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+            <option value="1">
+                
+                ⭐
+            </option>
+            <option value="2">
+                ⭐⭐
+            </option>
+            <option value="3">
+                ⭐⭐⭐
+
+            </option>
+            <option value="4">
+                ⭐⭐⭐⭐
+
+            </option>
+            <option value="5">
+                ⭐⭐⭐⭐⭐
+
+            </option>
+
+        </select>
+       </div>
+        
+      <div class="mb-3">
+        <label for="floatingmessage">message</label>
+        <textarea ngModel  name="message" type="text" class="form-control " id="floatingmessage" 
+        ></textarea>
+      </div>
+      <input  type="hidden"  name="doctorID" [(ngModel)]="DoctorId">
+      <button class="btn btn-primary" type="submit">send </button>
+    
+    </form>

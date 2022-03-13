@@ -31,5 +31,12 @@ export class ReviewsService {
   deleteReview(review_id:number):Observable<Review>{
     return this.httpClient.delete<Review>(`${environment.ApiUrl}/reviews/${review_id}`)
   }
+  sendReview(newreview: Review): Observable<Review> {
+    const headers = { "content-type": "application/json" };
+    // const body = JSON.stringify(newreview);
+    return this.httpClient.post<Review>(`${environment.ApiUrl}/reviews`, newreview, {
+      headers: headers,
+    });
+  }
 
 }
