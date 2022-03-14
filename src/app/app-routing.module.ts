@@ -30,6 +30,8 @@ import { AuthGuard } from './Gaurds/auth.guard';
 import { ReviewComponent } from './Component/Review/review/review.component';
 import { UsergGuard } from './userguard/userg.guard';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
+import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -39,12 +41,15 @@ export const routes: Routes = [
   {path: 'booking/:id', component:BookWithDoctorComponent},
   {path: 'booking/:id/reviews/:id', component:ReviewComponent},
   {path: 'Search', component:SearchPageComponent},
+  {path: 'Community',  redirectTo: '/Home#Community'},
+  {path: 'specialty/:id', component:SearchPageComponent},
 
 
   {path:'userdashboard' ,canActivate:[UsergGuard], component:UserDashboardComponent , children:[
     {path:'reservations' , component:UserReservationsComponent},
     {path:'manageprofile' , component:UserManageProfileComponent},
     {path:'changepassword' , component:UserChangePasswordComponent},
+    {path:'feedback/:docotrID' , component:UserFeadbackComponent},
        ]},
        {path:'signup',component:UsersignupComponent},
        {path:'signin',component:SignInComponent},
@@ -54,7 +59,7 @@ export const routes: Routes = [
     {path:'profile' , component:DoctorProfileComponent},
     {path:'editprofile' , component:DoctorEditProfileComponent},
     {path:'appointment' , component:DoctorAppiontmentComponent},
-    {path:'dreservations' , component:DoctorReservationsComponent},
+    {path:'dreservations/:status' , component:DoctorReservationsComponent},
     {path:'feedback' , component:DoctorFeedbackComponent},
   ]},
   //   {path:'admin',redirectTo:'admin/addDoctor'},
@@ -77,6 +82,7 @@ export const routes: Routes = [
     {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},
+  {path:'**',component:NotFoundComponent}
 ]
 
 export const routerOptions: ExtraOptions = {

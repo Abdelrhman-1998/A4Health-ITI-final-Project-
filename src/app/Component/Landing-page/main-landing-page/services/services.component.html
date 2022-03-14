@@ -1,4 +1,4 @@
-    <div class="services pt-3 pb-3" id="service">
+<div class="services pt-3 pb-3" id="service">
     <h2 class="text-center m-0">
         Our Services
     </h2>
@@ -7,45 +7,41 @@
 
        <!-- <i class="fa-solid fa-hand-holding-medical"></i> -->
     </p>
-    <div class="container serv">
-    <owl-carousel-o [options]="customOptions">        
-        <ng-template carouselSlide class="item-con" *ngFor="let specialty of specialties;index as i">
-            <div class="item-card">
-                <div class="serviceCard">
-                    <div class="cardIcon" *ngIf="specialty.name == specialIcon[i].name">
-                        <i [class]="specialIcon[i].icon"></i>
-                    </div>
-                    <div class="cardIcon" *ngIf="specialty.name != specialIcon[i].name">
-                        <i class="fa-solid fa-hand-holding-medical"></i>
-                    </div>
-                    <div class="cardBody">
-                        <p>
-                            {{specialty.name}}
-                        </p>
-                    </div>
-
-                    <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
-                        <form action="" method="">
-                        <!-- <a class="btn" [href]="specialty.name" role="button"> Learn More</a> -->
-                        <a  type="submit" (click)="sendSpecialtyId(specialty.id)" (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
-                            Learn More
-                        </a>
-                        <a  type="submit"  (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                    </form>
+    <div class="container serv mt-2 mb-2">
+    <owl-carousel-o [options]="customOptions"> 
+        <ng-container *ngFor="let specialty of specialties ;index as i">
+            <ng-template carouselSlide class="item-con">
+                <div class="item ">
+                    <div class="item-card">
+                        <div class="serviceCard">
+                            <div class="cardIcon" *ngIf="specialty.name == specialIcon[i].name">
+                                <i [class]="specialIcon[i].icon"></i>
+                            </div>
+                            <div class="cardIcon" *ngIf="specialty.name != specialIcon[i].name">
+                                <i class="fa-solid fa-hand-holding-medical"></i>
+                            </div>
+                            <div class="cardBody">
+                                <p>
+                                    {{specialty.name}}
+                                </p>
+                            </div>
+        
+                            <div class="cardFooter d-flex  justify-content-between align-items-center flex-nowrap">
+                                <a href="#" (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
+                                    Learn More
+                                </a>
+                                <a href="#" (click)="sendSpecialtyId(specialty.id)" [routerLink]="['/specialty',specialty.name]">
+                                    <i class="fas fa-long-arrow-alt-right"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </ng-template> 
-        
->>>>>>> origin/Arwa
+            </ng-template> 
+        </ng-container>       
+   
     </owl-carousel-o>
+    
 
-
-
-
-
-
-</div>
+    </div>
 </div>

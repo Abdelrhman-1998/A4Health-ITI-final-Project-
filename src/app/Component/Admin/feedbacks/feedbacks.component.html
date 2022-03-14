@@ -15,11 +15,10 @@
                 <table class="table table-bordered text-center text-dark" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            
+                            <th>ID</th>
                             <th>Patient</th>
                             <th>Feedback Messages</th>
-                            <th>Doctor</th>
-                            <th>Doctor ID</th>
+                            <th>Doctor</th>                         
                             <th>Rating</th>
                             <th>Delete</th>
                             
@@ -27,13 +26,15 @@
                     </thead>
                     <tbody>
                         <!-- | filter:searchResult -->
-                        <tr  *ngFor="let review of reviews | paginate: { itemsPerPage: count, currentPage: p }| filter:searchResultn ; index as i">
+                        <!-- | filter:searchResultn -->
+                        <tr  *ngFor="let review of reviews | paginate: { itemsPerPage: count, currentPage: p } ; index as i">
                         
-                            <td>{{patients[i].username}}</td>
+                            <td>{{review.id}}</td>
+                            <td >{{review.patient}}</td>
                             <td class="w-50">{{review.message}}</td>
-                            <td><span>Dr.</span> {{doctors[i].fname+' '+doctors[i].lname}}</td>
-                            <td>{{review.doctor_id}}</td>
-                            <td><i *ngFor="let star of counter(review.rating)" class="fa-solid fa-star text-warning"></i>
+                            <td><span>Dr.</span> {{review.doctor}}</td>
+                            <!-- <td>{{review.doctor_id}}</td> -->
+                            <td><i *ngFor="let star of counter(rate)"  class="fa-solid fa-star text-warning"></i>
                             </td>
                             <td class="text-center"><button class="btn btn-danger w-100"
                                 (click)="delete(review.id)"

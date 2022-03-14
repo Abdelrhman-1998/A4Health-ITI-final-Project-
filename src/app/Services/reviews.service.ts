@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Review } from "../../app/Models/review";
 import { environment } from "../../environments/environment";
@@ -9,10 +9,11 @@ import { Observable } from "rxjs";
 })
 export class ReviewsService {
   // doctor:Doctor[]=[];
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
   constructor(private httpClient: HttpClient) {}
 
   getAllReviews(): Observable<Review[]>{
-   return this.httpClient.get<Review[]>(`${environment.ApiUrl}/reviews`);
+   return this.httpClient.get<Review[]>(`${environment.ApiUrl}/dashboard/reviews`,{headers:this.header});
   }
   getReviewByID(review_id:number):Observable<Review>{
     return this.httpClient.get<Review>(`${environment.ApiUrl}/reviews/${review_id}`)
@@ -29,7 +30,14 @@ export class ReviewsService {
     return this.httpClient.get<Review>(`${environment.ApiUrl}/reviews?rating=${rating}?id=${doctor_id}`)
   }
   deleteReview(review_id:number):Observable<Review>{
-    return this.httpClient.delete<Review>(`${environment.ApiUrl}/reviews/${review_id}`)
+    return this.httpClient.delete<Review>(`${environment.ApiUrl}/dashboard/reviews/${review_id}`,{headers:this.header})
+  }
+  sendReview(newreview: Review): Observable<Review> {
+    const headers = { "content-type": "application/json" };
+    // const body = JSON.stringify(newreview);
+    return this.httpClient.post<Review>(`${environment.ApiUrl}/reviews`, newreview, {
+      headers: headers,
+    });
   }
 
 }

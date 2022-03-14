@@ -40,14 +40,11 @@ export class SignInComponent implements OnInit {
         this.isSuccessful = true;
         this.isSignUpFailed = false;  
          if(this.isSuccessful==this.loginServises.isUserlogged){
-      this.router.navigate(['Home']);
-  
-    }
-   
-      }
+         this.router.navigate(['Home']);
+        }}
      
     )
-    this.router.navigate(['/doctordashboard/appointment'])
+    this.router.navigate(['/userdashboard/reservations'])
    console.log(this.user);
     console.log(loginValue)
     

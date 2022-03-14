@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{NgForm,FormControl,FormGroup,Validators} from '@angular/forms'
+import { Router } from '@angular/router';
 import { Doctor } from 'src/app/Models/doctor';
 import { Specialty } from 'src/app/Models/specialty';
 import { DoctorsService } from 'src/app/Services/doctors.service';
@@ -15,22 +16,30 @@ export class AddDoctorComponent implements OnInit {
   addnew!:Doctor
   phonePattern="(01)[0-9]{9}";
   specialty:Specialty[]=[]
+  files:any
+  
   constructor(
     private doctorSrvice:DoctorsService,
-    private specialtyService:SpecialtiesService
+    private  specialtyService:SpecialtiesService,
+    private router:Router,
     ) { }
   // validation
-  loginForm=new FormGroup({
+  AddDoctor=new FormGroup({
     username:new FormControl('',[
       Validators.required,
-      Validators.minLength(3)]),
+      Validators.minLength(4)]),
     fname:new FormControl('',[
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(4)
     ]),
     lname:new FormControl('',[
       Validators.required,
-      Validators.minLength(3)
+      Validators.minLength(4)
+    ]),
+    city:new FormControl('',[
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(15)
     ]),
     gender:new FormControl('',[
       Validators.required,
@@ -38,7 +47,7 @@ export class AddDoctorComponent implements OnInit {
     title:new FormControl('',[
       Validators.required,
     ]),
-    specialization:new FormControl('',[
+    specialization_id:new FormControl('',[
       Validators.required,
     ]),
     phone:new FormControl('',[
@@ -46,60 +55,131 @@ export class AddDoctorComponent implements OnInit {
       Validators.pattern(this.phonePattern)
 
     ]),
+    description: new FormControl(
+       Validators.required,
+       Validators.minLength(15),
+      //  Validators.maxLength(50)
+    ),
     password : new FormControl('',[
       Validators.required,
-      Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
+      // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
       // At least 8 characters in length
       // Lowercase letters
       // Uppercase letters
       // Numbers
      // Special characters
+    ]),
+    street:new FormControl('',[
+      Validators.required,
+      Validators.minLength(4),
+      Validators.maxLength(20)
+    ]),
+    fees:new FormControl('',[
+      Validators.required,
+      Validators.minLength(1),
+    ]),
+    img_name:new FormControl('',[
+      Validators.required,
     ])
   })
   ngOnInit(): void {
     this.getAllSpecialties()
   }
+  upLoadImg(event:any){
+    this.files=event.target.files[0]
+    console.log(this.files);
+    
+  }
 
   sendDataOfDoctor(data:NgForm){
+    let formData= new FormData();
+    formData.append('username',this.AddDoctor.value.username);
+    formData.append('fname',this.AddDoctor.value.fname);
+    formData.append('lname',this.AddDoctor.value.lname);
+    formData.append('city',this.AddDoctor.value.city);
+    formData.append('gender',this.AddDoctor.value.gender);
+    formData.append('title',this.AddDoctor.value.title);
+    formData.append('specialization_id',this.AddDoctor.value.specialization_id);
+    formData.append('phone',this.AddDoctor.value.phone);
+    formData.append('description',this.AddDoctor.value.description);
+    formData.append('password',this.AddDoctor.value.password);
+    formData.append('street',this.AddDoctor.value.street);
+    formData.append('fees',this.AddDoctor.value.fees);
+    formData.append('img_name',this.files,this.files.name);
+    
+
+
+
    this.doctor=data
+   this.doctor.img_name =this.files
    console.log(this.doctor);
-   
-    this.doctorSrvice.addDoctor(this.doctor).subscribe((res)=>this.addnew=res)
-    console.log(this.addnew);
-    
-    
+  this.doctorSrvice.addDoctor(formData).subscribe(
+    (res)=>{
+      // console.log(this.files);
+      console.log("test");
+      
+      this.addnew=res
+
+      console.log(res);
+      // setTimeout(()=>{
+      //   this.router.navigate(['/admin/doctor'])
+      // },3000)
+      
+    }, 
+    (error: any) => {
+        console.log(error)
+    }
+  )
   }
   
   getAllSpecialties(){
     this.specialtyService.getAllSpecialties().subscribe(
       (specialty)=>{
         this.specialty=specialty;
+        console.log(this.specialty);
+        
       }
     )
   }
   get username(){
-    return this.loginForm.get('username');
+    return this.AddDoctor.get('username');
   }
   get fname(){
-    return this.loginForm.get('fname');
+    return this.AddDoctor.get('fname');
   }
   get lname(){
-    return this.loginForm.get('lname');
+    return this.AddDoctor.get('lname');
   }
   get gender(){
-    return this.loginForm.get('gender');
+    return this.AddDoctor.get('gender');
   }
   get title(){
-    return this.loginForm.get('title');
+    return this.AddDoctor.get('title');
   }
   get specialization(){
-    return this.loginForm.get('specialization');
+    return this.AddDoctor.get('specialization_id');
   }
   get phone(){
-    return this.loginForm.get('phone');
+    return this.AddDoctor.get('phone');
   }
   get password(){
-    return this.loginForm.get('password');
+    return this.AddDoctor.get('password');
   }
-  
+  get city(){
+    return this.AddDoctor.get('city');
+  }
+  get Description(){
+    return this.AddDoctor.get('description');
+  }
+  get Street(){
+    return this.AddDoctor.get('street');
+  }
+  get Fees(){
+    return this.AddDoctor.get('fees');
+  }
+  get img_name(){
+    return this.AddDoctor.get('img_name');
+  }
+
+ 
 }

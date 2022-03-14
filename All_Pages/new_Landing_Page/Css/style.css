@@ -89,39 +89,10 @@
 .item-card{
     width: 90% !important;
 }
-.owl-theme .owl-nav{
- font-size: 40px;
- color: #fff;
- /* position: relative; */
- 
-}
+
 button.owl-prev,button.owl-next{
     width: 30px;
     /* height: 50px; */
     text-align: center;
    background-color: #0075ff !important;
-}
-.owl-prev:hover , .owl-next:hover{
-    background-color: #fff !important;
-     color: #0075ff !important;
-}
-.serv{
-    position: relative;
-}
-.owl-prev{
-position: absolute;
-left: -3%;
-top: 30%;
-}
-.owl-next{
-    position: absolute;
-    right: -1%;
-    top: 30%;
-    }
-
-.owl-one .owl-dots{
-    visibility: hidden;
-}
-.owl-carousel .owl-item img{
-    width: auto !important;
 }

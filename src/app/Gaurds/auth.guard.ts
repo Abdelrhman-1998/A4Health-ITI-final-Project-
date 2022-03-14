@@ -17,7 +17,7 @@ export class AuthGuard implements CanActivate {
    if(this.AuthUser.isUserlogged){
      return true;
     }else{
-      // alert('You Must LogIn First !')
+      alert('You Must LogIn First !')
       this.router.navigate(['/admin/login'])
       return false
     }

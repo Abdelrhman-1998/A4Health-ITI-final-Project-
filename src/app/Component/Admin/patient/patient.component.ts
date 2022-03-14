@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Patient } from 'src/app/Models/patient';
 import { PatientsService } from 'src/app/Services/patients.service';
 
@@ -12,7 +13,10 @@ export class PatientComponent implements OnInit {
   status=''
   p: number = 1;
   count: number = 5;
-  constructor(private patientService:PatientsService) { }
+  constructor(
+    private patientService:PatientsService,
+    private router:Router
+    ) { }
 
   ngOnInit(): void {
     this.getAllPatients()
@@ -21,7 +25,7 @@ export class PatientComponent implements OnInit {
     this.patientService.getAllPatients().subscribe(
       (patient)=>{
         this.patients=patient
-        // console.log(this.patients);
+        console.log(patient);
         
       }
     )
@@ -29,5 +33,8 @@ export class PatientComponent implements OnInit {
   delete(id:number){
     this.patientService.deletePatientByID(id).subscribe(() => this.status = 'Delete successful')
     // window.location.reload();
+    // setTimeout(()=>{
+    //   this.router.navigate(['/admin/doctor'])
+    // },2000)
     }
 }

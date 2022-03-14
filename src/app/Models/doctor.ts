@@ -6,6 +6,7 @@ export interface Doctor{
     appointments:[{"Date":string,"Time":[]}];
     username:string;
     specialization:string;
+    
     title:string;
     fees:number;
     rating:any;

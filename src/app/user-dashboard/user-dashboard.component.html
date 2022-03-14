@@ -79,55 +79,39 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                        <a   class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-bell fa-fw"></i>
                             <!-- Counter - Alerts -->
-                            <span class="badge badge-danger badge-counter">3+</span>
+                            <span  class="badge badge-danger badge-counter">{{notifications.length}}</span>
                         </a>
                         <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="alertsDropdown">
+                        <div  class="w-100 dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="alertsDropdown"> 
                             <h6 class="dropdown-header">
-                                Alerts Center
-                            </h6>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-primary">
-                                        <i class="fas fa-file-alt text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 12, 2019</div>
-                                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-success">
-                                        <i class="fas fa-donate text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 7, 2019</div>
-                                    $290.29 has been deposited into your account!
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-warning">
-                                        <i class="fas fa-exclamation-triangle text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 2, 2019</div>
-                                    Spending Alert: We've noticed unusually high spending for your account.
-                                </div>
-                            </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                                New Notification
+                             </h6>
+                            <div *ngFor="let not of notifications" >
+                           
+                             <p class="m-3"> 
+                                <i class="fa-solid fa-arrow-up-right-from-square text-danger"></i>
+                                {{not.message}}
+                                <a *ngIf="not.type=='Feedback time'"  [routerLink]="['feedback/',not.doctorId]"
+                                > feedback here </a> 
+                                <a  *ngIf="not.type=='Cancel Appointment'" [routerLink]="['reservations/']"
+                                > check your reservations</a> 
+                            </p>
+                            </div>
+                            <!-- <div *ngFor="let not of finalNot">
+                                <p class="m-3"> 
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-danger"></i>
+                                    check your Reservation updating
+                                     <a routerLink="/userdashboard/reservations"> here</a> </p>
+                            </div> -->
                         </div>
                     </li>
   
+
                     <!-- Nav Item - Messages -->
   
                     <div class="topbar-divider d-none d-sm-block"></div>
@@ -143,12 +127,12 @@
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" [routerLink]="['/userdashboard/manageprofile']" routerLinkActive="router-link-active" >
                                 <i class="fa-solid fa-user-doctor"></i>
                                 Profile
                             </a>
                             <!-- <div class="dropdown-divider"></div> -->
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a (click)="logout()" class="dropdown-item">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 Logout
                             </a>
@@ -190,7 +174,7 @@
   </a>
   
   <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -207,7 +191,7 @@
             </div>
         </div>
     </div>
-  </div>
+  </div> -->
   <!-- //"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", -->
   <!-- <div class="main-wrap">
     <input id="slide-sidebar" type="checkbox" role="button" />

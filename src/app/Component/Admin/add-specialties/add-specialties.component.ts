@@ -14,7 +14,7 @@ export class AddSpecialtiesComponent implements OnInit {
   newSpecialty!:Specialty
   specialtyItem!: Specialty
   editMood = false;
- 
+ specialtyEdit!:Specialty
 
   id = this.activatedRoute.snapshot.params['id'];
   title!:any
@@ -36,6 +36,8 @@ export class AddSpecialtiesComponent implements OnInit {
     console.log(this.activatedRoute.snapshot.url);
     if(this.activatedRoute.snapshot.url[1].path=='edit'){
       this.editMood = true;
+      console.log(this.editMood);
+      
     }
     if(this.editMood){
       this.getdoctorId()
@@ -62,14 +64,21 @@ export class AddSpecialtiesComponent implements OnInit {
     )
      console.log(data);
   } 
- 
+ getAll(){
+   this.specialtiesService.getAllSpecialties().subscribe(
+     (res)=>{
+      //  this.specialtyEdit=res
+     }
+   )
+ }
   getdoctorId(){
   this.specialtiesService.getSpecialtyByID(this.id).subscribe(
     (spe)=>{
       this.specialtyItem=spe
+      console.log(this.specialtyItem);
     }
   );
-    console.log(this.specialtyItem);
+    
     
   }
 }

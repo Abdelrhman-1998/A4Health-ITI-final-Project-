@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DoctorserviceService } from 'src/app/doctorservice/doctorservice.service';
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _Doctorservic:DoctorserviceService) { }
+  notification:any[]=[]
+  type:any
 
   ngOnInit(): void {
+    this._Doctorservic.getNotifications().subscribe((response)=>{
+      this.notification = response.notifications;
+      this.type = response.type;
+      console.log(this.notification);
+    });
   }
 
 }
