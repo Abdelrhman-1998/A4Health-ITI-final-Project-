@@ -7,7 +7,7 @@
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Patients' Appointments</h6>
     </div>
-    <div class="p-3 w-25"> 
+    <div class="p-3 w-25" *ngIf="!isCancel"> 
         <select  #filterStatus class="form-select" aria-label="Default select example">
         <option selected disabled class="d-none">Status</option>
          <option value="Pending">Pending</option>
@@ -51,7 +51,8 @@
 
                             <button type="button" class="btn btn-primary btn-sm w-100" [ngClass]="{
                                 'btn-danger':doctorPaitnetsAppiontmets[i].status=='missed',
-                                'btn-success':doctorPaitnetsAppiontmets[i].status=='completed'
+                                'btn-success':doctorPaitnetsAppiontmets[i].status=='completed',
+                                'btn-secondary':doctorPaitnetsAppiontmets[i].status=='cancel'
                             }">{{dpa.status}}</button>
                         </td>
                         <td>
@@ -93,7 +94,8 @@
                             <button type="button" class="btn btn-primary btn-sm w-100" [ngClass]="{
                                 'btn-danger':filter[i].status=='missed',
                                 'btn-success':filter[i].status=='completed',
-                                'btn-primary':filter[i].status=='Pending'
+                                'btn-primary':filter[i].status=='Pending',
+                                'btn-secondary':filter[i].status=='cancel'
                             }">{{dpa.status}}</button>
                         </td>
                         <td>

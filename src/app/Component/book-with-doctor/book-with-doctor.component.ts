@@ -58,7 +58,7 @@ export class BookWithDoctorComponent implements OnInit {
       (review) => {
        let total=0
         review.forEach((revRate)=>{
-          total += revRate.rating
+          total += revRate.rate
           this.totalRate =total/ review.length;
           
           

@@ -1,4 +1,4 @@
-:root{
+/* :root{
     --color1:#043d75;
     --color2:#0075ff;
     --color3:#FF8C83;
@@ -9,8 +9,8 @@
     --color8:#6eb4d8;
     --color9:#ffd5bf;
     scroll-behavior: smooth;
-}
-
+} */
+@import url("../../../../../All_Pages/new_Landing_Page/style.css");
 header,.aboutUs{
     font-family: 'Inter', sans-serif;
     background-image: url("../../../../assets/landing_page/images/wavy.jpg");
@@ -18,7 +18,7 @@ header,.aboutUs{
     background-size: cover;
 
 }
-.home-pic{
+/* .home-pic{
     background-color: #ebeeff;
     border-radius: 25px;
     box-shadow:3px 3px 10px 4px #ddd;
@@ -117,4 +117,4 @@ header{
     text-align: center;
 }
 }
-
+ */

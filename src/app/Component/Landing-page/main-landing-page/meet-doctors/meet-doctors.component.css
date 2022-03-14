@@ -42,7 +42,6 @@
 }
  .doctor:hover .card-body{
     background-color: #0075ff !important;
-    border-radius: 20px !important;
 
 }
 .doctor{
@@ -110,7 +109,6 @@
 }
 .card-body{
     background-color: #fff !important;
-    border-radius: 20px !important;
 }
 .meetdoc-pra{
     padding-left: 0px !important;

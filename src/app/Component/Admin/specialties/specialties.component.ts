@@ -21,6 +21,8 @@ getAllSpecialties(){
   this.specialtyServer.getAllSpecialties().subscribe(
     (res)=>{
       this.specialties=res
+      console.log( this.specialties);
+      
     }
   )
 }

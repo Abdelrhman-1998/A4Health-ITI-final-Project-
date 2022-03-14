@@ -27,11 +27,15 @@ count: number = 5;
    this.doctorService.getAllDoctors().subscribe(
      (doc)=>{
        this.doctor=doc
+       console.log(this.doctor);
+       
      }
    )
+   
  }
  delete(id:number){
-   this.doctorService.deleteDoctor(id).subscribe(() => this.status = 'Delete successful')
-   window.location.reload();
+   this.doctorService.deleteDoctor(id).subscribe(
+     () => this.status = 'Delete successful')
+     this.ngOnInit()
    }
 }

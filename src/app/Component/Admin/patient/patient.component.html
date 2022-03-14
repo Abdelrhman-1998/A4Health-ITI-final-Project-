@@ -13,19 +13,19 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>UserName</th>
+                            <th> Full Name</th>
                             <th>Gender</th>
-                            <th>Phone Number</th>
+                            <!-- <th>Phone Number</th> -->
                             <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let patient of patients | paginate: { itemsPerPage: count, currentPage: p }">
                             <td>{{patient.id}}</td>
-                            <td>{{patient.username}}</td>
+                            <td>{{patient.fname+' '+patient.lname}}</td>
                             <td>{{patient.gender}}</td>
-                            <td>{{patient.phone}}</td>
-                            <td class="text-center"><button class="btn btn-danger w-50" type="submit" (click)="delete(patient.id)" routerLink="/admin/patients">Delete</button></td>
+                            <!-- <td>{{patient.phone}}</td> -->
+                            <td class="text-center"><button class="btn btn-danger w-50" type="submit" (click)="delete(patient.id)">Delete</button></td>
                         </tr>
                      
                         

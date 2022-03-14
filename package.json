@@ -26,13 +26,14 @@
     "ngx-pagination": "^5.1.1",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@types/jquery": "^2.0.47",
+    "@types/bootstrap": "^5.1.9"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.1.4",
     "@angular/cli": "~13.1.4",
     "@angular/compiler-cli": "~13.1.0",
-    "@types/bootstrap": "^5.1.9",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.10.0",

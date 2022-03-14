@@ -12,7 +12,7 @@
     <div
       class="card-body container-fluid d-flex justify-content-center bg-light"
     >
-      <form  action="" method="" class="w-75" [formGroup]="loginForm" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
+      <form  action="" method="" class="w-75" [formGroup]="AddDoctor" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
         <div class="mb-3">
           <label for="username" class="form-label"
             >UserName:</label
@@ -68,14 +68,87 @@
         </div> 
         </div>
         <div class="mb-3">
+          <label for="lname" class="form-label"
+            >City:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="city"
+            ngModel
+            formControlName="city"
+          />
+          <div class="alert alert-danger" role="alert" *ngIf="city && city.invalid && city.touched">
+            <span>
+                last name input filed is not valid
+            </span>
+        </div> 
+        </div>
+        <div class="mb-3">
+          <label for="lname" class="form-label"
+            >Street:</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="Street"
+            name="street"
+            ngModel
+            formControlName="street"
+          />
+          <div class="alert alert-danger" role="alert" *ngIf="Street && Street.invalid && Street.touched">
+            <span>
+                last name input filed is not valid
+            </span>
+        </div> 
+        </div>
+        <div class="mb-3">
+          <label for="lname" class="form-label"
+            >Fees:</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="Fees"
+            name="fees"
+            ngModel
+            formControlName="fees"
+          />
+          <div class="alert alert-danger" role="alert" *ngIf="Fees && Fees.invalid && Fees.touched">
+            <span>
+                last name input filed is not valid
+            </span>
+        </div> 
+        </div>
+        <div class="mb-3">
+          <label for="lname" class="form-label"
+            >Photo:</label
+          >
+          <input
+            type="file"
+            class="form-control"
+          
+            name="img_name"
+            ngModel
+            formControlName="img_name"
+            (change)="upLoadImg($event)"
+          />
+          <div class="alert alert-danger" role="alert" *ngIf="img_name && img_name.invalid && img_name.touched">
+            <span>
+                last name input filed is not valid
+            </span>
+        </div> 
+        </div>
+        <div class="mb-3">
           <label>Gender:</label>
         </div>
         <div class="mb-3">
-          <input type="radio" name="gender" id="male" value="male" ngModel formControlName="gender"/>
+          <input type="radio" name="gender" id="male" value="Male" ngModel formControlName="gender"/>
           <label for="male"> Male </label>
         </div>
         <div class="mb-3">
-          <input type="radio" name="gender" id="female" value="female" ngModel formControlName="gender" />
+          <input type="radio" name="gender" id="female" value="Female" ngModel formControlName="gender" />
           <label for="female"> Female </label>
         </div>
         <div class="alert alert-danger" role="alert" *ngIf="gender && gender.invalid && gender.touched">
@@ -88,10 +161,10 @@
             <label for="title" >Choose Title</label>
             <select  ngModel formControlName="title" name="title" id="title" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
               <option selected>Choose Title</option>
-              <option value="professors">Professors</option>
+              <option value="professor">Professors</option>
               <option value="lecturer">Lecturer</option>
               <option value="consultant">Consultant</option>
-              <option value="consultant">Specialist</option>
+              <option value="specialist">Specialist</option>
 
           </select>
       </div>
@@ -102,21 +175,39 @@
     </div> 
         </div>
         <div class="mb-3">
-        <div >       
-          <label for="specialization" >Choose specialization</label>
-          <select  ngModel formControlName="specialization" name="specialization" id="specialization" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-      
-              <option  *ngFor="let special of specialty" [value]="special.name" >{{special.name}}</option>
-              
-      </select>
-      </div>
-      <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
-        <span>
-          specialization input filed is not valid
-        </span>
-    </div> 
-      </div>
-      <div class="mb-3">
+          <div >       
+            <label for="specialization" >Choose specialization</label>
+            <select  ngModel formControlName="specialization_id" name="specialization_id" id="specialization" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+        
+                <option  *ngFor="let special of specialty" [value]="special.id" >{{special.name}}</option>
+                
+        </select>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
+          <span>
+            specialization input filed is not valid
+          </span>
+      </div> 
+        </div>
+        <div class="mb-3">
+          <div >       
+            <label for="specialization" >Description</label>
+            <input
+            type="text"
+            class="form-control"
+            id="description"
+            name="description"
+            ngModel
+            formControlName="description"
+          />
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="Description && Description.invalid && Description.touched">
+          <span>
+            specialization input filed is not valid
+          </span>
+      </div> 
+        </div>
+          <div class="mb-3">
           <label for="phone" class="form-label"
             >Phone Number:</label
           >
@@ -153,7 +244,7 @@
         </div> 
         </div>
 
-        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Add</button>
+        <button [disabled]="AddDoctor.invalid" type="submit" class="btn btn-primary">Add</button>
       </form>
     </div>
   </div>

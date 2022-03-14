@@ -11,9 +11,9 @@ export class FilterPipe implements PipeTransform {
  docs:any=[]
  private docServices!:DoctorService;
   transform(value: Review[] ,searchResultn: number):any{
-    if(!value){return []}
-    if(!searchResultn){return value}
-   return value.filter(e=>e.doctor_id==searchResultn)
+  //   if(!value){return []}
+  //   if(!searchResultn){return value}
+  //  return value.filter(e=>e.doctor_id==searchResultn)
     
   }
 

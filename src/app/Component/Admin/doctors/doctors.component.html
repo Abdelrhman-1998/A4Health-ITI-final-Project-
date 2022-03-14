@@ -15,11 +15,11 @@
                             <th>ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>User Name</th>
                             <th>Gender</th>
                             <th>Title</th>
                             <th>Specialization</th>
-                            <th>Phone Number</th>
+                            <th>City</th>
+                            <th>Street</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -28,11 +28,11 @@
                             <td>{{doc.id}}</td>
                             <td>{{doc.fname}}</td>
                             <td>{{doc.lname}}</td>
-                            <td>{{doc.username}}</td>
                             <td>{{doc.gender}}</td>
                             <td>{{doc.title}}</td>
                             <td>{{doc.specialization}}</td>
-                            <td>{{doc.phone}}</td>
+                            <td>{{doc.city}}</td>
+                            <td>{{doc.street}}</td>
                             <td class="text-center"><button class="btn btn-danger w-100" type="submit" (click)="delete(doc.id)">Delete</button></td>
                         </tr>
                       

@@ -62,6 +62,8 @@ import { UsersignupComponent } from './usersignup/usersignup.component';
 import { AdminLoginComponent } from './Component/Admin/admin-login/admin-login.component';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
 import * as bootstrap from 'bootstrap';
+import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +107,8 @@ import * as bootstrap from 'bootstrap';
      UsersignupComponent,
      AdminLoginComponent,
      SignInComponent,
+     UserFeadbackComponent,
+     NotFoundComponent,
   ],
   imports: [
     BrowserModule,

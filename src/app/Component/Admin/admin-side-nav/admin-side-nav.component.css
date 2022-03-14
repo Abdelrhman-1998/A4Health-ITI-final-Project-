@@ -18,6 +18,6 @@
 .nav-item{
     cursor: pointer;
 }
-#accordionSidebar{
+ul{
     height: 100%;
 }

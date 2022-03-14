@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Doctor } from "../../app/Models/doctor";
 import { environment } from "../../environments/environment";
@@ -8,9 +8,10 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class DoctorsService {
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
   constructor(private httpClient: HttpClient) {}
   getAllDoctors(): Observable<Doctor[]> {
-    return this.httpClient.get<Doctor[]>(`${environment.ApiUrl}/doctors`);
+    return this.httpClient.get<Doctor[]>(`${environment.ApiUrl}/dashboard/doctors`,{headers:this.header});
   }
   getDoctorWithID(doctorId: number): Observable<Doctor> {
     return this.httpClient.get<Doctor>(
@@ -22,12 +23,11 @@ export class DoctorsService {
       `${environment.ApiUrl}/doctors?rating=${doctorRate}`
     );
   }
-  addDoctor(newDoctor: Doctor): Observable<Doctor> {
+  addDoctor(newDoctor: any): Observable<Doctor> {
     const headers = { "content-type": "application/json" };
     const body = JSON.stringify(newDoctor);
-    return this.httpClient.post<Doctor>(`${environment.ApiUrl}/doctors`, body, {
-      headers: headers,
-    });
+    return this.httpClient.post<Doctor>(`${environment.ApiUrl}/dashboard/doctors`, newDoctor, {
+      headers: this.header});
   }
   updateDoctor(doctorId: number, updateDoctor: Doctor): Observable<Doctor> {
     const body = JSON.stringify(updateDoctor);
@@ -38,7 +38,6 @@ export class DoctorsService {
   }
   deleteDoctor(doctorId: number): Observable<Doctor> {
     return this.httpClient.delete<Doctor>(
-      `${environment.ApiUrl}/doctors/${doctorId}`
-    );
+      `${environment.ApiUrl}/dashboard/doctors/${doctorId}`,{headers:this.header});
   }
 }

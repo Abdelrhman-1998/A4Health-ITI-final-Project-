@@ -66,17 +66,19 @@ export class ServicesComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    pullDrag: true,
+    pullDrag: false,
     dots: true,
-    navSpeed: 700,
-
-    navText:  ['&#8249', '&#8250;'],
+    navSpeed: 600,
+    navText: ['&#8249', '&#8250;'],
     responsive: {
       0: {
-        items: 1
+        items: 1 
       },
-      600: {
+      400: {
         items: 2
+      },
+      760: {
+        items: 3
       },
       1000: {
         items: 4
@@ -84,6 +86,7 @@ export class ServicesComponent implements OnInit {
     },
     nav: true
   }
+  
   
 
 }

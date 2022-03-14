@@ -15,18 +15,20 @@ export class LoginService {
 
   login(user:User):Observable<User>{
     // call  login API ,access token
-    let token ="test"
-    localStorage.setItem('token',token)
+    let token =''
+    localStorage.setItem('Authorization',token)
     this.isLoggedSub.next(true)
-    return this.httpClient.post<User>(`${environment.ApiUrl}/admin`,user)
+    return this.httpClient.post<User>(`${environment.ApiUrl}/dashboard/login`,user)
   }
   logout(){
-
-    localStorage.removeItem('token');
+    localStorage.removeItem('Authorization');
     this.isLoggedSub.next(false)
   }
   get isUserlogged():boolean{
-    return (localStorage.getItem('token'))?true:false
+    return (localStorage.getItem('Authorization'))?true:false
+  }
+  getToken():Observable<string>{
+    return this.httpClient.get<string>(`${environment.ApiUrl}/token`)
   }
   isUserLoggedSub():Observable<boolean>{
     return this.isLoggedSub.asObservable();

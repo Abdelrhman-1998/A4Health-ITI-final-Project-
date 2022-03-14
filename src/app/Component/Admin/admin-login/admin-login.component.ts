@@ -15,7 +15,7 @@ export class AdminLoginComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
-
+test:any
   constructor(
     private loginServises:LoginService,
     private router:Router
@@ -48,16 +48,22 @@ loginAdmin(data:NgForm){
     (log)=>{
       this.isSuccessful = true;
       this.isSignUpFailed = false;  
-       if(this.isSuccessful==this.loginServises.isUserlogged){
-    this.router.navigate(['admin']);
-
-  }
- 
+      this.test=log
+      if(this.test.error){
+        this.router.navigate(['/admin'])
+      }else{
+        // Authorization: Bearer <token>
+        localStorage.setItem('Authorization','Bearer '+this.test.token)
+        setTimeout(()=>{
+          this.router.navigate(['/admin/doctor'])
+        },2000)
+      }
+    console.log(this.test.token);
     }
    
   )
-  this.router.navigate(['/admin/doctor'])
- console.log(this.user);
+  // this.router.navigate(['/admin/doctor'])
+//  console.log(this.user);
   
 }
 }

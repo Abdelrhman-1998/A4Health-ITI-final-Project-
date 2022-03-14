@@ -28,34 +28,38 @@ import { AdminDashboardComponent } from './Component/Admin/admin-dashboard/admin
 import { AdminLoginComponent } from './Component/Admin/admin-login/admin-login.component';
 import { AuthGuard } from './Gaurds/auth.guard';
 import { ReviewComponent } from './Component/Review/review/review.component';
+import { UsergGuard } from './userguard/userg.guard';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
+import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
   {path: 'Home', component: MainLandingPageComponent},
   {path: 'AboutUs', redirectTo: '/Home#aboutUs'},
   {path: 'Service', redirectTo: '/Home#service'},
-  {path: 'Community', redirectTo: '/Home#Community'},
   {path: 'booking/:id', component:BookWithDoctorComponent},
   {path: 'booking/:id/reviews/:id', component:ReviewComponent},
   {path: 'Search', component:SearchPageComponent},
+  {path: 'Community',  redirectTo: '/Home#Community'},
   {path: 'specialty/:id', component:SearchPageComponent},
-  {path:'login',component:SignInComponent},
-  {path:'signUp',component:UsersignupComponent},
 
 
-  {path:'userdashboard' , component:UserDashboardComponent , children:[
+  {path:'userdashboard' ,canActivate:[UsergGuard], component:UserDashboardComponent , children:[
     {path:'reservations' , component:UserReservationsComponent},
     {path:'manageprofile' , component:UserManageProfileComponent},
     {path:'changepassword' , component:UserChangePasswordComponent},
+    {path:'feedback/:docotrID' , component:UserFeadbackComponent},
        ]},
        {path:'signup',component:UsersignupComponent},
+       {path:'signin',component:SignInComponent},
 
-  {path:'doctordashboard',canActivate:[AuthGuard]  ,component:DoctorDashboardComponent , children:[
+
+  {path:'doctordashboard',canActivate:[UsergGuard]  ,component:DoctorDashboardComponent , children:[
     {path:'profile' , component:DoctorProfileComponent},
     {path:'editprofile' , component:DoctorEditProfileComponent},
     {path:'appointment' , component:DoctorAppiontmentComponent},
-    {path:'dreservations' , component:DoctorReservationsComponent},
+    {path:'dreservations/:status' , component:DoctorReservationsComponent},
     {path:'feedback' , component:DoctorFeedbackComponent},
   ]},
   //   {path:'admin',redirectTo:'admin/addDoctor'},
@@ -78,6 +82,7 @@ export const routes: Routes = [
     {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},
+  {path:'**',component:NotFoundComponent}
 ]
 
 export const routerOptions: ExtraOptions = {
