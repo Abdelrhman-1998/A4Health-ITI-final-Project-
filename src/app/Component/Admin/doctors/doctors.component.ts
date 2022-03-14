@@ -37,6 +37,7 @@ message!:string
    this.doctorService.deleteDoctor(id).subscribe(
      (res) => {
        this.status = 'Delete successful'
+       this.ngOnInit();
       },() => this.message='Delete successful',
       console.error
      

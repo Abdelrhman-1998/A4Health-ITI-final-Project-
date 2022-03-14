@@ -51,10 +51,11 @@ export class FeedbacksComponent implements OnInit {
   delete(id: number) {
     this.reviewsServices.deleteReview(id).subscribe(() => {
       this.status = 'Delete successful';
+      this.ngOnInit();
       this.router
       .navigate(['/admin/feedback'])
 
-      this.ngOnInit();
+      
     });
   }
   counter(i: number) {

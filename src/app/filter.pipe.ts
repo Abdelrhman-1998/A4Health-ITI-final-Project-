@@ -16,8 +16,8 @@ export class FilterPipe implements PipeTransform {
   //  return value.filter(e=>e.doctor_id==searchResultn)
   if(!value)return null
   if(!searchResultn)return value
-  // searchResultn=searchResultn.toLowerCase();
-  return value.filter(e=>e.doctor===searchResultn)
+  searchResultn=searchResultn.toLowerCase();
+  return value.filter(e=>e.doctor.toLowerCase().indexOf(searchResultn)!== -1)
   
     
   }
