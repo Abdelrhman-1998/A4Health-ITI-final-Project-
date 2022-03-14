@@ -43,7 +43,7 @@ message!:string
      
      
      )
-     this.ngOnInit()
+    //  this.ngOnInit()
    
    }
 }

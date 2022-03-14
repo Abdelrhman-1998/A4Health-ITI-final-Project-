@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate {
       //handle your auth error or rethrow
       if (err.status === 401 || err.status === 403) {
           //navigate /delete cookies or whatever
-          this.router.navigateByUrl(`/login`);
+          this.router.navigateByUrl(`admin/login`);
           // if you've caught / handled the error, you don't want to rethrow it unless you also want downstream consumers to have to handle it as well.
           return of(err.message); // or EMPTY may be appropriate here
       }

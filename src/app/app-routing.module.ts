@@ -74,7 +74,7 @@ export const routes: Routes = [
  
     {path:'admin',component:AdminDashboardComponent,children:[
       {path:'login',component:AdminLoginComponent},
-      {path:'changepassword',component:ChangePasswordComponent},
+      {path:'changepassword',component:ChangePasswordComponent,canActivate:[AuthGuard]},
       {path:'addDoctor',component:AddDoctorComponent,canActivate:[AuthGuard]},
     {path:'doctor',component:DoctorsComponent,canActivate:[AuthGuard]},
     {path:'patient',component:PatientComponent,canActivate:[AuthGuard]},
