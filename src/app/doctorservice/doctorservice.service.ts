@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,14 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class DoctorserviceService {
 
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
   constructor(private _HttpClient:HttpClient) { }
   getDoctorProfile():Observable<any>
   {
-    return this._HttpClient.get("https://api.jsonbin.io/b/6227430c7caf5d678362a438/1");
+    return this._HttpClient.get(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}`,{headers:this.header});
   }
   getDoctorFeedback():Observable<any>
   {
-    return this._HttpClient.get("https://api.jsonbin.io/b/622748cb7caf5d678362a615");
+    return this._HttpClient.get(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}/feedback`,{headers:this.header});
   }
   getDoctorEditProfile():Observable<any>
   {
@@ -22,7 +23,19 @@ export class DoctorserviceService {
   }
   getDoctorAppiontmets():Observable<any>
   {
-    return this._HttpClient.get("https://api.jsonbin.io/b/62286dbea703bb674926551b/1");
+    return this._HttpClient.get(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}/appointments`,{headers:this.header});
+  }
+  Addappiontment(newAppiontment:any):Observable<any>
+  {
+    return this._HttpClient.post(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}/appointments`,newAppiontment,{headers:this.header});
+  }
+  deleteAppiontment(appiontment_id:any):Observable<any>
+  {
+    return this._HttpClient.delete(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}/appointments/${appiontment_id}`,{headers:this.header});
+  }
+  updateAppiontment(appiontment_id:any , appiontment:any):Observable<any>
+  {
+    return this._HttpClient.put(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}/appointments/${appiontment_id}`, appiontment,{headers:this.header});
   }
   getDoctorPaitnetsAppiontmets():Observable<any>
   {

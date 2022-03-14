@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DoctorserviceService } from 'src/app/doctorservice/doctorservice.service';
+import { UserloginService } from 'src/app/userguard/userlogin.service';
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -8,7 +10,8 @@ import { DoctorserviceService } from 'src/app/doctorservice/doctorservice.servic
 })
 export class DoctorDashboardComponent implements OnInit {
 
-  constructor(private _Doctorservic:DoctorserviceService) { }
+  constructor(private _Doctorservic:DoctorserviceService , private _logoutservice:UserloginService ,  private router:Router
+) { }
   notification:any[]=[]
   type:any
 
@@ -18,6 +21,11 @@ export class DoctorDashboardComponent implements OnInit {
       this.type = response.type;
       console.log(this.notification);
     });
+  }
+  logout()
+  {
+    this._logoutservice.logout()
+    this.router.navigate(['signin'])
   }
 
 }

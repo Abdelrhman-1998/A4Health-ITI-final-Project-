@@ -13,8 +13,7 @@ export class DoctorFeedbackComponent implements OnInit {
   ngOnInit(): void {
     this._Doctorservic.getDoctorFeedback().subscribe((response)=>{
       this.feedback = response;
-      console.log(this.feedback);
+      console.log(response);
     });
   }
-
 }

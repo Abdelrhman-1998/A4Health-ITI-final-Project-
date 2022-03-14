@@ -11,9 +11,12 @@ export class DoctorProfileComponent implements OnInit {
   constructor(private _Doctorservic:DoctorserviceService) { }
 
   ngOnInit(): void {
+
     this._Doctorservic.getDoctorProfile().subscribe((response)=>{
       this.doctorData = response;
+      console.log(response);
       console.log(this.doctorData);
+
     });
   }
 
