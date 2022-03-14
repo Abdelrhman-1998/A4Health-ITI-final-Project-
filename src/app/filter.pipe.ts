@@ -10,10 +10,15 @@ export class FilterPipe implements PipeTransform {
  doctor:Doctor[]=[];
  docs:any=[]
  private docServices!:DoctorService;
-  transform(value: Review[] ,searchResultn: number):any{
+  transform(value: Review[] ,searchResultn: string):any{
   //   if(!value){return []}
   //   if(!searchResultn){return value}
   //  return value.filter(e=>e.doctor_id==searchResultn)
+  if(!value)return null
+  if(!searchResultn)return value
+  // searchResultn=searchResultn.toLowerCase();
+  return value.filter(e=>e.doctor===searchResultn)
+  
     
   }
 

@@ -17,7 +17,7 @@ export class AddDoctorComponent implements OnInit {
   phonePattern="(01)[0-9]{9}";
   specialty:Specialty[]=[]
   files:any
-  
+  message!:string
   constructor(
     private doctorSrvice:DoctorsService,
     private  specialtyService:SpecialtiesService,
@@ -62,6 +62,7 @@ export class AddDoctorComponent implements OnInit {
     ),
     password : new FormControl('',[
       Validators.required,
+      Validators.minLength(8)
       // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
       // At least 8 characters in length
       // Lowercase letters
@@ -71,7 +72,7 @@ export class AddDoctorComponent implements OnInit {
     ]),
     street:new FormControl('',[
       Validators.required,
-      Validators.minLength(4),
+      Validators.minLength(3),
       Validators.maxLength(20)
     ]),
     fees:new FormControl('',[
@@ -119,6 +120,8 @@ export class AddDoctorComponent implements OnInit {
       console.log("test");
       
       this.addnew=res
+      this.router
+      .navigate(['/admin/doctor'])
 
       console.log(res);
       // setTimeout(()=>{
@@ -126,9 +129,8 @@ export class AddDoctorComponent implements OnInit {
       // },3000)
       
     }, 
-    (error: any) => {
-        console.log(error)
-    }
+    () => this.message='Add successful',
+      console.error
   )
   }
   

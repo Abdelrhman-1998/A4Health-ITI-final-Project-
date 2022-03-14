@@ -1,5 +1,10 @@
 <div class="container-fluid mt-4">
-                    
+  <div *ngIf="message" class="my-3 alert alert-success d-flex align-items-center" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div>
+     {{message}}
+    </div>
+  </div>        
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
   <!-- DataTales Example -->
@@ -9,9 +14,11 @@
         Add New Doctor
       </h6>
     </div>
+  
     <div
       class="card-body container-fluid d-flex justify-content-center bg-light"
     >
+    
       <form  action="" method="" class="w-75" [formGroup]="AddDoctor" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
         <div class="mb-3">
           <label for="username" class="form-label"
@@ -26,9 +33,7 @@
             formControlName="username"
           />
           <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
-            <span>
-                username input filed is not valid
-            </span>
+            <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['required']">UserName is required</p>
         </div> 
         </div>
         <div class="mb-3">
@@ -44,10 +49,8 @@
             formControlName="fname"
           />
           <div class="alert alert-danger" role="alert" *ngIf="fname && fname.invalid && fname.touched">
-            <span>
-                frist name input filed is not valid
-            </span>
-        </div> 
+            <p class="m-0" >first name is required</p>
+        </div>  
         </div>
         <div class="mb-3">
           <label for="lname" class="form-label"
@@ -62,9 +65,7 @@
             formControlName="lname"
           />
           <div class="alert alert-danger" role="alert" *ngIf="lname && lname.invalid && lname.touched">
-            <span>
-                last name input filed is not valid
-            </span>
+            <p class="m-0" *ngIf="AddDoctor.get('lname')?.errors?.['required']">Last name is required</p>
         </div> 
         </div>
         <div class="mb-3">
@@ -79,10 +80,9 @@
             ngModel
             formControlName="city"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="city && city.invalid && city.touched">
-            <span>
-                last name input filed is not valid
-            </span>
+          <div class="alert alert-danger" role="alert" *ngIf="city && city.invalid && city.touched && city.errors">
+            <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['required']">City is required</p>
+
         </div> 
         </div>
         <div class="mb-3">
@@ -98,9 +98,7 @@
             formControlName="street"
           />
           <div class="alert alert-danger" role="alert" *ngIf="Street && Street.invalid && Street.touched">
-            <span>
-                last name input filed is not valid
-            </span>
+            <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['required']">Street is required</p>
         </div> 
         </div>
         <div class="mb-3">
@@ -116,9 +114,8 @@
             formControlName="fees"
           />
           <div class="alert alert-danger" role="alert" *ngIf="Fees && Fees.invalid && Fees.touched">
-            <span>
-                last name input filed is not valid
-            </span>
+            <p class="m-0" *ngIf="AddDoctor.get('fees')?.errors?.['required']">Fees is required</p>
+
         </div> 
         </div>
         <div class="mb-3">
@@ -135,9 +132,8 @@
             (change)="upLoadImg($event)"
           />
           <div class="alert alert-danger" role="alert" *ngIf="img_name && img_name.invalid && img_name.touched">
-            <span>
-                last name input filed is not valid
-            </span>
+            <p class="m-0" *ngIf="AddDoctor.get('img_name')?.errors?.['required']">Image is required</p>
+
         </div> 
         </div>
         <div class="mb-3">
@@ -169,9 +165,8 @@
           </select>
       </div>
       <div class="alert alert-danger" role="alert" *ngIf="title && title.invalid && title.touched">
-        <span>
-          title input filed is not valid
-        </span>
+        <p class="m-0" *ngIf="AddDoctor.get('title')?.errors?.['required']">title is required</p>
+
     </div> 
         </div>
         <div class="mb-3">
@@ -184,9 +179,8 @@
         </select>
         </div>
         <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
-          <span>
-            specialization input filed is not valid
-          </span>
+          <p class="m-0">specialization is required</p>
+
       </div> 
         </div>
         <div class="mb-3">
@@ -200,12 +194,10 @@
             ngModel
             formControlName="description"
           />
+          <div class="alert alert-danger" role="alert" *ngIf="Description && Description.invalid && Description.touched">
+            <p class="m-0" >Description is required</p>
+          </div>
         </div>
-        <div class="alert alert-danger" role="alert" *ngIf="Description && Description.invalid && Description.touched">
-          <span>
-            specialization input filed is not valid
-          </span>
-      </div> 
         </div>
           <div class="mb-3">
           <label for="phone" class="form-label"
@@ -220,9 +212,7 @@
             formControlName="phone"
           />
           <div class="alert alert-danger" role="alert" *ngIf="phone && phone.invalid && phone.touched">
-            <span>
-              phone number input filed is not valid
-            </span>
+            <p class="m-0" *ngIf="AddDoctor.get('phone')?.errors?.['required']">phone is required</p>
         </div> 
         </div>
         <div class="mb-3">
@@ -238,9 +228,8 @@
             formControlName="password"
           />
           <div class="alert alert-danger" role="alert" *ngIf="password && password.invalid && password.touched">
-            <span>
-              password input filed is not valid
-            </span>
+            <p class="m-0" *ngIf="AddDoctor.get('password')?.errors?.['required']">password is required</p>
+
         </div> 
         </div>
 

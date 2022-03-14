@@ -31,10 +31,13 @@ export class PatientComponent implements OnInit {
     )
   }
   delete(id:number){
-    this.patientService.deletePatientByID(id).subscribe(() => this.status = 'Delete successful')
+    this.patientService.deletePatientByID(id).subscribe(() => {
+      this.status = 'Delete successful'
+      this.router.navigate(['/admin/patient'])
+
+  })
     // window.location.reload();
     // setTimeout(()=>{
-    //   this.router.navigate(['/admin/doctor'])
     // },2000)
     }
 }

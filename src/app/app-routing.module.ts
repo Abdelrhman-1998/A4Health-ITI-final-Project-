@@ -32,6 +32,7 @@ import { UsergGuard } from './userguard/userg.guard';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
 import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ChangePasswordComponent } from './Component/Admin/change-password/change-password.component';
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -72,13 +73,14 @@ export const routes: Routes = [
   // {path:'admin/feadback',component:FeedbacksComponent},
  
     {path:'admin',component:AdminDashboardComponent,children:[
-    {path:'login',component:AdminLoginComponent},
-    {path:'addDoctor',component:AddDoctorComponent,canActivate:[AuthGuard]},
+      {path:'login',component:AdminLoginComponent},
+      {path:'changepassword',component:ChangePasswordComponent},
+      {path:'addDoctor',component:AddDoctorComponent,canActivate:[AuthGuard]},
     {path:'doctor',component:DoctorsComponent,canActivate:[AuthGuard]},
     {path:'patient',component:PatientComponent,canActivate:[AuthGuard]},
     {path:'specialties',component:SpecialtiesComponent,canActivate:[AuthGuard]},
     {path:'addSpecialties',component:AddSpecialtiesComponent,canActivate:[AuthGuard]},
-    {path:'specialty/edit/:id',component:AddSpecialtiesComponent,canActivate:[AuthGuard]} ,
+    {path:'specialty/edit/:id/:name',component:AddSpecialtiesComponent,canActivate:[AuthGuard]} ,
     {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},

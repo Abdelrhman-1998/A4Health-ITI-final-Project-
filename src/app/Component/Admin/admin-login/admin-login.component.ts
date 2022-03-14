@@ -15,6 +15,7 @@ export class AdminLoginComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
+  massege!:string
 test:any
   constructor(
     private loginServises:LoginService,
@@ -50,7 +51,8 @@ loginAdmin(data:NgForm){
       this.isSignUpFailed = false;  
       this.test=log
       if(this.test.error){
-        this.router.navigate(['/admin'])
+       this.massege='Username or password incorrect'
+        this.router.navigate(['/admin/login'])
       }else{
         // Authorization: Bearer <token>
         localStorage.setItem('Authorization','Bearer '+this.test.token)

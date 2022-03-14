@@ -1,5 +1,10 @@
 <div class="container-fluid">
-
+    <div *ngIf="message" class=" my-3 alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="30" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        <div>
+         {{message}}
+        </div>
+      </div>
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
     <!-- DataTales Example -->
@@ -7,6 +12,7 @@
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Doctors's Data</h6>
         </div>
+       
         <div class="card-body bg-light">
             <div class="table-responsive">
                 <table class="table table-bordered text-center " id="dataTable" width="100%" cellspacing="0">

@@ -14,7 +14,7 @@ export class DoctorsComponent implements OnInit {
 doctor:Doctor[]=[];
 p: number = 1;
 count: number = 5;
-
+message!:string
   constructor(
     private doctorService:DoctorsService,
     private router:Router
@@ -35,7 +35,14 @@ count: number = 5;
  }
  delete(id:number){
    this.doctorService.deleteDoctor(id).subscribe(
-     () => this.status = 'Delete successful')
+     (res) => {
+       this.status = 'Delete successful'
+      },() => this.message='Delete successful',
+      console.error
+     
+     
+     )
      this.ngOnInit()
+   
    }
 }
