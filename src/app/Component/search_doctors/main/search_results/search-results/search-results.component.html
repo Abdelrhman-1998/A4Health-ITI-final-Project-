@@ -325,7 +325,7 @@
                                         </option>
                                         </select>
                                     </div>
-                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"    (click)="submitAppointment(AppointmentForm,date,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/login']:[]">
+                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"    (click)="submitAppointment(AppointmentForm,date,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]">
                                          Book
                                      </button>
                                      <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectList)" >
@@ -360,7 +360,7 @@
                                         </option>
                                         </select>
                                     </div>
-                                     <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)="submitAppointment(AppointmentFormModal,dateModal ,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/login']:[]" >
+                                     <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)="submitAppointment(AppointmentFormModal,dateModal ,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]" >
                                         <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
                                             <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
                                         </div>
