@@ -1,89 +1,81 @@
 <section class="container-fluid">
-  <div class="row">
+    <div class="row">
 
-    <h2 class="py-3">User name Reservations</h2>
-      <!-- <div class="col-12">
+      <h2 class="py-3">User name Reservations</h2>
+        <!-- <div class="col-12">
+         
+         <table class="table text-center table-striped table-hover ">
+             <thead>
+               <tr>
+                 
+                 <th scope="col">Doctor Name</th>
+                 <th scope="col">Location</th>
+                 <th scope="col">Reservation Time</th>
+                 <th scope="col"> </th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Mark</td>
+                 <td>Maadi Cairo</td>
+                 <td>3am Thursday 16/12/2020</td>
+                 <td><button class="btn btn-danger">Delete</button></td>
+               </tr>
+               <tr>
+                 <td>Mark</td>
+                 <td>Maadi Cairo</td>
+                 <td>3am Thursday 16/12/2020</td>
+                 <td><button class="btn btn-danger">Delete</button></td>
+               </tr>
+               <tr>
+                 <td>Mark</td>
+                 <td>Maadi Cairo</td>
+                 <td>3am Thursday 16/12/2020</td>
+                 <td><button class="btn btn-danger">Delete</button></td>
+               </tr>
+               <tr>
+                 <td>Mark</td>
+                 <td>Maadi Cairo</td>
+                 <td>3am Thursday 16/12/2020</td>
+                 <td><button class="btn btn-danger">Delete</button></td>
+               </tr>
+               <tr>
+                 <td>Mark</td>
+                 <td>Maadi Cairo</td>
+                 <td>3am Thursday 16/12/2020</td>
+                 <td><button class="btn btn-danger">Delete</button></td>
+               </tr>
+               <tr>
+                 <td>Mark</td>
+                 <td>Maadi Cairo</td>
+                 <td>3am Thursday 16/12/2020</td>
+                 <td><button class="btn btn-danger">Delete</button></td>
+               </tr>  
+               <tr>
+                 <td>Mark</td>
+                 <td>Maadi Cairo</td>
+                 <td>3am Thursday 16/12/2020</td>
+                 <td><button class="btn btn-danger">Delete</button></td>
+               </tr>
+               <tr>
+                 <td>Mark</td>
+                 <td>Maadi Cairo</td>
+                 <td>3am Thursday 16/12/2020</td>
+                 <td><button class="btn btn-danger">dasdas</button></td>
+               </tr>
+             </tbody>
+           </table>
+        </div> -->
+        <div *ngFor="let user of homeData" class="col-4 g-3">
+          <div class="cont bg-white db rounded-3 shadow p-3 hover-c">
+          <h5 #fname class="py-2">{{user.name}}</h5>
+          <h6 class="py-2">{{user.Location}}</h6>
+          <p class="py-2">{{user.Date}}</p>
+          <button (click)="delete(fname.textContent)" class="btn btn-danger w-100">Cancel</button>
+        </div>
        
-       <table class="table text-center table-striped table-hover ">
-           <thead>
-             <tr>
-               
-               <th scope="col">Doctor Name</th>
-               <th scope="col">Location</th>
-               <th scope="col">Reservation Time</th>
-               <th scope="col"> </th>
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-               <td>Mark</td>
-               <td>Maadi Cairo</td>
-               <td>3am Thursday 16/12/2020</td>
-               <td><button class="btn btn-danger">Delete</button></td>
-             </tr>
-             <tr>
-               <td>Mark</td>
-               <td>Maadi Cairo</td>
-               <td>3am Thursday 16/12/2020</td>
-               <td><button class="btn btn-danger">Delete</button></td>
-             </tr>
-             <tr>
-               <td>Mark</td>
-               <td>Maadi Cairo</td>
-               <td>3am Thursday 16/12/2020</td>
-               <td><button class="btn btn-danger">Delete</button></td>
-             </tr>
-             <tr>
-               <td>Mark</td>
-               <td>Maadi Cairo</td>
-               <td>3am Thursday 16/12/2020</td>
-               <td><button class="btn btn-danger">Delete</button></td>
-             </tr>
-             <tr>
-               <td>Mark</td>
-               <td>Maadi Cairo</td>
-               <td>3am Thursday 16/12/2020</td>
-               <td><button class="btn btn-danger">Delete</button></td>
-             </tr>
-             <tr>
-               <td>Mark</td>
-               <td>Maadi Cairo</td>
-               <td>3am Thursday 16/12/2020</td>
-               <td><button class="btn btn-danger">Delete</button></td>
-             </tr>  
-             <tr>
-               <td>Mark</td>
-               <td>Maadi Cairo</td>
-               <td>3am Thursday 16/12/2020</td>
-               <td><button class="btn btn-danger">Delete</button></td>
-             </tr>
-             <tr>
-               <td>Mark</td>
-               <td>Maadi Cairo</td>
-               <td>3am Thursday 16/12/2020</td>
-               <td><button class="btn btn-danger">dasdas</button></td>
-             </tr>
-           </tbody>
-         </table>
-      </div> -->
-      <div *ngFor="let user of homeData" class="col-4 g-3">
-        <div class="cont bg-white db rounded-3 shadow p-3 hover-c">
-        <h5 #fname class="py-2">{{user.doctorName}}</h5>
-        <h6 class="py-2">{{user.Location}}</h6>
-        <p class="py-2">{{user.date}}</p>
-        <p class="py-2">{{user.patient_time}}</p>
-        <p class="payment status py-2">
-          payment status: <span>{{user.payment_status}}</span>
-      </p>
-      <button  class="btn btn-primary w-100 mb-2" (click)="payment()" [routerLink]="routing_status?['/paymentForm',countryCode,sessionId]:[]">
-            Pay
-      </button>
-        <button (click)="delete(fname.textContent)" class="btn btn-danger w-100">Cancel</button>
+      </div>
 
       </div>
-     
-    </div>
-
-    </div>
-      
+        
 </section>

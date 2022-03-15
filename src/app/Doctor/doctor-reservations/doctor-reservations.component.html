@@ -7,13 +7,13 @@
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Patients' Appointments</h6>
     </div>
-    <div class="p-3 w-25" *ngIf="!isCancel"> 
+    <div class="p-3 w-25"> 
         <select  #filterStatus class="form-select" aria-label="Default select example">
         <option selected disabled class="d-none">Status</option>
-         <option value="Pending">Pending</option>
-        <option value="missed">Missed</option>
+         <option value="pending">Pending</option>
+        <option value="misssed">Missed</option>
         <option value="completed">Completed</option>
-        <option value="cancel">Cancel</option>
+        
       </select>
       <button (click)="filterS(filterStatus.value)" type="button" class="btn btn-primary mt-3">Filter</button>
 
@@ -30,6 +30,7 @@
                         <th>Time</th>
                         <th>Date</th>
                         <th>Patient</th>
+                        <th>Payment Status</th>
                         <th>Gender</th>
                         <th>Phone</th>
                         <th>Status</th>
@@ -38,9 +39,10 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let dpa of doctorPaitnetsAppiontmets ; index as i" class="text-center">
-                        <td >{{dpa.time}}</td>
+                        <td >{{dpa.patientTime}}</td>
                         <td>{{dpa.date}}</td>
-                        <td>{{dpa.patient}}</td>
+                        <td>{{dpa.patientName}}</td>
+                        <td>{{dpa.payment_status}}</td>
                         <td >{{dpa.gender}}</td>
                         <td>{{dpa.phone}}</td>
                         <td>
@@ -50,9 +52,9 @@
 
 
                             <button type="button" class="btn btn-primary btn-sm w-100" [ngClass]="{
-                                'btn-danger':doctorPaitnetsAppiontmets[i].status=='missed',
-                                'btn-success':doctorPaitnetsAppiontmets[i].status=='completed',
-                                'btn-secondary':doctorPaitnetsAppiontmets[i].status=='cancel'
+                                'btn-danger':doctorPaitnetsAppiontmets[i].status=='misssed',
+                                'btn-success':doctorPaitnetsAppiontmets[i].status=='completed'
+                            
                             }">{{dpa.status}}</button>
                         </td>
                         <td>
@@ -71,6 +73,7 @@
                         <th>Time</th>
                         <th>Date</th>
                         <th>Patient</th>
+                        <th>Payment Status</th>
                         <th>Gender</th>
                         <th>Phone</th>
                         <th>Status</th>
@@ -80,9 +83,10 @@
                 <tbody>
                    
                     <tr *ngFor="let dpa of filter ; index as i" class="text-center">
-                        <td >{{dpa.time}}</td>
+                        <td >{{dpa.patientTime}}</td>
                         <td>{{dpa.date}}</td>
-                        <td>{{dpa.patient}}</td>
+                        <td>{{dpa.patientName}}</td>
+                        <td>{{dpa.payment_status}}</td>
                         <td >{{dpa.gender}}</td>
                         <td>{{dpa.phone}}</td>
                         <td>
@@ -92,10 +96,11 @@
             
             
                             <button type="button" class="btn btn-primary btn-sm w-100" [ngClass]="{
-                                'btn-danger':filter[i].status=='missed',
+                                'btn-danger':filter[i].status=='misssed',
                                 'btn-success':filter[i].status=='completed',
-                                'btn-primary':filter[i].status=='Pending',
-                                'btn-secondary':filter[i].status=='cancel'
+                                'btn-primary':filter[i].status=='pending'
+                               
+
                             }">{{dpa.status}}</button>
                         </td>
                         <td>
@@ -147,9 +152,9 @@
         <i class="fa-solid fa-pen-to-square"></i>
           Edit Appointment's Status
         </h5>
-      <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
-        <!-- <span aria-hidden="true">&times;</span>
-      </button> -->
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
     <div class="modal-body ">
         <div>
@@ -157,14 +162,14 @@
             <label class="ms-2" for="status1"> completed </label>
         </div>
         <div>
-            <input formControlName="status" type="radio" name="status" value="missed" id="status2">
+            <input formControlName="status" type="radio" name="status" value="misssed" id="status2">
             <label  class="ms-2" for="status2"> missed </label>
         </div>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       <input (click)="changeStatus(patientStatus.value)" type="submit" value="Save changes" class="btn btn-primary">
-  </div>
+   </div>
 </div>
 </form>
 </div>

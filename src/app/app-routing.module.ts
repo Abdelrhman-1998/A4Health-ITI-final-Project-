@@ -32,8 +32,8 @@ import { UsergGuard } from './userguard/userg.guard';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
 import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { PaymentFormComponent } from './Component/paymentForm/payment-form/payment-form.component';
-import { LoadingPageComponent } from './Component/loading/loading-page/loading-page.component';
+import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
+import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -63,6 +63,8 @@ export const routes: Routes = [
     {path:'appointment' , component:DoctorAppiontmentComponent},
     {path:'dreservations/:status' , component:DoctorReservationsComponent},
     {path:'feedback' , component:DoctorFeedbackComponent},
+    {path:'changepassword' , component:DoctorpasswordComponent},
+    {path:'offers' , component:DoctorOffersComponent},
   ]},
   //   {path:'admin',redirectTo:'admin/addDoctor'},
   // {path:'admin/addDoctor',component:AddDoctorComponent},
@@ -84,7 +86,6 @@ export const routes: Routes = [
     {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},
-  {path:'paymentForm/:countryCode/:sessionId', component:PaymentFormComponent},
   {path:'**',component:NotFoundComponent}
 ]
 

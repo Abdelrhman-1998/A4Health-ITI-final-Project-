@@ -14,17 +14,8 @@ export class PatientsService {
   getAllPatients():Observable<Patient[]>{
     return this.httpClient.get<Patient[]>(`${environment.ApiUrl}/dashboard/patients`,{headers:this.header})
   }
-  // getPatientByID(patient_id:number):Observable<Patient>{
-  //   return this.httpClient.get<Patient>(`${environment.ApiUrl}/patients/${patient_id}`)
-  // }
-  getPatientByID(patient_id:any){
-    let url="https://a4-health.herokuapp.com/api/patients/"+patient_id;
-    return this.httpClient.get(url,{'headers':this.header});
-
-  }
-  changePassword(patient_id:any,password:{}){
-    let url = "https://a4-health.herokuapp.com/api/patients/"+patient_id+"/password";
-    return this.httpClient.put(url,password,{'headers':this.header});
+  getPatientByID(patient_id:number):Observable<Patient>{
+    return this.httpClient.get<Patient>(`${environment.ApiUrl}/patients/${patient_id}`)
   }
   updatePatient(patient_id:number,updatePatient:Patient):Observable<Patient>{
     const body = JSON.stringify(updatePatient);

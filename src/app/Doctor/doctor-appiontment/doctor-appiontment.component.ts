@@ -52,7 +52,7 @@ export class DoctorAppiontmentComponent implements OnInit {
     this._Doctorservic.Addappiontment(appiontment).subscribe((response)=>{
       //this.doctorAppiontmets = response;
       //console.log(response);
-      window.location.reload();
+      this.ngOnInit();
     });
 
   }
@@ -65,7 +65,7 @@ export class DoctorAppiontmentComponent implements OnInit {
     this._Doctorservic.deleteAppiontment(appiontment.id).subscribe((response)=>{
       //this.doctorAppiontmets = response;
       //console.log(response);
-      window.location.reload();
+      this.ngOnInit();
     });
   }
   getIndexAppiontmets(appiontment:any)
@@ -94,7 +94,7 @@ export class DoctorAppiontmentComponent implements OnInit {
     this._Doctorservic.updateAppiontment(this.index,appiontment).subscribe((response)=>{
       //this.doctorAppiontmets = response;
       console.log(response);
-       window.location.reload();
+      this.ngOnInit();
     });
     /*console.log(appiontment);
     this.doctorAppiontmets.splice(this.index,1,appiontment);*/

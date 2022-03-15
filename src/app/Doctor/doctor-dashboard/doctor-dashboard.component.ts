@@ -17,8 +17,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this._Doctorservic.getNotifications().subscribe((response)=>{
-      this.notification = response.notifications;
-      this.type = response.type;
+      this.notification = response;
       console.log(this.notification);
     });
   }

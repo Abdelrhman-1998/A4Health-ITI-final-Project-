@@ -10,12 +10,17 @@ import { DoctorserviceService } from 'src/app/doctorservice/doctorservice.servic
 })
 export class DoctorReservationsComponent implements OnInit {
   doctorPaitnetsAppiontmets:any[]=[]
+  res:any
   filter:any[]=[]
+  a:any[]=[1,2,3]
+
   isCancel:boolean=false;
 
   isFilter:boolean=false;
   canclecor:any
   editIndex!: number;
+  index1:any;
+  index2:any;
   _Status: string="pending"
 
 
@@ -28,6 +33,8 @@ export class DoctorReservationsComponent implements OnInit {
     this._Doctorservic.getDoctorPaitnetsAppiontmets().subscribe((response)=>{
       this.doctorPaitnetsAppiontmets = response;
       console.log(this.doctorPaitnetsAppiontmets);
+      //console.log(this.allAppiontmets[0].appointment_id);
+      //console.log(this.allAppiontmets[0].reservations[0]);
       if(this.router.snapshot.params['status']=="cancel")
     {
       this.isCancel=true;
@@ -58,15 +65,22 @@ export class DoctorReservationsComponent implements OnInit {
   {
     console.log(patientStatus);
 
-   console.log(this.doctorPaitnetsAppiontmets[this.editIndex])
-   this.doctorPaitnetsAppiontmets[this.editIndex].status=patientStatus.status;
+   //console.log(this.allAppiontmets[this.editIndex])
+   //this.doctorPaitnetsAppiontmets[this.editIndex].status=patientStatus.status;
+   this._Doctorservic.updateStatus(this.doctorPaitnetsAppiontmets[this.editIndex].id,patientStatus).subscribe((response)=>{
+    console.log(response);
+    this.ngOnInit();
+  })
+   
+   
+   
    //console.log(this.doctorPaitnetsAppiontmets)
 
   }
   filterS(status:any)
   {
     this.isFilter=true;
-    console.log(status);
+    //console.log(status);
     let filterArr:any = []
     for(let i = 0 ; i<this.doctorPaitnetsAppiontmets.length ; i++)
     {
@@ -78,4 +92,49 @@ export class DoctorReservationsComponent implements OnInit {
     console.log(filterArr);
     this.filter = filterArr;
   }
+  newindexCh(x:any,a:any)
+  {
+    this.index1=x;
+    this.index2=a;
+    //console.log(x,a)
+  }
+  /*C_S(Sstatus:any)
+  {
+    console.log(Sstatus);
+    //this.allAppiontmets[this.index1].reservations[this.index2].status=Sstatus.status
+    //console.log(this.allAppiontmets[this.index1].reservations[this.index2].id)
+    this._Doctorservic.updateStatus(this.allAppiontmets[this.index1].reservations[this.index2].id,Sstatus).subscribe((response)=>{
+      console.log(response);
+      window.location.reload();
+    })
+   //console.log(this.allAppiontmets[this.index1].reservations[this.index2]);
+  }*/
+
+  /*filterSS(status:any)
+  {
+    this.isFilter=true;
+    //console.log(status);
+    let arr:any = [];
+    for(let i = 0 ; i<this.allAppiontmets.length ; i++)
+    {
+      arr.push(this.allAppiontmets[i])
+    }
+    for(let i = 0 ; i<arr.length ; i++)
+    {
+      for(let k = 0 ; k<arr[i].reservations.length ; k++)
+      {
+        //console.log(this.allAppiontmets[i].reservations[k] ,"dasadasdasd");
+        //console.log(k);
+        if(arr[i].reservations[k].status!=status)
+      {
+        //console.log( 1,filterArr[i].reservations[k]);
+        arr[i].reservations.splice(k,1);
+        k--;
+        //filterArr.push(this.allAppiontmets[i]);
+      }
+      }    
+    }
+    console.log(arr);
+    this.filter = arr;
+  }*/
 }
