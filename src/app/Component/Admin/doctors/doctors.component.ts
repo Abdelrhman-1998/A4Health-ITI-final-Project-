@@ -15,6 +15,7 @@ doctor:Doctor[]=[];
 p: number = 1;
 count: number = 5;
 message!:string
+checkstatus!:any
   constructor(
     private doctorService:DoctorsService,
     private router:Router
@@ -28,7 +29,15 @@ message!:string
      (doc)=>{
        this.doctor=doc
        console.log(this.doctor);
+       this.checkstatus=doc
        
+     },(error)=>{
+      if(error){
+        console.log("error");
+        
+        localStorage.removeItem('Authorization')
+        this.router.navigate(['/admin/login'])
+      }
      }
    )
    
@@ -36,8 +45,10 @@ message!:string
  delete(id:number){
    this.doctorService.deleteDoctor(id).subscribe(
      (res) => {
+      
        this.status = 'Delete successful'
        this.ngOnInit();
+      
       },() => this.message='Delete successful',
       console.error
      

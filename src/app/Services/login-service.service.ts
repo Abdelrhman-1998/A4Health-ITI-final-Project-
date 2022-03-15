@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '../Models/user';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
+
   private isLoggedSub:BehaviorSubject<boolean>
-  constructor(private httpClient: HttpClient) { 
+  constructor(private httpClient: HttpClient , private router:Router) { 
     this.isLoggedSub=new BehaviorSubject<boolean>(false)
   }
 
@@ -23,6 +26,7 @@ export class LoginService {
   logout(){
     localStorage.removeItem('Authorization');
     this.isLoggedSub.next(false)
+    return this.httpClient.get<User>(`${environment.ApiUrl}/logout`,{headers:this.header})
   }
   get isUserlogged():boolean{
     return (localStorage.getItem('Authorization'))?true:false
@@ -32,5 +36,10 @@ export class LoginService {
   }
   isUserLoggedSub():Observable<boolean>{
     return this.isLoggedSub.asObservable();
+  }
+  checkToken(){
+    if(!localStorage.getItem('Authorization')){
+      this.router.navigate(['/admin/login'])
+    }
   }
 }

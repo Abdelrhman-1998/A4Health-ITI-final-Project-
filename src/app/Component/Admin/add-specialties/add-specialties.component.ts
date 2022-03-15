@@ -17,9 +17,9 @@ export class AddSpecialtiesComponent implements OnInit {
   editMood = false;
   specialtyEdit!: Specialty;
   message!: string;
-  id = this.activatedRoute.snapshot.params['id'];
-  name=this.activatedRoute.snapshot.params['name'];
   title!: any;
+  id!:number
+  name!:string
   updateSpecialty!: Specialty;
   constructor(
     private specialtiesService: SpecialtiesService,
@@ -39,6 +39,9 @@ export class AddSpecialtiesComponent implements OnInit {
       this.editMood = true;
     }
     if (this.editMood) {
+     this. id = this.activatedRoute.snapshot.params['id'];
+      this.name=this.activatedRoute.snapshot.params['name'];
+    
       console.log('from if');
 
       // this.getdoctorId();

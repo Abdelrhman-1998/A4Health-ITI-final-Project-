@@ -14,14 +14,18 @@ export class AdminNavbarComponent implements OnInit {
   }
 
   logOut(){
-    this.logOutservices.logout()
-    console.log("logout");
+    this.logOutservices.logout().subscribe(
+      (res)=>{
+        console.log("logout");
+        if(this.isSuccessful!=this.logOutservices.isUserlogged){
+          this.router.navigate(['admin/login']);
+        }
+      }
+    )
     
-    if(this.isSuccessful!=this.logOutservices.isUserlogged){
-      this.router.navigate(['admin/login']);
-  
-    }
-    this.router.navigate(['/admin/login'])
+    
+   
+    // this.router.navigate(['/admin/login'])
 
   }
 }
