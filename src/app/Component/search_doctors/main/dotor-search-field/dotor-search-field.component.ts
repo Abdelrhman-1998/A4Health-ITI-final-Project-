@@ -83,8 +83,8 @@ export class DotorSearchFieldComponent implements OnInit{
 
     this.Area_options_arr=["50 vic","20 flem","30 roshdy","70 gin","60 vic"];
     this.City_options_arr=["Alexandria","Cairo","Aswan","Giza"];
-    this.Specialization_options_arr=["Neurology","Dentistry","Dermatology","Orthopedics","Audiology","Family Medicine"];
-    this.offers_options_arr=["offer1","offer2"];
+    this.Specialization_options_arr;
+    // this.offers_options_arr=["offer1","offer2"];
 
     this.Doctor_Service.getDataFromApi().subscribe(res=>{
           this.test_array=res as any;
@@ -98,6 +98,21 @@ export class DotorSearchFieldComponent implements OnInit{
 
 
   ngOnInit(): void {
+    this.Doctor_Service.getSpecializations().subscribe(res =>{
+      console.log(res);
+      let specialization_names:any=[];
+      let arr:any = res;
+     arr.forEach(function(ele:any){
+       let name = ele.name;
+       specialization_names.push(name);
+     })
+      this.Specialization_options_arr=specialization_names;
+    },
+    err=>{
+      console.log(err)
+    });
+    
+
     let specilaiztion = this.route.snapshot.params['id'];
     console.log(specilaiztion);
     if(specilaiztion!="" && specilaiztion!=null){

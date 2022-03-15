@@ -1,5 +1,5 @@
 
-    <!-- Page Heading -->
+   <!-- Page Heading -->
             <!-- <div class="col-lg-3 "> -->
                 <!-- <div class="bg-white rounded-3">
                     <div class="nav flex-column nav-pills w-100  " id="v-pills-tab" role="tablist"
@@ -73,7 +73,7 @@
                        
                         <div class="form-floating my-3 d-flex justify-content-between ">
                            
-                            <input #phone type="number" class="form-control w-75" id="floatingphone"
+                            <input formControlName="phone" name="phone" #phone type="text" class="form-control w-75" id="floatingphone"
                                 placeholder="name@example.com">
                             <label for="floatingphone">Phone</label>
                             <button (click)="addPhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Add</button>

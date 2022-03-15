@@ -32,6 +32,8 @@ import { UsergGuard } from './userguard/userg.guard';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
 import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PaymentFormComponent } from './Component/paymentForm/payment-form/payment-form.component';
+import { LoadingPageComponent } from './Component/loading/loading-page/loading-page.component';
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -82,6 +84,7 @@ export const routes: Routes = [
     {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},
+  {path:'paymentForm/:countryCode/:sessionId', component:PaymentFormComponent},
   {path:'**',component:NotFoundComponent}
 ]
 

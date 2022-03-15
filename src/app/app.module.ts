@@ -64,6 +64,9 @@ import { SignInComponent } from './Component/sign-in/sign-in.component';
 import * as bootstrap from 'bootstrap';
 import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PaymentFormComponent } from './Component/paymentForm/payment-form/payment-form.component';
+import { LoadingPageComponent } from './Component/loading/loading-page/loading-page.component';
+import { MainpulateTimesPipe } from './Pipes/mainpulate-times.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -109,17 +112,21 @@ import { NotFoundComponent } from './not-found/not-found.component';
      SignInComponent,
      UserFeadbackComponent,
      NotFoundComponent,
+     PaymentFormComponent,
+     LoadingPageComponent,
+     MainpulateTimesPipe
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     HttpClientModule,
     ReactiveFormsModule,
     NgxPaginationModule,
     BrowserAnimationsModule,
     CarouselModule,
     FormsModule,
+
     BrowserAnimationsModule,RouterModule.forRoot(routes, routerOptions)
   ],
   providers: [],

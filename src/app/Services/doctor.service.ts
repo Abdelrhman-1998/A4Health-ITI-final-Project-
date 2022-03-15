@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Doctor } from '../Models/doctor';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 
 
@@ -15,11 +15,22 @@ export class DoctorService {
   }
 
   // get all data 
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
 
     getDataFromApi(){
-
-      let url ="https://api.jsonbin.io/b/62213a3a7caf5d67835e87b5/11";
+      let url ="https://a4-health.herokuapp.com/api/doctors";
        return this.httpClient.get(url);
+    }
+
+    postAppointmetApi(patient_id:number,appiontment:{}){
+      console.log(this.header);
+      let url="https://a4-health.herokuapp.com/api/patients/"+patient_id+"/reservations";
+      return this.httpClient.post(url,appiontment,{'headers':this.header});
+
+    }
+    getSpecializations(){
+      let url="https://a4-health.herokuapp.com/api/specializations";
+      return this.httpClient.get(url);
     }
 
   // search
@@ -60,7 +71,7 @@ export class DoctorService {
 
   filterBySpecilaization(specilaization:"string",all_data:Doctor[]){
     let filterd_data=all_data.filter(ele => {
-      return ele.specialization.toLowerCase()== specilaization.toLowerCase();
+      return ele.specialization.toLowerCase().trim()== specilaization.toLowerCase().trim();
     });
     return filterd_data;
   }
@@ -102,8 +113,8 @@ export class DoctorService {
       today=today.toString().split(" ").slice(0,4).join("-");
         let filtered_data=search_results.filter(function(ele){
           let dates:any=[];
-                ele.appointments.forEach(function(ele){
-                      dates.push(new Date (ele.Date).toString().split(" ").slice(0,4).join("-"));
+                ele.appointment.forEach(function(ele){
+                      dates.push(new Date (ele.date).toString().split(" ").slice(0,4).join("-"));
                 });
           return dates.includes(today)
         })
@@ -116,8 +127,8 @@ export class DoctorService {
       tomorrow_date= tomorrow_date.toString().split(" ").slice(0,4).join("-");
         let filtered_data=search_results.filter(function(ele){
           let dates:any=[];
-                ele.appointments.forEach(function(ele){
-                      dates.push(new Date (ele.Date).toString().split(" ").slice(0,4).join("-"));
+                ele.appointment.forEach(function(ele){
+                      dates.push(new Date (ele.date).toString().split(" ").slice(0,4).join("-"));
                 });
           return dates.includes(tomorrow_date)
         })

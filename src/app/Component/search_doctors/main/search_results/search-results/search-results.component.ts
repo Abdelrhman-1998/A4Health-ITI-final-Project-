@@ -20,13 +20,15 @@ export class SearchResultsComponent implements OnInit {
   switch_status!:boolean;
   offers_status!:boolean;
   top_arrow!:boolean;//appointment
+  submmitedForm!:{}
+  appointment_id!:number;
  
   appointment_previous_element!:any;
   constructor(private Doctor_service:DoctorService ,   private route: ActivatedRoute) { 
  
   }
   // tocken from api stroed in local storage
-  confirm_condition=true;
+  confirm_condition=false;
   printValues(x:any){
       console.log(x.value);
   }
@@ -44,13 +46,16 @@ export class SearchResultsComponent implements OnInit {
       x.scrollTop=0;
   }
   //------------------
-  submitAppointment(x:any,y:any,z:any){
+  submitAppointment(x:any,y:any,z:any,appointment_id:number){
+ 
     // check authentication status
     if(this.confirm_condition){
       x.value.date=y.value;
       console.log(x.value);
+      this.submmitedForm=x;
       $("#Appointments").modal('hide');
       $("#confirm_appointment").modal('show');
+      this.appointment_id=appointment_id;
      
     }
     else{
@@ -74,6 +79,36 @@ export class SearchResultsComponent implements OnInit {
       this.appointment_previous_element=x;
    }
 //-------------------------------------
+
+// confirm take submmited form
+
+naivgateToReservation(x:any){
+  console.log(x.value);
+  let time_array = x.value.appointment.split(" ");
+  let time_prefix = time_array[1];
+  let time=time_array[0].split(":");
+  let patient_time;
+  if(time_prefix.trim()=="PM"){
+        let value= +time[0]+12;
+        patient_time=value+":"+time[1];
+  }
+  else{
+    patient_time=time[0]+":"+time[1]
+  }
+
+
+  let patient_id:any= localStorage.getItem("patient_id");
+  let appointment_id=this.appointment_id;
+  console.log(appointment_id);
+  let appointment_object={"appointment_id":appointment_id,"patient_time":patient_time,"patient_id":patient_id};
+  console.log(appointment_object);
+  this.Doctor_service.postAppointmetApi(patient_id,appointment_object).subscribe(res=>{
+    console.log(appointment_object);
+    console.log(res);
+  },err=>{
+    console.log(err);
+  })
+}
 
  // display
   view_data!:Doctor[];
@@ -287,8 +322,9 @@ submitFilter(x:NgForm,y:NgForm){
               this.view_length=this.view_data.length;
         }
      
-     
-
+        localStorage.setItem("Authorization","Bearer 49|IYV2KWStxVTnXIXRCSWVamJOGrU0eAaKjDO8DUEM");
+        localStorage.setItem("patient_id","3");
+        
         //--------------------------------
 
 
