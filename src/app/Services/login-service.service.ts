@@ -26,7 +26,7 @@ export class LoginService {
   logout(){
     localStorage.removeItem('Authorization');
     this.isLoggedSub.next(false)
-    return this.httpClient.get<User>(`${environment.ApiUrl}/logout`,{headers:this.header})
+    return this.httpClient.get(`${environment.ApiUrl}/logout`,{headers:this.header})
   }
   get isUserlogged():boolean{
     return (localStorage.getItem('Authorization'))?true:false
