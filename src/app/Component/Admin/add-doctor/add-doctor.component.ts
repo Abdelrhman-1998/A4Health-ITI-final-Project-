@@ -99,14 +99,19 @@ export class AddDoctorComponent implements OnInit {
     console.log(this.doctor);
     this.doctorSrvice.addDoctor(formData).subscribe((res) => {
       this.error = res;
-      if (this.error.errors) {
-        this.message = this.error.errors.username;
-        console.log(this.message);
-
-        this.router.navigate(['/admin/addDoctor']);
-      } else {
-        this.router.navigate(['/admin/doctor']);
-      }
+      // if (this.error.errors) {
+      //   this.message = this.error.errors.username;
+      //   console.log(this.message);
+      //   this.router.navigate(['/admin/addDoctor']);
+      // } else {
+      //   this.router.navigate(['/admin/doctor']);
+      // }
+    },(error)=>{
+      this.message=error.message
+    },()=>{
+      this.message='Added succesfully'
+      this.router.navigate(['/admin/doctor']);
+      
     });
   }
 
