@@ -30,11 +30,10 @@ checkstatus!:any
        this.doctor=doc
        console.log(this.doctor);
        this.checkstatus=doc
-       
+
      },(error)=>{
       if(error){
-        console.log("error");
-        
+        console.log("error");    
         localStorage.removeItem('Authorization')
         this.router.navigate(['/admin/login'])
       }

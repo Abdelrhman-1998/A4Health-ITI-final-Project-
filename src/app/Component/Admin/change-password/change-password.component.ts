@@ -10,12 +10,14 @@ import { PasswordService } from 'src/app/Services/password.service';
 export class ChangePasswordComponent implements OnInit {
 passwordData:any
 message!:string
+response:any
   constructor(
     private changePassword:PasswordService
   ) { }
   changePasswordForm:FormGroup = new FormGroup({
-    oldpass:new FormControl(null , [Validators.required , Validators.minLength(8) ]),
-    newpass:new FormControl(null, [Validators.required , Validators.minLength(8) ])
+    old_password:new FormControl(null , [Validators.required , Validators.minLength(8) ]),
+    password:new FormControl(null, [Validators.required , Validators.minLength(8) ]),
+    password_confirmation:new FormControl(null, [Validators.required , Validators.minLength(8) ]),
   }); 
   ngOnInit(): void {
   }
@@ -24,8 +26,17 @@ message!:string
     this.passwordData=data
     this.changePassword.changePassword(this.passwordData).subscribe(
       (res)=>{
-        console.log(res)
-      },() => this.message='Delete successful',
-      );
+        this.response=res
+      },
+      (error)=>{
+        if(error.error.message){
+          this.message='password incorrect'
+        }},() => this.message='Change Password successful',
+        );
+      
+      // console.error
+      // ,() => this.message='Change Password successful',
+     
+    
   }
 }

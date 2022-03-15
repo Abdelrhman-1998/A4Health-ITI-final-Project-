@@ -67,7 +67,7 @@ export class AddSpecialtiesComponent implements OnInit {
         console.log(res);
         this.router
         .navigate(['/admin/specialties'])
-      },() => this.message='Delete successful',
+      },() => this.message='Updated successful',
       console.error);
     console.log(data);
   }

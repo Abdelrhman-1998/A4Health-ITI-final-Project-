@@ -58,7 +58,7 @@ loginAdmin(data:NgForm){
         localStorage.setItem('Authorization','Bearer '+this.test.token)
         setTimeout(()=>{
           this.router.navigate(['/admin/doctor'])
-        },2000)
+        },500)
       }
     console.log(this.test.token);
     }
