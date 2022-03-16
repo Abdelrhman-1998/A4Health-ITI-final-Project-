@@ -3,7 +3,7 @@
     <div class="container">
       <span
         ><a href="#">Vezeeta</a> / Doctor
-        {{doctor_data.fname + " " +doctor_data.lname }}
+        {{fname + " " +lname }}
       </span>
 
       <div class="row">
@@ -23,13 +23,13 @@
               >
                 <h4 class="doctor-name pt-2 pb-2 m-0">
                   <span>Doctor : </span>
-                  <span>{{ doctor_data.fname + " " + doctor_data.lname }}</span>
+                  <span>{{fname + " " + lname }}</span>
                 </h4>
                 <p class="text-secondary doctor-info">
-                  {{ doctor_data.title }} of {{ doctor_data.specialization }}
+                  {{ title }} of {{ specilaization }}
                 </p>
                 <p class="card-text text-secondary px-2">
-                  {{doctor_data.description }}
+                  {{description }}
                 </p>
                 <!-- <p>
                   <a href="#">General Surgeon Specialized in</a>
@@ -113,7 +113,7 @@
               <div class="location">
                 <i class="fa-solid fa-location-dot text-primary"></i>
                 <span class="px15 text-secondary fs-5">
-                  {{doctor_data.city +":" +doctor_data.street}}
+                  {{city +":" +street}}
                  </span>
                 <p class="fw-bold text-secondary fs-6">
                   Book now to receive the clinic’s address details and phone
@@ -309,7 +309,7 @@
                           class="fa-solid fa-money-bill-1-wave text-primary fs-4"
                         ></i>
                         <p class="text-secondary px15">
-                          Fees :<span class="fw-bold px15">{{doctor_data.fees}} EGP</span>
+                          Fees :<span class="fw-bold px15">{{fees}} EGP</span>
                         </p>
                       </div>
                     </div>
@@ -326,7 +326,7 @@
                 <div class="location">
                   <i class="fa-solid fa-location-dot text-primary"></i>
                   <span class="px15 text-secondary fs-5">
-                   {{doctor_data.city +":" +doctor_data.street}}
+                   {{city +":" +street}}
                   </span>
                   <p class="fw-bold text-secondary fs-6">
                     Book now to receive the clinic’s address details and phone
