@@ -18,11 +18,11 @@ export class UserloginService {
   {
     let token =''
     let id_token =''
-    //localStorage.setItem('Authorization',token)
-     this.gtoken.thetoken =token ;
+    localStorage.setItem('Authorization',token)
+    //  this.gtoken.thetoken =token ;
 
-    //localStorage.setItem('id',id_token)
-    this.gtoken.theid =id_token ;
+    localStorage.setItem('id',id_token)
+    // this.gtoken.theid =id_token ;
 
     this.isLoggedSub.next(true)
     return this.httpClient.post("https://a4-health.herokuapp.com/api/login" , userData);
@@ -35,11 +35,10 @@ export class UserloginService {
   }*/
   logout(){
 
-    /*localStorage.removeItem('Authorization');
-    localStorage.removeItem('id');*/
-    this.gtoken.thetoken =null ;
-    this.gtoken.theid =null ;
-
+    localStorage.removeItem('Authorization');
+    localStorage.removeItem('id');
+    // this.gtoken.thetoken =null ;
+    // this.gtoken.theid =null ;
 
     this.isLoggedSub.next(false)
   }
