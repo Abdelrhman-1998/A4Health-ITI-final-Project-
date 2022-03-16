@@ -8,7 +8,7 @@ import { Specialty } from '../Models/specialty';
   providedIn: 'root'
 })
 export class SpecialtiesService {
-  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
   text:string=''
   constructor(private httpClient: HttpClient) { }
   getAllSpecialties(): Observable<Specialty[]>{
