@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DoctorserviceService } from 'src/app/doctorservice/doctorservice.service';
+import { DoctorService } from 'src/app/Services/doctor.service';
 
 @Component({
   selector: 'app-doctor-offers',
@@ -9,9 +10,10 @@ import { DoctorserviceService } from 'src/app/doctorservice/doctorservice.servic
 })
 export class DoctorOffersComponent implements OnInit  {
 
-  Offers:any[]=[]
+  Offers:any[]=[];
+  doctor_offers!:any
   index!: number;
-  constructor(private _Doctorservic:DoctorserviceService) { }
+  constructor(private _Doctorservic:DoctorserviceService,private offers:DoctorService) { }
   addOfferForm:FormGroup = new FormGroup({
     name:new FormControl(null , [Validators.required] ),
     discount:new FormControl(null, [Validators.required]),
@@ -23,10 +25,10 @@ export class DoctorOffersComponent implements OnInit  {
     doctor_id:new FormControl(localStorage.getItem("id")),
   }); 
   ngOnInit(): void {
-    this._Doctorservic.getOffers().subscribe((response)=>{
-      this.Offers = response;
-      console.log(response);
-    });
+    // this.offers.getDoctorInfo().subscribe((response)=>{
+    //   this.Offers = response;
+    //   console.log(response);
+    // });
   }
   /*submitDate(form:any)
   {

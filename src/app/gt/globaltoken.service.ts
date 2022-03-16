@@ -10,6 +10,8 @@ export class GlobaltokenService {
   // from make appointment
   doctor_fullname:any;
 
+  show_username!:boolean;
+
   itemValue = new BehaviorSubject(this.thetoken);
   idValue = new BehaviorSubject(this.theid);
 

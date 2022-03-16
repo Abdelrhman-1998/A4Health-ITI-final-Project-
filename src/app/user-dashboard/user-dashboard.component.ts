@@ -6,6 +6,7 @@ import { ReviewsService } from '../Services/reviews.service';
 import { Review } from '../Models/review';
 import { Notification } from '../Models/notification';
 import { UserloginService } from '../userguard/userlogin.service';
+import { GlobaltokenService } from '../gt/globaltoken.service';
 
 
 @Component({
@@ -16,6 +17,7 @@ import { UserloginService } from '../userguard/userlogin.service';
 
 
 export class UserDashboardComponent implements OnInit {
+  confirmCondition:any;
   notifications!:any[];
   notification_length!:any;
   type:any
@@ -29,7 +31,8 @@ export class UserDashboardComponent implements OnInit {
     private notificationServicse:NotificationService,
     private router:Router,
     private reviewServices:ReviewsService,
-    private logoutServices:UserloginService
+    private logoutServices:UserloginService,
+    private checkAuth:GlobaltokenService
     ) { }
 
   ngOnInit(): void {
@@ -39,6 +42,7 @@ export class UserDashboardComponent implements OnInit {
   //   this.getUserNotification()
   // }
 getUserNotification(){
+
   this.notificationServicse.getUserNotifications().subscribe(
     (notification:any)=>{
        this.notifications=notification;
@@ -76,8 +80,16 @@ getUserNotification(){
 }
 
 logout(){
-this.logoutServices.logout()
-this.router.navigate(['signin'])
+  
+  // this.confirmCondition=this.checkAuth.show_username;
+  this.logoutServices.logout()
+  this.router.navigate(['signin'])
+  .then(() => {
+    window.location.reload();
+  });
+
+// this.router.navigate(['signin']);
+
 }
 
 

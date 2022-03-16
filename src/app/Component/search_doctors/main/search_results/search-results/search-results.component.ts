@@ -29,7 +29,9 @@ export class SearchResultsComponent implements OnInit {
  
   }
   // tocken from api stroed in local storage
-  confirm_condition=this.patient.thetoken;
+  confirm_condition!:boolean;
+ 
+  
   printValues(x:any){
       console.log(x.value);
   }
@@ -48,7 +50,7 @@ export class SearchResultsComponent implements OnInit {
   }
   //------------------
   submitAppointment(x:any,y:any,z:any,appointment_id:number){
-
+    console.log(this.confirm_condition);
     // check authentication status
     if(this.confirm_condition){
       x.value.date=y.value;
@@ -302,6 +304,26 @@ submitFilter(x:NgForm,y:NgForm){
 
 // owl carousel 
   ngOnInit(): void {
+    this.patient.itemValue.subscribe(res=>{
+      console.log(res);
+ 
+      if(res!="null"){
+          this.confirm_condition=true;
+      }
+      else{
+          this.confirm_condition=false;
+      }
+     
+    },
+      err=>{
+        console.log(err);
+     
+         
+      });
+
+
+
+
     console.log(this.confirm_condition);
     //display data from api
     this.Doctor_service.getDataFromApi().subscribe(

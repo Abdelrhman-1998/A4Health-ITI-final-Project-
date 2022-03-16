@@ -107,8 +107,8 @@
                                          </span>
                                     </p>
                                     <p class="m-2">
-                                        <span  class="text-primary" *ngIf="not.data.type=='feedback'" [routerLink]="['feedback/',not.id]">
-                                           feedback
+                                        <span  class="text-primary" *ngIf="not.data.type=='feedback'" [routerLink]="['feedback/',not.data.id]">
+                                           feedback 
                                         </span>
                                         <span  class="text-danger" *ngIf="not.data.type=='cancel'" [routerLink]="['/userdashboard/reservations']">
                                            check your reservations (canceled)

@@ -166,6 +166,11 @@
               <h5 class="card-title text-secondary">
                 <i class="fa-solid fa-umbrella umbrella px-3"></i>Offers
               </h5>
+              <div *ngFor="let item of doctor_data.offers ">
+                      <p class="ms-2 mb-1">
+                       Offer: {{item.name}} <span> , Discount: {{item.discount}}</span>
+                      </p>
+              </div>
               <div class="py-2 px-2">
                 <a type="button" class="btn btn-outline-primary">Medright</a>
                 <a type="button" class="btn btn-outline-primary">INAYA Egypt</a>
@@ -343,6 +348,7 @@
                   <button (click)="navigateTosearchPage()"  class="btn btn-danger">
                     <a >Make An Appointment </a>
                   </button>
+                  <!-- <app-appointments></app-appointments> -->
                 </div>
               </div>
               <div class="card-body border-bottom d-flex flex-row calender">
