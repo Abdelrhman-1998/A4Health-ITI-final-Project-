@@ -21,6 +21,7 @@ export class AddSpecialtiesComponent implements OnInit {
   id!:number
   name!:string
   updateSpecialty!: Specialty;
+
   constructor(
     private specialtiesService: SpecialtiesService,
     private activatedRoute: ActivatedRoute,
@@ -37,6 +38,8 @@ export class AddSpecialtiesComponent implements OnInit {
   ngOnInit(): void {
     if (this.activatedRoute.snapshot.url[1].path == 'edit') {
       this.editMood = true;
+      console.log(this.editMood);
+      
     }
     if (this.editMood) {
      this. id = this.activatedRoute.snapshot.params['id'];
@@ -56,6 +59,9 @@ export class AddSpecialtiesComponent implements OnInit {
 
       .subscribe((spe) => {
         this.newSpecialty = spe;
+        this.router
+        .navigate(['/admin/specialties'])
+
       },() => this.message='Input is Required',
       console.error);
   }
@@ -63,14 +69,14 @@ export class AddSpecialtiesComponent implements OnInit {
     this.title = data;
     this.specialtiesService
       .updateSpecialty(this.id, this.title)
-      
-      .subscribe((res) => {
+            .subscribe((res) => {
         console.log(res);
         this.router
         .navigate(['/admin/specialties'])
       },() => this.message='Updated successful',
       console.error);
     console.log(data);
+
 
   }
   // getdoctorId() {

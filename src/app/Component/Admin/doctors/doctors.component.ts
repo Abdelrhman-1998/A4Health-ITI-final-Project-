@@ -37,6 +37,7 @@ checkstatus!:any
       //   localStorage.removeItem('Authorization')
       //   this.router.navigate(['/admin/login'])
       // }
+
      }
    )
    
@@ -55,5 +56,6 @@ checkstatus!:any
      )
     //  this.ngOnInit()
    
+
    }
 }

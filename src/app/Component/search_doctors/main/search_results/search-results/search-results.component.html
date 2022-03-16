@@ -252,8 +252,7 @@
             <p class="mt-3 mb-3 text-center text-md-start ">
                 Search results :<span> {{view_length}}</span> doctors
             </p>
-            <!-- | paginate: { itemsPerPage: count, currentPage: p } -->
-        <div  class="doctor-card row m-0 mt-3 mb-3 p-3 position-relative" *ngFor="let item of view_data" >
+        <div  class="doctor-card row m-0 mt-3 mb-3 p-3 position-relative" *ngFor="let item of view_data| paginate: { itemsPerPage: count, currentPage: p }" >
             <div class=" offer-icon position-absolute" [ngStyle]="offers_status?{'display':'block'}:{'display':'none'}">
                 <a [routerLink]="['/booking',item.id]"  routerLinkActive="active" title="view offers" class="position-absolute ">
                     <i class="fa-solid fa-dollar-sign"></i>

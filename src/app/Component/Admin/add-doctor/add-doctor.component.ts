@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
 import { Doctor } from 'src/app/Models/doctor';
 import { Specialty } from 'src/app/Models/specialty';
@@ -29,6 +30,7 @@ export class AddDoctorComponent implements OnInit {
     username: new FormControl('', [
       Validators.required,
       Validators.minLength(4),
+
     ]),
     fname: new FormControl('', [Validators.required, Validators.minLength(4)]),
     lname: new FormControl('', [Validators.required, Validators.minLength(4)]),
@@ -36,6 +38,7 @@ export class AddDoctorComponent implements OnInit {
       Validators.required,
       Validators.minLength(4),
       Validators.maxLength(15),
+
     ]),
     gender: new FormControl('', [Validators.required]),
     title: new FormControl('', [Validators.required]),
@@ -52,6 +55,7 @@ export class AddDoctorComponent implements OnInit {
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(8),
+
       // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
       // At least 8 characters in length
       // Lowercase letters
@@ -70,6 +74,7 @@ export class AddDoctorComponent implements OnInit {
   ngOnInit(): void {
     this.getAllSpecialties();
   }
+
   upLoadImg(event: any) {
     this.files = event.target.files[0];
     console.log(this.files);
@@ -114,6 +119,7 @@ export class AddDoctorComponent implements OnInit {
       
     });
   }
+  
 
   getAllSpecialties() {
     this.specialtyService.getAllSpecialties().subscribe((specialty) => {
@@ -160,4 +166,5 @@ export class AddDoctorComponent implements OnInit {
   get img_name() {
     return this.AddDoctor.get('img_name');
   }
+
 }

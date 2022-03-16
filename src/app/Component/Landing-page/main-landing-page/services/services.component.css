@@ -83,8 +83,9 @@
   perspective: 100px;
 }
 
-/* @import url("../../../../../../All_Pages/new_Landing_Page/style.css"); */
-/* @import url("../../../../../../All_Pages//new_Landing_Page/Css/style.css"); */
+
+@import url("../../../../../../All_Pages/new_Landing_Page/style.css");
+@import url("../../../../../../All_Pages//new_Landing_Page/Css/style.css");
 .item:hover i{
   color: white !important;
 }

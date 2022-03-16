@@ -33,6 +33,9 @@ import { SignInComponent } from './Component/sign-in/sign-in.component';
 import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ChangePasswordComponent } from './Component/Admin/change-password/change-password.component';
+import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
+import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
+
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -42,6 +45,8 @@ export const routes: Routes = [
   {path: 'booking/:id', component:BookWithDoctorComponent},
   {path: 'booking/:id/reviews/:id', component:ReviewComponent},
   {path: 'Search', component:SearchPageComponent},
+  {path: 'Community',  redirectTo: '/Home#Community'},
+  {path: 'specialty/:id', component:SearchPageComponent},
 
   {path: 'Community',  redirectTo: '/Home#Community'},
   {path: 'specialty/:id', component:SearchPageComponent},
@@ -64,6 +69,8 @@ export const routes: Routes = [
     {path:'appointment' , component:DoctorAppiontmentComponent},
     {path:'dreservations/:status' , component:DoctorReservationsComponent},
     {path:'feedback' , component:DoctorFeedbackComponent},
+    {path:'changepassword' , component:DoctorpasswordComponent},
+    {path:'offers' , component:DoctorOffersComponent},
   ]},
   //   {path:'admin',redirectTo:'admin/addDoctor'},
   // {path:'admin/addDoctor',component:AddDoctorComponent},

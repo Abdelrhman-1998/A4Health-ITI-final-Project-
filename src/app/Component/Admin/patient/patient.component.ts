@@ -39,6 +39,7 @@ export class PatientComponent implements OnInit {
   })
     // window.location.reload();
     // setTimeout(()=>{
+
     // },2000)
     }
 }

@@ -4,7 +4,7 @@
 </h1>
 <div class="feedbackComments text-black">
     <div *ngFor="let f of feedback" class="card-body text-center bg-white my-3">
-        <p class="card-text my-2">{{f.feedback}}</p>
+        <p class="card-text my-2">{{f.message}}</p>
         <p class="fw-bold">Rating</p>
         <div class="d-flex justify-content-center">
             <div class="d-flex gap-2 align-items-center justify-content-center">
@@ -16,7 +16,7 @@
             </div>
         </div>
         <p class="text-end mt-1 mb-1">
-            {{f.name}}
+            {{f.patientName}}
         </p>
       </div>
       

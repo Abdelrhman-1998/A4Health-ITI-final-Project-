@@ -46,13 +46,20 @@ label {
     transition: left 0.5s ease;
 } */
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> Ahmed_Ayman
 @import url('../../assets/css/style.css');
 .displaynone{
     display: none;
 }
 .diplayBlock{
     display: block;
+<<<<<<< HEAD
 }
 =======
 @import url('../../assets/css/style.css');
 >>>>>>> origin/Ahmed_Ayman
+=======
+}
+>>>>>>> Ahmed_Ayman

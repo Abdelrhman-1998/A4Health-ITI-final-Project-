@@ -64,7 +64,12 @@ import { SignInComponent } from './Component/sign-in/sign-in.component';
 import * as bootstrap from 'bootstrap';
 import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+
 import { ChangePasswordComponent } from './Component/Admin/change-password/change-password.component';
+
+
+import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
+import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +116,10 @@ import { ChangePasswordComponent } from './Component/Admin/change-password/chang
      SignInComponent,
      UserFeadbackComponent,
      NotFoundComponent,
-     ChangePasswordComponent,
+    ChangePasswordComponent,
+     DoctorpasswordComponent,
+     DoctorOffersComponent,
+
   ],
   imports: [
     BrowserModule,

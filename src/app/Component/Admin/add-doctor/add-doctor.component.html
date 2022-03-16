@@ -21,8 +21,10 @@
     <div
       class="card-body container-fluid d-flex justify-content-center bg-light"
     >
+
     
       <form  action="" method="" class="w-75" [formGroup]="AddDoctor" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
+
 
         <div class="mb-3">
           <label for="username" class="form-label"
@@ -37,7 +39,7 @@
             formControlName="username"
           />
           <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
-<<<<<<< HEAD
+
             <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['required']">UserName is required</p>
         </div> 
         </div>
@@ -147,6 +149,7 @@
         </div>
         <div class="mb-3">
 
+
           <input type="radio" name="gender" id="male" value="Male" ngModel formControlName="gender"/>
           <label for="male"> Male </label>
         </div>
@@ -165,6 +168,7 @@
           <div class="wrapper">
             <label for="title" >Choose Title</label>
             <select  ngModel formControlName="title" name="title" id="title" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+
               <option value="professor">Professors</option>
               <option value="lecturer">Lecturer</option>
               <option value="consultant">Consultant</option>
@@ -189,6 +193,7 @@
         <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
           <p class="m-0">specialization is required</p>
 
+
       </div> 
         </div>
         <div class="mb-3">
@@ -206,6 +211,7 @@
             <p class="m-0" >Description is required</p>
           </div>
         </div>
+
         </div>
           <div class="mb-3">
           <label for="phone" class="form-label"
@@ -243,7 +249,6 @@
 
         <button [disabled]="AddDoctor.invalid" type="submit" class="btn btn-primary">Add</button>
 
-    
       </form>
     </div>
   </div>

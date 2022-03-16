@@ -36,8 +36,8 @@
                     </thead>
                     <tbody>
                         <!-- | filter:searchResult -->
-                        <!--| paginate: { itemsPerPage: count, currentPage: p } -->
-                        <tr  *ngFor="let review of reviews   | filter:searchResultn; index as i">
+                        <!-- | filter:searchResultn -->
+                        <tr  *ngFor="let review of reviews | paginate: { itemsPerPage: count, currentPage: p } | filter:searchResultn; index as i">
                         
                             <td>{{review.id}}</td>
                             <td >{{review.patient}}</td>

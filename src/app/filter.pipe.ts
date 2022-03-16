@@ -20,6 +20,7 @@ export class FilterPipe implements PipeTransform {
   return value.filter(e=>e.doctor.toLowerCase().indexOf(searchResultn)!== -1)
   
 
+
     
   }
 
