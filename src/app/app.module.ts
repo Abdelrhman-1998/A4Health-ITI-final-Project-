@@ -65,6 +65,7 @@ import * as bootstrap from 'bootstrap';
 import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ChangePasswordComponent } from './Component/Admin/change-password/change-password.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -111,6 +112,7 @@ import { ChangePasswordComponent } from './Component/Admin/change-password/chang
      UserFeadbackComponent,
      NotFoundComponent,
      ChangePasswordComponent,
+
   ],
   imports: [
     BrowserModule,

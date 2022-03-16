@@ -14,6 +14,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Feedbacks</h6>
             <form class="d-flex" #filterDoctor="ngForm">
                 <input class="form-control me-2" name="searchResult" type="search" placeholder="Search with Doctor Name" aria-label="Search" [(ngModel)]="searchResultn">
+
             </form>
         </div>
        
@@ -22,10 +23,12 @@
                 <table class="table table-bordered text-center text-dark" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
+
                             <th>ID</th>
                             <th>Patient</th>
                             <th>Feedback Messages</th>
                             <th>Doctor</th>                         
+
                             <th>Rating</th>
                             <th>Delete</th>
                             
@@ -42,6 +45,7 @@
                             <td><span>Dr.</span> {{review.doctor}}</td>
                             <!-- <td>{{review.doctor_id}}</td> -->
                             <td><i *ngFor="let star of counter(rate)"  class="fa-solid fa-star text-warning"></i>
+
                             </td>
                             <td class="text-center"><button class="btn btn-danger w-100"
                                 (click)="delete(review.id)"

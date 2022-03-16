@@ -9,10 +9,12 @@
     <div
       class="card-body container-fluid d-flex justify-content-center bg-light"
     >
+
    
       <form action="" method=""  class="w-75" #addSpecialty="ngForm">
         <div class="mb-3">
           <label for="name" class="form-label">Specialty Name:</label>
+
           <input
             type="text"
             class="form-control"
@@ -35,10 +37,12 @@
             name="id"
             ngModel
             [disabled]="!editMood"
+
             [ngModel]="editMood ? id: ''"
           />
         </div>
         <!-- <span>{{error}}</span> -->
+
         <div>
           <button
             [disabled]="addSpecialty.invalid"
@@ -46,6 +50,8 @@
             type="submit"
             class="btn btn-primary"
             (click)="sendDataOfspecialty(addSpecialty.value)"
+
+
           >
             Add
           </button>
@@ -55,6 +61,8 @@
           type="submit"
           class="btn btn-primary"
           *ngIf="editMood"
+
+ 
           (click)="updateDataOfspecialty(addSpecialty.value)"
         >
           Edit

@@ -15,12 +15,14 @@ export class DoctorReservationsComponent implements OnInit {
 
   isFilter:boolean=false;
   canclecor:any
+
   editIndex!: number;
   _Status: string="pending"
 
 
   constructor(private _Doctorservic:DoctorserviceService
     ,private router:ActivatedRoute) { }
+  
   patientStatus:FormGroup = new FormGroup({
     status:new FormControl(null , [Validators.required] ),
   }); 
@@ -47,6 +49,7 @@ export class DoctorReservationsComponent implements OnInit {
     
   }
  
+
   getIndexChanged(dpa:any)
   {
    // console.log(this.doctorPaitnetsAppiontmets.indexOf(dpa));

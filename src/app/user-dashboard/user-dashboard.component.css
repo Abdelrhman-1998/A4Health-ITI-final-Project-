@@ -45,6 +45,7 @@ label {
     -moz-transition: left 0.5s ease;
     transition: left 0.5s ease;
 } */
+<<<<<<< HEAD
 @import url('../../assets/css/style.css');
 .displaynone{
     display: none;
@@ -52,3 +53,6 @@ label {
 .diplayBlock{
     display: block;
 }
+=======
+@import url('../../assets/css/style.css');
+>>>>>>> origin/Ahmed_Ayman

@@ -45,6 +45,7 @@ export class SignInComponent implements OnInit {
      
     )
     this.router.navigate(['/userdashboard/reservations'])
+
    console.log(this.user);
     console.log(loginValue)
     

@@ -9,8 +9,13 @@
     --color8:#6eb4d8;
     --color9:#ffd5bf;
     scroll-behavior: smooth;
+<<<<<<< HEAD
 } */
 @import url("../../../../../All_Pages/new_Landing_Page/style.css");
+=======
+}
+
+>>>>>>> origin/Ahmed_Ayman
 header,.aboutUs{
     font-family: 'Inter', sans-serif;
     background-image: url("../../../../assets/landing_page/images/wavy.jpg");
@@ -117,4 +122,8 @@ header{
     text-align: center;
 }
 }
+<<<<<<< HEAD
  */
+=======
+
+>>>>>>> origin/Ahmed_Ayman

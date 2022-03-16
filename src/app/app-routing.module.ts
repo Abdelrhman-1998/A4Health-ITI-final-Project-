@@ -42,6 +42,7 @@ export const routes: Routes = [
   {path: 'booking/:id', component:BookWithDoctorComponent},
   {path: 'booking/:id/reviews/:id', component:ReviewComponent},
   {path: 'Search', component:SearchPageComponent},
+
   {path: 'Community',  redirectTo: '/Home#Community'},
   {path: 'specialty/:id', component:SearchPageComponent},
 
@@ -50,6 +51,7 @@ export const routes: Routes = [
     {path:'reservations' , component:UserReservationsComponent},
     {path:'manageprofile' , component:UserManageProfileComponent},
     {path:'changepassword' , component:UserChangePasswordComponent},
+
     {path:'feedback/:docotrID' , component:UserFeadbackComponent},
        ]},
        {path:'signup',component:UsersignupComponent},
@@ -76,15 +78,18 @@ export const routes: Routes = [
       {path:'login',component:AdminLoginComponent},
       {path:'changepassword',component:ChangePasswordComponent,canActivate:[AuthGuard]},
       {path:'addDoctor',component:AddDoctorComponent,canActivate:[AuthGuard]},
+
     {path:'doctor',component:DoctorsComponent,canActivate:[AuthGuard]},
     {path:'patient',component:PatientComponent,canActivate:[AuthGuard]},
     {path:'specialties',component:SpecialtiesComponent,canActivate:[AuthGuard]},
     {path:'addSpecialties',component:AddSpecialtiesComponent,canActivate:[AuthGuard]},
+
     {path:'specialty/edit/:id/:name',component:AddSpecialtiesComponent,canActivate:[AuthGuard]} ,
     {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},
   {path:'**',component:NotFoundComponent}
+
 ]
 
 export const routerOptions: ExtraOptions = {

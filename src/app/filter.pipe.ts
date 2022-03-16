@@ -19,6 +19,7 @@ export class FilterPipe implements PipeTransform {
   searchResultn=searchResultn.toLowerCase();
   return value.filter(e=>e.doctor.toLowerCase().indexOf(searchResultn)!== -1)
   
+
     
   }
 

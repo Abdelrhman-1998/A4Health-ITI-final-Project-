@@ -32,6 +32,7 @@ export class ReviewsService {
   deleteReview(review_id:number):Observable<Review>{
     return this.httpClient.delete<Review>(`${environment.ApiUrl}/dashboard/reviews/${review_id}`,{headers:this.header})
   }
+
   sendReview(newreview: Review): Observable<Review> {
     const headers = { "content-type": "application/json" };
     // const body = JSON.stringify(newreview);
@@ -39,5 +40,6 @@ export class ReviewsService {
       headers: headers,
     });
   }
+
 
 }

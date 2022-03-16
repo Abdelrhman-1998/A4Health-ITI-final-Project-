@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 import { Router } from '@angular/router';
 import { SignUpService } from '../Services/sign-up.service';
+
 
 @Component({
   selector: 'app-usersignup',
@@ -35,13 +37,16 @@ export class UsersignupComponent implements OnInit {
   }); 
   
   ngOnInit(): void {
+
     this.check()
+
   }
   show()
   {
     this.ifV=true;
     this.ifV1="das";
     this.hide=true;
+
     // console.log("dasd")
   }
 //send data from form
@@ -85,6 +90,7 @@ export class UsersignupComponent implements OnInit {
     var formSubmitting = false;
    var setFormSubmitting = function() { formSubmitting = true; };
 
+
 /*window.onload = function() {
     window.addEventListener("beforeunload", function (e) {
         if (formSubmitting) {
@@ -99,6 +105,7 @@ export class UsersignupComponent implements OnInit {
     });
 };*/
 
+
     window.addEventListener("beforeunload",  (e) =>{
 
       this.signUpServices.delete(this.userId).subscribe(
@@ -107,11 +114,14 @@ export class UsersignupComponent implements OnInit {
         }
       )
       localStorage.removeItem('userId')
+
+    window.addEventListener("beforeunload", function (e) {
+
       var confirmationMessage = 'It looks like you have been editing something. '
                               + 'If you leave before saving, your changes will be lost.';
   
       (e || window.event).returnValue = confirmationMessage; //Gecko + IE
       return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
   });
-  }
+  })}
 }

@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./feedbacks.component.css'],
 })
 export class FeedbacksComponent implements OnInit {
+
   reviews: Review[] = [];
   patients: Patient[] = [];
   doctors: Doctor[] = [];
@@ -22,6 +23,7 @@ export class FeedbacksComponent implements OnInit {
   searchArray: any = [];
   filter = false;
   rate!: number;
+
   p: number = 1;
   count: number = 5;
   message!:string
@@ -42,9 +44,11 @@ export class FeedbacksComponent implements OnInit {
         this.reviews.forEach((e) => {
           this.rate = Number(e.rate);
         });
+
         // console.log(this.reviews);
       },() => this.message='Delete successful',
       console.error
+
     );
   }
 
@@ -61,6 +65,9 @@ export class FeedbacksComponent implements OnInit {
   counter(i: number) {
     return new Array(i);
   }
+
+ 
+
 }
 
 /**

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { LoginService } from 'src/app/Services/login-service.service';
+
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -14,6 +16,7 @@ export class AdminDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.router.navigate(['/admin/doctor'])
     this.login.checkToken();
+
   }
  checkToken(){
 

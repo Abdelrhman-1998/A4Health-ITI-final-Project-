@@ -83,6 +83,7 @@
   perspective: 100px;
 }
 
+<<<<<<< HEAD
 @import url("../../../../../../All_Pages/new_Landing_Page/style.css");
 @import url("../../../../../../All_Pages//new_Landing_Page/Css/style.css");
 .item:hover i{
@@ -94,6 +95,11 @@
 }
 
 /* .owl-next {
+=======
+
+
+.owl-next {
+>>>>>>> origin/Ahmed_Ayman
   transform: translateX(30px);
   background-color: var(--color2) !important;
   color: white !important;
@@ -211,5 +217,9 @@ display: flex !important;
     width: 250px !important;
     margin-left: 0%;
   }
+<<<<<<< HEAD
 } */
+=======
+}
+>>>>>>> origin/Ahmed_Ayman
 

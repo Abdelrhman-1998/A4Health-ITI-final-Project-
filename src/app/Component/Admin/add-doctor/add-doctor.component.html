@@ -1,10 +1,12 @@
 <div class="container-fluid mt-4">
+
   <div *ngIf="message" class="my-3 alert alert-dander d-flex align-items-center" role="alert">
     <svg class="bi flex-shrink-0 me-2" width="24" height="30" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
     <div class="fw-bold fs-4">
      {{message}}
     </div>
   </div>        
+
   <!-- Page Heading -->
   <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
   <!-- DataTales Example -->
@@ -14,12 +16,14 @@
         Add New Doctor
       </h6>
     </div>
+
   
     <div
       class="card-body container-fluid d-flex justify-content-center bg-light"
     >
     
       <form  action="" method="" class="w-75" [formGroup]="AddDoctor" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
+
         <div class="mb-3">
           <label for="username" class="form-label"
             >UserName:</label
@@ -33,6 +37,7 @@
             formControlName="username"
           />
           <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
+<<<<<<< HEAD
             <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['required']">UserName is required</p>
         </div> 
         </div>
@@ -134,23 +139,27 @@
           <div class="alert alert-danger" role="alert" *ngIf="img_name && img_name.invalid && img_name.touched">
             <p class="m-0" *ngIf="AddDoctor.get('img_name')?.errors?.['required']">Image is required</p>
 
+
         </div> 
         </div>
         <div class="mb-3">
           <label>Gender:</label>
         </div>
         <div class="mb-3">
+
           <input type="radio" name="gender" id="male" value="Male" ngModel formControlName="gender"/>
           <label for="male"> Male </label>
         </div>
         <div class="mb-3">
           <input type="radio" name="gender" id="female" value="Female" ngModel formControlName="gender" />
+
           <label for="female"> Female </label>
         </div>
         <div class="alert alert-danger" role="alert" *ngIf="gender && gender.invalid && gender.touched">
           <span>
             gender input filed is not valid
           </span>
+
       </div> 
         <div class="mb-3">
           <div class="wrapper">
@@ -233,6 +242,8 @@
         </div>
 
         <button [disabled]="AddDoctor.invalid" type="submit" class="btn btn-primary">Add</button>
+
+    
       </form>
     </div>
   </div>

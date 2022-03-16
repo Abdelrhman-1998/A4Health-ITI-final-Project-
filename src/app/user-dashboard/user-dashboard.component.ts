@@ -7,6 +7,7 @@ import { Review } from '../Models/review';
 import { Notification } from '../Models/notification';
 import { UserloginService } from '../userguard/userlogin.service';
 
+
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
@@ -73,6 +74,7 @@ logout(){
 this.logoutServices.logout()
 this.router.navigate(['signin'])
 }
+
 
 
 }

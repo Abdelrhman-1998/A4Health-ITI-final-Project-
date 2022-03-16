@@ -47,6 +47,7 @@ export class AddSpecialtiesComponent implements OnInit {
       // this.getdoctorId();
     }
   }
+
   sendDataOfspecialty(data: NgForm) {
     this.specialty = data;
 
@@ -70,6 +71,7 @@ export class AddSpecialtiesComponent implements OnInit {
       },() => this.message='Updated successful',
       console.error);
     console.log(data);
+
   }
   // getdoctorId() {
   //   this.specialtyItem=[this.id,this.]

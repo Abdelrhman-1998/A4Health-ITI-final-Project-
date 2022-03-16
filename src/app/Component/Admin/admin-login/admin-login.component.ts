@@ -15,8 +15,10 @@ export class AdminLoginComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
+
   massege!:string
 test:any
+
   constructor(
     private loginServises:LoginService,
     private router:Router
@@ -66,6 +68,7 @@ loginAdmin(data:NgForm){
   )
   // this.router.navigate(['/admin/doctor'])
 //  console.log(this.user);
+
   
 }
 }
