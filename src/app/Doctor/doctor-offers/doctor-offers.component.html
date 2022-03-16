@@ -36,12 +36,13 @@
                             <th>Discount</th>
                             <th>Action</th>
                         </tr>
+           
                     </thead>
                     <tbody>
-                        <tr *ngFor="let offer of Offers ; index as i" class="text-center">
-                            <td>{{offer.id}}</td>
+                        <tr *ngFor="let offer of doctor_offers ; index as i" class="text-center">
                             <td>{{offer.name}}</td>
                             <td>{{offer.discount}}</td>
+                            <td>{{offer.doctor_id}}</td>
 
                             <td>
                                 <a (click)="getIndexOffer(offer)" class="me-2" title="Edit Appointment"

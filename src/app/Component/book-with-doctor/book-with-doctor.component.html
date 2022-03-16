@@ -3,7 +3,7 @@
     <div class="container">
       <span
         ><a href="#">Vezeeta</a> / Doctor
-        {{ doctor.fname + " " + doctor.lname }}
+        {{fname + " " +lname }}
       </span>
 
       <div class="row">
@@ -14,7 +14,7 @@
                 class="doctor-image col-sm-4 p-0 pt-2 pb-2 d-flex justify-content-center align-items-center"
               >
                 <img
-                  [src]="doctor.image_name"
+                  src="{{image_url}}"
                   class="img-fluid rounded-circle"
                 />
               </div>
@@ -23,13 +23,17 @@
               >
                 <h4 class="doctor-name pt-2 pb-2 m-0">
                   <span>Doctor : </span>
-                  <span>{{ doctor.fname + " " + doctor.lname }}</span>
+                  <span>{{fname + " " + lname }}</span>
                 </h4>
                 <p class="text-secondary doctor-info">
-                  {{ doctor.title }} of {{ doctor.specialization }}
+                  Title: {{ title }} 
                 </p>
+                <p class="text-secondary doctor-info">
+                  Specilaization: {{ specilaization }}
+                </p>
+              
                 <p class="card-text text-secondary px-2">
-                  {{ doctor.description }}
+                  Description: {{description }}
                 </p>
                 <!-- <p>
                   <a href="#">General Surgeon Specialized in</a>
@@ -96,7 +100,7 @@
                         class="fa-solid fa-money-bill-1-wave text-primary fs-4"
                       ></i>
                       <p class="text-secondary px15">
-                        Fees :<span class="fw-bold px15">{{doctor.fees}} EGP</span>
+                        <!-- Fees :<span class="fw-bold px15">{{doctor.fees}} EGP</span> -->
                       </p>
                     </div>
                   </div>
@@ -113,7 +117,7 @@
               <div class="location">
                 <i class="fa-solid fa-location-dot text-primary"></i>
                 <span class="px15 text-secondary fs-5">
-                  {{doctor.city +":" +doctor.street}}
+                  {{city +":" +street}}
                  </span>
                 <p class="fw-bold text-secondary fs-6">
                   Book now to receive the clinic’s address details and phone
@@ -123,9 +127,10 @@
             </div>
             <div class="card-body border-bottom gy-3 text-center">
               <div class="my-2">
-                <button routerLink="/Search" class="btn btn-danger">
+                <button (click)="navigateTosearchPage()"class="btn btn-danger">
                   <a >Make An Appointment </a>
                 </button>
+                <!-- <app-appointments></app-appointments> -->
               </div>
               
             </div>
@@ -161,6 +166,11 @@
               <h5 class="card-title text-secondary">
                 <i class="fa-solid fa-umbrella umbrella px-3"></i>Offers
               </h5>
+              <div *ngFor="let item of doctor_data.offers ">
+                      <p class="ms-2 mb-1">
+                       Offer: {{item.name}} <span> , Discount: {{item.discount}}</span>
+                      </p>
+              </div>
               <div class="py-2 px-2">
                 <a type="button" class="btn btn-outline-primary">Medright</a>
                 <a type="button" class="btn btn-outline-primary">INAYA Egypt</a>
@@ -170,7 +180,8 @@
           <div class="review card py-3 mb-3">
             <div class="card-body">
               <h5 class="card-title text-secondary">
-                <i class="fa-solid fa-star-half-stroke px-3 star"></i>Patients’
+                <i class="fa-solid fa-star-half-stroke px-3 star"></i>
+                Patients’
                 Reviews :
               </h5>
               <div class="py-2 px-2">
@@ -180,9 +191,10 @@
                 </div>
                 <div class="text-center text-secondary">
                   <p>Overall Rating</p>
-                  <p>From {{ overAllRating.length }} Visitors</p>
+                  <!-- <p>From {{ overAllRating.length }} Visitors</p> -->
                 </div>
                 <div class="row gx-5">
+
                   <!-- <div class="col-lg-4">
               
                     <div
@@ -213,12 +225,12 @@
                       <p>Clinic Rating</p>
                     </div>
                   </div> -->
-                  
+<!--                   
                     <div class="text-center">
                       <span class="tota-rate"
                         ><span>{{ totalRate }} /</span> <span>5</span></span
                       >
-                    </div>
+                    </div> -->
 
                     <div class="text-center text-secondary py-1">
                       <p>Doctor Rating</p>
@@ -229,15 +241,61 @@
             </div>
           </div>
 
-          <app-review id="reviews" *ngIf="showAllReviews" [DoctorId]="cardDoctorId"></app-review>
-          <button
+          <!-- <app-review id="reviews" *ngIf="showAllReviews" [DoctorId]="doctor_id">
+
+          </app-review> -->
+          <div class="review card py-3 mb-3" >
+
+            <div class="review-body py-2 mb-3 border-bottom" *ngFor="let review of doctor_reviews">
+        
+                <div class="container" >
+                <div class="row">
+                    <div class="col-lg-8">
+                    <!-- <div class="rating d-flex gap-3 pb-2 justify-content-start">
+                    <i *ngFor="let star of counter(review.rate)" class="fa-solid fa-star"></i>
+                    
+                  </div>  -->
+                  <div class="rating d-flex gap-3 pb-2 justify-content-start" >
+                    <i class={{item2}} *ngFor=" let item2 of +review.rate |ratingStars"></i>
+                  </div>
+                  <div class="text-secondary">
+                    <p>Rating</p>
+                  </div>
+                  <div class="text-secondary">
+                    <p>
+                    patientName: {{review.patientName}}
+                    </p>
+                  </div>
+                  <div class="message">
+                      <p class="text-secondary">{{review.message}}</p>
+                      <span class="timing text-secondary">Sunday, 20 February 2022 08:26 PM</span>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center">
+                    <div class="rate-number py-3 text-center justify-content-center">
+                        <span class="tota-rate fs-4 text p-2 ">{{review.rate}}</span>
+                        <p class="px15 text-secondary py-2">Doctor Rating </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+           
+        </div>
+
+
+
+
+          <!-- <button
             class="showReviews btn btn-primary d-flex my-3"
             *ngIf="!showAllReviews"
             (click)="showReviews()"
-           
+  
           >
             Show all reviews
-          </button>
+          </button> -->
+
+
         </div>
         <div class="col-lg-4 d-none d-lg-block">
           <aside class="py-3">
@@ -260,7 +318,7 @@
                           class="fa-solid fa-money-bill-1-wave text-primary fs-4"
                         ></i>
                         <p class="text-secondary px15">
-                          Fees :<span class="fw-bold px15">{{doctor.fees}} EGP</span>
+                          Fees :<span class="fw-bold px15">{{fees}} EGP</span>
                         </p>
                       </div>
                     </div>
@@ -277,7 +335,7 @@
                 <div class="location">
                   <i class="fa-solid fa-location-dot text-primary"></i>
                   <span class="px15 text-secondary fs-5">
-                   {{doctor.city +":" +doctor.street}}
+                   {{city +":" +street}}
                   </span>
                   <p class="fw-bold text-secondary fs-6">
                     Book now to receive the clinic’s address details and phone
@@ -287,9 +345,10 @@
               </div>
               <div class="card-body border-bottom gy-3 text-center">
                 <div class="my-2">
-                  <button routerLink="/Search" class="btn btn-danger">
+                  <button (click)="navigateTosearchPage()"  class="btn btn-danger">
                     <a >Make An Appointment </a>
                   </button>
+                  <!-- <app-appointments></app-appointments> -->
                 </div>
               </div>
               <div class="card-body border-bottom d-flex flex-row calender">

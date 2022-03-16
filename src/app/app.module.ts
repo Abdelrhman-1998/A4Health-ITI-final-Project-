@@ -70,7 +70,7 @@ import { ChangePasswordComponent } from './Component/Admin/change-password/chang
 
 import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
 import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
-
+import { MainpulateTimesPipe } from './Pipes/mainpulate-times.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,6 +91,7 @@ import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.comp
     DotorSearchFieldComponent,
     SearchResultsComponent,
     RatingStarsPipe,
+    MainLandingPageComponent,
     MeetDoctorsComponent,
     FeedbackComponent,
     BookWithDoctorComponent,   
@@ -119,6 +120,7 @@ import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.comp
     ChangePasswordComponent,
      DoctorpasswordComponent,
      DoctorOffersComponent,
+     MainpulateTimesPipe
 
   ],
   imports: [

@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-   const Authorization =localStorage.getItem('AuthorizationA');
+   const Authorization =localStorage.getItem('Authorization');
   //  Authorization&& this.jwtHelper.isTokenExpired(Authorization) || 
   if(this.AuthUser.isUserlogged){
     console.log('true');

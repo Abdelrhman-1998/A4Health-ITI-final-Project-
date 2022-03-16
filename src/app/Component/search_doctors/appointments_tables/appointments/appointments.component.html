@@ -1,23 +1,20 @@
-
-<div class="Appointments ps-0  d-lg-flex flex-column ">
-
-
+<div class="Appointments ps-0 w-75 d-flex flex-column ">
     <owl-carousel-o [options]="customOptions" class="p-lg-3">
-        <ng-template carouselSlide *ngFor="let appointment_item of appointments| sortAppointments ;let a=index">
+        <ng-template carouselSlide *ngFor="let appointment_item of appointemnts | mainpulateTimes  | sortAppointments ;let a=index">
 
-            <form #AppointmentForm="ngForm"   class="card text-center slide ms-2 me-2">
+            <form #AppointmentForm="ngForm"   class="card text-center slide ms-2 me-2" (ngSubmit)="printValues(AppointmentForm)">
                 <div class=" card-header bg-primary text-white">
                  {{appointment_item.Date | appointmentPipe}}
                 </div>
                 <div class="card-body position-relative" >
                     <input #date type="hidden" name="date" value={{appointment_item.Date}} >
-                     <select #selectList class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel   (click)="disableAllbuttons(bookingButton) " (scroll)="checkScroll(selectList,Arrow)">
+                     <select #selectList class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectList,Arrow)" (click)="disableAllbuttons(bookingButton)">
                     <option #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1" >
                         {{item}}
                     </option>
                     </select>
                 </div>
-                 <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"  (click)="submitAppointment(AppointmentForm,date)" data-bs-target="#confirm_appointment" data-bs-toggle="modal" >
+                 <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"    (click)="submitAppointment(AppointmentForm,date,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]">
                      Book
                  </button>
                  <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectList)" >
@@ -31,6 +28,25 @@
 </div> 
 
 
+<div #myModal id="confirm_appointment" class="modal " data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div  class="modal-dialog modal-dialog-centered modal-confirm ">
+		<div class="modal-content ">
+			<div class="modal-header d-flex flex-column">
+				<div class="icon-box">
+                    <i class="fa-solid fa-calendar-check material-icon text-primary"></i>
+				</div>				
+				<h4 class="modal-title text-primary w-100">Awesome!</h4>
+			</div>
+			<div class="modal-body">
+      
+				<p class="text-center">Your booking has been confirmed. Check your profile for detials.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn w-100" data-bs-dismiss="modal">OK</button>
+			</div>
+		</div>
+	</div>
+</div>     
 <!-- appointment moadl  -->
 <!-- 
 <div class="modal  fade" id="Appointments" tabindex="-1" aria-labelledby="AppointmentsLabel" aria-hidden="true">

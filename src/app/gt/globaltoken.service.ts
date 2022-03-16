@@ -6,8 +6,31 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class GlobaltokenService {
 
+  reservationID:any;
+  // from make appointment
+  doctor_fullname:any;
+
+  show_username!:boolean;
+
   itemValue = new BehaviorSubject(this.thetoken);
   idValue = new BehaviorSubject(this.theid);
+
+  setReservation(value:any){
+    this.reservationID=value;
+  }
+
+  getReservation(){
+    return this.reservationID;
+  }
+
+  setDoctorFullName(value:any){
+      this.doctor_fullname=value;
+  }
+
+  getDoctorFullName(){
+    return this.doctor_fullname;
+  }
+
 
   set thetoken(value:any) {
     this.itemValue.next(value); // this will make sure to tell every subscriber about the change.
@@ -18,7 +41,7 @@ export class GlobaltokenService {
     localStorage.setItem('id',value);
   }
   get thetoken() {
-    return localStorage.getItem('Authorizationken');
+    return localStorage.getItem('Authorization');
   }
   get theid() {
     return localStorage.getItem('id');

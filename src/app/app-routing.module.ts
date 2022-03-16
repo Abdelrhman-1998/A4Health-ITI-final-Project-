@@ -35,7 +35,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ChangePasswordComponent } from './Component/Admin/change-password/change-password.component';
 import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
 import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
-
+import { PaymentFormComponent } from './Component/paymentForm/payment-form/payment-form.component';
+import { LoadingPageComponent } from './Component/loading/loading-page/loading-page.component';
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -95,6 +96,7 @@ export const routes: Routes = [
     {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},
+  {path:'paymentForm/:countryCode/:sessionId', component:PaymentFormComponent},
   {path:'**',component:NotFoundComponent}
 
 ]

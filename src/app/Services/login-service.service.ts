@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class LoginService {
 
-  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
 
   private isLoggedSub:BehaviorSubject<boolean>
   constructor(private httpClient: HttpClient , private router:Router) { 
@@ -26,17 +26,17 @@ export class LoginService {
     // call  login API ,access token
 
     let token =''
-    localStorage.setItem('AuthorizationA',token)
+    localStorage.setItem('Authorization',token)
     this.isLoggedSub.next(true)
     return this.httpClient.post<User>(`${environment.ApiUrl}/dashboard/login`,user)
   }
   logout(){
-    localStorage.removeItem('AuthorizationA');
+    localStorage.removeItem('Authorization');
     this.isLoggedSub.next(false)
     return this.httpClient.get(`${environment.ApiUrl}/logout`,{headers:this.header})
   }
   get isUserlogged():boolean{
-    return (localStorage.getItem('AuthorizationA'))?true:false
+    return (localStorage.getItem('Authorization'))?true:false
   }
   getToken():Observable<string>{
     return this.httpClient.get<string>(`${environment.ApiUrl}/token`)
@@ -47,7 +47,7 @@ export class LoginService {
   }
 
   checkToken(){
-    if(!localStorage.getItem('AuthorizationA')){
+    if(!localStorage.getItem('Authorization')){
       this.router.navigate(['/admin/login'])
     }
   }

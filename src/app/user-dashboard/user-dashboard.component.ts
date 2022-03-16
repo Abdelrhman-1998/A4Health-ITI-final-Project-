@@ -6,6 +6,7 @@ import { ReviewsService } from '../Services/reviews.service';
 import { Review } from '../Models/review';
 import { Notification } from '../Models/notification';
 import { UserloginService } from '../userguard/userlogin.service';
+import { GlobaltokenService } from '../gt/globaltoken.service';
 
 
 @Component({
@@ -13,8 +14,12 @@ import { UserloginService } from '../userguard/userlogin.service';
   templateUrl: './user-dashboard.component.html',
   styleUrls: ['./user-dashboard.component.css']
 })
+
+
 export class UserDashboardComponent implements OnInit {
-  notifications!:Notification[]
+  confirmCondition:any;
+  notifications!:any[];
+  notification_length!:any;
   type:any
   showrouter:boolean=false
   router2:boolean=false
@@ -26,19 +31,22 @@ export class UserDashboardComponent implements OnInit {
     private notificationServicse:NotificationService,
     private router:Router,
     private reviewServices:ReviewsService,
-    private logoutServices:UserloginService
+    private logoutServices:UserloginService,
+    private checkAuth:GlobaltokenService
     ) { }
 
   ngOnInit(): void {
-  this.shownewNotification()
+  this.getUserNotification()
   }
-   shownewNotification(){
-    this.getUserNotification()
-  }
+  //  shownewNotification(){
+  //   this.getUserNotification()
+  // }
 getUserNotification(){
-  this.notificationServicse.getUserNotification().subscribe(
-    (notification)=>{
-       this.notifications=notification
+
+  this.notificationServicse.getUserNotifications().subscribe(
+    (notification:any)=>{
+       this.notifications=notification;
+       this.notification_length=notification.length;
       this.notifications.forEach(notification => {
     //   if(notification.type==='Feedback time'){
     //     this.showrouter=false
@@ -63,6 +71,7 @@ getUserNotification(){
       //     this.router2=true
       //   break
       // }
+      console.log(notification);
       
       });
     
@@ -71,8 +80,16 @@ getUserNotification(){
 }
 
 logout(){
-this.logoutServices.logout()
-this.router.navigate(['signin'])
+  
+  // this.confirmCondition=this.checkAuth.show_username;
+  this.logoutServices.logout()
+  this.router.navigate(['signin'])
+  .then(() => {
+    window.location.reload();
+  });
+
+// this.router.navigate(['signin']);
+
 }
 
 

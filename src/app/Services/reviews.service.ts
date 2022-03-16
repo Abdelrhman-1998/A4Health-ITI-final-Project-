@@ -9,7 +9,7 @@ import { Observable } from "rxjs";
 })
 export class ReviewsService {
   // doctor:Doctor[]=[];
-  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
   constructor(private httpClient: HttpClient) {}
 
   getAllReviews(): Observable<Review[]>{
