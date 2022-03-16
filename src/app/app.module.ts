@@ -20,7 +20,7 @@ import { FormsModule }   from '@angular/forms';
 import { DotorSearchFieldComponent } from '././Component/search_doctors/main/dotor-search-field/dotor-search-field.component';
 import { SearchResultsComponent } from '././Component/search_doctors/main/search_results/search-results/search-results.component';
 
-import { NgxPaginationModule } from 'ngx-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -112,12 +112,10 @@ import { ChangePasswordComponent } from './Component/Admin/change-password/chang
      UserFeadbackComponent,
      NotFoundComponent,
      ChangePasswordComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     HttpClientModule,
     ReactiveFormsModule,
     NgxPaginationModule,

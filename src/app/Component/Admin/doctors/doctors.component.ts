@@ -32,11 +32,11 @@ checkstatus!:any
        this.checkstatus=doc
 
      },(error)=>{
-      if(error){
-        console.log("error");    
-        localStorage.removeItem('Authorization')
-        this.router.navigate(['/admin/login'])
-      }
+      // if(error){
+      //   console.log("error");    
+      //   localStorage.removeItem('Authorization')
+      //   this.router.navigate(['/admin/login'])
+      // }
      }
    )
    
