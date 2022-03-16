@@ -1,5 +1,10 @@
 <div class="container-fluid">
-
+    <div *ngIf="message" class=" my-3 alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="30" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        <div>
+         {{message}}
+        </div>
+      </div>
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
     <!-- DataTales Example -->
@@ -7,6 +12,7 @@
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Doctors's Data</h6>
         </div>
+       
         <div class="card-body bg-light">
             <div class="table-responsive">
                 <table class="table table-bordered text-center " id="dataTable" width="100%" cellspacing="0">
@@ -15,11 +21,11 @@
                             <th>ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>User Name</th>
                             <th>Gender</th>
                             <th>Title</th>
                             <th>Specialization</th>
-                            <th>Phone Number</th>
+                            <th>City</th>
+                            <th>Street</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
@@ -28,11 +34,11 @@
                             <td>{{doc.id}}</td>
                             <td>{{doc.fname}}</td>
                             <td>{{doc.lname}}</td>
-                            <td>{{doc.username}}</td>
                             <td>{{doc.gender}}</td>
                             <td>{{doc.title}}</td>
                             <td>{{doc.specialization}}</td>
-                            <td>{{doc.phone}}</td>
+                            <td>{{doc.city}}</td>
+                            <td>{{doc.street}}</td>
                             <td class="text-center"><button class="btn btn-danger w-100" type="submit" (click)="delete(doc.id)">Delete</button></td>
                         </tr>
                       

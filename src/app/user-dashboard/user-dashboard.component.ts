@@ -7,13 +7,17 @@ import { Review } from '../Models/review';
 import { Notification } from '../Models/notification';
 import { UserloginService } from '../userguard/userlogin.service';
 
+
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
   styleUrls: ['./user-dashboard.component.css']
 })
+
+
 export class UserDashboardComponent implements OnInit {
-  notifications!:Notification[]
+  notifications!:any[];
+  notification_length!:any;
   type:any
   showrouter:boolean=false
   router2:boolean=false
@@ -29,15 +33,16 @@ export class UserDashboardComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-  this.shownewNotification()
+  this.getUserNotification()
   }
-   shownewNotification(){
-    this.getUserNotification()
-  }
+  //  shownewNotification(){
+  //   this.getUserNotification()
+  // }
 getUserNotification(){
-  this.notificationServicse.getUserNotification().subscribe(
-    (notification)=>{
-       this.notifications=notification
+  this.notificationServicse.getUserNotifications().subscribe(
+    (notification:any)=>{
+       this.notifications=notification;
+       this.notification_length=notification.length;
       this.notifications.forEach(notification => {
     //   if(notification.type==='Feedback time'){
     //     this.showrouter=false
@@ -62,6 +67,7 @@ getUserNotification(){
       //     this.router2=true
       //   break
       // }
+      console.log(notification);
       
       });
     

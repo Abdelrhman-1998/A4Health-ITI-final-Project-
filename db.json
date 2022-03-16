@@ -198,6 +198,7 @@
       "rating": 3,
       "message": " saied Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque accusantium est molestiae et eum quidem soluta saepe in. Labore necessitatibus praesentium dolor adipisci vitae dolore rerum eaque tempore aliquid sunt!"
     }
+   
   ],
   "patients": [
     {
@@ -251,6 +252,20 @@
         "01123308219"
       ],
       "image_name": "http://www.ihd.ae/sites/ihd/files/styles/doctor_image_/public/doctor-photos/Dr-saedi.jpg?itok=7N4HZKZt"
+    }
+  ],
+  "notification": [
+    {
+      "type": "Feedback time",
+      "doctorId":1,
+      "date": "",
+      "message":" Feedback time"
+    },
+    {
+      "type": "Cancel Appointment",
+      "doctorId": 2,
+      "date": "",
+      "message":" not"
     }
   ]
 }

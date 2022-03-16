@@ -275,7 +275,7 @@
                            <span>{{item.specialization}} </span> <span>{{item.title}}</span>
                         </p>
                         <div class="rating d-flex gap-3 pb-2 justify-content-center justify-content-lg-start " >
-                            <i class={{item2}} *ngFor=" let item2 of item.rating|ratingStars"></i>
+                            <i class={{item2}} *ngFor=" let item2 of +item.rating |ratingStars"></i>
                         </div>
                         <p class="number-ratings pb-2 m-0">
                             Overall ratings from <span>900</span> visitors
@@ -311,7 +311,7 @@
             </div>
             <div class="Appointments col-lg-4 ps-0 d-none d-lg-flex flex-column ">
                         <owl-carousel-o [options]="customOptions" class="p-lg-3">
-                            <ng-template carouselSlide *ngFor="let appointment_item of item.appointments | sortAppointments ;let a=index">
+                            <ng-template carouselSlide *ngFor="let appointment_item of item.appointment | mainpulateTimes | sortAppointments ;let a=index">
 
                                 <form #AppointmentForm="ngForm"   class="card text-center slide ms-2 me-2" (ngSubmit)="printValues(AppointmentForm)">
                                     <div class=" card-header bg-primary text-white">
@@ -325,7 +325,7 @@
                                         </option>
                                         </select>
                                     </div>
-                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"    (click)="submitAppointment(AppointmentForm,date,myModal)" [routerLink]="!confirm_condition?['/login']:[]">
+                                     <button   #bookingButton class=" btn btn-danger position-relative resetAllButtons" disabled type="submit"    (click)="submitAppointment(AppointmentForm,date,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]">
                                          Book
                                      </button>
                                      <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectList)" >
@@ -347,20 +347,20 @@
                     <div class="modal-body">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner" >
-                              <div class="carousel-item"  *ngFor="let appointment_item of item.appointments;let i=index" [ngClass]="i==0?'active':''" >
+                              <div class="carousel-item"  *ngFor="let appointment_item of item.appointment | mainpulateTimes | sortAppointments;let i=index" [ngClass]="i==0?'active':''" >
                                 <form #AppointmentFormModal="ngForm"   class="card text-center slide">
                                     <div class=" card-header bg-primary text-white">
                                      {{appointment_item.Date | appointmentPipe}}
                                     </div>
                                     <div class="card-body position-relative" >
                                         <input #dateModal type="hidden" name="date" value={{appointment_item.Date}}>
-                                         <select #selectListModal class="form-select  timing lh-lg w-100 h-100" name="appointment_modal" size="10" ngModel (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
+                                         <select #selectListModal class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
                                         <option #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1">
                                             {{item}}
                                         </option>
                                         </select>
                                     </div>
-                                     <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)="submitAppointment(AppointmentFormModal,dateModal ,myModal)" [routerLink]="!confirm_condition?['/login']:[]" >
+                                     <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)="submitAppointment(AppointmentFormModal,dateModal ,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]" >
                                         <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
                                             <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
                                         </div>
@@ -632,7 +632,7 @@
 				<p class="text-center">Your booking has been confirmed. Check your profile for detials.</p>
 			</div>
 			<div class="modal-footer">
-				<button class="btn w-100" data-bs-dismiss="modal">OK</button>
+				<button class="btn w-100" data-bs-dismiss="modal" (click)="naivgateToReservation(submmitedForm)" >OK</button>
 			</div>
 		</div>
 	</div>

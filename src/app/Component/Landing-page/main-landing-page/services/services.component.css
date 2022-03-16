@@ -83,6 +83,7 @@
   perspective: 100px;
 }
 
+
 @import url("../../../../../../All_Pages/new_Landing_Page/style.css");
 @import url("../../../../../../All_Pages//new_Landing_Page/Css/style.css");
 .item:hover i{
@@ -94,6 +95,7 @@
 }
 
 /* .owl-next {
+
   transform: translateX(30px);
   background-color: var(--color2) !important;
   color: white !important;
@@ -211,5 +213,5 @@ display: flex !important;
     width: 250px !important;
     margin-left: 0%;
   }
-} */
+*/
 

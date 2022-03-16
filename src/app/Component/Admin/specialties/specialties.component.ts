@@ -12,6 +12,7 @@ export class SpecialtiesComponent implements OnInit {
   status=''
   p: number = 1;
   count: number = 5;
+  message!:string
   constructor(private specialtyServer:SpecialtiesService) { }
   
   ngOnInit(): void {
@@ -21,6 +22,8 @@ getAllSpecialties(){
   this.specialtyServer.getAllSpecialties().subscribe(
     (res)=>{
       this.specialties=res
+      console.log( this.specialties);
+      
     }
   )
 }
@@ -28,6 +31,7 @@ delete(id:number){
   this.specialtyServer.deleteSpecialty(id).subscribe(() => 
   {this.status = 'Delete successful' 
   this.ngOnInit();
-})
+},() => this.message='Delete successful',
+   console.error)
   }
 }

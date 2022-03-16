@@ -73,7 +73,7 @@
                        
                         <div class="form-floating my-3 d-flex justify-content-between ">
                            
-                            <input #phone type="number" class="form-control w-75" id="floatingphone"
+                            <input formControlName="phone" name="phone" #phone type="text" class="form-control w-75" id="floatingphone"
                                 placeholder="name@example.com">
                             <label for="floatingphone">Phone</label>
                             <button (click)="addPhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Add</button>
@@ -94,7 +94,7 @@
                         </div> -->
                         <div class="d position-relative">
                             <!-- formControlName="City" -->
-                            <select formControlName="City"  class="form-select text-primary my-3" aria-label="Default select example">
+                            <select   class="form-select text-primary my-3" aria-label="Default select example">
                                 <option disabled selected style="display:none;"> City </option>
 
                                 <option *ngFor="let c of city"  class="text-primary" [value]="c">{{c}}</option>

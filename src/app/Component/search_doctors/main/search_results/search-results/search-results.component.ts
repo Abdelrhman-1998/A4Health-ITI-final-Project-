@@ -7,7 +7,8 @@ import { NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
 import { ActivatedRoute } from "@angular/router";
-
+import { GlobaltokenService } from 'src/app/gt/globaltoken.service';
+import { MainpulateTimesPipe } from 'src/app/Pipes/mainpulate-times.pipe';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -20,13 +21,15 @@ export class SearchResultsComponent implements OnInit {
   switch_status!:boolean;
   offers_status!:boolean;
   top_arrow!:boolean;//appointment
+  submmitedForm!:{}
+  appointment_id!:number;
  
   appointment_previous_element!:any;
-  constructor(private Doctor_service:DoctorService ,   private route: ActivatedRoute) { 
+  constructor(private Doctor_service:DoctorService ,   private route: ActivatedRoute,private patient:GlobaltokenService) { 
  
   }
   // tocken from api stroed in local storage
-  confirm_condition=true;
+  confirm_condition=this.patient.thetoken;
   printValues(x:any){
       console.log(x.value);
   }
@@ -44,13 +47,16 @@ export class SearchResultsComponent implements OnInit {
       x.scrollTop=0;
   }
   //------------------
-  submitAppointment(x:any,y:any,z:any){
+  submitAppointment(x:any,y:any,z:any,appointment_id:number){
+
     // check authentication status
     if(this.confirm_condition){
       x.value.date=y.value;
       console.log(x.value);
+      this.submmitedForm=x;
       $("#Appointments").modal('hide');
       $("#confirm_appointment").modal('show');
+      this.appointment_id=appointment_id;
      
     }
     else{
@@ -74,6 +80,39 @@ export class SearchResultsComponent implements OnInit {
       this.appointment_previous_element=x;
    }
 //-------------------------------------
+
+// confirm take submmited form
+
+naivgateToReservation(x:any){
+  console.log(x.value);
+  let time_array = x.value.appointment.split(" ");
+  let time_prefix = time_array[1];
+  let time=time_array[0].split(":");
+  let patient_time;
+  if(time_prefix.trim()=="PM"){
+        let value= +time[0]+12;
+        patient_time=value+":"+time[1];
+  }
+  else{
+    patient_time=time[0]+":"+time[1]
+  }
+
+
+  let patient_id:any= this.patient.theid;
+  let appointment_id=this.appointment_id;
+  console.log(appointment_id);
+  let appointment_object={"appointment_id":appointment_id,"patient_time":patient_time,"patient_id":patient_id};
+  console.log(appointment_object);
+
+  console.log(this.confirm_condition);
+
+  this.Doctor_service.postAppointmetApi(patient_id,appointment_object).subscribe(res=>{
+    console.log(appointment_object);
+    console.log(res);
+  },err=>{
+    console.log(err);
+  })
+}
 
  // display
   view_data!:Doctor[];
@@ -263,6 +302,7 @@ submitFilter(x:NgForm,y:NgForm){
 
 // owl carousel 
   ngOnInit(): void {
+    console.log(this.confirm_condition);
     //display data from api
     this.Doctor_service.getDataFromApi().subscribe(
       res=>{  
@@ -286,9 +326,22 @@ submitFilter(x:NgForm,y:NgForm){
               console.log(this.view_data);
               this.view_length=this.view_data.length;
         }
+// from make an appointment part date 15/3
+        let doctor_fullname= this.patient.doctor_fullname;
+        if(doctor_fullname == "" || doctor_fullname==null ){
+          this.view_data=res as any;
+          this.view_length=this.view_data.length;
+          console.log(res);
+        }
+        else{
+          this.view_data=this.Doctor_service.filterByName(doctor_fullname,this.Doctor_data);
+          console.log(this.view_data);
+          this.view_length=this.view_data.length;
+        }
      
-     
-
+        // localStorage.setItem("Authorization","Bearer 49|IYV2KWStxVTnXIXRCSWVamJOGrU0eAaKjDO8DUEM");
+        // localStorage.setItem("patient_id","3");
+        
         //--------------------------------
 
 

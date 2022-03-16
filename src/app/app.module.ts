@@ -20,7 +20,7 @@ import { FormsModule }   from '@angular/forms';
 import { DotorSearchFieldComponent } from '././Component/search_doctors/main/dotor-search-field/dotor-search-field.component';
 import { SearchResultsComponent } from '././Component/search_doctors/main/search_results/search-results/search-results.component';
 
-import { NgxPaginationModule } from 'ngx-pagination';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
@@ -64,6 +64,13 @@ import { SignInComponent } from './Component/sign-in/sign-in.component';
 import * as bootstrap from 'bootstrap';
 import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+
+import { ChangePasswordComponent } from './Component/Admin/change-password/change-password.component';
+
+
+import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
+import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
+import { MainpulateTimesPipe } from './Pipes/mainpulate-times.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +91,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DotorSearchFieldComponent,
     SearchResultsComponent,
     RatingStarsPipe,
+    MainLandingPageComponent,
     MeetDoctorsComponent,
     FeedbackComponent,
     BookWithDoctorComponent,   
@@ -109,11 +117,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
      SignInComponent,
      UserFeadbackComponent,
      NotFoundComponent,
+    ChangePasswordComponent,
+     DoctorpasswordComponent,
+     DoctorOffersComponent,
+     MainpulateTimesPipe
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     HttpClientModule,
     ReactiveFormsModule,
     NgxPaginationModule,

@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-8">
             <div class="rating d-flex gap-3 pb-2 justify-content-start">
-            <i *ngFor="let star of counter(review.rating)" class="fa-solid fa-star"></i>
+            <i *ngFor="let star of counter(review.rate)" class="fa-solid fa-star"></i>
             
           </div> 
           <div class="text-secondary">
@@ -19,7 +19,7 @@
         </div>
         <div class="col-lg-4 d-flex align-items-center">
             <div class="rate-number py-3 text-center justify-content-center">
-                <span class="tota-rate fs-4 text p-2 ">{{review.rating}}</span>
+                <span class="tota-rate fs-4 text p-2 ">{{review.rate}}</span>
                 <p class="px15 text-secondary py-2">Doctor Rating </p>
             </div>
         </div>

@@ -55,7 +55,7 @@ getReviewByDoctorId(){
 
   this.reviewService.getReviewByDoctorID(this.DoctorId).subscribe((review)=>{
     for(let rev of review){
-    this.stars.length=rev.rating;
+    this.stars.length=rev.rate;
     }
     this.reviewwithDoctorID=review;
   })

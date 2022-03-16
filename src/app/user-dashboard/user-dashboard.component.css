@@ -45,10 +45,14 @@ label {
     -moz-transition: left 0.5s ease;
     transition: left 0.5s ease;
 } */
+
 @import url('../../assets/css/style.css');
 .displaynone{
     display: none;
 }
 .diplayBlock{
     display: block;
+
 }
+
+@import url('../../assets/css/style.css');

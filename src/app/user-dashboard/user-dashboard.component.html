@@ -79,6 +79,7 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
+
                         <a   class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-bell fa-fw"></i>
@@ -91,17 +92,34 @@
                             <h6 class="dropdown-header">
                                 New Notification
                              </h6>
-                            <div *ngFor="let not of notifications" >
+                             <div *ngFor="let not of notifications" >
                            
-                             <p class="m-3"> 
-                                <i class="fa-solid fa-arrow-up-right-from-square text-danger"></i>
-                                {{not.message}}
-                                <a *ngIf="not.type=='Feedback time'"  [routerLink]="['feedback/',not.doctorId]"
-                                > feedback here </a> 
-                                <a  *ngIf="not.type=='Cancel Appointment'" [routerLink]="['reservations/']"
-                                > check your reservations</a> 
-                            </p>
-                            </div>
+                                <div class="m-3"> 
+                                    <p class="m-2">
+                                     
+                                       <span class="text-primary">
+                                         Doctor: {{not.data.doctorName}} 
+                                       </span>
+                                    </p>
+                                    <p class="m-2">
+                                       <span  class="text-primary" >
+                                           Date: {{not.data.date}} 
+                                         </span>
+                                    </p>
+                                    <p class="m-2">
+                                        <span  class="text-primary" *ngIf="not.data.type=='feedback'" [routerLink]="['feedback/',not.id]">
+                                           feedback
+                                        </span>
+                                        <span  class="text-danger" *ngIf="not.data.type=='cancel'" [routerLink]="['/userdashboard/reservations']">
+                                           check your reservations (canceled)
+                                        </span>
+                                    </p>
+                                   <!-- <a *ngIf="not.type=='Feedback time'"  [routerLink]="['feedback/',not.doctorId]"
+                                   > feedback here </a> 
+                                   <a  *ngIf="not.type=='Cancel Appointment'" [routerLink]="['reservations/']"
+                                   > check your reservations</a>  -->
+                               </div>
+                               </div>
                             <!-- <div *ngFor="let not of finalNot">
                                 <p class="m-3"> 
                                     <i class="fa-solid fa-arrow-up-right-from-square text-danger"></i>
@@ -111,6 +129,7 @@
                         </div>
                     </li>
   
+
 
                     <!-- Nav Item - Messages -->
   
@@ -127,12 +146,14 @@
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
+
                             <a class="dropdown-item" [routerLink]="['/userdashboard/manageprofile']" routerLinkActive="router-link-active" >
                                 <i class="fa-solid fa-user-doctor"></i>
                                 Profile
                             </a>
                             <!-- <div class="dropdown-divider"></div> -->
                             <a (click)="logout()" class="dropdown-item">
+
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 Logout
                             </a>
@@ -175,6 +196,7 @@
   
   <!-- Logout Modal-->
   <!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -191,7 +213,10 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+<<<<<<< HEAD
   </div> -->
+
   <!-- //"./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js", -->
   <!-- <div class="main-wrap">
     <input id="slide-sidebar" type="checkbox" role="button" />

@@ -1,7 +1,7 @@
 export interface Review {
       id:number;
-      patient_id: number;
-      doctor_id: number;
-      rating: number;
+      patient: string;
+      doctor: string;
+      rate: number;
       message:string;
 }

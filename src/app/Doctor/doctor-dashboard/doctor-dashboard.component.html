@@ -1,3 +1,6 @@
+
+   
+
  <!-- Page Wrapper -->
  <div id="wrapper">
 
@@ -56,7 +59,18 @@
         </li>
 
         <!-- Divider -->
-        <hr class="sidebar-divider">                        
+        <hr class="sidebar-divider">      
+        <li class="nav-item">
+            <a class="nav-link" routerLink="changepassword">
+                <i class="fa-solid fa-calendar-days text-white"></i>
+                <span class="fw-bold">Change Password</span></a>
+        </li>     
+        <hr class="sidebar-divider">      
+        <li class="nav-item">
+            <a class="nav-link" routerLink="offers">
+                <i class="fa-solid fa-dollar text-white"></i>
+                <span class="fw-bold">Offers</span></a>
+        </li>                  
 
 
 
@@ -98,19 +112,20 @@
                             <h6 class="dropdown-header">
                                 Alerts Center
                             </h6>
-                            <a *ngFor="let not of notification" class="dropdown-item d-flex align-items-center" routerLink="dreservations/{{type}}">
+                            <a *ngFor="let not of notification" class="dropdown-item d-flex align-items-center" routerLink="dreservations/all">
                                 <div class="mr-3">
                                     <div class="icon-circle bg-primary">
                                         <i class="fas fa-file-alt text-white"></i>
                                     </div>
                                 </div>
                                 <div>
-                                    <div class="small text-gray-500">December 12, 2019</div>
-                                    <span class="font-weight-bold">{{not}}</span>
+                                    <div class="small text-gray-500">{{not.data.date}}</div>
+                                    <span class="font-weight-bold">{{not.data.type}} </span>
+                                    <span class="font-weight-bold">{{not.data.patient}}</span>
                                 </div>
                             </a>
                             
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                            <!-- <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a> -->
                         </div>
                     </li>
 
@@ -134,7 +149,7 @@
                                 Profile
                             </a>
                             <!-- <div class="dropdown-divider"></div> -->
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a (click)="logout()" class="dropdown-item">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 Logout
                             </a>
@@ -184,7 +199,7 @@
 </a>
 
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<!-- <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -201,4 +216,7 @@
             </div>
         </div>
     </div>
-</div>
+<<<<<<< HEAD
+>>>>>>> origin/Ahmed_Ayman
+=======
+</div> -->

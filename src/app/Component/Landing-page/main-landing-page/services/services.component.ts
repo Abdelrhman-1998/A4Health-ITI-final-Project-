@@ -80,6 +80,7 @@ export class ServicesComponent implements OnInit {
       760: {
         items: 3
       },
+
       1000: {
         items: 4
       }
@@ -88,5 +89,6 @@ export class ServicesComponent implements OnInit {
   }
   
   
+
 
 }
