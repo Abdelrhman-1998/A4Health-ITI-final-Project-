@@ -21,15 +21,15 @@ export class BookWithDoctorComponent implements OnInit {
   doctor_datadoctor!: Doctor;
   doctor_data:any;
 
-  fname:any;
-  lname:any;
-  fees:any;
-  image_url:any;
-  title:any;
-  specilaization:any;
-  description:any;
-  city:any;
-  street:any;
+  fname:any="";
+  lname:any='';
+  fees:any="";
+  image_url:any="";
+  title:any="";
+  specilaization:any="";
+  description:any="";
+  city:any="";
+  street:any="";
 
   full_name:any;
   doctor_reviews:any;
@@ -63,7 +63,7 @@ export class BookWithDoctorComponent implements OnInit {
       this.fname=data.fname;
       this.lname=data.lname;
       this.title=data.title;
-      this.specilaization=data.specilaization;
+      this.specilaization=data.specialization;
       this.fees=data.fees;
       this.city=data.city;
       this.street=data.street;
