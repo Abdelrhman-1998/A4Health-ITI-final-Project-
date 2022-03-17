@@ -51,9 +51,10 @@ export class SignInComponent implements OnInit {
           this.router.navigate(['signin'])
         }else{
           // Authorization: Bearer <token>
-          // this.checkAuth.thetoken
-          localStorage.setItem('Authorization','Bearer '+this.test.token);
-          localStorage.setItem('id',this.test.id);
+          this.checkAuth.thetoken="Bearer "+this.test.token;
+          this.checkAuth.theid=this.test.id;
+          // localStorage.setItem('Authorization','Bearer '+this.test.token);
+          // localStorage.setItem('id',this.test.id);
 
           setTimeout(()=>{
             ///////////////

@@ -37,7 +37,7 @@ export class GlobaltokenService {
     localStorage.setItem('Authorization',value);
   }
   set theid(value:any) {
-    this.itemValue.next(value); // this will make sure to tell every subscriber about the change.
+    this.idValue.next(value); // this will make sure to tell every subscriber about the change.
     localStorage.setItem('id',value);
   }
   get thetoken() {

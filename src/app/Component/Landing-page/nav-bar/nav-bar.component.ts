@@ -29,11 +29,11 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
    this.checkAuth.itemValue.subscribe(res=>{
      console.log(res);
-     if(res !="null"){
-          this.confirmCondition=true;
+     if(res ==null || res =='' || res =="null"){
+          this.confirmCondition=false;
      }
      else{
-       this.confirmCondition=false;
+       this.confirmCondition=true;
      }
    },err=>{
      console.log(err);

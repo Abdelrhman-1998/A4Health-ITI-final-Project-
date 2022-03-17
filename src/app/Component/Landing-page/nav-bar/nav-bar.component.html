@@ -41,12 +41,16 @@
                         aria-selected="false"><a  [routerLink]="['/Community']">Community</a></button>
 
                 </li>
-                <li *ngIf="confirmCondition">
-                    <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill" routerLink="/userdashboard">
+ 
+                <li *ngIf="confirmCondition" class="nav-item" role="presentation" >
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
                         <i class="fa-solid fa-user ms-2 me-2"></i> <span>username</span>
                     </button>
 
                 </li>
+
+
                 <li  *ngIf="!confirmCondition">
                     <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-primary margin-o-small mx-lg-2 mt-lg-0  mt-sm-3  px-4 rounded-pill" routerLink="signin">Sign In</button>
 

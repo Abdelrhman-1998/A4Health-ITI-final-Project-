@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PasswordService {
-  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
 
   constructor(private httpClient: HttpClient) { }
 

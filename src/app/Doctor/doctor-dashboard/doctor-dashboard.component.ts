@@ -28,10 +28,8 @@ export class DoctorDashboardComponent implements OnInit {
   logout()
   {
     this._logoutservice.logout()
-    this.router.navigate(['signin'])
-    .then(() => {
-      window.location.reload();
-    });
+    this.router.navigate(['signin']);
+
    
   }
 

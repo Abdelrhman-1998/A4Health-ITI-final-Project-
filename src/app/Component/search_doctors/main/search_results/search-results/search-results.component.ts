@@ -307,11 +307,11 @@ submitFilter(x:NgForm,y:NgForm){
     this.patient.itemValue.subscribe(res=>{
       console.log(res);
  
-      if(res!="null"){
-          this.confirm_condition=true;
+      if(res =="null" || res=="" || res==null){
+          this.confirm_condition=false;
       }
       else{
-          this.confirm_condition=false;
+          this.confirm_condition=true;
       }
      
     },
@@ -344,22 +344,23 @@ submitFilter(x:NgForm,y:NgForm){
         }
         else{
           console.log(this.view_data);
+          console.log(this.Doctor_data);
               this.view_data=this.Doctor_service.filterBySpecilaization(specilaiztion,this.Doctor_data);
               console.log(this.view_data);
               this.view_length=this.view_data.length;
         }
 // from make an appointment part date 15/3
-        let doctor_fullname= this.patient.doctor_fullname;
-        if(doctor_fullname == "" || doctor_fullname==null ){
-          this.view_data=res as any;
-          this.view_length=this.view_data.length;
-          console.log(res);
-        }
-        else{
-          this.view_data=this.Doctor_service.filterByName(doctor_fullname,this.Doctor_data);
-          console.log(this.view_data);
-          this.view_length=this.view_data.length;
-        }
+        // let doctor_fullname= this.patient.doctor_fullname;
+        // if(doctor_fullname == "" || doctor_fullname==null ){
+        //   this.view_data=res as any;
+        //   this.view_length=this.view_data.length;
+        //   console.log(res);
+        // }
+        // else{
+        //   this.view_data=this.Doctor_service.filterByName(doctor_fullname,this.Doctor_data);
+        //   console.log(this.view_data);
+        //   this.view_length=this.view_data.length;
+        // }
      
         // localStorage.setItem("Authorization","Bearer 49|IYV2KWStxVTnXIXRCSWVamJOGrU0eAaKjDO8DUEM");
         // localStorage.setItem("patient_id","3");

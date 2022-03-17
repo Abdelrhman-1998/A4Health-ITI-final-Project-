@@ -1,0 +1,6 @@
+.aaaa{
+    height: 70vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

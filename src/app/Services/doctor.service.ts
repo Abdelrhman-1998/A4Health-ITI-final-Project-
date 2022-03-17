@@ -79,8 +79,11 @@ export class DoctorService {
 
   filterBySpecilaization(specilaization:"string",all_data:Doctor[]){
     let filterd_data=all_data.filter(ele => {
-      return ele.specialization.toLowerCase().trim()== specilaization.toLowerCase().trim();
+      // console.log(ele.specialization.trim());
+      // console.log(specilaization.trim());
+      return ele.specialization.trim().toLowerCase() == specilaization.trim().toLowerCase();
     });
+    console.log(filterd_data);
     return filterd_data;
   }
 

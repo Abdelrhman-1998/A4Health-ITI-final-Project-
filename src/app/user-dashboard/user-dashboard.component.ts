@@ -83,10 +83,7 @@ logout(){
   
   // this.confirmCondition=this.checkAuth.show_username;
   this.logoutServices.logout()
-  this.router.navigate(['signin'])
-  .then(() => {
-    window.location.reload();
-  });
+  this.router.navigate(['signin']);
 
 // this.router.navigate(['signin']);
 
