@@ -31,7 +31,35 @@
                             <td class="text-center"><button class="btn btn-success w-50" 
                                 [routerLink]="['/admin/specialty','edit',specialty.id,specialty.name]"
                                 > Edit  </button></td>
-                            <td class="text-center"><button class="btn btn-danger w-50" type="submit" routerLink="/admin/specialties" (click)="delete(specialty.id)" >Delete</button></td>
+                            <td class="text-center"><button class="btn btn-danger w-50" type="submit"  data-toggle="modal"
+                                data-target="#myModal"  >Delete</button></td>
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                      <h4 class="modal-title">DELETE Specialty!</h4>
+                                    </div>
+                
+                                    <!-- Modal body -->
+                                    <div class="modal-body">Are you sure you want to delete ?</div>
+                
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                      <button
+                                        type="button"
+                                        (click)="delete(specialty.id)"
+                                        class="btn btn-danger"
+                                        data-dismiss="modal"
+                                        routerLink="/admin/specialties"
+                                      >
+                                        Confirm
+                                      </button>
+                                      <button type="button" class="close btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                         </tr>
                      
                         

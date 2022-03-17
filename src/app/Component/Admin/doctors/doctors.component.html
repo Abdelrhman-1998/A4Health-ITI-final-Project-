@@ -1,54 +1,158 @@
 <div class="container-fluid">
-    <div *ngIf="message" class=" my-3 alert alert-success d-flex align-items-center" role="alert">
-        <svg class="bi flex-shrink-0 me-2" width="24" height="30" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-        <div>
-         {{message}}
-        </div>
-      </div>
-    <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
-    <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Doctors's Data</h6>
-        </div>
-       
-        <div class="card-body bg-light">
-            <div class="table-responsive">
-                <table class="table table-bordered text-center " id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Gender</th>
-                            <th>Title</th>
-                            <th>Specialization</th>
-                            <th>City</th>
-                            <th>Street</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let doc of doctor | paginate: { itemsPerPage: count, currentPage: p }">
-                            <td>{{doc.id}}</td>
-                            <td>{{doc.fname}}</td>
-                            <td>{{doc.lname}}</td>
-                            <td>{{doc.gender}}</td>
-                            <td>{{doc.title}}</td>
-                            <td>{{doc.specialization}}</td>
-                            <td>{{doc.city}}</td>
-                            <td>{{doc.street}}</td>
-                            <td class="text-center"><button class="btn btn-danger w-100" type="submit" (click)="delete(doc.id)">Delete</button></td>
-                        </tr>
-                      
-                    </tbody>
-                </table>
-            </div>
-            <div class="text-right">
-                <pagination-controls (pageChange)="p = $event"></pagination-controls>
-              </div>
-        </div>
+  <div
+    *ngIf="message"
+    class="my-3 alert alert-success d-flex align-items-center"
+    role="alert"
+  >
+    <svg
+      class="bi flex-shrink-0 me-2"
+      width="24"
+      height="30"
+      role="img"
+      aria-label="Success:"
+    >
+      <use xlink:href="#check-circle-fill" />
+    </svg>
+    <div>
+      {{ message }}
+    </div>
+  </div>
+  <!-- Page Heading -->
+  <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Doctors's Data</h6>
     </div>
 
+    <div class="card-body bg-light">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered text-center"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Gender</th>
+              <th>Title</th>
+              <th>Specialization</th>
+              <th>City</th>
+              <th>Street</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let doc of doctor
+                  | paginate: { itemsPerPage: count, currentPage: p }
+              "
+            >
+              <td>{{ doc.id }}</td>
+              <td>{{ doc.fname }}</td>
+              <td>{{ doc.lname }}</td>
+              <td>{{ doc.gender }}</td>
+              <td>{{ doc.title }}</td>
+              <td>{{ doc.specialization }}</td>
+              <td>{{ doc.city }}</td>
+              <td>{{ doc.street }}</td>
+              <td class="text-center">
+                <button
+                  class="btn btn-danger w-100"
+                  type="submit"
+                  data-toggle="modal"
+                  data-target="#myModal"
+                >
+                  Delete
+                </button>
+              </td>
+              <!-- The Modal -->
+              <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                      <h4 class="modal-title">DELETE DOCTOR!</h4>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">Are you sure you want to delete ?</div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        (click)="delete(doc.id)"
+                        class="btn btn-danger"
+                        data-dismiss="modal"
+                      >
+                        Confirm
+                      </button>
+                      <button type="button" class="close btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-right">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- <button type="button" class="btn btn-primary">Open modal</button> -->
+
+<!-- <a  class="me-2" title="Edit Appointment"
+                                    data-toggle="modal" data-target="#editModal">
+                                    <i class="fa-solid fa-pencil "></i>
+                                </a>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+    aria-hidden="true">
+
+    <form class=" modal-dialog modal-dialog-centered" role="document" >
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Edit Appointment</h5>
+
+            </div>
+            <div class="modal-body">
+                <div class="mt-2 mb-2">
+                    <input formControlName="date" type="Date" name="modalAppointmentDate" id="modalAppointmentDate">
+                </div>
+                <div class="mt-2 mb-2">
+                    <input formControlName="start_time" type="time" name="modalAppointmentTime"
+                        id="modalAppointmentTime">
+                </div>
+                <div class="mt-2 mb-2">
+                    <input formControlName="patient_limit" type="number" name="patientLimit" id="AppointmentTime"
+                        placeholder="Patient Limit">
+                </div>
+
+                <div class="mt-2 mb-2">
+                    <input formControlName="examination_time" type="number" name="examinationTime" id="AppointmentTime"
+                        placeholder="Examination Time">
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="submit"
+                    >
+                    Save
+                </button>
+                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </form>
+</div> -->

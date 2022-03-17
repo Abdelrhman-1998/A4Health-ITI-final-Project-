@@ -57,7 +57,7 @@ loginAdmin(data:NgForm){
         this.router.navigate(['/admin/login'])
       }else{
         // Authorization: Bearer <token>
-        localStorage.setItem('Authorization','Bearer '+this.test.token)
+        localStorage.setItem('AuthorizationA','Bearer '+this.test.token)
         setTimeout(()=>{
           this.router.navigate(['/admin/doctor'])
         },500)

@@ -48,9 +48,35 @@
 
                             </td>
                             <td class="text-center"><button class="btn btn-danger w-100"
-                                (click)="delete(review.id)"
+                                data-toggle="modal"
+                                data-target="#myModal"
                                 >Delete</button></td>
-
+                                <div class="modal" id="myModal">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                          <h4 class="modal-title">DELETE FeedBack!</h4>
+                                        </div>
+                    
+                                        <!-- Modal body -->
+                                        <div class="modal-body">Are you sure you want to delete ?</div>
+                    
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                          <button
+                                            type="button"
+                                            class="btn btn-danger"
+                                           
+                                            (click)="delete(review.id)"
+                                          >
+                                            Confirm
+                                          </button>
+                                          <button type="button" class="close btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                         </tr>
                         
                   

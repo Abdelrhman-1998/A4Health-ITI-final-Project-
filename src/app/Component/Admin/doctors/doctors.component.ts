@@ -16,6 +16,7 @@ p: number = 1;
 count: number = 5;
 message!:string
 checkstatus!:any
+confirm:boolean=false
   constructor(
     private doctorService:DoctorsService,
     private router:Router
@@ -48,7 +49,7 @@ checkstatus!:any
       
        this.status = 'Delete successful'
        this.ngOnInit();
-      
+      this.confirm=true
       },() => this.message='Delete successful',
       console.error
      

@@ -27,49 +27,19 @@ export class AddDoctorComponent implements OnInit {
   ) {}
   // validation
   AddDoctor = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(4),
-
-    ]),
-    fname: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    lname: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    city: new FormControl('', [
-      Validators.required,
-      Validators.minLength(4),
-      Validators.maxLength(15),
-
-    ]),
-    gender: new FormControl('', [Validators.required]),
-    title: new FormControl('', [Validators.required]),
-    specialization_id: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [
-      Validators.required,
-      Validators.pattern(this.phonePattern),
-    ]),
-    description: new FormControl(
-      Validators.required,
-      Validators.minLength(15)
-      //  Validators.maxLength(50)
-    ),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(8),
-
-      // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
-      // At least 8 characters in length
-      // Lowercase letters
-      // Uppercase letters
-      // Numbers
-      // Special characters
-    ]),
-    street: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(20),
-    ]),
-    fees: new FormControl('', [Validators.required, Validators.minLength(1)]),
-    img_name: new FormControl('', [Validators.required]),
+    username:new FormControl(null, [Validators.required , Validators.minLength(4)]),
+    fname: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+    lname: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+    city: new FormControl(null, [Validators.required,Validators.minLength(4),Validators.maxLength(15),]),
+    gender: new FormControl(null, [Validators.required]),
+    title: new FormControl(null, [Validators.required]),
+    specialization_id: new FormControl(null, [Validators.required]),
+    phone: new FormControl(null, [Validators.required,Validators.pattern(this.phonePattern),]),
+    description: new FormControl(null,[Validators.required,Validators.minLength(15),Validators.maxLength(50)]),
+    password: new FormControl(null, [Validators.required,Validators.minLength(8),]),
+    street: new FormControl(null, [Validators.required,Validators.minLength(3),Validators.maxLength(20),]),
+    fees: new FormControl(null, [Validators.required, Validators.minLength(1)]),
+    img_name: new FormControl(null, [Validators.required]),
   });
   ngOnInit(): void {
     this.getAllSpecialties();

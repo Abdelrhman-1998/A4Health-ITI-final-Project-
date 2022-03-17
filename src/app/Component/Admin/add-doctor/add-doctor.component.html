@@ -38,10 +38,11 @@
             ngModel
             formControlName="username"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="username && username.invalid && username.touched">
-
-            <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['required']">UserName is required</p>
-        </div> 
+          <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('username')?.errors && AddDoctor.get('username')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['required']">Username is required</p>
+                <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['minlength']">Username min length is 4</p>
+            </div>
         </div>
         <div class="mb-3">
           <label for="fname" class="form-label"
@@ -55,9 +56,11 @@
             ngModel
             formControlName="fname"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="fname && fname.invalid && fname.touched">
-            <p class="m-0" >first name is required</p>
-        </div>  
+          <div class="alert alert-danger" 
+          *ngIf="AddDoctor.get('fname')?.errors && AddDoctor.get('fname')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('fname')?.errors?.['required']">First Name is required</p>
+              <p class="m-0" *ngIf="AddDoctor.get('fname')?.errors?.['minlength']">First Name min length is 4</p>
+          </div> 
         </div>
         <div class="mb-3">
           <label for="lname" class="form-label"
@@ -71,9 +74,11 @@
             ngModel
             formControlName="lname"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="lname && lname.invalid && lname.touched">
-            <p class="m-0" *ngIf="AddDoctor.get('lname')?.errors?.['required']">Last name is required</p>
-        </div> 
+          <div class="alert alert-danger" 
+          *ngIf="AddDoctor.get('lname')?.errors && AddDoctor.get('lname')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('lname')?.errors?.['required']">Last Name is required</p>
+              <p class="m-0" *ngIf="AddDoctor.get('lname')?.errors?.['minlength']">Last Name min length is 4</p>
+          </div> 
         </div>
         <div class="mb-3">
           <label for="lname" class="form-label"
@@ -87,10 +92,12 @@
             ngModel
             formControlName="city"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="city && city.invalid && city.touched && city.errors">
-            <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['required']">City is required</p>
-
-        </div> 
+          <div class="alert alert-danger" 
+          *ngIf="AddDoctor.get('city')?.errors && AddDoctor.get('city')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['required']">City is required</p>
+              <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['minlength']">City min length is 4</p>
+              <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['maxlength']">City max length is 15</p>
+          </div>  
         </div>
         <div class="mb-3">
           <label for="lname" class="form-label"
@@ -104,9 +111,12 @@
             ngModel
             formControlName="street"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="Street && Street.invalid && Street.touched">
-            <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['required']">Street is required</p>
-        </div> 
+          <div class="alert alert-danger" 
+          *ngIf="AddDoctor.get('street')?.errors && AddDoctor.get('street')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['required']">Street is required</p>
+              <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['minlength']">Street min length is 3</p>
+              <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['maxLength']">Street max length is 20</p>
+          </div> 
         </div>
         <div class="mb-3">
           <label for="lname" class="form-label"
@@ -120,10 +130,11 @@
             ngModel
             formControlName="fees"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="Fees && Fees.invalid && Fees.touched">
-            <p class="m-0" *ngIf="AddDoctor.get('fees')?.errors?.['required']">Fees is required</p>
-
-        </div> 
+          <div class="alert alert-danger" 
+          *ngIf="AddDoctor.get('fees')?.errors && AddDoctor.get('fees')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('fees')?.errors?.['required']">fees is required</p>
+              <p class="m-0" *ngIf="AddDoctor.get('fees')?.errors?.['minlength']">fees min length is 1</p>
+          </div>
         </div>
         <div class="mb-3">
           <label for="lname" class="form-label"
@@ -138,11 +149,10 @@
             formControlName="img_name"
             (change)="upLoadImg($event)"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="img_name && img_name.invalid && img_name.touched">
-            <p class="m-0" *ngIf="AddDoctor.get('img_name')?.errors?.['required']">Image is required</p>
-
-
-        </div> 
+          <div class="alert alert-danger" 
+          *ngIf="AddDoctor.get('img_name')?.errors && AddDoctor.get('img_name')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('img_name')?.errors?.['img_name']">Images is required</p>
+          </div>
         </div>
         <div class="mb-3">
           <label>Gender:</label>
@@ -176,10 +186,10 @@
 
           </select>
       </div>
-      <div class="alert alert-danger" role="alert" *ngIf="title && title.invalid && title.touched">
-        <p class="m-0" *ngIf="AddDoctor.get('title')?.errors?.['required']">title is required</p>
-
-    </div> 
+      <div class="alert alert-danger" 
+      *ngIf="AddDoctor.get('title')?.errors && AddDoctor.get('title')?.touched">
+          <p class="m-0" *ngIf="AddDoctor.get('title')?.errors?.['required']">title is required</p>
+      </div>
         </div>
         <div class="mb-3">
           <div >       
@@ -190,11 +200,10 @@
                 
         </select>
         </div>
-        <div class="alert alert-danger" role="alert" *ngIf="specialization && specialization.invalid && specialization.touched">
-          <p class="m-0">specialization is required</p>
-
-
-      </div> 
+        <div class="alert alert-danger" 
+        *ngIf="AddDoctor.get('specialization_id')?.errors && AddDoctor.get('specialization_id')?.touched">
+            <p class="m-0" *ngIf="AddDoctor.get('specialization_id')?.errors?.['required']">specialization is required</p>
+        </div>
         </div>
         <div class="mb-3">
           <div >       
@@ -207,8 +216,11 @@
             ngModel
             formControlName="description"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="Description && Description.invalid && Description.touched">
-            <p class="m-0" >Description is required</p>
+          <div class="alert alert-danger" 
+          *ngIf="AddDoctor.get('description')?.errors && AddDoctor.get('description')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['required']">fees is required</p>
+              <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['minlength']">fees min length is 15</p>
+              <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['maxlength']">fees max length is 50</p>
           </div>
         </div>
 
@@ -225,9 +237,10 @@
             ngModel
             formControlName="phone"
           />
-          <div class="alert alert-danger" role="alert" *ngIf="phone && phone.invalid && phone.touched">
-            <p class="m-0" *ngIf="AddDoctor.get('phone')?.errors?.['required']">phone is required</p>
-        </div> 
+          <div class="alert alert-danger" 
+          *ngIf="AddDoctor.get('phone')?.errors && AddDoctor.get('phone')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('phone')?.errors?.['required']">phone is required</p>
+          </div> 
         </div>
         <div class="mb-3">
           <label for="password" class="form-label"
