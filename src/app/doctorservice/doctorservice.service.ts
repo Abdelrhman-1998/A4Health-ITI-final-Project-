@@ -80,6 +80,10 @@ export class DoctorserviceService {
   {
     return this._HttpClient.put(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}/offers/${offer_id}`,offer,{headers:this.header});
   }
+  reportFeedBack(feedback_id:any):Observable<any>
+  {
+    return this._HttpClient.get(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}/feedback/${feedback_id}/ReportAbuse`,{headers:this.header});
+  }
  
 }
 

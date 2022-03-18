@@ -10,10 +10,25 @@ export class DoctorFeedbackComponent implements OnInit {
 
   constructor(private _Doctorservic:DoctorserviceService) { }
   feedback:any[]=[];
+  index!: number;
+  success!: any;
   ngOnInit(): void {
     this._Doctorservic.getDoctorFeedback().subscribe((response)=>{
       this.feedback = response;
       console.log(response);
+    });
+  }
+  getindexToReport(feedback:any)
+  {
+    this.index= feedback.id;
+    this.success = null;
+    console.log(this.index);
+  }
+  sendReport()
+  {
+    this._Doctorservic.reportFeedBack( this.index).subscribe((response)=>{
+     // this.feedback = response;
+     this.success = response.response
     });
   }
 }

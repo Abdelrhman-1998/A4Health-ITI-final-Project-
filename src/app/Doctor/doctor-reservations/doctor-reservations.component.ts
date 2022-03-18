@@ -13,6 +13,8 @@ export class DoctorReservationsComponent implements OnInit {
   res:any
   filter:any[]=[]
   a:any[]=[1,2,3]
+  changed!: any;
+
 
   isCancel:boolean=false;
 
@@ -32,6 +34,8 @@ export class DoctorReservationsComponent implements OnInit {
   ngOnInit(): void {
     this._Doctorservic.getDoctorPaitnetsAppiontmets().subscribe((response)=>{
       this.doctorPaitnetsAppiontmets = response;
+      this.doctorPaitnetsAppiontmets.sort((a, b) => (a.date < b.date) ? 1 : (a.date === b.date) ? ((a.patientTime < b.patientTime) ? 1 : -1) : -1 )
+
       console.log(this.doctorPaitnetsAppiontmets);
       //console.log(this.allAppiontmets[0].appointment_id);
       //console.log(this.allAppiontmets[0].reservations[0]);
@@ -58,16 +62,22 @@ export class DoctorReservationsComponent implements OnInit {
   {
    // console.log(this.doctorPaitnetsAppiontmets.indexOf(dpa));
     this.editIndex = this.doctorPaitnetsAppiontmets.indexOf(dpa)
+    this.changed =null;
     //console.log(this.editIndex);
 
   }
   changeStatus(patientStatus:any)
   {
-    console.log(patientStatus);
+    //console.log(patientStatus);
 
    //console.log(this.allAppiontmets[this.editIndex])
    //this.doctorPaitnetsAppiontmets[this.editIndex].status=patientStatus.status;
    this._Doctorservic.updateStatus(this.doctorPaitnetsAppiontmets[this.editIndex].id,patientStatus).subscribe((response)=>{
+    console.log(response.response);
+    if(response.response == 'done')
+    {
+      this.changed = response.response;
+    }
     console.log(response);
     this.ngOnInit();
   })

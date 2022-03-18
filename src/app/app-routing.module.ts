@@ -34,6 +34,8 @@ import { UserFeadbackComponent } from './user-feadback/user-feadback.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
 import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
+import { DoctorguardGuard } from './doctorguard.guard';
+import { PatientguardGuard } from './patientguard.guard';
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -47,7 +49,7 @@ export const routes: Routes = [
   {path: 'specialty/:id', component:SearchPageComponent},
 
 
-  {path:'userdashboard' ,canActivate:[UsergGuard], component:UserDashboardComponent , children:[
+  {path:'userdashboard' ,canActivate:[UsergGuard,PatientguardGuard], component:UserDashboardComponent , children:[
     {path:'reservations' , component:UserReservationsComponent},
     {path:'manageprofile' , component:UserManageProfileComponent},
     {path:'changepassword' , component:UserChangePasswordComponent},
@@ -57,7 +59,7 @@ export const routes: Routes = [
        {path:'signin',component:SignInComponent},
 
 
-  {path:'doctordashboard',canActivate:[UsergGuard]  ,component:DoctorDashboardComponent , children:[
+  {path:'doctordashboard',canActivate:[UsergGuard , DoctorguardGuard]  ,component:DoctorDashboardComponent , children:[
     {path:'profile' , component:DoctorProfileComponent},
     {path:'editprofile' , component:DoctorEditProfileComponent},
     {path:'appointment' , component:DoctorAppiontmentComponent},

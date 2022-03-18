@@ -13,11 +13,9 @@ export class DoctorProfileComponent implements OnInit {
   ngOnInit(): void {
 
     this._Doctorservic.getDoctorProfile().subscribe((response)=>{
-      
       this.doctorData = response;
       console.log(response);
       console.log(this.doctorData);
-
     });
   }
 

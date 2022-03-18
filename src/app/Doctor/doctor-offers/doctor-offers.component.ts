@@ -11,15 +11,19 @@ export class DoctorOffersComponent implements OnInit  {
 
   Offers:any[]=[]
   index!: number;
+  edited!: any;
+  deleted!: any;
+
+
   constructor(private _Doctorservic:DoctorserviceService) { }
   addOfferForm:FormGroup = new FormGroup({
     name:new FormControl(null , [Validators.required] ),
-    discount:new FormControl(null, [Validators.required]),
+    discount:new FormControl(null, [Validators.required  ,Validators.max(100) , Validators.min(0)]),
     doctor_id:new FormControl(localStorage.getItem("id"), [Validators.required]),
   }); 
   editOfferForm:FormGroup = new FormGroup({
     name:new FormControl(null , [Validators.required] ),
-    discount:new FormControl(null, [Validators.required]),
+    discount:new FormControl(null, [Validators.required ,Validators.max(100) , Validators.min(0)]),
     doctor_id:new FormControl(localStorage.getItem("id")),
   }); 
   ngOnInit(): void {
@@ -52,15 +56,25 @@ export class DoctorOffersComponent implements OnInit  {
     });
 
   }
-  deleteOffer(offer:any)
+  getIndexOfferToDelete(offer:any)
   {
-          console.log(offer.id);
+    this.index= offer.id;
+    this.deleted= null;
+    console.log(this.index);
+  }
+  deleteOffer()
+  {
+          //console.log(offer.id);
 
     //deleteAppiontment
     //this.doctorAppiontmets.splice(this.doctorAppiontmets.indexOf(appiontment),1);
-    this._Doctorservic.deleteOffer(offer.id).subscribe((response)=>{
+    this._Doctorservic.deleteOffer(this.index).subscribe((response)=>{
       //this.doctorAppiontmets = response;
       //console.log(response);
+      if(response.response == 'deleted')
+      {
+        this.deleted = response.response;
+      }
       this.ngOnInit();
     });
   }
@@ -69,6 +83,8 @@ export class DoctorOffersComponent implements OnInit  {
   // console.log(this.doctorAppiontmets.indexOf(appiontment));
   // this.index= this.doctorAppiontmets.indexOf(appiontment);
      this.index= offer.id;
+     this.edited= null;
+
      console.log(this.index);
 
    this.editOfferForm = new FormGroup ({
@@ -89,6 +105,10 @@ export class DoctorOffersComponent implements OnInit  {
     this._Doctorservic.updateOffer(this.index,offer).subscribe((response)=>{
       //this.doctorAppiontmets = response;
       console.log(response);
+      if(response.response == 'updated')
+      {
+        this.edited=response.response
+      }
        //window.location.reload();
        this.ngOnInit();
     });

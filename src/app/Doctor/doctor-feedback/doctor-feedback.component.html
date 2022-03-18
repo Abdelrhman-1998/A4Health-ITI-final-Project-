@@ -1,5 +1,5 @@
 <h1 class="h3 mb-4 feedBackHeader text-black">
-    <i class="fa-solid fa-comment text-white fs-1 text-primary"></i>
+    <i class="fa-solid fa-comment fs-1 text-primary"></i>
     Feedbacks
 </h1>
 <div class="feedbackComments text-black">
@@ -15,11 +15,40 @@
                 <i class="fa-solid fa-star-half text-warning"></i>
             </div>
         </div>
-        <p class="text-end mt-1 mb-1">
-            {{f.patientName}}
-        </p>
+      
+        <div class="text-end">
+            <p class="text-end mt-1 mb-1">
+                {{f.patientName}}
+            </p>
+            <button (click)="getindexToReport(f)" class="my-3 btn btn-danger " data-toggle="modal" data-target="#reportModal">Report</button>
+        </div>
       </div>
-      
-      
+</div>
+
+
+
+<div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+    aria-hidden="true">
+
+    <div class=" modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Report Feedback</h5>
+
+            </div>
+            <div class="modal-body">
+                <h5>Are You sure to Report this Feedback</h5>
+            </div>
+            <div class="modal-footer">
+                <button (click)="sendReport()" class="btn btn-danger" type="submit" >
+                    Report
+                </button>
+                <button class="btn btn-primary" type="button" data-dismiss="modal">Close</button>
+            </div>
+            <div *ngIf="success" class="alert alert-success" role="alert">
+                Report sent successfully
+              </div>
+        </div>
+    </div>
 </div>
 

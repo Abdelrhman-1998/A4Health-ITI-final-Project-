@@ -26,7 +26,7 @@ export class SignInComponent implements OnInit {
     password:new FormControl(null, [Validators.required , Validators.minLength(4)]),
   }); 
   ngOnInit(): void {
-    this.isSuccessful==this.loginServises.isUserlogged
+    //this.isSuccessful==this.loginServises.isUserlogged
   }
   submitLogIn(loginValue:any)
   {
@@ -49,10 +49,12 @@ export class SignInComponent implements OnInit {
             //this.router.navigate(['/doctordashboard/appointment'])
             if(this.test.type == "doctor")
             {
+              localStorage.setItem('type',"doctor")
               this.router.navigate(['/doctordashboard/appointment'])
             }
             else
             {
+              localStorage.setItem('type',"patient")
               this.router.navigate(['/userdashboard/reservations'])
             }
           },2000)
