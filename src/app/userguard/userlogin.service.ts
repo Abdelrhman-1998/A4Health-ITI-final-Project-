@@ -20,7 +20,7 @@ export class UserloginService {
     let id_token =''
     //localStorage.setItem('Authorization',token)
      this.gtoken.thetoken =token;
-
+     this.gtoken.theUsername='';
     //localStorage.setItem('id',id_token)
     this.gtoken.theid =id_token;
 
@@ -39,7 +39,7 @@ export class UserloginService {
     localStorage.removeItem('id');*/
     this.gtoken.thetoken ='';
     this.gtoken.theid ='' ;
-
+    this.gtoken.theUsername='';
 
     this.isLoggedSub.next(false)
   }

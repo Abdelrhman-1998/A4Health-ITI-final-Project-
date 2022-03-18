@@ -12,8 +12,10 @@ export class GlobaltokenService {
 
   show_username!:boolean;
 
+  username:any;
   itemValue = new BehaviorSubject(this.thetoken);
   idValue = new BehaviorSubject(this.theid);
+  usernameValue=  new BehaviorSubject(this.theUsername);
 
   setReservation(value:any){
     this.reservationID=value;
@@ -32,6 +34,7 @@ export class GlobaltokenService {
   }
 
 
+
   set thetoken(value:any) {
     this.itemValue.next(value); // this will make sure to tell every subscriber about the change.
     localStorage.setItem('Authorization',value);
@@ -40,10 +43,19 @@ export class GlobaltokenService {
     this.idValue.next(value); // this will make sure to tell every subscriber about the change.
     localStorage.setItem('id',value);
   }
+
+  set theUsername(value:any){
+        this.usernameValue.next(value);
+        localStorage.setItem('username',value);
+  }
+
   get thetoken() {
     return localStorage.getItem('Authorization');
   }
   get theid() {
     return localStorage.getItem('id');
+  }
+  get theUsername(){
+    return   localStorage.getItem('username');
   }
 }

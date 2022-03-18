@@ -102,7 +102,7 @@
                         </p>
                         <p class="d-flex align-items-center gap-2 position-relative ps-2 pe-2">
                             <i class="fa-solid fa-user-doctor"></i>
-                            <input  type="search" name="search" placeholder="Doctor name" class="flex-grow-1"  ngModel >
+                            <input  type="search" name="search" placeholder="Doctor name" class="flex-grow-1"  ngModel [(ngModel)]="doctor_name" >
                         </p>
                     </div>
                     <div  class="d-flex align-items-center p-1 position-relative  justify-content-center bg-danger">
@@ -294,7 +294,7 @@
                                 </p>
                                 <p class="d-flex align-items-center gap-2 position-relative ps-2 pe-2">
                                     <i class="fa-solid fa-user-doctor"></i>
-                                    <input type="search" name="search" placeholder="Doctor name" class="flex-grow-1" ngModel>
+                                    <input type="search" name="search" placeholder="Doctor name" class="flex-grow-1" ngModel [(ngModel)]="doctor_name">
                                 </p>
                             </div>
                             <div class="d-flex align-items-center p-1  justify-content-center bg-danger">
@@ -311,8 +311,8 @@
             </form>
         </div>
         <div class="modal-footer d-flex">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button class="btn btn-secondary" (click)="form2.reset()" (click)="resetSpans(choose_specilty_modal,choode_area_modal,choose_city_modal)" (click)="resetAllArrows(area_modal,specialization_modal,city_modal)">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            <button class="btn btn-primary" (click)="form2.reset()" (click)="resetSpans(choose_specilty_modal,choode_area_modal,choose_city_modal)" (click)="resetAllArrows(area_modal,specialization_modal,city_modal)">
                     Reset
             </button>
         </div>

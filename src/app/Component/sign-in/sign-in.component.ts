@@ -16,9 +16,15 @@ export class SignInComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
   test:any
-  id:any
+  id:any;
 
+  //
 
+  username:any;
+
+  getUsername(x:any){
+    this.username=x.value;
+  }
   constructor(
     private loginServises:UserloginService,
     private router:Router,
@@ -37,9 +43,10 @@ export class SignInComponent implements OnInit {
  
   submitLogIn(loginValue:any)
   {
-  
+    this.username=loginValue.username;
     console.log(loginValue)
-    this.user=loginValue
+    this.user=loginValue;
+    console.log(this.user);
     this.loginServises._login(loginValue).subscribe(
       (log)=>{
         this.isSuccessful = true;
@@ -53,6 +60,7 @@ export class SignInComponent implements OnInit {
           // Authorization: Bearer <token>
           this.checkAuth.thetoken="Bearer "+this.test.token;
           this.checkAuth.theid=this.test.id;
+          this.checkAuth.theUsername=this.username;
           // localStorage.setItem('Authorization','Bearer '+this.test.token);
           // localStorage.setItem('id',this.test.id);
 

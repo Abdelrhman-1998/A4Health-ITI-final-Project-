@@ -305,12 +305,16 @@
                                     View offers
                                 </a>
                         </button>
-                        <button class=" btn btn-danger d-lg-none showButtonOver" data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        <button *ngIf="item.appointment.length" class=" btn btn-danger d-lg-none showButtonOver" data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        <div *ngIf="!item.appointment.length" class="text-center bg-danger text-white notAvaliable d-block d-lg-none">
+                            Not Avaliable
+                        </div>
+
                    
                 </div>
             </div>
-            <div class="Appointments col-lg-4 ps-0 d-none d-lg-flex flex-column ">
-                        <owl-carousel-o [options]="customOptions" class="p-lg-3">
+            <div class="Appointments col-lg-4 ps-0 d-none d-lg-flex flex-column" [ngClass]="item.appointment.length?'':'justify-content-center'">
+                        <owl-carousel-o [options]="customOptions" class="p-lg-3" *ngIf="item.appointment.length">
                             <ng-template carouselSlide *ngFor="let appointment_item of item.appointment | mainpulateTimes | sortAppointments ;let a=index">
 
                                 <form #AppointmentForm="ngForm"   class="card text-center slide ms-2 me-2" (ngSubmit)="printValues(AppointmentForm)">
@@ -320,8 +324,8 @@
                                     <div class="card-body position-relative" >
                                         <input #date type="hidden" name="date" value={{appointment_item.Date}} >
                                          <select #selectList class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectList,Arrow)" (click)="disableAllbuttons(bookingButton)">
-                                        <option #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1" >
-                                            {{item}}
+                                        <option #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1" [ngClass]="confirmOption==item?'d-none':''" >
+                                         {{item}}
                                         </option>
                                         </select>
                                     </div>
@@ -335,8 +339,11 @@
                             </ng-template>                              
          
                         </owl-carousel-o>
-                 
+                        <div *ngIf="!item.appointment.length" class="text-center bg-danger text-white notAvaliable">
+                            Not Avaliable
+                        </div>
             </div> 
+
             <div class="modal  fade" id="Appointments" tabindex="-1" aria-labelledby="AppointmentsLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
@@ -355,7 +362,7 @@
                                     <div class="card-body position-relative" >
                                         <input #dateModal type="hidden" name="date" value={{appointment_item.Date}}>
                                          <select #selectListModal class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
-                                        <option #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1">
+                                        <option [ngClass]="confirmOption==item?'d-none':''"  #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1">
                                             {{item}}
                                         </option>
                                         </select>

@@ -22,8 +22,8 @@ export class PaymentFormComponent implements OnInit {
   config:any=
 {
 
-    countryCode:"KWT", // Here, add your Country Code.
-    sessionId:"74cc99f8-65a2-ec11-bafa-000d3aaca798", // Here you add the "SessionId" you receive from InitiateSession Endpoint.
+    // countryCode:"KWT", // Here, add your Country Code.
+    // sessionId:"74cc99f8-65a2-ec11-bafa-000d3aaca798", // Here you add the "SessionId" you receive from InitiateSession Endpoint.
     cardViewId: "card-element",
     // The following style is optional.
     style: {

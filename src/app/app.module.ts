@@ -71,6 +71,7 @@ import { ChangePasswordComponent } from './Component/Admin/change-password/chang
 import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
 import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
 import { MainpulateTimesPipe } from './Pipes/mainpulate-times.pipe';
+import ls from 'localstorage-slim';
 @NgModule({
   declarations: [
     AppComponent,

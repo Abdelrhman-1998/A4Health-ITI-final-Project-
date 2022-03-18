@@ -8,10 +8,11 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class DoctorsService {
-  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
   constructor(private httpClient: HttpClient) {}
   getAllDoctors(): Observable<Doctor[]> {
-    return this.httpClient.get<Doctor[]>(`${environment.ApiUrl}/dashboard/doctors`,{headers:this.header});
+   let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+    return this.httpClient.get<Doctor[]>(`${environment.ApiUrl}/dashboard/doctors`,{headers:header});
   }
   getDoctorWithID(doctorId: number): Observable<Doctor> {
     return this.httpClient.get<Doctor>(
@@ -24,10 +25,11 @@ export class DoctorsService {
     );
   }
   addDoctor(newDoctor: any): Observable<Doctor> {
+  let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
     const headers = { "content-type": "application/json" };
     const body = JSON.stringify(newDoctor);
     return this.httpClient.post<Doctor>(`${environment.ApiUrl}/dashboard/doctors`, newDoctor, {
-      headers: this.header});
+      headers:header});
   }
   updateDoctor(doctorId: number, updateDoctor: Doctor): Observable<Doctor> {
     const body = JSON.stringify(updateDoctor);
@@ -37,7 +39,8 @@ export class DoctorsService {
     );
   }
   deleteDoctor(doctorId: number): Observable<Doctor> {
+    let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
     return this.httpClient.delete<Doctor>(
-      `${environment.ApiUrl}/dashboard/doctors/${doctorId}`,{headers:this.header});
+      `${environment.ApiUrl}/dashboard/doctors/${doctorId}`,{headers:header});
   }
 }

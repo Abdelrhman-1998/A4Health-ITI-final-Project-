@@ -8,6 +8,8 @@ import { NgForm } from '@angular/forms';
 import { AppModule } from 'src/app/app.module';
 import { ActivatedRoute } from "@angular/router";
 import { GlobaltokenService } from 'src/app/gt/globaltoken.service';
+import { MainpulateTimesPipe } from 'src/app/Pipes/mainpulate-times.pipe';
+import { SortAppointmentsPipe } from 'src/app/Pipes/sort-appointments.pipe';
 @Component({
   selector: 'app-appointments',
   templateUrl: './appointments.component.html',

@@ -8,11 +8,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PatientsService {
-  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
 
   constructor(private httpClient: HttpClient) { }
   getAllPatients():Observable<Patient[]>{
-    return this.httpClient.get<Patient[]>(`${environment.ApiUrl}/dashboard/patients`,{headers:this.header})
+   let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+
+    return this.httpClient.get<Patient[]>(`${environment.ApiUrl}/dashboard/patients`,{headers:header})
   }
   // getPatientByID(patient_id:number):Observable<Patient>{
   //   return this.httpClient.get<Patient>(`${environment.ApiUrl}/patients/${patient_id}`)
@@ -41,6 +43,7 @@ export class PatientsService {
     return this.httpClient.put(url,patient_data,{'headers':this.header});
   }
   deletePatientByID(patient_id:number):Observable<Patient>{
-    return this.httpClient.delete<Patient>(`${environment.ApiUrl}/dashboard/patients/${patient_id}`,{headers:this.header})
+    let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+    return this.httpClient.delete<Patient>(`${environment.ApiUrl}/dashboard/patients/${patient_id}`,{headers:header})
   }
 }

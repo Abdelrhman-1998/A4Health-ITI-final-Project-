@@ -9,11 +9,12 @@ import { Observable } from "rxjs";
 })
 export class ReviewsService {
   // doctor:Doctor[]=[];
-  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+  header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
   constructor(private httpClient: HttpClient) {}
 
   getAllReviews(): Observable<Review[]>{
-   return this.httpClient.get<Review[]>(`${environment.ApiUrl}/dashboard/reviews`,{headers:this.header});
+    let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+   return this.httpClient.get<Review[]>(`${environment.ApiUrl}/dashboard/reviews`,{headers:header});
   }
   getReviewByID(review_id:number):Observable<Review>{
     return this.httpClient.get<Review>(`${environment.ApiUrl}/reviews/${review_id}`)
@@ -30,7 +31,8 @@ export class ReviewsService {
     return this.httpClient.get<Review>(`${environment.ApiUrl}/reviews?rating=${rating}?id=${doctor_id}`)
   }
   deleteReview(review_id:number):Observable<Review>{
-    return this.httpClient.delete<Review>(`${environment.ApiUrl}/dashboard/reviews/${review_id}`,{headers:this.header})
+    let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+    return this.httpClient.delete<Review>(`${environment.ApiUrl}/dashboard/reviews/${review_id}`,{headers:header})
 
   }
   sendReview(newreview: Review): Observable<Review> {

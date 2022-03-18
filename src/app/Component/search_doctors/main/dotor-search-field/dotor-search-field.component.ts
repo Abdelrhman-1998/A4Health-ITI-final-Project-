@@ -17,6 +17,7 @@ export class DotorSearchFieldComponent implements OnInit{
   City_options_arr!:any;
   Specialization_options_arr!:any;
   test_array!:Doctor[];
+  doctor_name:any;
   data_arrived:boolean=false;
   specializtion_name!:string;
   specializtion_name1!:string;
@@ -114,6 +115,7 @@ export class DotorSearchFieldComponent implements OnInit{
     
 
     let specilaiztion = this.route.snapshot.params['id'];
+    let doctor_name= this.route.snapshot.params['name'];
     console.log(specilaiztion);
     if(specilaiztion!="" && specilaiztion!=null){
       this.specializtion_name= specilaiztion;
@@ -122,6 +124,18 @@ export class DotorSearchFieldComponent implements OnInit{
     else{
       this.specializtion_name1="Choose Speciality"
     }
+    // if(doctor_name!="" && doctor_name!=null){
+    //   // this.specializtion_name= specilaiztion;
+    //   // this.specializtion_name1=specilaiztion;
+    //   this.doctor_name=doctor_name;
+    // }
+    // else{
+    //   // this.specializtion_name1="Choose Speciality"
+    // }
+
+
+
+
     //for testing only
    
 }

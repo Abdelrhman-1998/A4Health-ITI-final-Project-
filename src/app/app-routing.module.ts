@@ -46,9 +46,10 @@ export const routes: Routes = [
   {path: 'booking/:id', component:BookWithDoctorComponent},
   {path: 'booking/:id/reviews/:id', component:ReviewComponent},
   {path: 'Search', component:SearchPageComponent},
+  {path: 'Search/:doctorID', component:SearchPageComponent},
   {path: 'Community',  redirectTo: '/Home#Community'},
   {path: 'specialty/:id', component:SearchPageComponent},
-
+  
   {path: 'Community',  redirectTo: '/Home#Community'},
   {path: 'specialty/:id', component:SearchPageComponent},
 

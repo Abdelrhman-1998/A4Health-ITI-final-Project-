@@ -9,6 +9,7 @@ import { GlobaltokenService } from 'src/app/gt/globaltoken.service';
 })
 export class NavBarComponent implements OnInit {
   confirmCondition=this.checkAuth.show_username;
+  user_name:any;
   constructor(private checkAuth:GlobaltokenService) { }
   loginForm=new FormGroup({
     username:new FormControl('',[
@@ -34,6 +35,12 @@ export class NavBarComponent implements OnInit {
      }
      else{
        this.confirmCondition=true;
+       this.checkAuth.usernameValue.subscribe(res=>{
+         this.user_name=res;
+          console.log(this.user_name);
+       },err=>{
+          console.log(err);
+       })
      }
    },err=>{
      console.log(err);

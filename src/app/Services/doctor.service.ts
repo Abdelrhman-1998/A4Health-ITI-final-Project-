@@ -62,7 +62,12 @@ export class DoctorService {
       });
       return filterd_data;
   }
-
+  filterById(id:number,all_data:Doctor[]){
+    let filterd_data=all_data.filter(ele => {
+      return ele.id ==id;
+    });
+    return filterd_data
+  }
   filterByCity(city:"string",all_data:Doctor[]){
     let filterd_data=all_data.filter(ele => {
       return ele.city.toLowerCase()==city.toLowerCase();

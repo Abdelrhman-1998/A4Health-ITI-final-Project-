@@ -25,6 +25,12 @@ export class SearchResultsComponent implements OnInit {
   appointment_id!:number;
  
   appointment_previous_element!:any;
+  choosenBookingOption:any;
+  confirmOption:any;
+
+
+
+
   constructor(private Doctor_service:DoctorService ,   private route: ActivatedRoute,private patient:GlobaltokenService) { 
  
   }
@@ -54,6 +60,8 @@ export class SearchResultsComponent implements OnInit {
     // check authentication status
     if(this.confirm_condition){
       x.value.date=y.value;
+      this.choosenBookingOption=x.value.appointment;
+      console.log(x.value.appointment);
       console.log(x.value);
       this.submmitedForm=x;
       $("#Appointments").modal('hide');
@@ -100,7 +108,13 @@ naivgateToReservation(x:any){
   }
 
 
-  let patient_id:any= this.patient.theid;
+  let patient_id:any;
+  this.patient.idValue.subscribe(res=>{
+    console.log(res);
+    patient_id=res;
+  },err=>{
+    console.log(err);
+  })
   let appointment_id=this.appointment_id;
   console.log(appointment_id);
   let appointment_object={"appointment_id":appointment_id,"patient_time":patient_time,"patient_id":patient_id};
@@ -111,6 +125,8 @@ naivgateToReservation(x:any){
   this.Doctor_service.postAppointmetApi(patient_id,appointment_object).subscribe(res=>{
     console.log(appointment_object);
     console.log(res);
+    this.confirmOption=this.choosenBookingOption;
+    console.log(this.confirmOption);
   },err=>{
     console.log(err);
   })
@@ -336,7 +352,7 @@ submitFilter(x:NgForm,y:NgForm){
 
         let specilaiztion = this.route.snapshot.params['id'];
         console.log(specilaiztion);
-      
+        let doctor_name=this.route.snapshot.params['doctorID'];
         if(specilaiztion=="" || specilaiztion==null ){
           this.view_data=res as any;
           this.view_length=this.view_data.length;
@@ -349,6 +365,20 @@ submitFilter(x:NgForm,y:NgForm){
               console.log(this.view_data);
               this.view_length=this.view_data.length;
         }
+        if(doctor_name=="" || doctor_name==null ){
+          this.view_data=res as any;
+          this.view_length=this.view_data.length;
+          console.log(res);
+        }
+        else{
+          console.log(this.view_data);
+          console.log(this.Doctor_data);
+              this.view_data=this.Doctor_service.filterById(doctor_name,this.Doctor_data);
+              console.log(this.view_data);
+              this.view_length=this.view_data.length;
+        }
+
+
 // from make an appointment part date 15/3
         // let doctor_fullname= this.patient.doctor_fullname;
         // if(doctor_fullname == "" || doctor_fullname==null ){

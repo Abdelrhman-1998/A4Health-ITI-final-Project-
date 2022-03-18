@@ -5,7 +5,11 @@
     font-family:'Inter', sans-serif;
     font-size: 16px;
 }
-
+.notAvaliable{
+    box-sizing: content-box;
+    padding: 10px;
+    border-radius: 10px;
+}
 .main_section{
     background-color: var(--color4);
 }
