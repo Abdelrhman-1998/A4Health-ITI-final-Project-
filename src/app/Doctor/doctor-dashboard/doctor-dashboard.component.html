@@ -137,19 +137,19 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{doctorData.fname}}</span>
                             <img class="img-profile rounded-circle"
                             src="/assets/img/undraw_profile.svg">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" routerLink="profile">
                                 <i class="fa-solid fa-user-doctor"></i>
                                 Profile
                             </a>
                             <!-- <div class="dropdown-divider"></div> -->
-                            <a (click)="logout()" class="dropdown-item">
+                            <a style="cursor: pointer;" (click)="logout()" class="dropdown-item">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                 Logout
                             </a>
@@ -162,7 +162,7 @@
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
-            <div class="container-fluid mt-4">
+            <div class="container-fluid my-5">
 
                 <!-- Page Heading -->
                 <!-- <app-doctor-profile></app-doctor-profile> -->
@@ -178,13 +178,6 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; Your Website 2020</span>
-                </div>
-            </div>
-        </footer>
         <!-- End of Footer -->
 
     </div>

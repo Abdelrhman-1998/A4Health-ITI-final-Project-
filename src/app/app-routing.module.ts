@@ -35,8 +35,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ChangePasswordComponent } from './Component/Admin/change-password/change-password.component';
 import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
 import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
+
 import { PaymentFormComponent } from './Component/paymentForm/payment-form/payment-form.component';
 import { LoadingPageComponent } from './Component/loading/loading-page/loading-page.component';
+
+import { DoctorguardGuard } from './doctorguard.guard';
+import { PatientguardGuard } from './patientguard.guard';
+
 export const routes: Routes = [
 
   {path:'', component: MainLandingPageComponent},
@@ -53,7 +58,7 @@ export const routes: Routes = [
   {path: 'specialty/:id', component:SearchPageComponent},
 
 
-  {path:'userdashboard' ,canActivate:[UsergGuard], component:UserDashboardComponent , children:[
+  {path:'userdashboard' ,canActivate:[UsergGuard,PatientguardGuard], component:UserDashboardComponent , children:[
     {path:'reservations' , component:UserReservationsComponent},
     {path:'manageprofile' , component:UserManageProfileComponent},
     {path:'changepassword' , component:UserChangePasswordComponent},
@@ -64,7 +69,7 @@ export const routes: Routes = [
        {path:'signin',component:SignInComponent},
 
 
-  {path:'doctordashboard',canActivate:[UsergGuard]  ,component:DoctorDashboardComponent , children:[
+  {path:'doctordashboard',canActivate:[UsergGuard , DoctorguardGuard]  ,component:DoctorDashboardComponent , children:[
     {path:'profile' , component:DoctorProfileComponent},
     {path:'editprofile' , component:DoctorEditProfileComponent},
     {path:'appointment' , component:DoctorAppiontmentComponent},
@@ -81,9 +86,9 @@ export const routes: Routes = [
   // {path:'admin/addSpecialties',component:AddSpecialtiesComponent},
   // {path:'admin/specialty/edit/:id',component:AddSpecialtiesComponent} ,
   // {path:'admin/feadback',component:FeedbacksComponent},
- 
+  {path:'login',component:AdminLoginComponent},
     {path:'admin',component:AdminDashboardComponent,children:[
-      {path:'login',component:AdminLoginComponent},
+    // {path:'login',component:AdminLoginComponent},
       {path:'changepassword',component:ChangePasswordComponent,canActivate:[AuthGuard]},
       {path:'addDoctor',component:AddDoctorComponent,canActivate:[AuthGuard]},
 
@@ -97,6 +102,7 @@ export const routes: Routes = [
     {path:'feadback/report/:id',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},
+  
   {path:'paymentForm/:countryCode/:sessionId', component:PaymentFormComponent},
   {path:'**',component:NotFoundComponent}
 

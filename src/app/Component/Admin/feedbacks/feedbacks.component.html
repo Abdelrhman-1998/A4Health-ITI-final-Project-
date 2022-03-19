@@ -1,4 +1,12 @@
-<div class="container-fluid">
+<div id="wrapper" class="d-flex ">
+
+  <app-admin-side-nav></app-admin-side-nav>
+  <div id="content-wrapper" class="w-100">
+     
+  <div id="content">
+  <app-admin-navbar class="w-100 fixed-top"></app-admin-navbar>
+
+  <div class="container-fluid">
 
     <div *ngIf="message" class="my-3 alert alert-success d-flex align-items-center" role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
@@ -38,7 +46,7 @@
                         <!-- | filter:searchResult -->
                         <!-- | filter:searchResultn -->
                        
-                        <tr  *ngFor="let review of reviews | paginate: { itemsPerPage: count, currentPage: p } | filter:searchResultn|filterWithId :feedback_id; index as i">
+                        <tr  *ngFor="let review of reviews | paginate: { itemsPerPage: count, currentPage: p } | filter:searchResultn|filterWithId:feedback_id; index as i">
                           
                             <td>{{review.id}}</td>
                             <td >{{review.patient}}</td>
@@ -93,4 +101,7 @@
         </div>
     </div>
 
+</div>
+  </div>
+  </div>
 </div>

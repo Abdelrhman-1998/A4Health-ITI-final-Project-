@@ -79,7 +79,7 @@ export class AddDoctorComponent implements OnInit {
     console.log(this.doctor);
     this.doctorSrvice.addDoctor(formData).subscribe((res) => {
       this.error = res;
-      // console.log(this.error.errors);
+      console.log(this.error.errors);
       if(this.error.errors.username){
           this.message=this.error.errors.username
       }else{

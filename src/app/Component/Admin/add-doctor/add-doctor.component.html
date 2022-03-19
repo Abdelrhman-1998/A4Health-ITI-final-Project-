@@ -1,264 +1,275 @@
-<div class="container-fluid mt-4">
+<div id="wrapper" class="d-flex ">
 
-  <div *ngIf="message" class="my-3 alert alert-warning d-flex align-items-center" role="alert">
-    <svg class="bi flex-shrink-0 me-2" width="24" height="30" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-    <div class="fw-bold fs-4">
-     {{message}}
-    </div>
-  </div>        
+  <app-admin-side-nav></app-admin-side-nav>
+  <div id="content-wrapper" class="w-100">
+     
+  <div id="content">
+  <app-admin-navbar class="w-100 fixed-top"></app-admin-navbar>
 
-  <!-- Page Heading -->
-  <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
-  <!-- DataTales Example -->
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">
-        Add New Doctor
-      </h6>
-    </div>
+  <div class="container-fluid mt-4">
 
+    <div *ngIf="message" class="my-3 alert alert-warning d-flex align-items-center" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="30" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+      <div class="fw-bold fs-4">
+       {{message}}
+      </div>
+    </div>        
   
-    <div
-      class="card-body container-fluid d-flex justify-content-center bg-light"
-    >
-
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Doctors</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+      <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+          Add New Doctor
+        </h6>
+      </div>
+  
     
-      <form  action="" method="" class="w-75" [formGroup]="AddDoctor" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
-
-
-        <div class="mb-3">
-          <label for="username" class="form-label"
-            >UserName:</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="username"
-            name="username"
-            ngModel
-            formControlName="username"
-          />
-          <div class="alert alert-danger" 
-            *ngIf="AddDoctor.get('username')?.errors && AddDoctor.get('username')?.touched">
-                <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['required']">Username is required</p>
-                <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['minlength']">Username min length is 4</p>
-            </div>
-        </div>
-        <div class="mb-3">
-          <label for="fname" class="form-label"
-            >First Name:</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="fname"
-            name="fname"
-            ngModel
-            formControlName="fname"
-          />
-          <div class="alert alert-danger" 
-          *ngIf="AddDoctor.get('fname')?.errors && AddDoctor.get('fname')?.touched">
-              <p class="m-0" *ngIf="AddDoctor.get('fname')?.errors?.['required']">First Name is required</p>
-              <p class="m-0" *ngIf="AddDoctor.get('fname')?.errors?.['minlength']">First Name min length is 4</p>
-          </div> 
-        </div>
-        <div class="mb-3">
-          <label for="lname" class="form-label"
-            >Last Name:</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="lname"
-            name="lname"
-            ngModel
-            formControlName="lname"
-          />
-          <div class="alert alert-danger" 
-          *ngIf="AddDoctor.get('lname')?.errors && AddDoctor.get('lname')?.touched">
-              <p class="m-0" *ngIf="AddDoctor.get('lname')?.errors?.['required']">Last Name is required</p>
-              <p class="m-0" *ngIf="AddDoctor.get('lname')?.errors?.['minlength']">Last Name min length is 4</p>
-          </div> 
-        </div>
-        <div class="mb-3">
-          <label for="city" class="form-label"
-            >City:</label
-          >
-          <select  ngModel formControlName="city" name="city" id="city" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-
-            <option *ngFor="let city of city_" [value]="city">{{city}}</option>
-        </select>
-          <div class="alert alert-danger" 
-          *ngIf="AddDoctor.get('city')?.errors && AddDoctor.get('city')?.touched">
-              <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['required']">City is required</p>
-              <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['minlength']">City min length is 4</p>
-              <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['maxlength']">City max length is 15</p>
-          </div>  
-        </div>
-        <div class="mb-3">
-          <label for="lname" class="form-label"
-            >Street:</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="Street"
-            name="street"
-            ngModel
-            formControlName="street"
-          />
-          <div class="alert alert-danger" 
-          *ngIf="AddDoctor.get('street')?.errors && AddDoctor.get('street')?.touched">
-              <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['required']">Street is required</p>
-              <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['minlength']">Street min length is 3</p>
-              <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['maxLength']">Street max length is 20</p>
-          </div> 
-        </div>
-        <div class="mb-3">
-          <label for="lname" class="form-label"
-            >Fees:</label
-          >
-          <input
-            type="number"
-            class="form-control"
-            id="Fees"
-            name="fees"
-            ngModel
-            formControlName="fees"
-          />
-          <div class="alert alert-danger" 
-          *ngIf="AddDoctor.get('fees')?.errors && AddDoctor.get('fees')?.touched">
-              <p class="m-0" *ngIf="AddDoctor.get('fees')?.errors?.['required']">fees is required</p>
-              <p class="m-0" *ngIf="AddDoctor.get('fees')?.errors?.['minlength']">fees min length is 1</p>
+      <div
+        class="card-body container-fluid d-flex justify-content-center bg-light"
+      >
+  
+      
+        <form  action="" method="" class="w-75" [formGroup]="AddDoctor" #addDoctor="ngForm" (submit)="sendDataOfDoctor(addDoctor.value)">
+  
+  
+          <div class="mb-3">
+            <label for="username" class="form-label"
+              >UserName:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              name="username"
+              ngModel
+              formControlName="username"
+            />
+            <div class="alert alert-danger" 
+              *ngIf="AddDoctor.get('username')?.errors && AddDoctor.get('username')?.touched">
+                  <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['required']">Username is required</p>
+                  <p class="m-0" *ngIf="AddDoctor.get('username')?.errors?.['minlength']">Username min length is 4</p>
+              </div>
           </div>
-        </div>
-        <div class="mb-3">
-          <label for="lname" class="form-label"
-            >Photo:</label
-          >
-          <input
-            type="file"
-            class="form-control"
-          
-            name="img_name"
-            ngModel
-            formControlName="img_name"
-            (change)="upLoadImg($event)"
-          />
-          <div class="alert alert-danger" 
-          *ngIf="AddDoctor.get('img_name')?.errors && AddDoctor.get('img_name')?.touched">
-              <p class="m-0" *ngIf="AddDoctor.get('img_name')?.errors?.['img_name']">Images is required</p>
+          <div class="mb-3">
+            <label for="fname" class="form-label"
+              >First Name:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="fname"
+              name="fname"
+              ngModel
+              formControlName="fname"
+            />
+            <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('fname')?.errors && AddDoctor.get('fname')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('fname')?.errors?.['required']">First Name is required</p>
+                <p class="m-0" *ngIf="AddDoctor.get('fname')?.errors?.['minlength']">First Name min length is 4</p>
+            </div> 
           </div>
-        </div>
-        <div class="mb-3">
-          <label>Gender:</label>
-        </div>
-        <div class="mb-3">
-
-
-          <input type="radio" name="gender" id="male" value="Male" ngModel formControlName="gender"/>
-          <label for="male"> Male </label>
-        </div>
-        <div class="mb-3">
-          <input type="radio" name="gender" id="female" value="Female" ngModel formControlName="gender" />
-
-          <label for="female"> Female </label>
-        </div>
-        <div class="alert alert-danger" role="alert" *ngIf="gender && gender.invalid && gender.touched">
-          <span>
-            gender input filed is not valid
-          </span>
-
-      </div> 
-        <div class="mb-3">
-          <div class="wrapper">
-            <label for="title" >Choose Title</label>
-            <select  ngModel formControlName="title" name="title" id="title" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-
-              <option value="professor">Professors</option>
-              <option value="lecturer">Lecturer</option>
-              <option value="consultant">Consultant</option>
-              <option value="specialist">Specialist</option>
-
+          <div class="mb-3">
+            <label for="lname" class="form-label"
+              >Last Name:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="lname"
+              name="lname"
+              ngModel
+              formControlName="lname"
+            />
+            <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('lname')?.errors && AddDoctor.get('lname')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('lname')?.errors?.['required']">Last Name is required</p>
+                <p class="m-0" *ngIf="AddDoctor.get('lname')?.errors?.['minlength']">Last Name min length is 4</p>
+            </div> 
+          </div>
+          <div class="mb-3">
+            <label for="city" class="form-label"
+              >City:</label
+            >
+            <select  ngModel formControlName="city" name="city" id="city" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+  
+              <option *ngFor="let city of city_" [value]="city">{{city}}</option>
           </select>
-      </div>
-      <div class="alert alert-danger" 
-      *ngIf="AddDoctor.get('title')?.errors && AddDoctor.get('title')?.touched">
-          <p class="m-0" *ngIf="AddDoctor.get('title')?.errors?.['required']">title is required</p>
-      </div>
-        </div>
-        <div class="mb-3">
-          <div >       
-            <label for="specialization" >Choose specialization</label>
-            <select  ngModel formControlName="specialization_id" name="specialization_id" id="specialization" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
-        
-                <option  *ngFor="let special of specialty" [value]="special.id" >{{special.name}}</option>
-                
-        </select>
+            <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('city')?.errors && AddDoctor.get('city')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['required']">City is required</p>
+                <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['minlength']">City min length is 4</p>
+                <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['maxlength']">City max length is 15</p>
+            </div>  
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label"
+              >Street:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="Street"
+              name="street"
+              ngModel
+              formControlName="street"
+            />
+            <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('street')?.errors && AddDoctor.get('street')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['required']">Street is required</p>
+                <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['minlength']">Street min length is 3</p>
+                <p class="m-0" *ngIf="AddDoctor.get('street')?.errors?.['maxLength']">Street max length is 20</p>
+            </div> 
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label"
+              >Fees:</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="Fees"
+              name="fees"
+              ngModel
+              formControlName="fees"
+            />
+            <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('fees')?.errors && AddDoctor.get('fees')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('fees')?.errors?.['required']">fees is required</p>
+                <p class="m-0" *ngIf="AddDoctor.get('fees')?.errors?.['minlength']">fees min length is 1</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label"
+              >Photo:</label
+            >
+            <input
+              type="file"
+              class="form-control"
+            
+              name="img_name"
+              ngModel
+              formControlName="img_name"
+              (change)="upLoadImg($event)"
+            />
+            <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('img_name')?.errors && AddDoctor.get('img_name')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('img_name')?.errors?.['img_name']">Images is required</p>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label>Gender:</label>
+          </div>
+          <div class="mb-3">
+  
+  
+            <input type="radio" name="gender" id="male" value="Male" ngModel formControlName="gender"/>
+            <label for="male"> Male </label>
+          </div>
+          <div class="mb-3">
+            <input type="radio" name="gender" id="female" value="Female" ngModel formControlName="gender" />
+  
+            <label for="female"> Female </label>
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="gender && gender.invalid && gender.touched">
+            <span>
+              gender input filed is not valid
+            </span>
+  
+        </div> 
+          <div class="mb-3">
+            <div class="wrapper">
+              <label for="title" >Choose Title</label>
+              <select  ngModel formControlName="title" name="title" id="title" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+  
+                <option value="professor">Professors</option>
+                <option value="lecturer">Lecturer</option>
+                <option value="consultant">Consultant</option>
+                <option value="specialist">Specialist</option>
+  
+            </select>
         </div>
         <div class="alert alert-danger" 
-        *ngIf="AddDoctor.get('specialization_id')?.errors && AddDoctor.get('specialization_id')?.touched">
-            <p class="m-0" *ngIf="AddDoctor.get('specialization_id')?.errors?.['required']">specialization is required</p>
+        *ngIf="AddDoctor.get('title')?.errors && AddDoctor.get('title')?.touched">
+            <p class="m-0" *ngIf="AddDoctor.get('title')?.errors?.['required']">title is required</p>
         </div>
-        </div>
-        <div class="mb-3">
-          <div >       
-            <label for="specialization" >Description</label>
-            <input
-            type="text"
-            class="form-control"
-            id="description"
-            name="description"
-            ngModel
-            formControlName="description"
-          />
-          <div class="alert alert-danger" 
-          *ngIf="AddDoctor.get('description')?.errors && AddDoctor.get('description')?.touched">
-              <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['required']">fees is required</p>
-              <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['minlength']">fees min length is 15</p>
-              <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['maxlength']">fees max length is 50</p>
           </div>
-        </div>
-
-        </div>
           <div class="mb-3">
-          <label for="phone" class="form-label"
-            >Phone Number:</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputEmail1"
-            name="phone"
-            ngModel
-            formControlName="phone"
-          />
+            <div >       
+              <label for="specialization" >Choose specialization</label>
+              <select  ngModel formControlName="specialization_id" name="specialization_id" id="specialization" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+          
+                  <option  *ngFor="let special of specialty" [value]="special.id" >{{special.name}}</option>
+                  
+          </select>
+          </div>
           <div class="alert alert-danger" 
-          *ngIf="AddDoctor.get('phone')?.errors && AddDoctor.get('phone')?.touched">
-              <p class="m-0" *ngIf="AddDoctor.get('phone')?.errors?.['required']">phone is required</p>
+          *ngIf="AddDoctor.get('specialization_id')?.errors && AddDoctor.get('specialization_id')?.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('specialization_id')?.errors?.['required']">specialization is required</p>
+          </div>
+          </div>
+          <div class="mb-3">
+            <div >       
+              <label for="specialization" >Description</label>
+              <input
+              type="text"
+              class="form-control"
+              id="description"
+              name="description"
+              ngModel
+              formControlName="description"
+            />
+            <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('description')?.errors && AddDoctor.get('description')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['required']">fees is required</p>
+                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['minlength']">fees min length is 15</p>
+                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['maxlength']">fees max length is 50</p>
+            </div>
+          </div>
+  
+          </div>
+            <div class="mb-3">
+            <label for="phone" class="form-label"
+              >Phone Number:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="exampleInputEmail1"
+              name="phone"
+              ngModel
+              formControlName="phone"
+            />
+            <div class="alert alert-danger" 
+            *ngIf="AddDoctor.get('phone')?.errors && AddDoctor.get('phone')?.touched">
+                <p class="m-0" *ngIf="AddDoctor.get('phone')?.errors?.['required']">phone is required</p>
+            </div> 
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              ngModel
+              formControlName="password"
+            />
+            <div class="alert alert-danger" role="alert" *ngIf="password && password.invalid && password.touched">
+              <p class="m-0" *ngIf="AddDoctor.get('password')?.errors?.['required']">password is required</p>
+  
           </div> 
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label"
-            >Password</label
-          >
-          <input
-            type="password"
-            class="form-control"
-            id="password"
-            name="password"
-            ngModel
-            formControlName="password"
-          />
-          <div class="alert alert-danger" role="alert" *ngIf="password && password.invalid && password.touched">
-            <p class="m-0" *ngIf="AddDoctor.get('password')?.errors?.['required']">password is required</p>
-
-        </div> 
-        </div>
-
-        <button [disabled]="AddDoctor.invalid" type="submit" class="btn btn-primary">Add</button>
-
-      </form>
+          </div>
+  
+          <button [disabled]="AddDoctor.invalid" type="submit" class="btn btn-primary">Add</button>
+  
+        </form>
+      </div>
     </div>
+  </div>
+  </div>
   </div>
 </div>

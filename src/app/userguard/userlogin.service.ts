@@ -39,6 +39,7 @@ export class UserloginService {
     localStorage.removeItem('id');*/
     this.gtoken.thetoken =null ;
     this.gtoken.theid =null ;
+    localStorage.removeItem('type');
 
 
     this.isLoggedSub.next(false)
