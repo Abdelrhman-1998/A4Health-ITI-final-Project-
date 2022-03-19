@@ -1,6 +1,6 @@
 <div class="container-fluid mt-4">
 
-  <div *ngIf="message" class="my-3 alert alert-dander d-flex align-items-center" role="alert">
+  <div *ngIf="message" class="my-3 alert alert-warning d-flex align-items-center" role="alert">
     <svg class="bi flex-shrink-0 me-2" width="24" height="30" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
     <div class="fw-bold fs-4">
      {{message}}
@@ -81,17 +81,13 @@
           </div> 
         </div>
         <div class="mb-3">
-          <label for="lname" class="form-label"
+          <label for="city" class="form-label"
             >City:</label
           >
-          <input
-            type="text"
-            class="form-control"
-            id="city"
-            name="city"
-            ngModel
-            formControlName="city"
-          />
+          <select  ngModel formControlName="city" name="city" id="city" class="form-control" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+
+            <option *ngFor="let city of city_" [value]="city">{{city}}</option>
+        </select>
           <div class="alert alert-danger" 
           *ngIf="AddDoctor.get('city')?.errors && AddDoctor.get('city')?.touched">
               <p class="m-0" *ngIf="AddDoctor.get('city')?.errors?.['required']">City is required</p>

@@ -21,7 +21,7 @@ export class AddSpecialtiesComponent implements OnInit {
   id!:number
   name!:string
   updateSpecialty!: Specialty;
-
+  // city:any
   constructor(
     private specialtiesService: SpecialtiesService,
     private activatedRoute: ActivatedRoute,

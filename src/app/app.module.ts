@@ -71,6 +71,7 @@ import { ChangePasswordComponent } from './Component/Admin/change-password/chang
 import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
 import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
 import { MainpulateTimesPipe } from './Pipes/mainpulate-times.pipe';
+import { FilterWithIdPipe } from './filter-with-id.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,7 +121,8 @@ import { MainpulateTimesPipe } from './Pipes/mainpulate-times.pipe';
     ChangePasswordComponent,
      DoctorpasswordComponent,
      DoctorOffersComponent,
-     MainpulateTimesPipe
+     MainpulateTimesPipe,
+     FilterWithIdPipe
 
   ],
   imports: [

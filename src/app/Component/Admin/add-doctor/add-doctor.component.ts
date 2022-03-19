@@ -13,6 +13,7 @@ import { AdminSideNavComponent } from '../admin-side-nav/admin-side-nav.componen
   styleUrls: ['./add-doctor.component.css'],
 })
 export class AddDoctorComponent implements OnInit {
+  
   doctor!: any;
   addnew!: Doctor;
   phonePattern = '(01)[0-9]{9}';
@@ -25,6 +26,10 @@ export class AddDoctorComponent implements OnInit {
     private specialtyService: SpecialtiesService,
     private router: Router
   ) {}
+  city_=["Alexandria","Aswan","Asyut","Beheira","Beni Suef","Cairo","Dakahlia",
+"Damietta","Faiyum","Gharbia","Giza","Ismailia","Kafr El Sheikh","Luxor","Matruh","Minya","Monufia","New Valley",
+"North Sinai","Port Said","Qalyubia","Qena","Red Sea","Sharqia","Sohag","South Sinai","Suez"
+];
   // validation
   AddDoctor = new FormGroup({
     username:new FormControl(null, [Validators.required , Validators.minLength(4)]),
@@ -74,6 +79,13 @@ export class AddDoctorComponent implements OnInit {
     console.log(this.doctor);
     this.doctorSrvice.addDoctor(formData).subscribe((res) => {
       this.error = res;
+      // console.log(this.error.errors);
+      if(this.error.errors.username){
+          this.message=this.error.errors.username
+      }else{
+        this.message='Added succesfully'
+      }
+    
       // if (this.error.errors) {
       //   this.message = this.error.errors.username;
       //   console.log(this.message);
@@ -82,12 +94,14 @@ export class AddDoctorComponent implements OnInit {
       //   this.router.navigate(['/admin/doctor']);
       // }
     },(error)=>{
-      this.message=error.message
-    },()=>{
-      this.message='Added succesfully'
-      this.router.navigate(['/admin/doctor']);
+      this.message=error
+    },
+    // ()=>{
+    //   this.message='Added succesfully'
+    //   // this.router.navigate(['/admin/doctor']);
       
-    });
+    // }
+    );
   }
   
 

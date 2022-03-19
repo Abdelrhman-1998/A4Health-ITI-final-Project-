@@ -94,6 +94,7 @@ export const routes: Routes = [
 
     {path:'specialty/edit/:id/:name',component:AddSpecialtiesComponent,canActivate:[AuthGuard]} ,
     {path:'feadback',component:FeedbacksComponent,canActivate:[AuthGuard]},
+    {path:'feadback/report/:id',component:FeedbacksComponent,canActivate:[AuthGuard]},
    
   ]},
   {path:'paymentForm/:countryCode/:sessionId', component:PaymentFormComponent},
