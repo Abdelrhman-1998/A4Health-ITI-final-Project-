@@ -19,7 +19,7 @@ export class AdminNavbarComponent implements OnInit {
   logOut(){
 
     if(this.isSuccessful!=this.logOutservices.isUserlogged){
-      this.router.navigate(['admin/login']);
+      this.router.navigate(['/login']);
     }
     this.logOutservices.logout().subscribe(
     )

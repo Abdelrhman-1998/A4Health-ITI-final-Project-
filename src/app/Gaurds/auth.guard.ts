@@ -30,7 +30,7 @@ export class AuthGuard implements CanActivate {
       alert('You Must LogIn First !')
 
 
-      this.router.navigate(['/admin/login'])
+      this.router.navigate(['/login'])
       return false
     }
       
