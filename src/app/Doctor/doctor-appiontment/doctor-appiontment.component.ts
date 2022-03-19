@@ -12,8 +12,11 @@ export class DoctorAppiontmentComponent implements OnInit {
   doctorAppiontmets:any[]=[]
   index!: number;
   edited!: any;
-
+  adderror!: any;
+  keys:any[]=[]
+  errorss:any[]=[]
   deleted!: any;
+  addsuccess!: any;
 
   constructor(private _Doctorservic:DoctorserviceService) { }
   addAppiontment:FormGroup = new FormGroup({
@@ -34,7 +37,7 @@ export class DoctorAppiontmentComponent implements OnInit {
     start_date:new FormControl(null , [Validators.required] ),
     end_date:new FormControl(null , ),
     start_time:new FormControl(null, [Validators.required]),
-    patient_limit:new FormControl(null, [Validators.required]),
+    patient_limit:new FormControl(null,),
     examination_time:new FormControl(null,),
     doctor_id:new FormControl(localStorage.getItem("id"), [Validators.required]),
   });
@@ -60,7 +63,7 @@ export class DoctorAppiontmentComponent implements OnInit {
   }*/
   addAppiontmets(appiontment:any)
   {
-    console.log(appiontment);
+    console.log(appiontment.errors);
     //this.doctorAppiontmets.push(appiontment);
     this._Doctorservic.Addappiontment(appiontment).subscribe((response)=>{
       //this.doctorAppiontmets = response;
@@ -71,11 +74,30 @@ export class DoctorAppiontmentComponent implements OnInit {
   }
   addGroupAppiontmets(appiontments:any)
   {
+    this.adderror=null;
+    this.addsuccess=null;
     //console.log(appiontments);
     //this.doctorAppiontmets.push(appiontment);
     this._Doctorservic.Addappiontment(appiontments).subscribe((response)=>{
       //this.doctorAppiontmets = response;
           console.log(response);
+          if(response.errors)
+          {
+            this.adderror=response.errors;
+            for (const property in response.errors) {
+              //console.log(`${property}: ${response.errors[property]}`)
+              this.keys.push(property);
+              this.keys.push(response.errors[property]);
+              //console.log(this.keys);
+            }
+          }
+          else
+          {
+            this.addsuccess=response;
+          }
+
+
+ 
      
       this.ngOnInit();
     });

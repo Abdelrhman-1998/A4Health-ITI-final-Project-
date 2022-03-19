@@ -61,6 +61,12 @@
             <br>
             <button (click)="addGroupAppiontmets(addGroupAppiontment.value)" [disabled]="addGroupAppiontment.invalid" type="submit"
             class="btn btn-primary ">Add New Appointments</button>
+            <div *ngIf="adderror" class="alert alert-danger my-4">
+                <p *ngFor="let key of keys">{{key}}</p>
+            </div>
+            <div *ngIf="addsuccess" class="alert alert-success my-4">
+                <p >Added Successfully</p>
+            </div>
         </div>
 
 

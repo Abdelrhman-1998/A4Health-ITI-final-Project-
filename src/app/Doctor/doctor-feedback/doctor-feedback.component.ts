@@ -12,10 +12,18 @@ export class DoctorFeedbackComponent implements OnInit {
   feedback:any[]=[];
   index!: number;
   success!: any;
+  start:number []=[];
   ngOnInit(): void {
     this._Doctorservic.getDoctorFeedback().subscribe((response)=>{
       this.feedback = response;
+      console.log(response.length)
+     for(let i = 0 ; i<response.length ; i++)
+      {
+        /*console.log("dasadsdassdaasddas")
+        this.start.push(Number(this.feedback[i].rate));*/
+      }
       console.log(response);
+      //this.start = Array(response).fill(4);
     });
   }
   getindexToReport(feedback:any)
@@ -31,4 +39,10 @@ export class DoctorFeedbackComponent implements OnInit {
      this.success = response.response
     });
   }
+  numSequence(n: number){
+    return new Array(n);
+  }
+  counter(i: number) {
+    return new Array(i);
+}
 }
