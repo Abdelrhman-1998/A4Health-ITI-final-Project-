@@ -92,7 +92,7 @@ constructor(private route: ActivatedRoute,private httpClient:HttpClient,private 
     // check response of session url
   }
 
-  submit(){
+  submit1(){
 
     let header =this.header;
     let patient_id=this.patient_id;
@@ -100,6 +100,8 @@ constructor(private route: ActivatedRoute,private httpClient:HttpClient,private 
     let httpClient=this.httpClient;
     let observable:any;
     console.log("dds");
+    console.log( myFatoorah);
+    console.log(myFatoorah.submit());
     myFatoorah.submit()
     .then(function (response:any) {
       // console.log("dds");
