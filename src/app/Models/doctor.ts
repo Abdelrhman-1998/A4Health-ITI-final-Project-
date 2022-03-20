@@ -9,7 +9,7 @@ export interface Doctor{
     city:string;
     street:string;
     gender:string;
-    image_name?:string;
+    img_name:string;
     offers?:boolean;
     appointment:[{"id":number,"start_time":string,"date":string,"patient_limit":number,"examination_time":number,"doctor_id":number,"reserved_times":[""]}];
     // appointments:[{"Date":string,"Time":[]}];

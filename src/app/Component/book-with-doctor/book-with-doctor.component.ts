@@ -15,6 +15,7 @@ import { MainpulateTimesPipe } from 'src/app/Pipes/mainpulate-times.pipe';
   styleUrls: ["./book-with-doctor.component.css"],
 })
 export class BookWithDoctorComponent implements OnInit {
+  appointment:any;
   show: boolean = false;
   showAllReviews: boolean = false;
   // cardDoctorId: number = 2;
@@ -31,7 +32,8 @@ export class BookWithDoctorComponent implements OnInit {
   description:any="";
   city:any="";
   street:any="";
-  appointment:any;
+  offers:any;
+
   full_name:any;
   doctor_reviews:any;
   overAllRating!:Review[];
@@ -41,6 +43,8 @@ export class BookWithDoctorComponent implements OnInit {
   submmitedForm!:{}
   appointment_id!:number;
   appointment_previous_element!:any;
+  confirmOption:any;
+  choosenBookingOption:any;
   // rateNumber:number=0
   // reviewwithRateNumber!:Review
  
@@ -61,6 +65,13 @@ export class BookWithDoctorComponent implements OnInit {
     let doctor_id= this.activatedRoute.snapshot.params['id'];
     console.log(this.doctor_id);
     this.doctor_id=doctor_id;
+    this.doctorData.getDoctorInfo(doctor_id).subscribe(res=>{
+      let appointments:any= res;
+      this.appointment=appointments.appointment;
+      
+    },err=>{
+
+    })
    this.doctorData.getDoctorInfo(doctor_id).subscribe(res=>{
       this.doctor_data=res;
       let data:any = res;
@@ -68,23 +79,20 @@ export class BookWithDoctorComponent implements OnInit {
       this.fname=data.fname;
       this.lname=data.lname;
       this.title=data.title;
+      this.offers=data.offers;
       this.specilaization=data.specialization;
       this.fees=data.fees;
       this.city=data.city;
       this.street=data.street;
-      this.appointment=data.appointment;
-      console.log(this.appointment);
       this.description=data.description;
-      this.image_url=data.image;
+      this.image_url=data.img_name;
       console.log(this.image_url);
-      let fname=data.fname;
-      let lname=data.lname;
-      let fullname=fname+" "+lname;
-      this.full_name=fullname;
+
       this.doctor_id=data.id;
     },err=>{
       console.log(err)
-    })
+    });
+
     this.doctorData.getDoctorReviews(doctor_id).subscribe(res=>{
       this.doctor_reviews=res;
       console.log(res);
@@ -168,7 +176,45 @@ export class BookWithDoctorComponent implements OnInit {
 //   printValues(x:any){
 //     console.log(x.value);
 // }
+goToTop(x:any){
+  x.scrollTop=0;
+}
+//------------------
+submitAppointment(x:any,y:any,z:any,appointment_id:number){
+console.log(this.confirm_condition);
+// check authentication status
+if(this.confirm_condition){
+  x.value.date=y.value;
+  this.choosenBookingOption=x.value.appointment;
+  console.log(x.value.appointment);
+  console.log(x.value);
+  this.submmitedForm=x;
+  $("#Appointments").modal('hide');
+  $("#confirm_appointment").modal('show');
+  this.appointment_id=appointment_id;
+ 
+}
+else{
+  $("#Appointments").modal('hide');
+}
+}
+checkScroll(x:any,y:any){
+if(x.scrollTop==0){
+  y.style="display:none";
+}
+else{
+ y.style="display:block";
+}
 
+}
+disableAllbuttons(x:any){
+if(this.appointment_previous_element){
+  this.appointment_previous_element.disabled=true;
+}
+  x.disabled=false;
+  this.appointment_previous_element=x;
+}
+//-------
   
  
 

@@ -13,6 +13,7 @@ import { AdminSideNavComponent } from '../admin-side-nav/admin-side-nav.componen
   styleUrls: ['./add-doctor.component.css'],
 })
 export class AddDoctorComponent implements OnInit {
+  
   doctor!: any;
   addnew!: Doctor;
   phonePattern = '(01)[0-9]{9}';
@@ -25,51 +26,25 @@ export class AddDoctorComponent implements OnInit {
     private specialtyService: SpecialtiesService,
     private router: Router
   ) {}
+  city_=["Alexandria","Aswan","Asyut","Beheira","Beni Suef","Cairo","Dakahlia",
+"Damietta","Faiyum","Gharbia","Giza","Ismailia","Kafr El Sheikh","Luxor","Matruh","Minya","Monufia","New Valley",
+"North Sinai","Port Said","Qalyubia","Qena","Red Sea","Sharqia","Sohag","South Sinai","Suez"
+];
   // validation
   AddDoctor = new FormGroup({
-    username: new FormControl('', [
-      Validators.required,
-      Validators.minLength(4),
-
-    ]),
-    fname: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    lname: new FormControl('', [Validators.required, Validators.minLength(4)]),
-    city: new FormControl('', [
-      Validators.required,
-      Validators.minLength(4),
-      Validators.maxLength(15),
-
-    ]),
-    gender: new FormControl('', [Validators.required]),
-    title: new FormControl('', [Validators.required]),
-    specialization_id: new FormControl('', [Validators.required]),
-    phone: new FormControl('', [
-      Validators.required,
-      Validators.pattern(this.phonePattern),
-    ]),
-    description: new FormControl(
-      Validators.required,
-      Validators.minLength(15)
-      //  Validators.maxLength(50)
-    ),
-    password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(8),
-
-      // Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
-      // At least 8 characters in length
-      // Lowercase letters
-      // Uppercase letters
-      // Numbers
-      // Special characters
-    ]),
-    street: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(20),
-    ]),
-    fees: new FormControl('', [Validators.required, Validators.minLength(1)]),
-    img_name: new FormControl('', [Validators.required]),
+    username:new FormControl(null, [Validators.required , Validators.minLength(4)]),
+    fname: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+    lname: new FormControl(null, [Validators.required, Validators.minLength(4)]),
+    city: new FormControl(null, [Validators.required,Validators.minLength(4),Validators.maxLength(15),]),
+    gender: new FormControl(null, [Validators.required]),
+    title: new FormControl(null, [Validators.required]),
+    specialization_id: new FormControl(null, [Validators.required]),
+    phone: new FormControl(null, [Validators.required,Validators.pattern(this.phonePattern),]),
+    description: new FormControl(null,[Validators.required,Validators.minLength(15),Validators.maxLength(50)]),
+    password: new FormControl(null, [Validators.required,Validators.minLength(8),]),
+    street: new FormControl(null, [Validators.required,Validators.minLength(3),Validators.maxLength(20),]),
+    fees: new FormControl(null, [Validators.required, Validators.minLength(1)]),
+    img_name: new FormControl(null, [Validators.required]),
   });
   ngOnInit(): void {
     this.getAllSpecialties();
@@ -104,6 +79,13 @@ export class AddDoctorComponent implements OnInit {
     console.log(this.doctor);
     this.doctorSrvice.addDoctor(formData).subscribe((res) => {
       this.error = res;
+      console.log(this.error.errors);
+      if(this.error.errors.username){
+          this.message=this.error.errors.username
+      }else{
+        this.message='Added succesfully'
+      }
+    
       // if (this.error.errors) {
       //   this.message = this.error.errors.username;
       //   console.log(this.message);
@@ -112,12 +94,14 @@ export class AddDoctorComponent implements OnInit {
       //   this.router.navigate(['/admin/doctor']);
       // }
     },(error)=>{
-      this.message=error.message
-    },()=>{
-      this.message='Added succesfully'
-      this.router.navigate(['/admin/doctor']);
+      this.message=error
+    },
+    // ()=>{
+    //   this.message='Added succesfully'
+    //   // this.router.navigate(['/admin/doctor']);
       
-    });
+    // }
+    );
   }
   
 

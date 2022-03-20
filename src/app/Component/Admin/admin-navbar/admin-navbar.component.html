@@ -10,7 +10,57 @@
                 
 
       <!-- Nav Item - Messages -->
+      <li class="nav-item dropdown no-arrow mx-1">
 
+        <a   class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bell fa-fw"></i>
+            <!-- Counter - Alerts -->
+            <span  class="badge badge-danger badge-counter">{{noti.length}}</span>
+        </a>
+        <!-- Dropdown - Alerts -->
+        <div  class="w-100 notifications dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+            aria-labelledby="alertsDropdown"> 
+            <h6 class="dropdown-header">
+                New Notification
+             </h6>
+             <div  >
+           
+                <div *ngFor="let notification of noti ; index as i" class="m-3"> 
+                    <p class="m-2">
+                        <i class="fa-solid fa-triangle-exclamation text-danger"></i>
+                       <span class="text-gray-600">
+                         Doctor: {{notification.data.doctor_name}}
+                       </span>
+                    </p>
+                    <p class="m-2">
+                       <span  class="text-gray-600" >
+                         <span class="text-danger"> Report this patient :</span> {{notification.data.patient_name}}
+                         </span>
+                    </p>
+                    <p class="m-2">
+                        <span  class="text-gray-600"  >
+                          check feedback message
+                        </span>
+                        <span  class="text-danger" >
+                           <a [routerLink]="['/admin/feadback/report/',notification.data.feedback_id]">from here</a>
+                        </span>
+                    </p>
+                    <hr class="sidebar-divider my-0">
+                   <!-- <a *ngIf="not.type=='Feedback time'"  [routerLink]="['feedback/',not.doctorId]"
+                   > feedback here </a> 
+                   <a  *ngIf="not.type=='Cancel Appointment'" [routerLink]="['reservations/']"
+                   > check your reservations</a>  -->
+               </div>
+               </div>
+            <!-- <div *ngFor="let not of finalNot">
+                <p class="m-3"> 
+                    <i class="fa-solid fa-arrow-up-right-from-square text-danger"></i>
+                    check your Reservation updating
+                     <a routerLink="/userdashboard/reservations"> here</a> </p>
+            </div> -->
+        </div>
+    </li>
       <div class="topbar-divider d-none d-sm-block"></div>
       <!-- Nav Item - User Information -->
       <li class="nav-item dropdown no-arrow">

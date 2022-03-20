@@ -12,8 +12,7 @@ export class PatientsService {
 
   constructor(private httpClient: HttpClient) { }
   getAllPatients():Observable<Patient[]>{
-   let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
-
+    let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
     return this.httpClient.get<Patient[]>(`${environment.ApiUrl}/dashboard/patients`,{headers:header})
   }
   // getPatientByID(patient_id:number):Observable<Patient>{

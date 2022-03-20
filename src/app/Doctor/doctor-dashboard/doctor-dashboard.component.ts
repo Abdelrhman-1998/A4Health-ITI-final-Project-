@@ -17,6 +17,8 @@ export class DoctorDashboardComponent implements OnInit {
 ) { }
   notification:any[]=[]
   type:any
+  doctorData:any;
+
 
   ngOnInit(): void {
     this._Doctorservic.getNotifications().subscribe((response)=>{
@@ -24,12 +26,16 @@ export class DoctorDashboardComponent implements OnInit {
       this.notification = response;
       console.log(this.notification);
     });
+    this._Doctorservic.getDoctorProfile().subscribe((response)=>{
+      this.doctorData = response;
+      console.log(response);
+      console.log(this.doctorData);
+    });
   }
   logout()
   {
     this._logoutservice.logout()
     this.router.navigate(['signin']);
-
    
   }
 

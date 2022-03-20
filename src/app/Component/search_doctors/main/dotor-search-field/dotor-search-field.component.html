@@ -51,7 +51,7 @@
                       </p>
                 </div>
                     <select  #city size="4" name='city' class=" dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2" ngModel>
-                        <option #city_option (click)="choose_city.innerText=city_option.value"  *ngFor="let item of City_options_arr" value="{{item}}"  >
+                        <option #city_option (click)="choose_city.innerText=city_option.value"  *ngFor="let item of City_options_arr" value="{{item}}"  (click)="getAreaByCity(item)" >
                             {{item}}
                           </option>
                       </select>
@@ -190,7 +190,7 @@
                             </div>
                         </div>
                             <select  size="4" name='city' class="w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2" ngModel>
-                                <option  #city_option_modal (click)="choose_city_modal.innerText=city_option_modal.value" *ngFor="let item of City_options_arr" value="{{item}}"  >
+                                <option  #city_option_modal  (click)="choose_city_modal.innerText=city_option_modal.value" *ngFor="let item of City_options_arr" (click)="getAreaByCity(item)" value="{{item}}"  >
                                   {{item}}
                                 </option>
                                 <!-- <option value="Assiut" >

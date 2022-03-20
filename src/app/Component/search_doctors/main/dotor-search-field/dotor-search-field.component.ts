@@ -14,6 +14,7 @@ export class DotorSearchFieldComponent implements OnInit{
 
   offers_options_arr!:any;
   Area_options_arr!:any;
+  all_streets:any;
   City_options_arr!:any;
   Specialization_options_arr!:any;
   test_array!:Doctor[];
@@ -21,6 +22,7 @@ export class DotorSearchFieldComponent implements OnInit{
   data_arrived:boolean=false;
   specializtion_name!:string;
   specializtion_name1!:string;
+  all_data:any;
   resetSpans(x1:any,x3:any,x4:any){
       x1.innerText='Choose specialty';
       x3.innerText='Choose Area';
@@ -82,10 +84,13 @@ export class DotorSearchFieldComponent implements OnInit{
 
   constructor(private Doctor_Service:DoctorService , private route :ActivatedRoute) {
 
-    this.Area_options_arr=["50 vic","20 flem","30 roshdy","70 gin","60 vic"];
-    this.City_options_arr=["Alexandria","Cairo","Aswan","Giza"];
+
+    this.City_options_arr=["Alexandria","Aswan","Asyut","Beheira","Beni Suef","Cairo","Dakahlia",
+    "Damietta","Faiyum","Gharbia","Giza","Ismailia","Kafr El Sheikh","Luxor","Matruh","Minya","Monufia","New Valley",
+    "North Sinai","Port Said","Qalyubia","Qena","Red Sea","Sharqia","Sohag","South Sinai","Suez"
+  ];
     this.Specialization_options_arr;
-    // this.offers_options_arr=["offer1","offer2"];
+
 
     this.Doctor_Service.getDataFromApi().subscribe(res=>{
           this.test_array=res as any;
@@ -96,9 +101,35 @@ export class DotorSearchFieldComponent implements OnInit{
     
 }
 
-
+  getAreaByCity(x:any){
+    let filtered_data= this.all_data.filter(function(ele:any){
+        return ele.city==x
+    })
+    console.log(filtered_data);
+    let avaliable_streets:any=[];
+    filtered_data.forEach(function(ele:any){
+      avaliable_streets.push(ele.street);
+    })
+    
+    this.Area_options_arr=avaliable_streets;
+    console.log(this.Area_options_arr);
+  }
 
   ngOnInit(): void {
+    this.Doctor_Service.getDataFromApi().subscribe(res=>{
+      let Data:any=res;
+      let streets:any=[];
+      this.all_data=Data;
+      Data.forEach(function(ele:any){
+         if(!streets.includes(ele)) {
+           streets.push(ele.street);
+         }           
+      })
+      this.Area_options_arr=streets;
+    },err=>{
+
+    })
+
     this.Doctor_Service.getSpecializations().subscribe(res =>{
       console.log(res);
       let specialization_names:any=[];

@@ -9,6 +9,7 @@ import { PatientsService } from 'src/app/Services/patients.service';
   styleUrls: ['./patient.component.css']
 })
 export class PatientComponent implements OnInit {
+  patientId:any;
   patients:Patient[]=[]
   status=''
   p: number = 1;
@@ -18,9 +19,15 @@ export class PatientComponent implements OnInit {
     private router:Router
     ) { }
 
+    getPatientId(x:any){
+      this.patientId=x;
+      console.log(x);
+    }
+
   ngOnInit(): void {
     this.getAllPatients()
   }
+
   getAllPatients(){
     this.patientService.getAllPatients().subscribe(
       (patient)=>{
@@ -31,15 +38,16 @@ export class PatientComponent implements OnInit {
     )
   }
   delete(id:number){
+    console.log(id);
     this.patientService.deletePatientByID(id).subscribe(() => {
       this.status = 'Delete successful'
       this.ngOnInit();
       this.router.navigate(['/admin/patient'])
 
   })
-    // window.location.reload();
-    // setTimeout(()=>{
+    window.location.reload();
+    setTimeout(()=>{
 
-    // },2000)
+    },2000)
     }
 }

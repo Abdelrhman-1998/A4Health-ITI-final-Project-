@@ -16,7 +16,8 @@ export class GlobaltokenService {
   itemValue = new BehaviorSubject(this.thetoken);
   idValue = new BehaviorSubject(this.theid);
   usernameValue=  new BehaviorSubject(this.theUsername);
-
+  user_typeValue =  new BehaviorSubject(this.theUserType);
+  
   setReservation(value:any){
     this.reservationID=value;
   }
@@ -47,6 +48,15 @@ export class GlobaltokenService {
   set theUsername(value:any){
         this.usernameValue.next(value);
         localStorage.setItem('username',value);
+  }
+
+  set theUserType(value:any){
+    this.user_typeValue.next(value);
+    localStorage.setItem('type',value);
+  }
+
+  get theUserType(){
+    return localStorage.getItem('type');
   }
 
   get thetoken() {

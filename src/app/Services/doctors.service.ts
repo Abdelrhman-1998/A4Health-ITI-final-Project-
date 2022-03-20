@@ -11,7 +11,7 @@ export class DoctorsService {
   header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
   constructor(private httpClient: HttpClient) {}
   getAllDoctors(): Observable<Doctor[]> {
-   let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+    let header = new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
     return this.httpClient.get<Doctor[]>(`${environment.ApiUrl}/dashboard/doctors`,{headers:header});
   }
   getDoctorWithID(doctorId: number): Observable<Doctor> {
@@ -25,11 +25,12 @@ export class DoctorsService {
     );
   }
   addDoctor(newDoctor: any): Observable<Doctor> {
-  let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
     const headers = { "content-type": "application/json" };
     const body = JSON.stringify(newDoctor);
+    let header = new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+
     return this.httpClient.post<Doctor>(`${environment.ApiUrl}/dashboard/doctors`, newDoctor, {
-      headers:header});
+      headers: header});
   }
   updateDoctor(doctorId: number, updateDoctor: Doctor): Observable<Doctor> {
     const body = JSON.stringify(updateDoctor);
@@ -39,8 +40,10 @@ export class DoctorsService {
     );
   }
   deleteDoctor(doctorId: number): Observable<Doctor> {
-    let header =new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+    let header = new HttpHeaders().set("Authorization",localStorage.getItem('AuthorizationA')!);
+
     return this.httpClient.delete<Doctor>(
       `${environment.ApiUrl}/dashboard/doctors/${doctorId}`,{headers:header});
   }
+ 
 }

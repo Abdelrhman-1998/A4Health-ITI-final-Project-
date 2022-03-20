@@ -30,10 +30,11 @@ export class DoctorService {
       return this.httpClient.get(url);
     }
     postAppointmetApi(patient_id:number,appiontment:{}){
-      console.log(this.header);
+      // console.log(this.header);
+      let header= new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
       let url="https://a4-health.herokuapp.com/api/patients/"+patient_id+"/reservations";
       console.log(url);
-      return this.httpClient.post(url,appiontment,{'headers':this.header});
+      return this.httpClient.post(url,appiontment,{'headers':header});
 
     }
     getSpecializations(){
@@ -84,11 +85,8 @@ export class DoctorService {
 
   filterBySpecilaization(specilaization:"string",all_data:Doctor[]){
     let filterd_data=all_data.filter(ele => {
-      // console.log(ele.specialization.trim());
-      // console.log(specilaization.trim());
-      return ele.specialization.trim().toLowerCase() == specilaization.trim().toLowerCase();
+      return ele.specialization.toLowerCase().trim()== specilaization.toLowerCase().trim();
     });
-    console.log(filterd_data);
     return filterd_data;
   }
 

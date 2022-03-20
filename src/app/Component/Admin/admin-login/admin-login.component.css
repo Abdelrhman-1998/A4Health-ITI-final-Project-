@@ -1,6 +1,5 @@
 
 .login{
-    position: absolute;
-    top: 22%;
-    left: 18%;
+    height: 80vh;
+    background-color: aliceblue;
  }

@@ -173,6 +173,9 @@
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       <input (click)="changeStatus(patientStatus.value)" type="submit" value="Save changes" class="btn btn-primary">
    </div>
+   <div *ngIf="changed" class="alert alert-success" role="alert">
+    Status Changed Successfully
+  </div>
 </div>
 </form>
 </div>

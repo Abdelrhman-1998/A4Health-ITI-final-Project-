@@ -23,7 +23,6 @@ export class SearchResultsComponent implements OnInit {
   top_arrow!:boolean;//appointment
   submmitedForm!:{}
   appointment_id!:number;
- 
   appointment_previous_element!:any;
   choosenBookingOption:any;
   confirmOption:any;

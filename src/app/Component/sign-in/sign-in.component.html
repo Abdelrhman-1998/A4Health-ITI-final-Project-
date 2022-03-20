@@ -1,11 +1,11 @@
-<div class=" my-3 sideMargin w-75 mx-auto">
-    <div class="aaaa bg-white pb-4">
+<div class=" my-3 sideMargin w-75 mx-auto h d-flex align-items-center">
+    <div class="aaaa bg-white pb-4 w-100">
         <h4 class="bg-primary rounded-top text-white text-center py-2 ">Log in</h4>
         <form [formGroup]="loginForm">
         <div class="text-primary px-4">
             <div class="form-floating my-3 text-center">
-                <input #username formControlName="username" name="username" type="text" class="form-control " id="floatingUsername" 
-                    placeholder="name@example.com" >
+                <input formControlName="username" name="username" type="text" class="form-control " id="floatingUsername" 
+                    placeholder="name@example.com">
                 <label for="floatingUsername">Username</label>
             </div>
             <div class="alert alert-danger" 
@@ -23,10 +23,13 @@
                 <p class="m-0" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</p>
                 <p class="m-0" *ngIf="loginForm.get('password')?.errors?.['minlength']">Password min length is 4</p>
             </div>
-            <button (click)="submitLogIn(loginForm.value)" [disabled]="loginForm.invalid"  type="submit" class="btn btn-danger">Save</button>
+            <button (click)="submitLogIn(loginForm.value)" [disabled]="loginForm.invalid"  type="submit" class="btn btn-primary">Save</button>
             <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
         </div>
     </form>
+    <div *ngIf="sign"  class="alert alert-danger my-3" role="alert">
+        Username or Password isn't Correct
+    </div>
     </div>
 </div>
 <!-- Error massage -->

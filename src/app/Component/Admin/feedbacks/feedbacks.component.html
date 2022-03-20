@@ -1,4 +1,12 @@
-<div class="container-fluid">
+<div id="wrapper" class="d-flex ">
+
+  <app-admin-side-nav></app-admin-side-nav>
+  <div id="content-wrapper" class="w-100">
+     
+  <div id="content">
+  <app-admin-navbar class="w-100 fixed-top"></app-admin-navbar>
+
+  <div class="container-fluid">
 
     <div *ngIf="message" class="my-3 alert alert-success d-flex align-items-center" role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
@@ -34,27 +42,57 @@
                             
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngIf="show">
                         <!-- | filter:searchResult -->
                         <!-- | filter:searchResultn -->
-                        <tr  *ngFor="let review of reviews | paginate: { itemsPerPage: count, currentPage: p } | filter:searchResultn; index as i">
-                        
+                       
+                        <tr  *ngFor="let review of reviews | paginate: { itemsPerPage: count, currentPage: p } | filter:searchResultn|filterWithId:feedback_id; index as i">
+                          
                             <td>{{review.id}}</td>
                             <td >{{review.patient}}</td>
                             <td class="w-50">{{review.message}}</td>
                             <td><span>Dr.</span> {{review.doctor}}</td>
                             <!-- <td>{{review.doctor_id}}</td> -->
-                            <td><i *ngFor="let star of counter(rate)"  class="fa-solid fa-star text-warning"></i>
+                            <td><i *ngFor="let star of counter(review.rate)"  class="fa-solid fa-star text-warning"></i>
 
                             </td>
                             <td class="text-center"><button class="btn btn-danger w-100"
-                                (click)="delete(review.id)"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                (click)="getReviewId(review.id)"
                                 >Delete</button></td>
-
+        
+                                  
                         </tr>
-                        
+                        <div class="modal" id="myModal">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <!-- Modal Header -->
+                              <div class="modal-header">
+                                <h4 class="modal-title">DELETE FeedBack!</h4>
+                              </div>
+          
+                              <!-- Modal body -->
+                              <div class="modal-body">Are you sure you want to delete ?</div>
+          
+                              <!-- Modal footer -->
+                              <div class="modal-footer">
+                                <button
+                                  type="button"
+                                  class="btn btn-danger"
+                                 
+                                  (click)="delete(reviewId)"
+                                >
+                                  Confirm
+                                </button>
+                                <button type="button" class="close btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                   
                     </tbody>
+                    
                 </table>
             </div>
             <div class="text-right">
@@ -64,4 +102,7 @@
         </div>
     </div>
 
+</div>
+  </div>
+  </div>
 </div>

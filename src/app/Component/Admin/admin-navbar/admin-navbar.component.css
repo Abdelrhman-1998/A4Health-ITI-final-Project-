@@ -1,1 +1,5 @@
 @import url('../../../../assets/css/style.css');
+.notifications{
+    height: 50vh !important;
+    overflow: auto !important;
+}

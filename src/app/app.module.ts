@@ -71,7 +71,7 @@ import { ChangePasswordComponent } from './Component/Admin/change-password/chang
 import { DoctorpasswordComponent } from './Doctor/doctorpassword/doctorpassword.component';
 import { DoctorOffersComponent } from './Doctor/doctor-offers/doctor-offers.component';
 import { MainpulateTimesPipe } from './Pipes/mainpulate-times.pipe';
-import ls from 'localstorage-slim';
+import { FilterWithIdPipe } from './filter-with-id.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,7 +121,8 @@ import ls from 'localstorage-slim';
     ChangePasswordComponent,
      DoctorpasswordComponent,
      DoctorOffersComponent,
-     MainpulateTimesPipe
+     MainpulateTimesPipe,
+     FilterWithIdPipe
 
   ],
   imports: [

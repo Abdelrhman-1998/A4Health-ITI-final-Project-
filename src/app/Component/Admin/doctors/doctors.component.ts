@@ -15,12 +15,16 @@ doctor:Doctor[]=[];
 p: number = 1;
 count: number = 5;
 message!:string
-checkstatus!:any
+checkstatus!:any;
+docId:any;
+confirm:boolean=false
   constructor(
     private doctorService:DoctorsService,
     private router:Router
     ) { }
-
+  getDocId(x:any){
+    this.docId=x;
+  }
   ngOnInit(): void {
     this.getAllDoctors()
   }
@@ -43,18 +47,19 @@ checkstatus!:any
    
  }
  delete(id:number){
+   console.log(id);
    this.doctorService.deleteDoctor(id).subscribe(
      (res) => {
       
        this.status = 'Delete successful'
        this.ngOnInit();
-      
+      this.confirm=true
       },() => this.message='Delete successful',
       console.error
      
      
      )
-    //  this.ngOnInit()
+     this.ngOnInit()
    
 
    }

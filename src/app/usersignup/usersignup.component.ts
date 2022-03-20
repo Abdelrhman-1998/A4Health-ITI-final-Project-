@@ -108,17 +108,18 @@ export class UsersignupComponent implements OnInit {
 
     window.addEventListener("beforeunload",  (e) =>{
 
-      this.signUpServices.delete(this.userId).subscribe(
-        (res)=>{
-          console.log(res);
-        }
-      )
+      // this.signUpServices.delete(this.userId).subscribe(
+      //   (res)=>{
+      //     console.log(res);
+      //   }
+      // )
       localStorage.removeItem('userId')
 
     window.addEventListener("beforeunload", function (e) {
 
       var confirmationMessage = 'It looks like you have been editing something. '
                               + 'If you leave before saving, your changes will be lost.';
+  console.log(confirmationMessage);
   
       (e || window.event).returnValue = confirmationMessage; //Gecko + IE
       return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.

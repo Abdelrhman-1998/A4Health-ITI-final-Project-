@@ -13,7 +13,7 @@ export class MainpulateTimesPipe implements PipeTransform {
       let examination_time=_examination_time;
     
       let starting_time:any=_start_time;
-      console.log(starting_time);
+      // console.log(starting_time);
       starting_time=starting_time.split(":");
       starting_time=starting_time.slice(0,2);
       let time:any=starting_time;
@@ -64,8 +64,8 @@ export class MainpulateTimesPipe implements PipeTransform {
           // create rest of timea
           if(time_minutes+examination_time<60){
                       time_minutes=time_minutes+examination_time;
-                      console.log(time_minutes);
-                      console.log("hour:", time_hours_12);
+                      // console.log(time_minutes);
+                      // console.log("hour:", time_hours_12);
             
           }
           else{
@@ -78,8 +78,8 @@ export class MainpulateTimesPipe implements PipeTransform {
               if( time_hours_12>12){
                   time_hours_12= time_hours_12-12;
               }
-              console.log(time_minutes);
-              console.log("hour:", time_hours_12);
+              // console.log(time_minutes);
+              // console.log("hour:", time_hours_12);
           }
           // add prefix
           if(time_hours_24>=12 && time_hours_24<=23){
@@ -142,68 +142,75 @@ export class MainpulateTimesPipe implements PipeTransform {
         return time;
       }
     // let Date=value.Date;
-  let results:any=[];
+    let results:any=[];
 
-  console.log(value);
-  value.forEach(function(ele){
+    // console.log(value);
     console.log(value);
+    // let Output:any=[];
+
+        value.forEach(function(ele:any)
+
+        {
+          // console.log(value);
+          
+          let object={"Date":'',"Time":[""],"id":0};
+          object.id=ele.id;
+          object.Date=ele.date;
+          let reserved_data:any=ele.reserved_times;
     
-    let object={"Date":'',"Time":[""],"id":0};
-    object.id=ele.id;
-    object.Date=ele.date;
-    let reserved_data:any=ele.reserved_times;
-
-   reserved_data= reserved_data.map(function(ele:any){
-         
-            return ele.slice(0,5);
-   })
-    console.log(ele.date);
-    reserved_data=reserved_data.map(function(ele:any){
-          if(ele[0]=="0"){
-            return ele.slice(1);
-          }
-          else{
-            return ele
-          }
-    })
-    console.log(reserved_data);
-
-    // all dates without filtering
-
-    object.Time=transformTimes(ele.patient_limit,ele.examination_time,ele.start_time);
-
-    // get dates in 24 hours 
-
-    let all_data_24=transform_24(object.Time);
-    console.log(reserved_data);
-    // filter reserved data 
-    let filtered_data:any=[];
-
-    all_data_24.forEach(function(ele1:any){
-        let flag=true;
-      reserved_data.forEach(function(ele2:any){
-                if(ele1.trim() == ele2.trim()){
-                    flag=false
+          reserved_data= reserved_data.map(function(ele:any){
+              
+                  return ele.slice(0,5);
+          })
+          // console.log(ele.date);
+          reserved_data=reserved_data.map(function(ele:any){
+                if(ele[0]=="0"){
+                  return ele.slice(1);
+                }
+                else{
+                  return ele
                 }
           })
-        if(flag){
-          filtered_data.push(ele1);
-        }
-    })
-
-    console.log(filtered_data);
-    console.log(transform_12(filtered_data));
-
-    object.Time=transform_12(filtered_data);
-    // check if any dates are reserved 
-
-
-    results.push(object);
-  })
+        //   // console.log(reserved_data);
+    
+        //   // all dates without filtering
+    
+          object.Time=transformTimes(ele.patient_limit,ele.examination_time,ele.start_time);
+    
+        //   // get dates in 24 hours 
+    
+          let all_data_24=transform_24(object.Time);
+          // // console.log(reserved_data);
+          // // filter reserved data 
+          let filtered_data:any=[];
+    
+          all_data_24.forEach(function(ele1:any){
+              let flag=true;
+            reserved_data.forEach(function(ele2:any){
+                      if(ele1.trim() == ele2.trim()){
+                          flag=false
+                      }
+                })
+              if(flag){
+                filtered_data.push(ele1);
+              }
+          })
+    
+        //   // console.log(filtered_data);
+        //   // console.log(transform_12(filtered_data));
+    
+          object.Time=transform_12(filtered_data);
+        //   // check if any dates are reserved 
+    
+    
+          results.push(object);
+        });
+    
+      
 
 
  
-      console.log(results);
+    //   console.log(results);
       return results
 
   }

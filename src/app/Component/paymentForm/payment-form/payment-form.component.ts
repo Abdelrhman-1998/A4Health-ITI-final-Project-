@@ -24,7 +24,7 @@ export class PaymentFormComponent implements OnInit {
 
     // countryCode:"KWT", // Here, add your Country Code.
     // sessionId:"74cc99f8-65a2-ec11-bafa-000d3aaca798", // Here you add the "SessionId" you receive from InitiateSession Endpoint.
-    cardViewId: "card-element",
+    cardViewId:"card-element",
     // The following style is optional.
     style: {
       direction: "ltr",
@@ -93,14 +93,16 @@ constructor(private route: ActivatedRoute,private httpClient:HttpClient,private 
   }
 
   submit(){
+
     let header =this.header;
     let patient_id=this.patient_id;
     let reservation_id=this.payment.getReservation();
     let httpClient=this.httpClient;
     let observable:any;
+    console.log("dds");
     myFatoorah.submit()
-    // On success
     .then(function (response:any) {
+      // console.log("dds");
       var sessionId = response.SessionId;
       console.log(reservation_id)   
       var url = "https://a4-health.herokuapp.com/api/patients/"+patient_id+"/reservations/"+reservation_id+"/pay/now/"+sessionId;
