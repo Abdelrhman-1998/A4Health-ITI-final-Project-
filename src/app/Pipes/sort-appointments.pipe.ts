@@ -16,11 +16,11 @@ export class SortAppointmentsPipe implements PipeTransform {
 
 
         appointments.forEach(function(ele){
-        //  let date = new Date(ele["Date"]);
-        //  let date_string=date.toDateString().split(" ").slice(0,4).join("");
-        //  if(date > today ||  date_string==today_string){
+         let date = new Date(ele["Date"]);
+         let date_string=date.toDateString().split(" ").slice(0,4).join("");
+         if(date > today ||  date_string==today_string){
             dates_old.push(( (ele["Date"])));
-        //  }
+         }
             
         });
         function dateComparison(a:Date, b:Date) {
