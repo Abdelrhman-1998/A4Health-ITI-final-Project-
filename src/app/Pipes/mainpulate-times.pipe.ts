@@ -156,8 +156,7 @@ export class MainpulateTimesPipe implements PipeTransform {
           let object={"Date":'',"Time":[""],"id":0};
           object.id=ele.id;
           object.Date=ele.date;
-          let reserved_data:any=ele.reserved_times;
-    
+          let reserved_data:any=ele.reserved_times ;
           reserved_data= reserved_data.map(function(ele:any){
               
                   return ele.slice(0,5);
@@ -186,7 +185,7 @@ export class MainpulateTimesPipe implements PipeTransform {
     
           all_data_24.forEach(function(ele1:any){
               let flag=true;
-            reserved_data.forEach(function(ele2:any){
+              reserved_data.forEach(function(ele2:any){
                       if(ele1.trim() == ele2.trim()){
                           flag=false
                       }

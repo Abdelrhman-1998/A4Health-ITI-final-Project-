@@ -305,7 +305,7 @@
                                     View offers
                                 </a>
                         </button>
-                        <button *ngIf="item.appointment.length" class=" btn btn-danger d-lg-none showButtonOver" data-bs-toggle="modal" data-bs-target="#Appointments">Book</button>
+                        <button *ngIf="item.appointment.length" class=" btn btn-danger d-lg-none showButtonOver" (click)="store(item.appointment)" data-bs-toggle="modal" data-bs-target="#Appointments"  >Book</button>
                         <div *ngIf="!item.appointment.length" class="text-center bg-danger text-white notAvaliable d-block d-lg-none">
                             Not Avaliable
                         </div>
@@ -324,7 +324,7 @@
                                     <div class="card-body position-relative" >
                                         <input #date type="hidden" name="date" value={{appointment_item.Date}} >
                                          <select #selectList class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectList,Arrow)" (click)="disableAllbuttons(bookingButton)">
-                                        <option #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1" [ngClass]="confirmOption==item?'d-none':''" >
+                                        <option #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1" [ngClass]="confirmOption==item && confirmDate==appointment_item.Date ?'d-none':''" >
                                          {{item}}
                                         </option>
                                         </select>
@@ -343,58 +343,57 @@
                             Not Avaliable
                         </div>
             </div> 
+        </div>
+        <div class="modal fade" id="Appointments" tabindex="-1" aria-labelledby="AppointmentsLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header ">
+                  <h5 class="modal-title text-primary" id="AppointmentsLabel">Make An Appointment</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" >
+                          <div class="carousel-item"  *ngFor="let appointment_item of modal_appointment; let i=index" [ngClass]="i==0?'active':''" >
+                            <form #AppointmentFormModal="ngForm"   class="card text-center slide">
+                                <div class=" card-header bg-primary text-white">
+                                 {{appointment_item.Date | appointmentPipe}}
+                                </div>
+                                <div class="card-body position-relative" >
+                                    <input #dateModal type="hidden" name="date" value={{appointment_item.Date}}>
+                                     <select #selectListModal class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
+                                    <option [ngClass]="confirmOption==item && confirmDate==appointment_item.Date ?'d-none':''"  #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1">
+                                        {{item}}
+                                    </option>
+                                    </select>
+                                </div>
+                                 <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)="submitAppointment(AppointmentFormModal,dateModal ,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]" >
+                                    <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
+                                        <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
+                                    </div>
+                                   
+                                    Book
+                      
+                                 </button>
 
-            <div class="modal  fade" id="Appointments" tabindex="-1" aria-labelledby="AppointmentsLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header ">
-                      <h5 class="modal-title text-primary" id="AppointmentsLabel">Make An Appointment</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner" >
-                              <div class="carousel-item"  *ngFor="let appointment_item of item.appointment | mainpulateTimes | sortAppointments;let i=index" [ngClass]="i==0?'active':''" >
-                                <form #AppointmentFormModal="ngForm"   class="card text-center slide">
-                                    <div class=" card-header bg-primary text-white">
-                                     {{appointment_item.Date | appointmentPipe}}
-                                    </div>
-                                    <div class="card-body position-relative" >
-                                        <input #dateModal type="hidden" name="date" value={{appointment_item.Date}}>
-                                         <select #selectListModal class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
-                                        <option [ngClass]="confirmOption==item?'d-none':''"  #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1">
-                                            {{item}}
-                                        </option>
-                                        </select>
-                                    </div>
-                                     <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)="submitAppointment(AppointmentFormModal,dateModal ,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]" >
-                                        <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
-                                            <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
-                                        </div>
-                                       
-                                        Book
-                          
-                                     </button>
-    
-                                </form>
-                              </div>
-                              
-                            </div>
-                            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <i class="fa-solid fa-angle-left carousel-control-prev-icon text-primary fs-2"></i>
-                              <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <i class="fa-solid fa-angle-right carousel-control-next-icon text-primary fs-2"></i>
-                              <span class="visually-hidden">Previous</span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
+                            </form>
+                          </div> 
+            
                         </div>
-    
+                        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                            <i class="fa-solid fa-angle-left carousel-control-prev-icon text-primary fs-2"></i>
+                          <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                            <i class="fa-solid fa-angle-right carousel-control-next-icon text-primary fs-2"></i>
+                          <span class="visually-hidden">Previous</span>
+                          <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-                    </div>
-                  </div>
-            </div>
+
+                </div>
+                </div>
+              </div>
         </div>
         <div class="text-right d-flex justify-content-center">
             <pagination-controls (pageChange)="p = $event">

@@ -9,6 +9,7 @@ import { AppModule } from 'src/app/app.module';
 import { ActivatedRoute } from "@angular/router";
 import { GlobaltokenService } from 'src/app/gt/globaltoken.service';
 import { MainpulateTimesPipe } from 'src/app/Pipes/mainpulate-times.pipe';
+import { SortAppointmentsPipe } from 'src/app/Pipes/sort-appointments.pipe';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -26,9 +27,12 @@ export class SearchResultsComponent implements OnInit {
   appointment_previous_element!:any;
   choosenBookingOption:any;
   confirmOption:any;
-
-
-
+  confirmDate:any;
+  choosenDate:any;
+  modal_appointment:any;
+  // storeAppointment(x:any){
+  //   this.appointments=x;
+  // } 
 
   constructor(private Doctor_service:DoctorService ,   private route: ActivatedRoute,private patient:GlobaltokenService) { 
  
@@ -40,7 +44,7 @@ export class SearchResultsComponent implements OnInit {
   printValues(x:any){
       console.log(x.value);
   }
- 
+
   // pagination
 
   p: any = 1;
@@ -53,6 +57,13 @@ export class SearchResultsComponent implements OnInit {
   goToTop(x:any){
       x.scrollTop=0;
   }
+  store(x:any){
+    const pipe1= new MainpulateTimesPipe();
+    const pipe2 = new SortAppointmentsPipe();
+    this.modal_appointment=x;
+    this.modal_appointment=pipe1.transform(this.modal_appointment);
+    this.modal_appointment=pipe2.transform(this.modal_appointment)
+  }
   //------------------
   submitAppointment(x:any,y:any,z:any,appointment_id:number){
     console.log(this.confirm_condition);
@@ -60,6 +71,7 @@ export class SearchResultsComponent implements OnInit {
     if(this.confirm_condition){
       x.value.date=y.value;
       this.choosenBookingOption=x.value.appointment;
+      this.choosenDate=x.value.date;
       console.log(x.value.appointment);
       console.log(x.value);
       this.submmitedForm=x;
@@ -125,6 +137,9 @@ naivgateToReservation(x:any){
     console.log(appointment_object);
     console.log(res);
     this.confirmOption=this.choosenBookingOption;
+    this.confirmDate=this.choosenDate;
+    console.log(this.confirmDate)
+
     console.log(this.confirmOption);
   },err=>{
     console.log(err);

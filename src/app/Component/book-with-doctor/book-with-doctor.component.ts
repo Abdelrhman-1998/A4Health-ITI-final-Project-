@@ -9,6 +9,7 @@ import { ReviewsService } from "../../../app/Services/reviews.service";
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { GlobaltokenService } from "src/app/gt/globaltoken.service";
 import { MainpulateTimesPipe } from 'src/app/Pipes/mainpulate-times.pipe';
+import { SortAppointmentsPipe } from "src/app/Pipes/sort-appointments.pipe";
 @Component({
   selector: "app-book-with-doctor",
   templateUrl: "./book-with-doctor.component.html",
@@ -44,6 +45,8 @@ export class BookWithDoctorComponent implements OnInit {
   appointment_id!:number;
   appointment_previous_element!:any;
   confirmOption:any;
+  confirmDate:any;
+  choosenDate:any;
   choosenBookingOption:any;
   // rateNumber:number=0
   // reviewwithRateNumber!:Review
@@ -62,6 +65,23 @@ export class BookWithDoctorComponent implements OnInit {
   ngOnInit(): void {
     // this.getDoctorByID();
     // this.getOverAllRating();
+    this.globalService.itemValue.subscribe(res=>{
+      console.log(res);
+ 
+      if(res =="null" || res=="" || res==null){
+          this.confirm_condition=false;
+      }
+      else{
+          this.confirm_condition=true;
+      }
+     
+    },
+      err=>{
+        console.log(err);
+     
+         
+      });
+
     let doctor_id= this.activatedRoute.snapshot.params['id'];
     console.log(this.doctor_id);
     this.doctor_id=doctor_id;
@@ -80,6 +100,7 @@ export class BookWithDoctorComponent implements OnInit {
       this.lname=data.lname;
       this.title=data.title;
       this.offers=data.offers;
+      this.appointment= data.appointment;
       this.specilaization=data.specialization;
       this.fees=data.fees;
       this.city=data.city;
@@ -87,8 +108,13 @@ export class BookWithDoctorComponent implements OnInit {
       this.description=data.description;
       this.image_url=data.img_name;
       console.log(this.image_url);
-
-      this.doctor_id=data.id;
+      const pipe1= new MainpulateTimesPipe ();
+      const pipe2= new SortAppointmentsPipe();
+      this.appointment= pipe1.transform(this.appointment);
+      this.appointment=pipe2.transform(this.appointment);
+      console.log(this.appointment);
+      // this.appointment=pipe2.transform(this.appointment);
+      // this.doctor_id=data.id;
     },err=>{
       console.log(err)
     });
@@ -112,70 +138,12 @@ export class BookWithDoctorComponent implements OnInit {
   counter(i: number) {
     return new Array(i);
   }
-  navigateTosearchPage(){
-      this.globalService.setDoctorFullName(this.full_name);
-      console.log(this.full_name);
-      this.route.navigate(['/Search',this.doctor_id]);
-  }
-  // getDoctorByID() {
-  //   this.doctorService.getDoctorWithID(this.cardDoctorId).subscribe(
-  //     (doctor) => {
-  //       this.doctor = doctor;
-  //     },
-  //     (err) => console.log("HTTP Error", err),
-  //     () => console.log("HTTP request completed.")
-  //   );
-  // }
-  // getOverAllRating() {
-  //   this.reviewsService.getReviewByDoctorID(this.cardDoctorId).subscribe(
-  //     (review) => {
-  //      let total=0
-  //       review.forEach((revRate)=>{
-  //         total += revRate.rate
-  //         this.totalRate =total/ review.length;
-          
-          
-  //       })
-  //       if(total% review.length ===1){
-  //           this.halfstar=true;            
-  //           this.stars.length=(this.totalRate )
-  //         }else{
-  //           this.stars.length=(this.totalRate )
-  //         }
-  //       this.overAllRating=review;
-
-  //     }
-  //   );
+  // navigateTosearchPage(){
+  //     this.globalService.setDoctorFullName(this.full_name);
+  //     console.log(this.full_name);
+  //     this.route.navigate(['/Search',this.doctor_id]);
   // }
 
-  // customOptions: OwlOptions = {
-  //   loop: true,
-  //   mouseDrag: true,
-  //   touchDrag: true,
-  //   pullDrag: false,
-  //   dots: false,
-  //   navSpeed: 600,
-  //   navText: ['&#8249', '&#8250;'],
-  //   responsive: {
-  //     0: {
-  //       items: 1 
-  //     },
-  //     300: {
-  //       items: 2
-  //     },
-  //     760: {
-  //       items: 3
-  //     },
-  //     1000: {
-  //       items: 4
-  //     }
-  //   },
-  //   nav: true
-  // }
-
-//   printValues(x:any){
-//     console.log(x.value);
-// }
 goToTop(x:any){
   x.scrollTop=0;
 }
@@ -185,17 +153,18 @@ console.log(this.confirm_condition);
 // check authentication status
 if(this.confirm_condition){
   x.value.date=y.value;
-  this.choosenBookingOption=x.value.appointment;
-  console.log(x.value.appointment);
+  this.choosenBookingOption=x.value.appointment_modal;
+  this.choosenDate=x.value.date;
+  console.log(x.value.appointment_modal);
   console.log(x.value);
   this.submmitedForm=x;
-  $("#Appointments").modal('hide');
-  $("#confirm_appointment").modal('show');
+  $("#Appointment_booking").modal('hide');
+  $("#confirm_appointment2").modal('show');
   this.appointment_id=appointment_id;
  
 }
 else{
-  $("#Appointments").modal('hide');
+  $("#Appointment_booking").modal('hide');
 }
 }
 checkScroll(x:any,y:any){
@@ -214,82 +183,46 @@ if(this.appointment_previous_element){
   x.disabled=false;
   this.appointment_previous_element=x;
 }
-//-------
-  
- 
 
-  // disableAllbuttons(x:any){
-  //   if(this.appointment_previous_element){
-  //     this.appointment_previous_element.disabled=true;
-  //   }
-  //     x.disabled=false;
-  //     this.appointment_previous_element=x;
-  //  }
+  naivgateToReservation(x:any){
+    console.log(x.value);
+    let time_array = x.value.appointment_modal.split(" ");
+    let time_prefix = time_array[1];
+    let time=time_array[0].split(":");
+    let patient_time;
+    if(time_prefix.trim()=="PM"){
+          let value= +time[0]+12;
+          patient_time=value+":"+time[1];
+    }
+    else{
+      patient_time=time[0]+":"+time[1]
+    }
+  
+  
+    let patient_id:any;
+    this.globalService.idValue.subscribe(res=>{
+      console.log(res);
+      patient_id=res;
+    },err=>{
+      console.log(err);
+    })
+    let appointment_id=this.appointment_id;
+    console.log(appointment_id);
+    let appointment_object={"appointment_id":appointment_id,"patient_time":patient_time,"patient_id":patient_id};
+    console.log(appointment_object);
+  
+    console.log(this.confirm_condition);
+  
+    this.Doctor_service.postAppointmetApi(patient_id,appointment_object).subscribe(res=>{
+      console.log(appointment_object);
+      console.log(res);
+      this.confirmOption=this.choosenBookingOption;
+      this.confirmDate=this.choosenDate;
+      console.log(this.confirmOption);
+    },err=>{
+      console.log(err);
+    })
+  }
+  
 
-  // checkScroll(x:any,y:any){
-  //   if(x.scrollTop==0){
-  //     y.style="display:none";
-  //   }
-  //   else{
-  //    y.style="display:block";
-  //   }
- 
-  //  }
-  // goToTop(x:any){
-  //   x.scrollTop=0;
-  // }
-
-  // submitAppointment(x:any,y:any,z:any,appointment_id:number){
-  //   console.log(this.confirm_condition);
-  //   // check authentication status
-  //   if(this.confirm_condition){
-  //     x.value.date=y.value;
-  //     console.log(x.value);
-  //     this.submmitedForm=x;
-  //     $("#Appointments").modal('hide');
-  //     $("#confirm_appointment").modal('show');
-  //     this.appointment_id=appointment_id;
-     
-  //   }
-  //   else{
-  //     $("#Appointments").modal('hide');
-  //   }
-  // }
-
-  // naivgateToReservation(x:any){
-  //   console.log(x.value);
-  //   let time_array = x.value.appointment.split(" ");
-  //   let time_prefix = time_array[1];
-  //   let time=time_array[0].split(":");
-  //   let patient_time;
-  //   if(time_prefix.trim()=="PM"){
-  //         let value= +time[0]+12;
-  //         patient_time=value+":"+time[1];
-  //   }
-  //   else{
-  //     patient_time=time[0]+":"+time[1]
-  //   }
-  
-  
-  //   let patient_id:any;
-  //   this.globalService.idValue.subscribe(res=>{
-  //     console.log(res);
-  //     patient_id=res;
-  //   },err=>{
-  //     console.log(err);
-  //   })
-  //   let appointment_id=this.appointment_id;
-  //   console.log(appointment_id);
-  //   let appointment_object={"appointment_id":appointment_id,"patient_time":patient_time,"patient_id":patient_id};
-  //   console.log(appointment_object);
-  
-  //   console.log(this.confirm_condition);
-  
-  //   this.Doctor_service.postAppointmetApi(patient_id,appointment_object).subscribe(res=>{
-  //     console.log(appointment_object);
-  //     console.log(res);
-  //   },err=>{
-  //     console.log(err);
-  //   })
-  // }
 }
