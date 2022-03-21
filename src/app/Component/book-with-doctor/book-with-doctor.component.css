@@ -400,3 +400,8 @@ form{
 	margin: 100px auto;
 }
 
+.notAvaliable{
+    box-sizing: content-box;
+    padding: 10px;
+    border-radius: 10px;
+}

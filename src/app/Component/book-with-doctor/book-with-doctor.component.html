@@ -111,9 +111,13 @@
                   <!-- <button (click)=" navigateTosearchPage()" class="btn btn-danger">
                     <a >Make An Appointment </a>
                   </button>               -->
-                  <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
+                  <button *ngIf="appointment.length" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
                     <a >Make An Appointment </a>
-                  </button>            
+                  </button>
+                  <div *ngIf="!appointment.length" class="text-center bg-danger text-white notAvaliable d-block d-lg-none">
+                    Not Avaliable
+                  </div>  
+                  
 
                 </div>
 
@@ -211,10 +215,12 @@
                   <!-- <button (click)=" navigateTosearchPage()" class="btn btn-danger">
                     <a >Make An Appointment </a>
                   </button>               -->
-                    <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
+                    <button *ngIf="appointment.length" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
                       <a >Make An Appointment </a>
                     </button> 
-
+                    <div *ngIf="!appointment.length" class="text-center bg-danger text-white notAvaliable d-block ">
+                      Not Avaliable
+                    </div>  
                     
                   </div>
             
