@@ -75,7 +75,7 @@
         <p class="payment status py-2">
           payment status: <span>{{user.payment_status}}</span>
       </p>
-      <button  class="btn btn-primary w-100 mb-2" (click)="payment(user.id)" [routerLink]="routing_status?['/paymentForm',countryCode,sessionId]:[]">
+      <button *ngIf="user.payment_status!='paied'"  class="btn btn-primary w-100 mb-2" (click)="payment(user.id)" [routerLink]="routing_status?['/paymentForm',countryCode,sessionId]:[]">
             Pay
       </button>
         <button (click)="delete(fname.textContent)" class="btn btn-danger w-100" (click)="deleteReservation(user.id)">Cancel</button>
