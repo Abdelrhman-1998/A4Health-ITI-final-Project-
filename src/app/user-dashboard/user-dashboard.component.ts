@@ -8,7 +8,6 @@ import { Notification } from '../Models/notification';
 import { UserloginService } from '../userguard/userlogin.service';
 import { GlobaltokenService } from '../gt/globaltoken.service';
 
-
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
@@ -88,6 +87,15 @@ logout(){
 // this.router.navigate(['signin']);
 
 }
+toggle() {
+  "use strict"; // Start of use strict
+  $("body").toggleClass("sidebar-toggled");
+  $(".sidebar").toggleClass("toggled");
+  if ($(".sidebar").hasClass("toggled")) {
+    $('.sidebar .collapse').collapse('hide');
+  };
+  // Toggle the side navigation
 
+};
 
 }

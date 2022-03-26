@@ -38,5 +38,14 @@ export class DoctorDashboardComponent implements OnInit {
     this.router.navigate(['signin']);
    
   }
-
+  toggle() {
+    "use strict"; // Start of use strict
+    $("body").toggleClass("sidebar-toggled");
+    $(".sidebar").toggleClass("toggled");
+    if ($(".sidebar").hasClass("toggled")) {
+      $('.sidebar .collapse').collapse('hide');
+    };
+    // Toggle the side navigation
+  
+  };
 }
