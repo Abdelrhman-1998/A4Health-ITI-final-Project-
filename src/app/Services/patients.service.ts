@@ -28,8 +28,9 @@ export class PatientsService {
     return this.httpClient.put(url,password,{'headers':this.header});
   }
   submitFeedBack(patient_id:any,feedback:{}){
+    let header =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
     let url="https://a4-health.herokuapp.com/api/patients/"+patient_id+"/feedback";
-    return this.httpClient.post(url,feedback,{'headers':this.header});
+    return this.httpClient.post(url,feedback,{'headers':header});
   }
   // updatePatient(patient_id:number,updatePatient:Patient):Observable<Patient>{
   //   const body = JSON.stringify(updatePatient);
