@@ -36,10 +36,10 @@
                         <tr *ngFor="let specialty of specialties | paginate: { itemsPerPage: count, currentPage: p } ">
                             <td>{{specialty.id}}</td>
                             <td>{{specialty.name}}</td>
-                            <td class="text-center"><button class="btn btn-success w-50" 
+                            <td class="text-center"><button class="btn btn-success w-100" 
                                 [routerLink]="['/admin/specialty','edit',specialty.id,specialty.name]"
                                 > Edit  </button></td>
-                            <td class="text-center"><button class="btn btn-danger w-50" type="submit"  data-toggle="modal"
+                            <td class="text-center"><button class="btn btn-danger w-100" type="submit"  data-toggle="modal"
                                 data-target="#myModal" (click)="getSpecialityId(specialty.id)" >Delete</button></td>
                         </tr>
                         <div class="modal" id="myModal">

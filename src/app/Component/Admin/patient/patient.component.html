@@ -33,7 +33,7 @@
                             <td>{{patient.fname+' '+patient.lname}}</td>
                             <td>{{patient.gender}}</td>
                             <!-- <td>{{patient.phone}}</td> -->
-                            <td class="text-center"><button class="btn btn-danger w-50"   (click)="getPatientId(patient.id)"         data-toggle="modal"
+                            <td class="text-center"><button class="btn btn-danger w-100"   (click)="getPatientId(patient.id)"         data-toggle="modal"
                                 data-target="#myModal" type="submit" >Delete</button></td>
                         </tr>
                         <div class="modal" id="myModal">
@@ -57,7 +57,7 @@
                                 >
                                   Confirm
                                 </button>
-                                <button type="button" class="close btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="close btn btn-secondary  w-100" data-dismiss="modal">Close</button>
                               </div>
                             </div>
                           </div>
