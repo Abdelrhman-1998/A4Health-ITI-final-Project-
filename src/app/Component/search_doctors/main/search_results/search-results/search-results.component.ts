@@ -414,18 +414,7 @@ submitFilter(x:NgForm,y:NgForm){
               console.log(this.view_data);
               this.view_length=this.view_data.length;
         }
-        if(doctor_name=="" || doctor_name==null ){
-          this.view_data=res as any;
-          this.view_length=this.view_data.length;
-          console.log(res);
-        }
-        else{
-          console.log(this.view_data);
-          console.log(this.Doctor_data);
-              this.view_data=this.Doctor_service.filterById(doctor_name,this.Doctor_data);
-              console.log(this.view_data);
-              this.view_length=this.view_data.length;
-        }
+
 
 
 // from make an appointment part date 15/3
