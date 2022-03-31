@@ -163,12 +163,12 @@
                                     </div>
                                 </div>
                         </div>
-                            <select  size="4" name='speciality' class=" dropdown-menu p-0 w-100 " aria-labelledby="dropdownMenuButton1" ngModel [(ngModel)]="specializtion_name" >
-                                <option #speciality_option_modal (click)="choose_specilty_modal.innerText=speciality_option_modal.value" *ngFor="let item of Specialization_options_arr" value="{{item}}" >
+                            <ul  name='speciality' class=" dropdown-menu p-0 w-100 modal-ul" aria-labelledby="dropdownMenuButton1"  >
+                                <li (click)="sendToTheForm(form2,'speciality',item)" class="modal-li" #speciality_option_modal (click)="choose_specilty_modal.innerText=item" *ngFor="let item of Specialization_options_arr" >
                                     {{item}}
-                                </option>
+                                </li>
   
-                              </select>
+                            </ul>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
                         <div class="dropdown-toggle" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(area_modal,specialization_modal)"     (click)="city_modal.style.transform==''?city_modal.style.transform='rotate(180deg)':city_modal.style.transform=''">
@@ -189,47 +189,12 @@
                                 </div>
                             </div>
                         </div>
-                            <select  size="4" name='city' class="w-100 dropdown-menu p-0 " aria-labelledby="dropdownMenuButton2" ngModel>
-                                <option  #city_option_modal  (click)="choose_city_modal.innerText=city_option_modal.value" *ngFor="let item of City_options_arr" (click)="getAreaByCity(item)" value="{{item}}"  >
+                            <ul style="height:232px"  name='city' class="w-100 dropdown-menu  modal-ul" aria-labelledby="dropdownMenuButton2" >
+                                <li (click)="sendToTheForm(form2,'city',item)" class="modal-li" #city_option_modal  (click)="choose_city_modal.innerText=item" *ngFor="let item of City_options_arr" (click)="getAreaByCity(item)"   >
                                   {{item}}
-                                </option>
-                                <!-- <option value="Assiut" >
-                                    Assiut
-                                </option>
-                                <option value="Aswan" >
-                                    Aswan
-                                </option>
-                                <option value="Beheira"  >
-                                    Beheira
-                                </option>
-                                <option value="Bani Suef" >
-                                    Bani Suef
-                                </option>
-                                <option value="Cairo">
-                                    Cairo
-                                </option>
-                                <option value="Daqahliya" >
-                                    Daqahliya
-                                </option>
-                                <option value="Damietta" >
-                                    Damietta
-                                </option>
-                                <option value="Fayyoum" >
-                                    Fayyoum
-                                </option>
-                                <option value="Gharbiya" >
-                                    Gharbiya
-                                </option>
-                                <option value="Giza" >
-                                    Giza
-                                </option>
-                                <option value="Helwan" >
-                                    Helwan
-                                </option>
-                                <option value="Ismailia" >
-                                    Ismailia
-                                </option> -->
-                              </select>
+                                </li>
+              
+                            </ul>
                     </li>
                     <li  class="search-listItem dropdown searchItems" title="">
                         <div class="dropdown-toggle" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false"  (click)="reset_arrows(city_modal,specialization_modal)"     (click)="area_modal.style.transform==''?area_modal.style.transform='rotate(180deg)':area_modal.style.transform=''">
@@ -252,12 +217,11 @@
         
                             </div>
                         </div>
-                        <select size="4" name='area'  class="w-100 dropdown-menu p-0" aria-labelledby="dropdownMenuButton3" ngModel #select_area>
-                            <option #area_option_modal  (click)="choode_area_modal.innerText=area_option_modal.value" *ngFor="let item of Area_options_arr"  value="{{item}}">
+                        <ul  name='area'  class="w-100 dropdown-menu p-0 modal-ul" aria-labelledby="dropdownMenuButton3"  #select_area>
+                            <li  (click)="sendToTheForm(form2,'area',item)" class="modal-li" #area_option_modal  (click)="choode_area_modal.innerText=item" *ngFor="let item of Area_options_arr"  >
                                 {{item}}
-                            </option>
-                          
-                          </select>
+                            </li>
+                        </ul>
                     </li>
                     <!-- <li  class="search-listItem dropdown searchItems" title="">
                         <div class="dropdown-toggle" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false" (click)="reset_arrows(city_modal,area_modal,specialization_modal)"

@@ -111,10 +111,10 @@
                   <!-- <button (click)=" navigateTosearchPage()" class="btn btn-danger">
                     <a >Make An Appointment </a>
                   </button>               -->
-                  <button *ngIf="appointment.length" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
+                  <button *ngIf="appointment_length" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
                     <a >Make An Appointment </a>
                   </button>
-                  <div *ngIf="!appointment.length" class="text-center bg-danger text-white notAvaliable d-block d-lg-none">
+                  <div *ngIf="!appointment_length" class="text-center bg-danger text-white notAvaliable d-block d-lg-none">
                     Not Avaliable
                   </div>  
                   
@@ -215,10 +215,10 @@
                   <!-- <button (click)=" navigateTosearchPage()" class="btn btn-danger">
                     <a >Make An Appointment </a>
                   </button>               -->
-                    <button *ngIf="appointment.length" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
+                    <button *ngIf="appointment_length" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Appointment_booking">
                       <a >Make An Appointment </a>
                     </button> 
-                    <div *ngIf="!appointment.length" class="text-center bg-danger text-white notAvaliable d-block ">
+                    <div *ngIf="!appointment_length" class="text-center bg-danger text-white notAvaliable d-block ">
                       Not Avaliable
                     </div>  
                     
@@ -236,7 +236,7 @@
   </div>
 </section>
 
- <div #myModal id="confirm_appointment2" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
+ <div #myModal2 id="confirm_appointment2" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true"> -->
 	<div  class="modal-dialog modal-dialog-centered modal-confirm ">
 		<div class="modal-content ">
 			<div class="modal-header d-flex flex-column">
@@ -273,16 +273,16 @@
                       </div>
                       <div class="card-body position-relative" >
                           <input #dateModal type="hidden" name="date" value={{appointment_item.Date}}>
-                           <select #selectListModal class="form-select  timing lh-lg w-100 h-100" name="appointment_modal" size="10" ngModel (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
-                          <option #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1" [ngClass]="confirmOption==item && confirmDate==appointment_item.Date ?'d-none':''">
-                              {{item}}
-                          </option>
-                          </select>
+                          <ul  #selectListModal class="form-select  ul_booking  timing lh-lg w-100 " name="appointment"    (click)="disableAllbuttons(bookingButton)">
+                            <li style="font-size: 14px;"  (click)="disableAllOptions(option,item)"  [ngClass]="confirmOption==item && confirmDate==appointment_item.Date ?'d-none':''"  #option *ngFor="let item of  appointment_item.Time"  class="mt-1 mb-1 booking_li">
+                                {{item}}
+                            </li>
+                        </ul>
                       </div>
-                       <button #bookingButton disabled class=" btn btn-danger position-relative" type="submit"  (click)="submitAppointment(AppointmentFormModal,dateModal,myModal,appointment_item.id)" data-bs-toggle="modal" data-bs-target="#confirm_appointment">
-                          <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
+                       <button #bookingButton disabled class=" btn btn-danger position-relative" type="submit"  (click)="submitAppointmentModal(AppointmentFormModal,dateModal,myModal2,appointment_item.id)"  [routerLink]="!confirm_condition?['/signin']:[]">
+                          <!-- <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
                               <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
-                          </div>
+                          </div> -->
                            Book
                        </button>
 

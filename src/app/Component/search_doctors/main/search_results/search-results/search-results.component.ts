@@ -25,11 +25,15 @@ export class SearchResultsComponent implements OnInit {
   submmitedForm!:{}
   appointment_id!:number;
   appointment_previous_element!:any;
+
   choosenBookingOption:any;
   confirmOption:any;
   confirmDate:any;
   choosenDate:any;
   modal_appointment:any;
+  
+  app_previous_li:any;
+  app_time:any;
   // storeAppointment(x:any){
   //   this.appointments=x;
   // } 
@@ -84,7 +88,28 @@ export class SearchResultsComponent implements OnInit {
       $("#Appointments").modal('hide');
     }
   }
+  submitAppointmentModal(x:any,y:any,z:any,appointment_id:number){
+    console.log(this.confirm_condition);
+    if(this.confirm_condition){
+      x.value.date=y.value;
+      x.value.appointment=this.app_time;
+      console.log(x.value);
+      this.choosenBookingOption=x.value.appointment;
+      this.choosenDate=x.value.date;
+      console.log(x.value.appointment);
+      console.log(x.value);
+      this.submmitedForm=x;
+      $("#Appointments").modal('hide');
+      $("#confirm_appointment").modal('show');
+      this.appointment_id=appointment_id;
+     
+    }
+    else{
+      $("#Appointments").modal('hide');
+    }
+  }
   checkScroll(x:any,y:any){
+   
     if(x.scrollTop==0){
       y.style="display:none";
     }
@@ -92,6 +117,16 @@ export class SearchResultsComponent implements OnInit {
      y.style="display:block";
     }
  
+   }
+   disableAllOptions(x:any,y:any){
+      // this. li_check_click=true;
+      if(this.app_previous_li){
+        this.app_previous_li.style="background-color:transparent;color: #0075ff ;font-size:14px;"      
+      }
+      this.app_previous_li=x;
+      this.app_previous_li.style="background-color: #0075ff;color: white;font-size:14px;";
+      this.app_time=y;
+      console.log(y);
    }
    disableAllbuttons(x:any){
     if(this.appointment_previous_element){

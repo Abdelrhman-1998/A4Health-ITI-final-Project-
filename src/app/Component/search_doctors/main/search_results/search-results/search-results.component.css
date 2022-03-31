@@ -363,6 +363,7 @@ Appointment's part
 .card-body::-webkit-scrollbar{
     width: 0;
 }
+
 .form-select {
     padding-right:0 !important;
     background-image: none;

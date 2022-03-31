@@ -23,6 +23,7 @@ export class BookWithDoctorComponent implements OnInit {
   doctor_id:any;
   doctor_datadoctor!: Doctor;
   doctor_data:any;
+  appointment_length:any=true;
   confirm_condition!:boolean;
   fname:any="";
   lname:any='';
@@ -48,6 +49,39 @@ export class BookWithDoctorComponent implements OnInit {
   confirmDate:any;
   choosenDate:any;
   choosenBookingOption:any;
+
+  app_previous_li:any;
+  app_time:any;
+  disableAllOptions(x:any,y:any){
+    // this. li_check_click=true;
+    if(this.app_previous_li){
+      this.app_previous_li.style="background-color:transparent;color: #0075ff ;font-size:14px;"      
+    }
+    this.app_previous_li=x;
+    this.app_previous_li.style="background-color: #0075ff;color: white;font-size:14px;";
+    this.app_time=y;
+    console.log(y);
+ }
+  submitAppointmentModal(x:any,y:any,z:any,appointment_id:number){
+    console.log(this.confirm_condition);
+    if(this.confirm_condition){
+      x.value.date=y.value;
+      x.value.appointment=this.app_time;
+      console.log(x.value);
+      this.choosenBookingOption=x.value.appointment;
+      this.choosenDate=x.value.date;
+      console.log(x.value.appointment);
+      console.log(x.value);
+      this.submmitedForm=x;
+      $("#Appointment_booking").modal('hide');
+      $("#confirm_appointment2").modal('show');
+      this.appointment_id=appointment_id;
+     
+    }
+    else{
+      $("#Appointment_booking").modal('hide');
+    }
+  }
   // rateNumber:number=0
   // reviewwithRateNumber!:Review
  
@@ -88,6 +122,8 @@ export class BookWithDoctorComponent implements OnInit {
     this.doctorData.getDoctorInfo(doctor_id).subscribe(res=>{
       let appointments:any= res;
       this.appointment=appointments.appointment;
+      this.appointment_length= this.appointment.length;
+
       
     },err=>{
 
@@ -186,7 +222,7 @@ if(this.appointment_previous_element){
 
   naivgateToReservation(x:any){
     console.log(x.value);
-    let time_array = x.value.appointment_modal.split(" ");
+    let time_array = x.value.appointment.split(" ");
     let time_prefix = time_array[1];
     let time=time_array[0].split(":");
     let patient_time;

@@ -130,12 +130,12 @@ div.card-body{background-color: white;}
     }
     .carousel-control-next {
         right:80px !important;
-        top:425px;
+        top:410px;
 
     }
     .carousel-control-prev {
         left: 80px !important;
-        top: 425px;
+        top: 410px;
     }
     /* .offer-icon{
         display: none !important;
@@ -224,6 +224,11 @@ div.owl-item{
 }
 .card-body::-webkit-scrollbar{
     width: 0;
+}
+ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
 }
 select{
     outline: none !important;
@@ -404,4 +409,16 @@ form{
     box-sizing: content-box;
     padding: 10px;
     border-radius: 10px;
+}
+.booking_li{
+    color: var(--color2);
+    cursor: pointer;
+}
+.ul_booking{
+    height: 252px;
+    overflow: scroll;
+    scrollbar-width: 0 !important;
+}
+.ul_booking::-webkit-scrollbar{
+    width: 0px;
 }

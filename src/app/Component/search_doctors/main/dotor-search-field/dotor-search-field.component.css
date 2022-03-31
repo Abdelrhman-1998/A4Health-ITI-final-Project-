@@ -233,3 +233,23 @@ option{
     cursor: pointer;
     visibility: hidden;
 }
+.modal-ul{
+    padding: 5px!important;
+    border: 2px solid var(--color2);
+    overflow: scroll;
+    scrollbar-width: none;
+    height: 110px;
+   
+}
+.modal-ul::-webkit-scrollbar{
+    width: 0px;
+}
+.modal-ul li {
+    padding-left: 5px;
+    font-size: 14px !important;
+}
+.modal-ul li:hover{
+ 
+    background-color: var(--color2);
+    color: white;
+}

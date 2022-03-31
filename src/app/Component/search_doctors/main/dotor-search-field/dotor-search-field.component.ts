@@ -23,6 +23,9 @@ export class DotorSearchFieldComponent implements OnInit{
   specializtion_name!:string;
   specializtion_name1!:string;
   all_data:any;
+  sendToTheForm(x:any,y:any,z:any){
+    x.value[y]=z;
+  }
   resetSpans(x1:any,x3:any,x4:any){
       x1.innerText='Choose specialty';
       x3.innerText='Choose Area';

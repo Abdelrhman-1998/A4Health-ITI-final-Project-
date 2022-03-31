@@ -361,13 +361,13 @@
                                 </div>
                                 <div class="card-body position-relative" >
                                     <input #dateModal type="hidden" name="date" value={{appointment_item.Date}}>
-                                     <select #selectListModal class="form-select  timing lh-lg w-100 h-100" name="appointment" size="10" ngModel (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
-                                    <option [ngClass]="confirmOption==item && confirmDate==appointment_item.Date ?'d-none':''"  #option *ngFor="let item of  appointment_item.Time" value={{item}} class="mt-1 mb-1">
+                                <ul #selectListModal class="form-select   timing lh-lg w-100 h-100" name="appointment"   (scroll)="checkScroll(selectListModal,Arrow)" (click)="disableAllbuttons(bookingButton)">
+                                    <li style="font-size: 14px;"  (click)="disableAllOptions(option,item)"  [ngClass]="confirmOption==item && confirmDate==appointment_item.Date ?'d-none':''"  #option *ngFor="let item of  appointment_item.Time"  class="mt-1 mb-1">
                                         {{item}}
-                                    </option>
-                                    </select>
+                                    </li>
+                                </ul>
                                 </div>
-                                 <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)="submitAppointment(AppointmentFormModal,dateModal ,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]" >
+                                 <button   #bookingButton disabled class=" btn btn-danger position-relative" type="submit"    (click)=" submitAppointmentModal(AppointmentFormModal,dateModal ,myModal,appointment_item.id)" [routerLink]="!confirm_condition?['/signin']:[]" >
                                     <div #Arrow class="toTheTop position-absolute text-center" (click)="goToTop(selectListModal)">
                                         <i class="fa-solid fa-arrow-up" title="Top of the list"></i>
                                     </div>
