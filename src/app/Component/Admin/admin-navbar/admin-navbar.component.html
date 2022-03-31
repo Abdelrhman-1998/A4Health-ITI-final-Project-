@@ -16,7 +16,7 @@
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-bell fa-fw"></i>
             <!-- Counter - Alerts -->
-            <span  class="badge badge-danger badge-counter">{{noti.length}}</span>
+            <span *ngIf="noti.length>0" class="badge badge-danger badge-counter">{{noti.length}}</span>
         </a>
         <!-- Dropdown - Alerts -->
         <div  class="w-100 notifications dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"

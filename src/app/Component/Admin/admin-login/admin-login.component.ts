@@ -54,7 +54,7 @@ loginAdmin(data:NgForm){
       this.test=log
       if(this.test.error){
        this.massege='Username or password incorrect'
-        this.router.navigate(['/admin/login'])
+        this.router.navigate(['/admin'])
       }else{
         // Authorization: Bearer <token>
         localStorage.setItem('AuthorizationA','Bearer '+this.test.token)
