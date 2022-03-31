@@ -38,25 +38,25 @@ export class ServicesComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.getAllSpecialities()
+    // this.getAllSpecialities()
   }
-  getAllSpecialities() {
-    let x:string
-    this.specialityServices.getAllSpecialties().subscribe((spe) => {
-      spe.forEach(spe => {
-        this.icons.forEach(i=>{
+  // getAllSpecialities() {
+  //   let x:string
+  //   this.specialityServices.getAllSpecialties().subscribe((spe) => {
+  //     spe.forEach(spe => {
+  //       this.icons.forEach(i=>{
           
-            this.specialIcon.push(i) ; 
-        })
-        this.specialtyId=spe.id
-      }
-      );
+  //           this.specialIcon.push(i) ; 
+  //       })
+  //       this.specialtyId=spe.id
+  //     }
+  //     );
       
-      console.log(this.specialIcon);
+  //     console.log(this.specialIcon);
       
-      this.specialties = spe;
-    });
-  }
+  //     this.specialties = spe;
+  //   });
+  // }
   sendSpecialtyId(id:number){
     // this.router.navigate(['/search'],{queryParams:{id}})
   }
