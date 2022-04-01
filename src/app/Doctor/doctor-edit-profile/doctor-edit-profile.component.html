@@ -151,7 +151,7 @@
                    <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['minlength']">Last name min length is 4</p> -->
                   <!-- <p class="m-0" *ngIf="doctorEditForm.get('lastname')?.errors?.['maxlength']">Password Max length is 20</p> -->
               <!-- </div> -->
-            <button [disabled]="doctorEditForm.invalid" (click)="submitEditDoctor(doctorEditForm.value)" type="submit" class="btn btn-danger">Save</button>
+            <button [disabled]="doctorEditForm.invalid" (click)="submitEditDoctor(doctorEditForm.value)" type="submit" class="btn btn-primary">Save</button>
             <!-- <button type="reset" class="btn btn-secondary">Reset</button> -->
         </div>
         </form>

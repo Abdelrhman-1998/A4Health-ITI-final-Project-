@@ -54,7 +54,7 @@ export class SignInComponent implements OnInit {
           this.checkAuth.thetoken="Bearer "+this.test.token;
           this.checkAuth.theid=this.test.id;
           this.checkAuth.theUsername=this.username;
-          setTimeout(()=>{
+          //setTimeout(()=>{
             ///////////////
             //this.router.navigate(['/doctordashboard/appointment'])
             if(this.test.type == "doctor")
@@ -69,7 +69,7 @@ export class SignInComponent implements OnInit {
               this.checkAuth.theUserType="patient";
               this.router.navigate(['/userdashboard/reservations'])
             }
-          },2000)
+          //},2000)
         }
       console.log("token = " , this.test.token);
       }
