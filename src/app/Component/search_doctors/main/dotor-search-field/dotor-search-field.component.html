@@ -163,7 +163,7 @@
                                     </div>
                                 </div>
                         </div>
-                            <ul  name='speciality' class=" dropdown-menu p-0 w-100 modal-ul" aria-labelledby="dropdownMenuButton1"  >
+                            <ul style="height:300px"   name='speciality' class=" dropdown-menu p-0 w-100 modal-ul" aria-labelledby="dropdownMenuButton1"  >
                                 <li (click)="sendToTheForm(form2,'speciality',item)" class="modal-li" #speciality_option_modal (click)="choose_specilty_modal.innerText=item" *ngFor="let item of Specialization_options_arr" >
                                     {{item}}
                                 </li>
@@ -217,7 +217,7 @@
         
                             </div>
                         </div>
-                        <ul  name='area'  class="w-100 dropdown-menu p-0 modal-ul" aria-labelledby="dropdownMenuButton3"  #select_area>
+                        <ul style="height:150px"  name='area'  class="w-100 dropdown-menu p-0 modal-ul" aria-labelledby="dropdownMenuButton3"  #select_area>
                             <li  (click)="sendToTheForm(form2,'area',item)" class="modal-li" #area_option_modal  (click)="choode_area_modal.innerText=item" *ngFor="let item of Area_options_arr"  >
                                 {{item}}
                             </li>

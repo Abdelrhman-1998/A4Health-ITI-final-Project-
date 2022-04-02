@@ -76,17 +76,17 @@
                             <input formControlName="phone" name="phone" #phone type="text" class="form-control w-75" id="floatingphone"
                                 placeholder="name@example.com">
                             <label for="floatingphone">Phone</label>
-                            <button (click)="addPhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Add</button>
-                            <button (click)="deletePhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Delete</button>
+                            <!-- <button (click)="addPhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Add</button>
+                            <button (click)="deletePhone(phone.value)"  type="submit" class="btn btn-danger align-self-center">Delete</button> -->
                        
                         </div>
                    
-                        <div class="d position-relative">
+                        <!-- <div class="d position-relative">
                             <select  #Phones name="phones" class="form-select text-primary my-3" aria-label="Default select example">
                                 <option disabled selected style="display:none;"> Your Phones </option>
                                 <option *ngFor="let num of userData.Phones"  class="text-primary" [value]="num">{{num}}</option>
                             </select>
-                        </div>
+                        </div> -->
                         <!-- <div class="form-floating text-primary my-3">
                             <input type="date" class="form-control text-danger" id="floatingBirthday"
                                 placeholder="Birthday">
