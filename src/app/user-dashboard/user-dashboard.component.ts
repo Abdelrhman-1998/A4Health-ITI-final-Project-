@@ -46,7 +46,7 @@ getUserNotification(){
     (notification:any)=>{
        this.notifications=notification;
        this.notification_length=notification.length;
-      this.notifications.forEach(notification => {
+       this.notifications.forEach(notification => {
     //   if(notification.type==='Feedback time'){
     //     this.showrouter=false
     //     // this.router2=false

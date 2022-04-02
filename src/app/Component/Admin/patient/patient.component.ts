@@ -45,7 +45,7 @@ export class PatientComponent implements OnInit {
       this.router.navigate(['/admin/patient'])
 
   })
-    window.location.reload();
+    // window.location.reload();
     setTimeout(()=>{
 
     },2000)

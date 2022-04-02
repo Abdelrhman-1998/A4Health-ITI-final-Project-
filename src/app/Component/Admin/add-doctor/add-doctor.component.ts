@@ -80,6 +80,7 @@ export class AddDoctorComponent implements OnInit {
     this.doctorSrvice.addDoctor(formData).subscribe((res) => {
       this.error = res;
       console.log(this.error.errors);
+      this.router.navigate(['/admin/doctor'])
       if(this.error.errors.username){
           this.message=this.error.errors.username
       }else{
