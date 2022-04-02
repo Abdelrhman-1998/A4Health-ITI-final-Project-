@@ -21,6 +21,9 @@ export class DoctorserviceService {
   {
     return this._HttpClient.get(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}`,{headers:this.header});
   }
+  getDoctorStatus():Observable<any>{
+    return this._HttpClient.get(`https://a4-health.herokuapp.com/api/patients/${localStorage.getItem("id")}/reservations`,{headers:this.header});
+  }
  updateDoctorEditProfile(edited:any):Observable<any>
   {
     return this._HttpClient.put(`https://a4-health.herokuapp.com/api/doctors/${localStorage.getItem("id")}`,edited,{headers:this.header});

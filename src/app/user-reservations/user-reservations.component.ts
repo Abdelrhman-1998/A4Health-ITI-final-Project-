@@ -2,6 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserreservationsService } from '../userreservations.service';
 import { GlobaltokenService } from '../gt/globaltoken.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DoctorsService } from '../Services/doctors.service';
+import { DoctorserviceService } from '../doctorservice/doctorservice.service';
 
 @Component({
   selector: 'app-user-reservations',
@@ -12,7 +14,7 @@ export class UserReservationsComponent implements OnInit {
   homeData:any[]=[];
 
   header:any =new HttpHeaders().set("Authorization",localStorage.getItem('Authorization')!);
-  constructor(private _UserreservationsService:UserreservationsService ,private httpClient:HttpClient,private patient:GlobaltokenService
+  constructor(private _UserreservationsService:UserreservationsService ,private httpClient:HttpClient,private patient:GlobaltokenService,private doctor_service:DoctorserviceService
     ) { 
 
   }
@@ -21,7 +23,7 @@ export class UserReservationsComponent implements OnInit {
   routing_status!:boolean;
   patient_id:any;
   reservation_id:any;
-  
+  reservation_status:any;
   payment(reservation_id:any){ 
     // api
     console.log("tt");
@@ -49,10 +51,21 @@ export class UserReservationsComponent implements OnInit {
     let patient_id=this.patient.theid;
     this.patient_id=patient_id;
     let reservations:any;
+    this.doctor_service.getDoctorStatus().subscribe(res=>{
+      let response= res;
+      console.log(res);
+      let status= res[0].status;
+      this.reservation_status=status;
+
+    },err=>{
+      console.log(err);
+    })
     this._UserreservationsService.getReservations( patient_id).subscribe(res=>{
       let x:any =res;
       this.homeData=x;
         console.log(res);
+    
+        let response:any=res;
     },err=>{
       console.log(err);
     })

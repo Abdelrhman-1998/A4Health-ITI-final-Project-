@@ -78,7 +78,7 @@
       <button *ngIf="user.payment_status!='paied'"  class="btn btn-primary w-100 mb-2" (click)="payment(user.id)" [routerLink]="routing_status?['/paymentForm',countryCode,sessionId]:[]">
             Pay
       </button>
-        <button (click)="delete(fname.textContent)" class="btn btn-danger w-100" (click)="deleteReservation(user.id)">Cancel</button>
+        <button *ngIf="reservation_status!='completed'" (click)="delete(fname.textContent)" class="btn btn-danger w-100" (click)="deleteReservation(user.id)">Cancel</button>
 
       </div>
      
