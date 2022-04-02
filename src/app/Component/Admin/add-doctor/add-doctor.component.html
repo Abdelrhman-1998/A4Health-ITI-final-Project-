@@ -222,9 +222,9 @@
             />
             <div class="alert alert-danger" 
             *ngIf="AddDoctor.get('description')?.errors && AddDoctor.get('description')?.touched">
-                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['required']">fees is required</p>
-                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['minlength']">fees min length is 15</p>
-                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['maxlength']">fees max length is 50</p>
+                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['required']">description is required</p>
+                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['minlength']">description min length is 15</p>
+                <p class="m-0" *ngIf="AddDoctor.get('description')?.errors?.['maxlength']">description max length is 50</p>
             </div>
           </div>
   
