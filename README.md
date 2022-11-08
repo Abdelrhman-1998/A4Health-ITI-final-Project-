@@ -2,7 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
-<h1> A4Health is a medical service app which aims at helping patients to book their appointments with doctors,search for best doctors by many filters,track appointment status and more</h1>
+## About
+A4Health is a medical service app which aims at helping patients to book their appointments with doctors,search for best doctors by many filters,track appointment status and more
 
 ## Development server
 
